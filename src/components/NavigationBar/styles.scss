@@ -1,0 +1,32 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import '../../styles/_variable';
+
+.navbar-bg {
+  background: rgba(43, 47, 56, 0.75);
+  box-shadow:
+    0px 10px 10px 0px rgba(25, 25, 25, 0.2),
+    0px 2px 4px 0px rgba(25, 25, 25, 0.25);
+
+  .nav-item {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .active {
+    margin-top: 3px;
+    color: $white;
+
+    &::after {
+      content: '';
+      display: block;
+      text-decoration: underline;
+      text-decoration: none;
+      border-bottom: 4px solid $primary;
+      position: relative;
+      bottom: -16px;
+    }
+  }
+}

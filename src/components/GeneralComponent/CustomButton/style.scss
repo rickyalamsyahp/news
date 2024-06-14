@@ -1,0 +1,17 @@
+.btn-custom {
+  padding: 8px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  border-radius: 4px;
+
+  .svg-secondary {
+    path {
+      fill: #305db3;
+    }
+  }
+}

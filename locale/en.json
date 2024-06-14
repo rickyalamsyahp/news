@@ -1,0 +1,104 @@
+{
+  "navigation-bar": {
+    "total-solutions": "Total Solutions",
+    "innovation": "Innovation",
+    "commitments": "Commitments",
+    "about-us": "About Us",
+    "login": "Login"
+  },
+  "seo": {
+    "home": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture"
+    },
+    "total-solutions": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Total Solutions"
+    },
+    "innovation": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Innovation"
+    },
+    "about-us": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | About Us"
+    },
+    "commitments": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Commitments"
+    }
+  },
+  "homepage": {
+    "total-solutions": {
+      "subtitle": "Solutions",
+      "title": "We Deliver Solutions to ensure aqua farmers reach their optimum potential",
+      "see-all": "SEE OUR TOTAL SOLUTIONS",
+      "card": {
+        "aquafeed": "aquafeed",
+        "hatchery": "shrimp & fish Hatchery",
+        "farm": "shrimp & fish Farm",
+        "seafood-processing": "seafood processing",
+        "animal-health": "animal health & mobile lab",
+        "technical-team": "shrimp & fish technical team",
+        "innovations": "Innovations"
+      }
+    },
+    "commitments": {
+      "subtitle": "Commitments",
+      "title": "Sustainable Aquaculture Solutions Across the Nation",
+      "see-all": "SEE OUR COMMITMENTS",
+      "description": "Explore STP's total solutions in aquaculture, where advanced and sustainable feed production, hatcheries, and farming converge all over the nation to drive industry success.",
+      "count": {
+        "1": "Shrimp Hatcheries",
+        "2": "Shrimp Farms",
+        "3": "Fish Hatcheries",
+        "4": "Fish Farms",
+        "5": "Seafood Processing",
+        "6": "R&D Facilities"
+      }
+    }
+  },
+  "innovation": {
+    "jars": {
+      "description": "Located in the vibrant aquatic landscapes of Sumatra Utara, Jawa Barat, and Jawa Timur, our JAPFA Aquaculture Research Station (JARS) is dedicated to innovation. We focus on developing specialized feed formulations that support aquatic health and environmental stability. Our carefully designed feeds provide farmers with the resources they need to achieve sustainable success, enhancing both productivity and profitability."
+    },
+    "atd": {
+      "description": "Our ATD Team is committed to advancing aquaculture technology and ensuring future sustainability. We develop high-quality proteins for fish and shrimp growth, improve genetic breeding for catfish, innovate aerator technology, and create automated systems for feeding and water treatment in hatcheries and farms. Our team’s expertise and dedication provide farmers with the reliable tools necessary for success, driving productivity and profitability in the aquaculture industry.",
+      "download": "Download ATD product guide"
+    },
+    "arc": {
+      "description": "The Aquaculture Research Center (ARC) was established to promote responsible and sustainable aquaculture. It focuses on developing cultivable fish and shrimp species. ARC researches methods for farming marine and freshwater fish in controlled environments. Their work includes producing natural feed, managing broodstock, rearing productive broodstock, conducting artificial and natural breeding, harvesting and hatching eggs, and maintaining seeds. This comprehensive approach helps advance sustainable aquaculture practices."
+    },
+    "join-us": "Join us at STP Aquaculture as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
+    "contact-us": "Contact us"
+  },
+  "commitments": {
+    "emphasizing": {
+      "title": "Emphasizing Environmental Responsibility",
+      "description1": "Our commitment to environmental sustainability is demonstrated through our rigorous initiatives designed to protect and sustain water resources. We realize that water is essential in our operations and by that, we undertake significant water conservation activities as part of our corporate social responsibility. These initiatives are especially focused around the areas of our operational units, where the impact of our efforts can directly contribute to the well-being of the local and natural  ecosystems.",
+      "description2": "We strive to minimize our environmental footprint by implementing state-of-the-art water management and conservation technologies. Our proactive measures ensure the efficient use of water, reduce potential pollutants, and maintain the natural balance of the habitats we operate within."
+    },
+    "empowering": {
+      "title": "Empowering Community",
+      "description1": "We believe that aqua farmers, as well as the communities in which we operate, play a significant role in the industry. Our commitment to prioritizing sustainable aquaculture is not only marked by preserving the environment but also by raising awareness about more eco-friendly aquaculture practices. These efforts are carried out through the introduction of environmentally friendly aqua farming methods and the creation of industry-ready graduates. Additionally, we support sustainable livelihoods through initiatives in vannamei shrimp farming areas.",
+      "description2": "By integrating these principles into every aspect of our business, STP Aquaculture remains steadfast in our mission to contribute positively to sustainable aquaculture practices. We are not only nurturing our operations but also ensuring a sustainable future for the next generations"
+    }
+  },
+  "footer": {
+    "products": "Products",
+    "aquafeed": "Aquafeed",
+    "hatchery": "Shrimp & Fish Hatchery",
+    "grow-out": "Shrimp & Fish Grow Out",
+    "seafood-processing": "Seafood Processing",
+    "about-us": "About Us",
+    "story": "Story",
+    "vision-mission": "Vision & Mission",
+    "operations": "Operations",
+    "certification": "Certification",
+    "commitment": "Commitment",
+    "act-sustainability": "Act for Sustainability",
+    "news": "News & Articles",
+    "innovation": "Innovation",
+    "contact-us": "Contact Us"
+  }
+}

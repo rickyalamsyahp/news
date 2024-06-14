@@ -1,0 +1,104 @@
+{
+  "navigation-bar": {
+    "total-solutions": "Total Solutions",
+    "innovation": "Inovasi",
+    "commitments": "Komitmen",
+    "about-us": "Tentang Kami",
+    "login": "Masuk"
+  },
+  "seo": {
+    "home": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture"
+    },
+    "total-solutions": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Total Solutions"
+    },
+    "innovation": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Inovasi"
+    },
+    "about-us": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Tentang Kami"
+    },
+    "commitments": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Komitmen"
+    }
+  },
+  "homepage": {
+    "total-solutions": {
+      "subtitle": "Solusi",
+      "title": "Kami Memberikan Solusi untuk memastikan petani perairan mencapai potensi optimal mereka",
+      "see-all": "LIHAT SOLUSI TOTAL KAMI",
+      "card": {
+        "aquafeed": "pakan air",
+        "hatchery": "pembenihan udang & ikan",
+        "farm": "peternakan udang & ikan",
+        "seafood-processing": "pengolahan makanan laut",
+        "animal-health": "kesehatan hewan & laboratorium keliling",
+        "technical-team": "tim teknis udang & ikan",
+        "innovations": "inovasi"
+      }
+    },
+    "commitments": {
+      "subtitle": "Komitmen",
+      "title": "Solusi Budidaya Perairan Berkelanjutan di Seluruh Negeri",
+      "see-all": "LIHAT KOMITMEN KAMI",
+      "description": "Jelajahi solusi total STP dalam budidaya perairan, dimana produksi pakan, pembenihan, dan peternakan yang maju dan berkelanjutan berkumpul di seluruh negara untuk mendorong kesuksesan industri.",
+      "count": {
+        "1": "Tempat Pembenihan Udang",
+        "2": "Peternakan Udang",
+        "3": "Pembenihan Ikan",
+        "4": "Peternakan Ikan",
+        "5": "Pengolahan Makanan Laut",
+        "6": "Fasilitas Penelitian dan Pengembangan"
+      }
+    }
+  },
+  "innovation": {
+    "jars": {
+      "description": "Terletak di lanskap perairan yang dinamis di Sumatera Utara, Jawa Barat, dan Jawa Timur, Stasiun Penelitian Budidaya Perairan JAPFA (JARS) kami berdedikasi pada inovasi. Kami fokus pada pengembangan formulasi pakan khusus yang mendukung kesehatan perairan dan stabilitas lingkungan. Pakan kami yang dirancang dengan cermat memberikan petani sumber daya yang mereka perlukan untuk mencapai kesuksesan berkelanjutan, sehingga meningkatkan produktivitas dan profitabilitas."
+    },
+    "atd": {
+      "description": "Tim ATD kami berkomitmen untuk memajukan teknologi akuakultur dan memastikan keberlanjutan di masa depan. Kami mengembangkan protein berkualitas tinggi untuk pertumbuhan ikan dan udang, meningkatkan pemuliaan genetik ikan lele, inovasi teknologi aerator, dan menciptakan sistem otomatis untuk pemberian pakan dan pengolahan air di tempat pembenihan dan peternakan. Keahlian dan dedikasi tim kami memberikan para petani alat andal yang diperlukan untuk sukses, mendorong produktivitas dan profitabilitas dalam industri akuakultur.",
+      "download": "Unduh panduan produk ATD"
+    },
+    "arc": {
+      "description": "Pusat Penelitian Akuakultur (ARC) didirikan untuk mempromosikan budidaya perairan yang bertanggung jawab dan berkelanjutan. Ini berfokus pada pengembangan spesies ikan dan udang yang dapat dibudidayakan. ARC meneliti metode budidaya ikan laut dan air tawar di lingkungan terkendali. Pekerjaan mereka meliputi memproduksi pakan alami, mengelola indukan, membesarkan indukan produktif, melakukan pembiakan buatan dan alami, memanen dan menetaskan telur, serta memelihara benih. Pendekatan komprehensif ini membantu memajukan praktik akuakultur berkelanjutan."
+    },
+    "join-us": "Bergabunglah bersama kami di STP Aquaculture saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
+    "contact-us": "Hubungi kami"
+  },
+  "commitments": {
+    "emphasizing": {
+      "title": "Menekankan Tanggung Jawab Lingkungan",
+      "description1": "Komitmen kami terhadap kelestarian lingkungan ditunjukkan melalui inisiatif ketat kami yang dirancang untuk melindungi dan melestarikan sumber daya air. Kami menyadari bahwa air sangat penting dalam operasi kami dan oleh karena itu, kami melakukan kegiatan konservasi air yang signifikan sebagai bagian dari tanggung jawab sosial perusahaan. Inisiatif-inisiatif ini terutama difokuskan di sekitar area unit operasional kami, dimana dampak dari upaya kami dapat berkontribusi langsung terhadap kesejahteraan ekosistem lokal dan alam.",
+      "description2": "Kami berupaya meminimalkan dampak lingkungan dengan menerapkan teknologi pengelolaan dan konservasi air yang canggih. Langkah-langkah proaktif kami memastikan penggunaan air secara efisien, mengurangi potensi polutan, dan menjaga keseimbangan alami habitat tempat kami beroperasi."
+    },
+    "empowering": {
+      "title": "Pemberdayaan Komunitas",
+      "description1": "Kami percaya bahwa para petani perairan, serta masyarakat di mana kami beroperasi, memainkan peran penting dalam industri ini. Komitmen kami untuk memprioritaskan budidaya perikanan berkelanjutan tidak hanya ditandai dengan pelestarian lingkungan tetapi juga dengan meningkatkan kesadaran mengenai praktik budidaya perikanan yang lebih ramah lingkungan. Upaya tersebut dilakukan melalui pengenalan metode aqua farming yang ramah lingkungan dan penciptaan lulusan yang siap industri. Selain itu, kami mendukung penghidupan berkelanjutan melalui inisiatif di kawasan budidaya udang vannamei.",
+      "description2": "Dengan mengintegrasikan prinsip-prinsip ini ke dalam setiap aspek bisnis kami, STP Aquaculture tetap teguh dalam misi kami untuk berkontribusi positif terhadap praktik akuakultur berkelanjutan. Kami tidak hanya memelihara operasi kami tetapi juga memastikan masa depan yang berkelanjutan untuk generasi berikutnya"
+    }
+  },
+  "footer": {
+    "products": "Products",
+    "aquafeed": "Aquafeed",
+    "hatchery": "Shrimp & Fish Hatchery",
+    "grow-out": "Shrimp & Fish Grow Out",
+    "seafood-processing": "Seafood Processing",
+    "about-us": "About Us",
+    "story": "Story",
+    "vision-mission": "Vision & Mission",
+    "operations": "Operations",
+    "certification": "Certification",
+    "commitment": "Commitment",
+    "act-sustainability": "Act for Sustainability",
+    "news": "News & Articles",
+    "innovation": "Innovation",
+    "contact-us": "Contact Us"
+  }
+}
