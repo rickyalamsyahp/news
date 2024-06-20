@@ -1,19 +1,19 @@
-import Image from 'next/image'
-import React from 'react'
-import HeroHomepage from '../../../assets/images/Hero-Home.png'
+import HeroHomepage from '../../../assets/images/commitments-homepage-thumbnail.png'
+import { useTranslations } from 'next-intl'
 
 function Hero() {
+  const t = useTranslations('hero')
   return (
-    <section className='hero' id='hero-homepage'>
-      <Image
-        src={HeroHomepage}
-        alt='hero-homepage'
-        priority
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
-      />
+    <section
+      className='hero'
+      id='hero-homepage'
+      style={{
+        backgroundImage: `url(${HeroHomepage.src})`,
+      }}
+    >
+      <h1 className='fw-bold text-white m-auto w-75 text-center position-relative z-2'>
+        {t('homepage')}
+      </h1>
     </section>
   )
 }

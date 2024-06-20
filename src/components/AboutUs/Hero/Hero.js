@@ -1,16 +1,19 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import HeroHomepage from '../../../assets/images/commitments-homepage-thumbnail.png'
+import { useTranslations } from 'next-intl'
 
 function Hero() {
+  const t = useTranslations('hero')
   return (
-    <section className='hero-component'>
-      <Container fluid='xl' className='h-100'>
-        <Row className='justify-content-md-center align-items-center h-100'>
-          <Col md='auto'>
-            <h1>Section Hero</h1>
-          </Col>
-        </Row>
-      </Container>
+    <section
+      className='hero'
+      id='hero-homepage'
+      style={{
+        backgroundImage: `url(${HeroHomepage.src})`,
+      }}
+    >
+      <h1 className='fw-bold text-white m-auto w-75 text-center position-relative z-2'>
+        {t('commitments')}
+      </h1>
     </section>
   )
 }
