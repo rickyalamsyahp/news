@@ -8,9 +8,22 @@
   box-shadow:
     0px 10px 10px 0px rgba(25, 25, 25, 0.2),
     0px 2px 4px 0px rgba(25, 25, 25, 0.25);
+}
 
-  .nav-item {
-    font-size: 16px;
+.navbar-toggler {
+  outline: none !important;
+  border: none !important;
+  background-color: $light !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.nav-item {
+  font-size: 16px;
+  color: $light !important;
+  @include media-breakpoint-down(lg) {
+    color: $dark !important;
   }
 }
 

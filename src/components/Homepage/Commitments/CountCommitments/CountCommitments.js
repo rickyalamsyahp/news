@@ -6,9 +6,9 @@ import { useTranslations } from 'next-intl'
 export default function CountCommitments() {
   const t = useTranslations('homepage.commitments.count')
   return (
-    <Row className='py-5'>
+    <Row className='py-0 py-lg-5'>
       {[0, 1, 2, 3, 4, 5].map(data => (
-        <Col key={`card-commitment-${data + 1}`}>
+        <Col key={`card-commitment-${data + 1}`} xs={4} sm>
           <CardCommitments
             number={Math.floor(Math.random() * 10 + 1)}
             description={t(`${data + 1}`)}

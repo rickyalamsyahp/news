@@ -12,14 +12,14 @@ export default function DescriptionCommitments() {
           <Title subtitle={t('subtitle')} />
         </Col>
       </Row>
-      <Row className='pb-5'>
-        <Col sm={12} md={6}>
+      <Row className='pb-2 pb-lg-5'>
+        <Col sm={12} md={6} className='d-flex align-items-end mb-3 mb-lg-0'>
           <Title title={t('title')} />
         </Col>
         <Col
           sm={12}
           md={6}
-          className='d-flex justify-content-between flex-column'
+          className='d-flex justify-content-between flex-column gap-2 gap-lg-5'
         >
           <Title description={t('description')} readMore={t('see-all')} />
         </Col>

@@ -55,7 +55,7 @@ function Footer() {
       <section className='py-5'>
         <Container>
           <Row>
-            <Col>
+            <Col sm={12} md className='pb-3 pb-md-0'>
               <Image
                 src={LogoSTP}
                 alt='logo-stp-aquaculture'
@@ -64,8 +64,8 @@ function Footer() {
             </Col>
             {linkProduct.map((data, index) => (
               <Col key={`footer-header-${index}`}>
-                <h6 className='fw-bold mb-4'>{data.header}</h6>
-                <ul className='list-unstyled d-flex flex-column gap-3'>
+                <h6 className='fw-bold mb-3 mb-sm-4'>{data.header}</h6>
+                <ul className='list-unstyled d-flex flex-column gap-2 gap-sm-3'>
                   {data.child.map((child, idx) => (
                     <li key={`footer-child-${idx}`}>
                       <h6 className='text-secondary'>

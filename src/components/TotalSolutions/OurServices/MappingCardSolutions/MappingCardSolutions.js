@@ -19,14 +19,9 @@ export default function MappingCardSolutions() {
   ]
   return (
     <Col>
-      <Row className='justify-content-center gap-md-3 gap-5 gy-2'>
+      <Row className='justify-content-center g-xl-5 gy-5 gx-3 gy-xl-2'>
         {cardSolutions.map((data, index) => (
-          <Col
-            key={`card-solutions-${data.text}-${index}`}
-            style={{ width: '320px' }}
-            sm={6}
-            md={3}
-          >
+          <Col key={`card-solutions-${data.text}-${index}`} xs={6} sm>
             <CardSolutions text={data.text} image={data.image} />
           </Col>
         ))}

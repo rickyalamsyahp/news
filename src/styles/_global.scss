@@ -24,7 +24,7 @@ p {
 
 a {
   text-decoration: none !important;
-  color: inherit !important;
+  color: inherit;
 }
 
 .text-blue {
@@ -55,7 +55,7 @@ iframe {
 }
 .hero {
   margin-top: -85px;
-  height: 30vw;
+  height: 600px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -85,4 +85,21 @@ iframe {
 // Soon to be delete
 .temporary {
   height: 500px;
+}
+
+@include media-breakpoint-down(sm) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h5,
+  h4,
+  h3 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 14px;
+  }
 }
