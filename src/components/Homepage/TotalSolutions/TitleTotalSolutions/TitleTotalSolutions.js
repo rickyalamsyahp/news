@@ -5,7 +5,7 @@ import { Title } from '../../../GeneralComponent/Title/Title'
 export function TitleTotalSolutions() {
   const t = useTranslations('homepage.total-solutions')
   return (
-    <Col className='d-flex flex-column gap-4 pb-5'>
+    <Col className='d-flex flex-column gap-4 pb-2 pb-md-5'>
       <Title
         subtitle={t('subtitle')}
         title={t('title')}

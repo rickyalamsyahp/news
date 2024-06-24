@@ -1,28 +1,24 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
-import { Container, Navbar, Offcanvas, Nav } from 'react-bootstrap'
+import { Container, Navbar, Nav } from 'react-bootstrap'
 
 import { Link, usePathname } from '../../navigation'
 
 import STPLogo from '../../assets/images/stp-logo.png'
-import STPLogoColored from '../../assets/images/stp-logo-colored.png'
 
 import './styles.scss'
 import { ButtonPrimary } from '../GeneralComponent/CustomButton/CustomButton'
 import LocaleSwitcher from './LocaleSwitcher/LocaleSwitcher'
 
+import Hamburger from 'hamburger-react'
+
 function NavigationBar() {
   const t = useTranslations('navigation-bar')
-  const offCanvasRef = useRef()
-
-  const closeOffCanvas = () => {
-    if (offCanvasRef.current.backdrop !== null)
-      offCanvasRef.current.backdrop.click()
-  }
+  const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const lastSegment = pathname.split('/').pop()
   const navigationMap = [
@@ -52,39 +48,36 @@ function NavigationBar() {
       sticky='top'
       className={'navbar-bg'}
       style={{ padding: '16px 0px' }}
-      expand={'lg'}
+      expand='lg'
     >
       <Container>
         <Link href='/'>
-          <Image priority width={88} src={STPLogo} alt='stp' />
+          <Image priority src={STPLogo} alt='stp' />
         </Link>
 
-        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Offcanvas id='responsive-navbar-nav' ref={offCanvasRef}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-`}>
-              <Image priority width={80} src={STPLogoColored} alt='stp' />
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className='justify-content-end flex-grow-1 gap-3 gap-xl-5'>
-              {navigationMap.map((data, index) => (
-                <Link
-                  className={`nav-link nav-item ${
-                    lastSegment === data.className && 'active'
-                  }`}
-                  href={data.href}
-                  onClick={closeOffCanvas}
-                  key={`navbar-${index}`}
-                >
-                  {data.text}
-                </Link>
-              ))}
-              <ButtonPrimary>{t('login')}</ButtonPrimary>
-              <LocaleSwitcher />
-            </Nav>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
+        <Hamburger
+          toggled={open}
+          toggle={setOpen}
+          color='white'
+          duration={0.5}
+        />
+        <Nav className={`navbar-responsive collapse-${open}`}>
+          <Container className='justify-content-end d-flex flex-grow-1 flex-column flex-lg-row gap-3 gap-xl-5 '>
+            {navigationMap.map((data, index) => (
+              <Link
+                className={`nav-link text-light nav-item ${
+                  lastSegment === data.className && 'active'
+                }`}
+                href={data.href}
+                key={`navbar-${index}`}
+              >
+                {data.text}
+              </Link>
+            ))}
+            <ButtonPrimary>{t('login')}</ButtonPrimary>
+            <LocaleSwitcher />
+          </Container>
+        </Nav>
       </Container>
     </Navbar>
   )

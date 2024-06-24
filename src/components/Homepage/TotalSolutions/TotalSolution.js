@@ -5,7 +5,7 @@ import { TitleTotalSolutions } from './TitleTotalSolutions/TitleTotalSolutions'
 
 function TotalSolutions() {
   return (
-    <section className='bg-light py-5' id='total-solution-homepage'>
+    <section className='bg-light py-2 py-md-5' id='total-solution-homepage'>
       <Container>
         <Row className='py-4 flex-column'>
           <TitleTotalSolutions />

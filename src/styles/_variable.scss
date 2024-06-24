@@ -12,6 +12,15 @@ $h3-font-size: '38px';
 $h4-font-size: '28px';
 $h5-font-size: '19px';
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1560px,
+);
+
 $container-max-widths: (
   sm: 540px,
   md: 720px,

@@ -1,20 +1,42 @@
+@import 'bootstrap/scss/mixins';
+
 .slider-container {
-  .slick-slide:not(.slick-slide.slick-active) {
+  .slick-slide {
     .card-container {
-      transition: all 0.5s ease;
+      position: relative;
+      transition: opacity 0.5s ease-in;
       &::after {
         content: '';
         display: block;
         width: calc(98% + 2vw - 31px);
         height: 100%;
-        background: rgba(133, 141, 157, 1);
-        opacity: 70%;
+        background: rgba(133, 141, 157, 0.7);
         position: absolute;
         border-radius: 8px;
         top: 0;
         left: auto;
         z-index: 1;
+        transition: opacity 0.5s ease-out;
+        @include media-breakpoint-down(xxl) {
+          width: calc(98% + 2vw - 24px);
+        }
       }
+    }
+
+    &.slick-active {
+      .card-container::after {
+        opacity: 0;
+      }
+    }
+
+    &:not(.slick-active) {
+      .card-container::after {
+        opacity: 1;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding: 0px 10px;
     }
   }
   .card-carousel {
@@ -22,5 +44,9 @@
     left: 20px;
     background: rgba(161, 161, 161, 0.6);
     width: 25vw;
+
+    @include media-breakpoint-between(lg, xxl) {
+      width: 30vw;
+    }
   }
 }

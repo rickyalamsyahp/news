@@ -11,11 +11,11 @@ export function ButtonPrimary({ children }) {
   )
 }
 
-export function ButtonSecondary({ children }) {
+export function ButtonSecondary({ children, mobile }) {
   return (
     <Button
       variant={'light'}
-      className={`btn-custom bg-white text-primary`}
+      className={`btn-custom bg-white text-primary ${mobile && 'ms-auto'}`}
       style={{
         padding: '8px 24px',
         borderRadius: '10px',

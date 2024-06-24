@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import CardSolutions from '../../../GeneralComponent/CardSolutions/CardSolutions'
 import { useTranslations } from 'next-intl'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 export default function MappingCardSolutions() {
   const t = useTranslations('homepage.total-solutions.card')
@@ -46,8 +49,14 @@ export default function MappingCardSolutions() {
     <Col className='pt-4'>
       <Row className='justify-content-center g-xl-5 gy-5 gx-3 gy-xl-2'>
         {cardSolutions.map((data, index) => (
-          <Col key={`card-solutions-${data.text}-${index}`} xs={6} sm>
-            <CardSolutions text={data.text} image={data.image} />
+          <Col xs={6} sm key={`card-solutions-${data.text}-${index}`}>
+            <ScrollAnimation
+              animateIn='fadeInUp'
+              animateOnce={true}
+              delay={index >= 4 ? index * 1000 - 3500 : index * 1000 - 1000}
+            >
+              <CardSolutions text={data.text} image={data.image} />
+            </ScrollAnimation>
           </Col>
         ))}
       </Row>
