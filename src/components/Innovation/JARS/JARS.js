@@ -1,35 +1,35 @@
-'use client'
-
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import JARSImage from '../../../assets/images/jars-image.png'
-import ScrollAnimation from 'react-animate-on-scroll'
+import Reveal from '../../Animation/Reveal/Reveal'
 
 export default function JARS() {
   const t = useTranslations('innovation.jars')
   return (
-    <section className='pb-5'>
+    <section className='pb-3 pb-md-5'>
       <Container>
-        <Row className='justify-content-between align-items-center h-100'>
-          <Col md={4} className='d-flex gap-5 flex-column'>
-            <ScrollAnimation animateIn='fadeInLeft' animateOnce={true}>
-              <Title
-                description={t('description')}
-                title={'Japfa Aquaculture Research Station (JARS)'}
-              />
-            </ScrollAnimation>
-          </Col>
-          <Col md={5}>
-            <ScrollAnimation animateIn='fadeInDown' animateOnce={true}>
+        <Row className='justify-content-between align-items-start h-100'>
+          <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>
+            <Reveal overflow={true} direction={'top'}>
               <Image
                 src={JARSImage}
                 alt='jars-image'
-                className='w-100 h-auto'
+                className='img-innovation'
               />
-            </ScrollAnimation>
+            </Reveal>
+          </Col>
+          <Col md={{ span: 4, order: '1' }}>
+            <Reveal overflow={true} direction={'left'}>
+              <div className='d-flex gap-3 gap-md-5 flex-column mt-3 mt-md-5'>
+                <Title
+                  description={t('description')}
+                  title={'Japfa Aquaculture Research Station (JARS)'}
+                />
+              </div>
+            </Reveal>
           </Col>
         </Row>
       </Container>

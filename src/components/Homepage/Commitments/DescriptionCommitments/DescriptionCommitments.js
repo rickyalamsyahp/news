@@ -1,32 +1,34 @@
-'use client'
-
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { Title } from '../../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import ScrollAnimation from 'react-animate-on-scroll'
+import Reveal from '../../../Animation/Reveal/Reveal'
 
 export default function DescriptionCommitments() {
   const t = useTranslations('homepage.commitments')
   return (
-    <ScrollAnimation animateIn='fadeInUp' animateOnce={true}>
+    <Fragment>
       <Row className='pb-2'>
         <Col sm={12}>
-          <Title subtitle={t('subtitle')} />
+          <Reveal overflow={true}>
+            <Title subtitle={t('subtitle')} />
+          </Reveal>
         </Col>
       </Row>
       <Row className='pb-2 pb-lg-5'>
         <Col sm={12} md={6} className='d-flex align-items-end mb-3 mb-lg-0'>
-          <Title title={t('title')} />
+          <Reveal overflow={true}>
+            <Title title={t('title')} />
+          </Reveal>
         </Col>
-        <Col
-          sm={12}
-          md={6}
-          className='d-flex justify-content-between flex-column gap-2 gap-md-5'
-        >
-          <Title description={t('description')} readMore={t('see-all')} />
+        <Col sm={12} md={6}>
+          <Reveal overflow={true}>
+            <div className='d-flex justify-content-between flex-column gap-2 gap-md-5'>
+              <Title description={t('description')} readMore={t('see-all')} />
+            </div>
+          </Reveal>
         </Col>
       </Row>
-    </ScrollAnimation>
+    </Fragment>
   )
 }

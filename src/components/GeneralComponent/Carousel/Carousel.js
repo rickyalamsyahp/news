@@ -18,23 +18,23 @@ export default function Carousel() {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '400px',
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1400,
+        breakpoint: 2000,
         settings: {
-          centerPadding: '200px',
+          centerPadding: '0px',
+          variableWidth: true,
         },
       },
       {
         breakpoint: 992,
         settings: {
-          centerPadding: '40px',
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: true,
+          variableWidth: true,
         },
       },
     ],
@@ -63,7 +63,7 @@ export default function Carousel() {
                 className='m-auto w-100 h-100 rounded-2'
               />
             </div>
-            <Card className='d-block d-lg-none'>
+            <Card className='d-block d-lg-none card-responsive'>
               <Image
                 alt='carousel-image-1'
                 priority

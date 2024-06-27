@@ -1,0 +1,10 @@
+@import 'bootstrap/scss/mixins';
+
+.img-innovation {
+  width: 100%;
+  height: auto;
+  @include media-breakpoint-down(md) {
+    height: 300px;
+    object-fit: cover;
+  }
+}

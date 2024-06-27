@@ -30,9 +30,15 @@
   },
   "hero": {
     "homepage": "Nurturing the Future through Sustainable Aquaculture",
-    "total-solutions": "Elevating Your Potential through Our Total Solution",
+    "total-solutions": {
+      "title": "Elevating Your Potential through Our Total Solution",
+      "description": "Explore STP's total solutions in aquaculture, where advanced feed production, innovative hatcheries, and sustainable farming converge to drive industry success and global sustainability."
+    },
+    "innovation": {
+      "title": "Innovating the Future of Aquaculture",
+      "description": "Welcome to STP Aquaculture, where our dedication to innovation and commitment to sustainability are guiding our efforts in the aquaculture industry. By embracing advanced Industry 4.0 technologies, we strive to enhance product quality and contribute to a more sustainable and efficient future."
+    },
     "commitments": "Our Commitment through Actions for Sustainable Aquaculture",
-    "innovation": "Innovating the Future of Aquaculture",
     "about-us": "Passionately Advancing Aquaculture Practices"
   },
   "homepage": {

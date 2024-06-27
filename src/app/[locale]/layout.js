@@ -3,7 +3,6 @@ import { NextIntlClientProvider } from 'next-intl'
 import NavigationBar from '../../components/NavigationBar/NavigationBar'
 import { Open_Sans, Nunito_Sans } from 'next/font/google'
 import '../../styles/global.scss'
-import 'animate.css/animate.compat.css'
 import Footer from '../../components/Footer/Footer'
 
 const openSans = Open_Sans({

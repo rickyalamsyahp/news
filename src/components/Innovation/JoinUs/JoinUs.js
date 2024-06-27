@@ -1,22 +1,22 @@
-'use client'
-
 import { useTranslations } from 'next-intl'
 import React from 'react'
 import { ButtonThird } from '../../GeneralComponent/CustomButton/CustomButton'
 import { Container } from 'react-bootstrap'
-import ScrollAnimation from 'react-animate-on-scroll'
+import Reveal from '../../Animation/Reveal/Reveal'
 
 function JoinUs() {
   const t = useTranslations('innovation')
   return (
-    <section className='bg-blue p-5'>
+    <section className='bg-blue p-0 p-md-5'>
       <Container>
-        <ScrollAnimation animateIn='fadeInDown' animateOnce={true}>
-          <div className='py-4'>
-            <h2 className='text-white mb-5'>{t('join-us')}</h2>
+        <div className='py-4'>
+          <Reveal overflow={true}>
+            <h2 className='text-white mb-3 mb-md-5'>{t('join-us')}</h2>
+          </Reveal>
+          <Reveal overflow={true}>
             <ButtonThird>{t('contact-us')}</ButtonThird>
-          </div>
-        </ScrollAnimation>
+          </Reveal>
+        </div>
       </Container>
     </section>
   )

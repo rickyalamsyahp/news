@@ -5,6 +5,9 @@
     .card-container {
       position: relative;
       transition: opacity 0.5s ease-in;
+      @include media-breakpoint-up(xl) {
+        width: 1200px;
+      }
       &::after {
         content: '';
         display: block;
@@ -32,6 +35,15 @@
     &:not(.slick-active) {
       .card-container::after {
         opacity: 1;
+      }
+    }
+
+    .card-responsive {
+      @include media-breakpoint-between(sm, lg) {
+        width: 500px;
+      }
+      @include media-breakpoint-down(xs) {
+        width: 250px;
       }
     }
 

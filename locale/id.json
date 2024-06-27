@@ -30,9 +30,15 @@
   },
   "hero": {
     "homepage": "Memelihara Masa Depan melalui Akuakultur Berkelanjutan",
-    "total-solutions": "Meningkatkan Potensi Anda melalui Solusi Total Kami",
+    "total-solutions": {
+      "title": "Meningkatkan Potensi Anda melalui Solusi Total Kami",
+      "description": "Jelajahi solusi total STP dalam budidaya perikanan, dimana produksi pakan tingkat lanjut, pembenihan inovatif, dan pertanian berkelanjutan bersatu untuk mendorong kesuksesan industri dan keberlanjutan global."
+    },
     "commitments": "Komitmen Kami melalui Aksi untuk Budidaya Perikanan Berkelanjutan",
-    "innovation": "Menginovasi Masa Depan Akuakultur",
+    "innovation": {
+      "title": "Menginovasi Masa Depan Akuakultur",
+      "description": "Selamat datang di STP Aquaculture, dimana dedikasi kami terhadap inovasi dan komitmen terhadap keberlanjutan memandu upaya kami di industri akuakultur. Dengan menerapkan teknologi Industri 4.0 yang canggih, kami berupaya meningkatkan kualitas produk dan berkontribusi terhadap masa depan yang lebih berkelanjutan dan efisien."
+    },
     "about-us": "Dengan Penuh Semangat Memajukan Praktik Akuakultur"
   },
   "homepage": {
