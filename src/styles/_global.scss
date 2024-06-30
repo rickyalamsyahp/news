@@ -12,7 +12,7 @@
 // Extra large	      xl	          ≥1200px
 // Extra extra large	xxl	          ≥1400px
 html {
-  zoom: 85%;
+  zoom: 90%;
 }
 
 h1,
@@ -77,12 +77,6 @@ iframe {
   }
   display: grid;
   place-content: center;
-
-  // h1 {
-  //   -webkit-animation: fade-in-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1)
-  //     both;
-  //   animation: fade-in-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  // }
 }
 
 .unique-bg {
@@ -90,10 +84,6 @@ iframe {
 }
 .unique-bg-2 {
   background: linear-gradient(to bottom, white 85%, #eef5f8 15%);
-}
-// Soon to be delete
-.temporary {
-  height: 500px;
 }
 
 @include media-breakpoint-down(lg) {
@@ -123,28 +113,3 @@ iframe {
     font-size: 12px;
   }
 }
-
-// @-webkit-keyframes fade-in-bottom {
-//   0% {
-//     -webkit-transform: translateY(50px);
-//     transform: translateY(50px);
-//     opacity: 0;
-//   }
-//   100% {
-//     -webkit-transform: translateY(0);
-//     transform: translateY(0);
-//     opacity: 1;
-//   }
-// }
-// @keyframes fade-in-bottom {
-//   0% {
-//     -webkit-transform: translateY(50px);
-//     transform: translateY(50px);
-//     opacity: 0;
-//   }
-//   100% {
-//     -webkit-transform: translateY(0);
-//     transform: translateY(0);
-//     opacity: 1;
-//   }
-// }

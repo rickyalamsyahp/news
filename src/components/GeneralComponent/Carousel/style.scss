@@ -5,13 +5,13 @@
     .card-container {
       position: relative;
       transition: opacity 0.5s ease-in;
-      @include media-breakpoint-up(xl) {
-        width: 1200px;
+      @include media-breakpoint-up(lg) {
+        width: 840px;
       }
       &::after {
         content: '';
         display: block;
-        width: calc(98% + 2vw - 31px);
+        width: 825px;
         height: 100%;
         background: rgba(133, 141, 157, 0.7);
         position: absolute;

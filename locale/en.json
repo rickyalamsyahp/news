@@ -71,6 +71,17 @@
       }
     }
   },
+  "total-solutions": {
+    "products": {
+      "title": "Our Products",
+      "description": "Step into the world of STP, where innovative and sustainable feed production, hatcheries, and farming converge to drive industry success. From our state-of-the-art feed production facilities that utilize cutting-edge technology and precision nutrition to ensure optimal animal health, hatchery operations, and farm management. Discover how our integrated approach enhances productivity for our partners across the nation."
+    },
+    "services": {
+      "title": "Our Services",
+      "sub-title": "Solution for Your Aquaculture",
+      "description": "At STP, we're committed to provide solutions for your aquaculture needs with our services. Through our expertise, we excel in enhancing both the efficiency and productivity of your fish and shrimp operations."
+    }
+  },
   "innovation": {
     "jars": {
       "description": "Located in the vibrant aquatic landscapes of Sumatra Utara, Jawa Barat, and Jawa Timur, our JAPFA Aquaculture Research Station (JARS) is dedicated to innovation. We focus on developing specialized feed formulations that support aquatic health and environmental stability. Our carefully designed feeds provide farmers with the resources they need to achieve sustainable success, enhancing both productivity and profitability."
@@ -95,6 +106,51 @@
       "title": "Empowering Community",
       "description1": "We believe that aqua farmers, as well as the communities in which we operate, play a significant role in the industry. Our commitment to prioritizing sustainable aquaculture is not only marked by preserving the environment but also by raising awareness about more eco-friendly aquaculture practices. These efforts are carried out through the introduction of environmentally friendly aqua farming methods and the creation of industry-ready graduates. Additionally, we support sustainable livelihoods through initiatives in vannamei shrimp farming areas.",
       "description2": "By integrating these principles into every aspect of our business, STP Aquaculture remains steadfast in our mission to contribute positively to sustainable aquaculture practices. We are not only nurturing our operations but also ensuring a sustainable future for the next generations"
+    }
+  },
+  "about-us": {
+    "introduction": "Founded in 1987, as a proud member of PT Japfa Comfeed Indonesia Tbk., STP has been passionately to sustainable aquaculture. We are committed to excellence and continuously innovate to meet diverse market needs, ensuring our products and services are synonymous with quality and reliability",
+    "journey": {
+      "title": "Our Journey Through Time",
+      "tabs": {
+        "1987": "Established the Aquaculture division.",
+        "1988": "Established the Aquaculture division.",
+        "1989": "Established the Aquaculture division.",
+        "1990": "Established the Aquaculture division.",
+        "1995": "Established the Aquaculture division.",
+        "2005-2006": "Established the Aquaculture division"
+      }
+    },
+    "vision-mission": {
+      "vision": {
+        "title": "Our Vision",
+        "description": "Total Solution in Aquaculture Industry"
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "Empowering Our Customers for Profitable Performance",
+        "deliver": {
+          "title": "Here’s how we deliver our commitment",
+          "1": "Farmer-Oriented Approach",
+          "2": "Trusted Value-Added Products",
+          "3": "Uncompromising Quality Standards"
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "At STP, our people are the heartbeat of our company. We do things with a clear purpose and are always accountable for our actions through sustainable aquaculture. These are not just guiding principles but something we stand for in our everyday operations.",
+      "sub-description": "At the heart of STP is our purpose-driven approach. Every initiative, strategy, and product is crafted with a clear intention—to significantly benefit our stakeholders, both internally and externally. We aim to provide impactful solutions that meet today's needs and also lay the foundation for a prosperous future for everyone associated with us.",
+      "carousel": {
+        "purposeful": "Purposeful",
+        "responsible": "Responsible",
+        "relentless": "Relentless"
+      }
+    },
+    "area": "Our Area of Operations",
+    "certification": {
+      "title": "Our Certification",
+      "description": "At STP, our certifications are a testament to our dedication to operational excellence and compliance with the highest industry standards."
     }
   },
   "footer": {

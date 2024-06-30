@@ -9,7 +9,7 @@ import Reveal from '../../Animation/Reveal/Reveal'
 export default function Emphasizing() {
   const t = useTranslations('commitments.emphasizing')
   return (
-    <section className='py-3 py-md-5 unique-bg-2'>
+    <section className='pb-3 pb-md-5 unique-bg-2'>
       <Container className='mb-0 mb-md-5'>
         <Row className='justify-content-between align-items-start h-100'>
           <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>

@@ -4,26 +4,45 @@
 @import '../../styles/_variable';
 
 .navbar-bg {
-  background: rgba(43, 47, 56, 0.75);
   box-shadow:
     0px 0px 10px 0px rgba(25, 25, 25, 0.2),
     0px 0px 4px 0px rgba(25, 25, 25, 0.25);
+  transition: background 0.5s linear;
 
-  img {
-    width: 88px;
-    height: auto;
-    @include media-breakpoint-down(lg) {
-      width: 50px;
+  &.navbar-dark {
+    background: rgba(43, 47, 56, 0.75);
+    .nav-link,
+    .select-language {
+      transition: color 0.3s linear;
+      color: #f0f1f3;
+    }
+  }
+
+  &.navbar-white {
+    background: rgba(238, 241, 246, 0.75);
+    .nav-link,
+    .select-language {
+      transition: color 0.3s linear;
+      color: #383e49;
     }
   }
 }
 
-.nav-item {
+.img-logo {
+  width: 88px;
+  height: auto;
+  @include media-breakpoint-down(lg) {
+    width: 50px;
+  }
+  transition: opacity 0.5s linear;
+}
+
+.navbar-item {
   font-size: 16px;
 }
 
 @include media-breakpoint-up(md) {
-  .active {
+  .navbar-item.active {
     margin-top: 3px;
     color: $white;
 
@@ -49,7 +68,6 @@
   }
   .navbar-responsive {
     position: absolute;
-    background: rgba(43, 47, 56, 0.75);
     box-shadow:
       0px 10px 10px 0px rgba(25, 25, 25, 0.2),
       0px 2px 4px 0px rgba(25, 25, 25, 0.25);
@@ -58,19 +76,30 @@
     top: 80px;
     max-height: 0;
     overflow: hidden;
+    transition:
+      max-height 0.5s ease-in,
+      background 0.5s linear;
+    -webkit-transition:
+      max-height 0.5s ease-in,
+      background 0.5s linear;
+    -moz-transition:
+      max-height 0.5s ease-in,
+      background 0.5s linear;
+    -o-transition:
+      max-height 0.5s ease-in,
+      background 0.5s linear;
+
+    &.navbar-responsive-white {
+      background: rgba(238, 241, 246, 0.75);
+    }
+    &.navbar-responsive-dark {
+      background: rgba(43, 47, 56, 0.75);
+    }
   }
   .collapse-true {
     max-height: 500px; /* Adjust based on the content height */
-    transition: max-height 0.5s ease-in;
-    -webkit-transition: max-height 0.5s ease-in;
-    -moz-transition: max-height 0.5s ease-in;
-    -o-transition: max-height 0.5s ease-in;
   }
   .collapse-false {
     max-height: 0;
-    transition: max-height 0.5s ease-out;
-    -webkit-transition: max-height 0.5s ease-out;
-    -moz-transition: max-height 0.5s ease-out;
-    -o-transition: max-height 0.5s ease-out;
   }
 }

@@ -20,14 +20,8 @@ export default function Carousel() {
     centerMode: true,
     autoplay: true,
     autoplaySpeed: 3000,
+    variableWidth: true,
     responsive: [
-      {
-        breakpoint: 2000,
-        settings: {
-          centerPadding: '0px',
-          variableWidth: true,
-        },
-      },
       {
         breakpoint: 992,
         settings: {

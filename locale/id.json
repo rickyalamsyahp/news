@@ -32,12 +32,12 @@
     "homepage": "Memelihara Masa Depan melalui Akuakultur Berkelanjutan",
     "total-solutions": {
       "title": "Meningkatkan Potensi Anda melalui Solusi Total Kami",
-      "description": "Jelajahi solusi total STP dalam budidaya perikanan, dimana produksi pakan tingkat lanjut, pembenihan inovatif, dan pertanian berkelanjutan bersatu untuk mendorong kesuksesan industri dan keberlanjutan global."
+      "description": "Jelajahi solusi total STP dalam budidaya perikanan, dimana produksi pakan tingkat lanjut, pembenihan inovatif, dan pertanian berkelanjutan bersatu untuk mendorong kesuksesan industri dan keberlanjutan global"
     },
     "commitments": "Komitmen Kami melalui Aksi untuk Budidaya Perikanan Berkelanjutan",
     "innovation": {
       "title": "Menginovasi Masa Depan Akuakultur",
-      "description": "Selamat datang di STP Aquaculture, dimana dedikasi kami terhadap inovasi dan komitmen terhadap keberlanjutan memandu upaya kami di industri akuakultur. Dengan menerapkan teknologi Industri 4.0 yang canggih, kami berupaya meningkatkan kualitas produk dan berkontribusi terhadap masa depan yang lebih berkelanjutan dan efisien."
+      "description": "Selamat datang di STP Aquaculture, dimana dedikasi kami terhadap inovasi dan komitmen terhadap keberlanjutan memandu upaya kami di industri akuakultur. Dengan menerapkan teknologi Industri 4.0 yang canggih, kami berupaya meningkatkan kualitas produk dan berkontribusi terhadap masa depan yang lebih berkelanjutan dan efisien"
     },
     "about-us": "Dengan Penuh Semangat Memajukan Praktik Akuakultur"
   },
@@ -71,6 +71,17 @@
       }
     }
   },
+  "total-solutions": {
+    "products": {
+      "title": "Produk Kami",
+      "description": "Masuki dunia STP, tempat produksi pakan, pembenihan, dan peternakan yang inovatif dan berkelanjutan bersatu untuk mendorong kesuksesan industri. Dari fasilitas produksi pakan canggih kami yang memanfaatkan teknologi mutakhir dan nutrisi presisi untuk memastikan kesehatan hewan, operasi pembenihan, dan manajemen peternakan yang optimal. Temukan bagaimana pendekatan terpadu kami meningkatkan produktivitas mitra kami di seluruh negeri."
+    },
+    "services": {
+      "title": "Pelayanan Kami",
+      "sub-title": "Solusi Budidaya Perikanan Anda",
+      "description": "Di STP, kami berkomitmen untuk memberikan solusi kebutuhan budidaya perikanan Anda dengan layanan kami. Melalui keahlian kami, kami unggul dalam meningkatkan efisiensi dan produktivitas operasi ikan dan udang Anda."
+    }
+  },
   "innovation": {
     "jars": {
       "description": "Terletak di lanskap perairan yang dinamis di Sumatera Utara, Jawa Barat, dan Jawa Timur, Stasiun Penelitian Budidaya Perairan JAPFA (JARS) kami berdedikasi pada inovasi. Kami fokus pada pengembangan formulasi pakan khusus yang mendukung kesehatan perairan dan stabilitas lingkungan. Pakan kami yang dirancang dengan cermat memberikan petani sumber daya yang mereka perlukan untuk mencapai kesuksesan berkelanjutan, sehingga meningkatkan produktivitas dan profitabilitas."
@@ -97,21 +108,66 @@
       "description2": "Dengan mengintegrasikan prinsip-prinsip ini ke dalam setiap aspek bisnis kami, STP Aquaculture tetap teguh dalam misi kami untuk berkontribusi positif terhadap praktik akuakultur berkelanjutan. Kami tidak hanya memelihara operasi kami tetapi juga memastikan masa depan yang berkelanjutan untuk generasi berikutnya"
     }
   },
+  "about-us": {
+    "introduction": "Didirikan pada tahun 1987, sebagai anggota PT Japfa Comfeed Indonesia Tbk., STP sangat bersemangat dalam budidaya perikanan berkelanjutan. Kami berkomitmen terhadap keunggulan dan terus berinovasi untuk memenuhi beragam kebutuhan pasar, memastikan produk dan layanan kami identik dengan kualitas dan keandalan",
+    "journey": {
+      "title": "Perjalanan Kami Sepanjang Waktu",
+      "tabs": {
+        "1987": "Established the Aquaculture division.",
+        "1988": "Established the Aquaculture division.",
+        "1989": "Established the Aquaculture division.",
+        "1990": "Established the Aquaculture division.",
+        "1995": "Established the Aquaculture division.",
+        "2005-2006": "Established the Aquaculture division"
+      }
+    },
+    "vision-mission": {
+      "vision": {
+        "title": "Visi Kami",
+        "description": "Solusi Total dalam Industri Akuakultur"
+      },
+      "mission": {
+        "title": "Misi Kami",
+        "description": "Memberdayakan Pelanggan Kami untuk Kinerja yang Menguntungkan",
+        "deliver": {
+          "title": "Inilah cara kami mewujudkan komitmen kami",
+          "1": "Pendekatan Berorientasi Petani",
+          "2": "Produk Bernilai Tambah Tepercaya",
+          "3": "Standar Kualitas Tanpa Kompromi"
+        }
+      }
+    },
+    "values": {
+      "title": "Value Kami",
+      "description": "Di STP, karyawan kami adalah detak jantung perusahaan kami. Kami melakukan segala sesuatu dengan tujuan yang jelas dan selalu bertanggung jawab atas tindakan kami melalui budidaya perikanan yang berkelanjutan. Ini bukan sekedar prinsip panduan namun sesuatu yang kami perjuangkan dalam operasional sehari-hari.",
+      "sub-description": "Inti dari STP adalah pendekatan kami yang berorientasi pada tujuan. Setiap inisiatif, strategi, dan produk dirancang dengan tujuan yang jelas—untuk memberikan manfaat yang signifikan bagi para pemangku kepentingan, baik secara internal maupun eksternal. Kami bertujuan untuk memberikan solusi berdampak yang memenuhi kebutuhan saat ini dan juga meletakkan dasar bagi masa depan yang sejahtera bagi semua orang yang terkait dengan kami.",
+      "carousel": {
+        "purposeful": "Memiliki Tujuan",
+        "responsible": "Bertanggung Jawab",
+        "relentless": "Tanpa Henti"
+      }
+    },
+    "area": "Area Operasi Kami",
+    "certification": {
+      "title": "Sertifikasi Kami",
+      "description": "Di STP, sertifikasi kami merupakan bukti dedikasi kami terhadap keunggulan operasional dan kepatuhan terhadap standar industri tertinggi."
+    }
+  },
   "footer": {
-    "products": "Products",
-    "aquafeed": "Aquafeed",
-    "hatchery": "Shrimp & Fish Hatchery",
-    "grow-out": "Shrimp & Fish Grow Out",
-    "seafood-processing": "Seafood Processing",
-    "about-us": "About Us",
-    "story": "Story",
-    "vision-mission": "Vision & Mission",
-    "operations": "Operations",
-    "certification": "Certification",
-    "commitment": "Commitment",
-    "act-sustainability": "Act for Sustainability",
-    "news": "News & Articles",
-    "innovation": "Innovation",
-    "contact-us": "Contact Us"
+    "products": "Produk",
+    "aquafeed": "Pakan Air",
+    "hatchery": "Pembenihan Udang & Ikan",
+    "grow-out": "Udang & Ikan Tumbuh",
+    "seafood-processing": "Pengolahan Makanan Laut",
+    "about-us": "Tentang Kami",
+    "story": "Cerita",
+    "vision-mission": "Visi & Misi",
+    "operations": "Operasi",
+    "certification": "Sertifkasi",
+    "commitment": "Komitmen",
+    "act-sustainability": "Bertindak untuk Keberlanjutan",
+    "news": "Artikel Berita",
+    "innovation": "Inovasi",
+    "contact-us": "Hubungi kami"
   }
 }

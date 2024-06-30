@@ -13,7 +13,7 @@ export default function LocaleSwitcherSelect({ children, defaultValue }) {
 
   return (
     <select
-      className='d-flex bg-transparent py-2 px-2 border-0 fw-bold text-white nunito-sans select-language'
+      className='d-flex bg-transparent py-2 px-2 border-0 fw-bold nunito-sans select-language'
       defaultValue={defaultValue}
       onChange={onSelectChange}
     >
