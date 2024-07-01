@@ -59,13 +59,16 @@ function CustomTabs({
       <div className='svg-container'>
         <ArrowLeftCircle onClick={handlePrev} alt='arrow-left-circle' />
       </div>
-      <div className='tabs-scroll-container' ref={scrollRef}>
-        <div className='tabs-list'>
+      <div
+        className='tabs-scroll-container d-flex overflow-x-auto w-100'
+        ref={scrollRef}
+      >
+        <div className='tabs-list d-flex flex-nowrap w-100'>
           {tabs.map((tab, index) => (
             <h3
               key={index}
               ref={activeTab === index ? activeRef : null}
-              className={`tab-item ${activeTab === index ? 'active' : ''}`}
+              className={`tab-item ${activeTab === index ? 'active' : ''} text=end text-warning`}
               onClick={() => handleSelect(index)}
               id={`tab-${index}`}
             >
