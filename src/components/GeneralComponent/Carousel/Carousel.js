@@ -4,7 +4,9 @@ import Slider from 'react-slick'
 import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import Card1 from '../../../assets/images/sh-min.png'
+import Carousel1 from '../../../assets/images/carousel-1.png'
+import Carousel2 from '../../../assets/images/carousel-2.png'
+import Carousel3 from '../../../assets/images/carousel-3.png'
 import { ButtonSecondary } from '../CustomButton/CustomButton'
 import { Fragment } from 'react'
 import { Card } from 'react-bootstrap'
@@ -33,11 +35,22 @@ export default function Carousel() {
       },
     ],
   }
+  const dataCarousel = [
+    {
+      src: Carousel1,
+    },
+    {
+      src: Carousel2,
+    },
+    {
+      src: Carousel3,
+    },
+  ]
   return (
     <div className='slider-container py-3'>
       <Slider {...settings}>
-        {[0, 1, 2].map(data => (
-          <Fragment key={`card-carousel-${data + 1}`}>
+        {dataCarousel.map((data, index) => (
+          <Fragment key={`card-carousel-${index + 1}`}>
             <div className='card-container px-2 position-relative d-none d-lg-block'>
               <div className='card-carousel position-absolute p-4 text-white rounded-3'>
                 <div className='mb-3 d-flex flex-column gap-2'>
@@ -51,7 +64,7 @@ export default function Carousel() {
                 <ButtonSecondary>Read More</ButtonSecondary>
               </div>
               <Image
-                src={Card1}
+                src={data.src}
                 alt='carousel-image-1'
                 priority
                 className='m-auto w-100 h-100 rounded-2'
@@ -61,7 +74,7 @@ export default function Carousel() {
               <Image
                 alt='carousel-image-1'
                 priority
-                src={Card1}
+                src={data.src}
                 className='m-auto w-100 h-100 rounded-top-2'
               />
               <Card.Body className='bg-dark rounded-bottom-2'>

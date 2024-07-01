@@ -1,22 +1,38 @@
-import { useTranslations } from 'next-intl'
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import TabsJourney from './TabsJourney/TabsJourney'
+'use client'
 
-function OurStory() {
-  const t = useTranslations('about-us.journey')
+import { useRef, useState } from 'react'
+import Journey1 from '../../../../assets/images/images-journey-1.png'
+import CustomTabs from './CustomTabs/CustomTabs'
+import ContentTab from './ContentTabs/ContentTab'
+
+function TabsJourney() {
+  const [activeTab, setActiveTab] = useState(0)
+  const [transition, setTransition] = useState(false)
+  const scrollRef = useRef(null)
+  const activeRef = useRef(null)
+
+  const tabs = [
+    { eventKey: '1987', title: '1987', content: Journey1 },
+    { eventKey: '1988', title: '1988', content: Journey1 },
+    { eventKey: '1989', title: '1989', content: Journey1 },
+    { eventKey: '1990', title: '1990', content: Journey1 },
+    { eventKey: '1995', title: '1995', content: Journey1 },
+    { eventKey: '2005', title: '2005-2006', content: Journey1 },
+  ]
+
   return (
-    <section>
-      <Container className='pb-0 pb-lg-5'>
-        <Row>
-          <Col>
-            <h3 className='fw-bold text-center'>{t('title')}</h3>
-          </Col>
-        </Row>
-      </Container>
-      <TabsJourney />
-    </section>
+    <div className='tabs-container d-flex flex-column align-item-center pb-5'>
+      <CustomTabs
+        scrollRef={scrollRef}
+        activeTab={activeTab}
+        activeRef={activeRef}
+        tabs={tabs}
+        setTransition={setTransition}
+        setActiveTab={setActiveTab}
+      />
+      <ContentTab transition={transition} activeTab={activeTab} tabs={tabs} />
+    </div>
   )
 }
 
-export default OurStory
+export default TabsJourney

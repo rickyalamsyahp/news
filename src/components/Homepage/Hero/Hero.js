@@ -1,4 +1,4 @@
-import HeroHomepage from '../../../assets/images/commitments-homepage-thumbnail.png'
+import HeroHomepage from '../../../assets/images/Hero-Home.gif'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 
