@@ -21,7 +21,7 @@ function TabsJourney() {
   ]
 
   return (
-    <div className='tabs-container d-flex flex-column align-item-center'>
+    <div className='tabs-container d-flex flex-column align-item-center pb-5'>
       <CustomTabs
         scrollRef={scrollRef}
         activeTab={activeTab}
