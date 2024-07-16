@@ -62,12 +62,12 @@
       "see-all": "SEE OUR COMMITMENTS",
       "description": "Explore STP's total solutions in aquaculture, where advanced and sustainable feed production, hatcheries, and farming converge all over the nation to drive industry success.",
       "count": {
-        "1": "Shrimp Hatcheries",
-        "2": "Shrimp Farms",
-        "3": "Fish Hatcheries",
-        "4": "Fish Farms",
-        "5": "Seafood Processing",
-        "6": "R&D Facilities"
+        "1": "Shrimp <br></br> Hatcheries",
+        "2": "Shrimp <br></br> Farms",
+        "3": "Fish <br></br> Hatcheries",
+        "4": "Fish <br></br> Farms",
+        "5": "Seafood <br></br> Processing",
+        "6": "R&D <br></br> Facilities"
       }
     }
   },
@@ -124,27 +124,38 @@
     "vision-mission": {
       "vision": {
         "title": "Our Vision",
-        "description": "Total Solution in Aquaculture Industry"
+        "description": "Total Solution in Aquaculture Industry",
+        "detail": "At STP, we see ourselves as partners of our customers, providing comprehensive solutions that address every requirement within the aquaculture sector. Our goal is to be recognized as the go-to company for complete aquaculture support, utilizing innovation and expertise to advance the industry. We aim to enhance every aspect of aquaculture, making it more efficient, sustainable, and profitable."
       },
       "mission": {
         "title": "Our Mission",
         "description": "Empowering Our Customers for Profitable Performance",
+        "detail": "We are committed to the success of our customers with a clear mission: to support them in achieving profitable performance and superior outcomes. Here’s how we deliver on this commitment:",
         "deliver": {
           "title": "Here’s how we deliver our commitment",
           "1": "Farmer-Oriented Approach",
           "2": "Trusted Value-Added Products",
           "3": "Uncompromising Quality Standards"
         }
-      }
+      },
+      "readmore": "Read More"
     },
     "values": {
       "title": "Our Values",
       "description": "At STP, our people are the heartbeat of our company. We do things with a clear purpose and are always accountable for our actions through sustainable aquaculture. These are not just guiding principles but something we stand for in our everyday operations.",
-      "sub-description": "At the heart of STP is our purpose-driven approach. Every initiative, strategy, and product is crafted with a clear intention—to significantly benefit our stakeholders, both internally and externally. We aim to provide impactful solutions that meet today's needs and also lay the foundation for a prosperous future for everyone associated with us.",
       "carousel": {
-        "purposeful": "Purposeful",
-        "responsible": "Responsible",
-        "relentless": "Relentless"
+        "purposeful": {
+          "title": "Purposeful",
+          "description": "We carefully plan and think through our actions. If something doesn't benefit our customers or company, we don't do it. By being clear and decisive, we build trust and confidence in others."
+        },
+        "responsible": {
+          "title": "Responsible",
+          "description": "We understand that in both business and life, the journey never ends. In our ever-changing world, today's successes are quickly outpaced by new advancements. That's why we stay focused and constantly strive for improvement. Our commitment is to always deliver the best results for our customers and ourselves."
+        },
+        "relentless": {
+          "title": "Relentless",
+          "description": "We focus on long-term success in everything we do, from developing our employees to building strong customer relationships and supporting our communities. We're committed to a sustainable future and will continue to be a reliable presence both now and in the future."
+        }
       }
     },
     "area": "Our Area of Operations",

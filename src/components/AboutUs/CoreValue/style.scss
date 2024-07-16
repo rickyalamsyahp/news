@@ -1,0 +1,84 @@
+@import 'bootstrap/scss/mixins';
+
+.card-value {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  transform: scale(0.85);
+  transition:
+    transform 0.4s ease-out,
+    border-radius 0.4s ease-out;
+  width: 480px;
+  height: auto;
+  svg {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+    transition:
+      transform 0.4s ease-out,
+      left 0.4s ease-out,
+      bottom 0.4s ease-out;
+    @include media-breakpoint-down(md) {
+      transform: translate(-50%, 50%) scale(0.5);
+    }
+  }
+  h3 {
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+    transition: bottom 0.4s ease-out;
+  }
+  .image-value {
+    transition: filter 0.4s ease-out;
+    filter: blur(5px);
+  }
+  &::before {
+    content: '';
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 32.94%,
+      rgba(31, 31, 31, 0.9) 97.49%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 1;
+  }
+  &.active,
+  &:hover {
+    .image-value {
+      filter: blur(0px);
+    }
+    h3 {
+      bottom: 10%;
+    }
+  }
+  &.active {
+    transform: scale(1);
+    border-radius: 0px;
+
+    svg {
+      transform: translate(-50%, 50%) scale(0.2);
+      bottom: 20%;
+      @include media-breakpoint-down(md) {
+        bottom: 25%;
+      }
+    }
+  }
+}
+
+.card-value-description {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  &.active {
+    opacity: 0;
+  }
+}

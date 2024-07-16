@@ -1,18 +1,22 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
-import CardCommitments from './CardCommitments/CardCommitments'
 import { useTranslations } from 'next-intl'
+import Counter from '../../../Animation/Count/Count'
 
 export default function CountCommitments() {
   const t = useTranslations('homepage.commitments.count')
   return (
     <Row className='py-0 py-lg-5'>
-      {[0, 1, 2, 3, 4, 5].map(data => (
-        <Col key={`card-commitment-${data + 1}`} xs={4} sm>
-          <CardCommitments
-            number={Math.floor(Math.random() * 10 + 1)}
-            description={t(`${data + 1}`)}
-          />
+      {[12, 4, 5, 3, 3, 4].map((data, index) => (
+        <Col key={`card-commitment-${index + 1}`} xs={4} sm>
+          <div className='d-flex flex-column text-center'>
+            <Counter from={0} to={data} />
+            <h4 className='text-dark fw-bold lh-base'>
+              {t.rich(`${index + 1}`, {
+                br: () => <br />,
+              })}
+            </h4>
+          </div>
         </Col>
       ))}
     </Row>

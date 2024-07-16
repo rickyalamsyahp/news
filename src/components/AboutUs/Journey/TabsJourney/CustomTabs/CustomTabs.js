@@ -68,7 +68,7 @@ function CustomTabs({
             <h3
               key={index}
               ref={activeTab === index ? activeRef : null}
-              className={`tab-item ${activeTab === index ? 'active' : ''} text=end text-warning`}
+              className={`tab-item ${activeTab === index ? 'active' : ''} text-warning`}
               onClick={() => handleSelect(index)}
               id={`tab-${index}`}
             >

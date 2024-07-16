@@ -124,27 +124,38 @@
     "vision-mission": {
       "vision": {
         "title": "Visi Kami",
-        "description": "Solusi Total dalam Industri Akuakultur"
+        "description": "Solusi Total dalam Industri Akuakultur",
+        "detail": "Di STP, kami melihat diri kami sebagai mitra pelanggan kami, memberikan solusi komprehensif yang memenuhi setiap kebutuhan dalam sektor akuakultur. Tujuan kami adalah untuk diakui sebagai perusahaan pilihan dalam dukungan akuakultur yang lengkap, memanfaatkan inovasi dan keahlian untuk memajukan industri. Kami bertujuan untuk meningkatkan setiap aspek budidaya perikanan, menjadikannya lebih efisien, berkelanjutan, dan menguntungkan."
       },
       "mission": {
         "title": "Misi Kami",
         "description": "Memberdayakan Pelanggan Kami untuk Kinerja yang Menguntungkan",
+        "detail": "Kami berkomitmen terhadap kesuksesan pelanggan kami dengan misi yang jelas: mendukung mereka dalam mencapai kinerja yang menguntungkan dan hasil yang unggul. Inilah cara kami mewujudkan komitmen ini:",
         "deliver": {
           "title": "Inilah cara kami mewujudkan komitmen kami",
           "1": "Pendekatan Berorientasi Petani",
           "2": "Produk Bernilai Tambah Tepercaya",
           "3": "Standar Kualitas Tanpa Kompromi"
         }
-      }
+      },
+      "readmore": "Lihat Selengkapnya"
     },
     "values": {
       "title": "Value Kami",
       "description": "Di STP, karyawan kami adalah detak jantung perusahaan kami. Kami melakukan segala sesuatu dengan tujuan yang jelas dan selalu bertanggung jawab atas tindakan kami melalui budidaya perikanan yang berkelanjutan. Ini bukan sekedar prinsip panduan namun sesuatu yang kami perjuangkan dalam operasional sehari-hari.",
-      "sub-description": "Inti dari STP adalah pendekatan kami yang berorientasi pada tujuan. Setiap inisiatif, strategi, dan produk dirancang dengan tujuan yang jelas—untuk memberikan manfaat yang signifikan bagi para pemangku kepentingan, baik secara internal maupun eksternal. Kami bertujuan untuk memberikan solusi berdampak yang memenuhi kebutuhan saat ini dan juga meletakkan dasar bagi masa depan yang sejahtera bagi semua orang yang terkait dengan kami.",
       "carousel": {
-        "purposeful": "Memiliki Tujuan",
-        "responsible": "Bertanggung Jawab",
-        "relentless": "Tanpa Henti"
+        "purposeful": {
+          "title": "Memiliki Tujuan",
+          "description": "Kami dengan hati-hati merencanakan dan memikirkan tindakan kami. Jika ada sesuatu yang tidak menguntungkan pelanggan atau perusahaan kami, kami tidak melakukannya. Dengan bersikap jelas dan tegas, kita membangun kepercayaan dan keyakinan pada orang lain."
+        },
+        "responsible": {
+          "title": "Bertanggung Jawab",
+          "description": "Kami memahami bahwa baik dalam bisnis maupun kehidupan, perjalanan tidak pernah berakhir. Di dunia yang terus berubah, kesuksesan saat ini dengan cepat dikalahkan oleh kemajuan-kemajuan baru. Itu sebabnya kami tetap fokus dan terus berupaya melakukan perbaikan. Komitmen kami adalah untuk selalu memberikan hasil terbaik bagi pelanggan dan diri kami sendiri."
+        },
+        "relentless": {
+          "title": "Tanpa Henti",
+          "description": "Kami fokus pada kesuksesan jangka panjang dalam segala hal yang kami lakukan, mulai dari pengembangan karyawan hingga membangun hubungan pelanggan yang kuat dan mendukung komunitas kami. Kami berkomitmen terhadap masa depan yang berkelanjutan dan akan terus hadir secara andal baik saat ini maupun di masa depan."
+        }
       }
     },
     "area": "Area Operasi Kami",

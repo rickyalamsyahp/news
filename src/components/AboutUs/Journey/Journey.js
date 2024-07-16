@@ -6,7 +6,7 @@ import TabsJourney from './TabsJourney/TabsJourney'
 function OurStory() {
   const t = useTranslations('about-us.journey')
   return (
-    <section>
+    <section className='pb-5'>
       <Container className='pb-0 pb-lg-5'>
         <Row>
           <Col>

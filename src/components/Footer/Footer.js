@@ -35,18 +35,18 @@ function Footer() {
       ],
     },
     {
+      header: t('contact-us'),
+      child: [
+        { title: t('contact-us'), link: '#' },
+        { title: 'Instagram', link: '#' },
+      ],
+    },
+    {
       header: t('innovation'),
       child: [
         { title: 'JAPFA Aquaculture Research Station (JARS)', link: '#' },
         { title: 'Aquaculture Technology Development (ATD)', link: '#' },
         { title: 'Aquaculture Research Center (ARC)', link: '#' },
-      ],
-    },
-    {
-      header: t('contact-us'),
-      child: [
-        { title: t('contact-us'), link: '#' },
-        { title: 'Instagram', link: '#' },
       ],
     },
   ]
@@ -59,13 +59,13 @@ function Footer() {
               <Image
                 src={LogoSTP}
                 alt='logo-stp-aquaculture'
-                className='w-50 h-auto'
+                className='w-50 h-auto img-footer'
               />
             </Col>
             {linkProduct.map((data, index) => (
-              <Col key={`footer-header-${index}`}>
+              <Col key={`footer-header-${index}`} xs={6} md='auto'>
                 <h6 className='fw-bold mb-3 mb-sm-4'>{data.header}</h6>
-                <ul className='list-unstyled d-flex flex-column gap-2 gap-sm-3'>
+                <ul className='list-unstyled d-flex flex-column gap-2 gap-sm-3 mb-5 mb-md-0'>
                   {data.child.map((child, idx) => (
                     <li key={`footer-child-${idx}`}>
                       <h6 className='text-secondary'>

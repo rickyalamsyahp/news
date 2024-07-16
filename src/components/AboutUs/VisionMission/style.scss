@@ -1,0 +1,56 @@
+@import 'bootstrap/scss/mixins';
+
+.card-vision-mission {
+  border-bottom: 1px solid rgba(208, 211, 217, 1);
+  img {
+    @include media-breakpoint-down(md) {
+      height: 500px !important;
+      object-fit: cover;
+    }
+  }
+  .card-title {
+    span {
+      h6 {
+        cursor: pointer;
+        padding-top: 48px;
+      }
+    }
+  }
+  .card-detail-vision,
+  .card-detail-mission {
+    transition: opacity 0.5s ease;
+    h4 {
+      &:before {
+        content: '';
+        width: 80px;
+        height: 2px;
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .card-detail-mission {
+    background-color: rgba(38, 72, 128, 1);
+    h4 {
+      &:before {
+        background-color: $warning;
+      }
+    }
+  }
+  .card-detail-vision {
+    h4 {
+      &:before {
+        background-color: rgba(38, 72, 128, 1);
+      }
+    }
+  }
+
+  .card-mission-deliver {
+    border-top: 1px solid rgba(208, 211, 217, 1);
+    &:nth-child(2) {
+      border-left: 1px solid rgba(208, 211, 217, 1);
+      border-right: 1px solid rgba(208, 211, 217, 1);
+    }
+  }
+}
