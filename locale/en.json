@@ -39,7 +39,9 @@
       "description": "Welcome to STP Aquaculture, where our dedication to innovation and commitment to sustainability are guiding our efforts in the aquaculture industry. By embracing advanced Industry 4.0 technologies, we strive to enhance product quality and contribute to a more sustainable and efficient future."
     },
     "commitments": "Our Commitment through Actions for Sustainable Aquaculture",
-    "about-us": "Passionately Advancing Aquaculture Practices"
+    "about-us": "Passionately Advancing Aquaculture Practices",
+    "hatchery-farm": "Welcome to STP Sustainable Hatchery & Farm",
+    "technical-team": "Welcome to STP Sustainable Technical Team & Mobile Lab"
   },
   "homepage": {
     "total-solutions": {
@@ -180,5 +182,52 @@
     "news": "News & Articles",
     "innovation": "Innovation",
     "contact-us": "Contact Us"
+  },
+  "hatchery-farm": {
+    "hatchery": {
+      "title": "Healthy Offspring, Reliable Support",
+      "shrimp": {
+        "title": "Shrimp Hatchery",
+        "description1": "At STP Shrimp Hatchery, we produce top-quality shrimp larvae (benur) from SPF F1 broodstock. Our larvae are strong, healthy, and genetically superior. We ensure high quality through strict biosecurity measures and provide ongoing technical support for successful shrimp farming.",
+        "description2": "Our facilities are strategically located in Pidie Jaya (Aceh), Canti (Lampung), Anyer (Banten), Indramayu (West Java), Banyuwangi (East Java), Singaraja (Bali), Negara (Bali), Sumbawa (NTB), and Barru (South Sulawesi), ensuring optimal production across Indonesia."
+      },
+      "fish": {
+        "title": "Fish Hatchery",
+        "description1": "Our fish hatchery is dedicated to cultivating superior fish broodstock, focusing on species like Tilapia and Clarias Catfish. We use advanced breeding techniques to ensure that our fish are robust, healthy, and genetically superior. By prioritizing the health and well-being of our fish, we help farmers achieve better growth rates and higher yields.",
+        "description2": "Our facilities are strategically located in Purwakarta, West Java; Yogyakarta; and Takisung, South Kalimantan. Each location leverages optimal local conditions and state-of-the-art technology to produce high-quality broodstock, supporting aquaculture development across Indonesia."
+      }
+    },
+    "farm": {
+      "title": "Superior Aquaculture Practices",
+      "shrimp": {
+        "title": "Shrimp Farming",
+        "description": "We specialize in shrimp farming using high-quality larvae from STP Hatchery. Our larvae, known for their strong DNA, result in exceptional harvests. Committed to sustainability, we ensure the health of our shrimp and the environment. Using a Recirculated Aquaculture System (RAS), we maximize efficiency and sustainability. Our shrimp farming facilities in Banyuwangi and Situbondo (East Java) ensure optimal growth and sustainability."
+      },
+      "fish": {
+        "title": "Fish Farming",
+        "description": "In our Tilapia farming operations, located in the pristine waters of Lake Toba, we rear superior Tilapia seedlings. The lake's unique ecosystem provides an ideal environment for Tilapia farming, resulting in high-quality fish. Additionally, our Barramundi, a marine fish with high market value, are raised with exceptional care. We provide them with eco-friendly feed to ensure their health and promote sustainability."
+      }
+    },
+    "commitment": {
+      "title": "Our Commitment to Quality and Safety",
+      "description": "Our hatcheries specialize in producing high-quality, disease-free fry for both fish and shrimp, providing reliable foundations for sustainable aquaculture operations.",
+      "note1": "Guaranteed Quality and Quantity",
+      "note2": "Disease and Virus Free",
+      "note3": "Optimal Growth Potential"
+    },
+    "join-us": "Join us at STP Aquaculture as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
+    "contact-us": "Contact us"
+  },
+  "technical-team": {
+    "section1": {
+      "title": "Comprehensive Services for Animal and Water Quality Diagnostic",
+      "description": "At STP, We assist you in monitoring all aspects of your livestock's health and help prevent various potential diseases. Our services are designed to keep your animals healthy and productive. Additionally, we provide diagnostic solutions directly to your farm with our Japfa Aquaculture Mobile Diagnostic Lab service."
+    },
+    "section2": {
+      "title": "Achieve Aquaculture Excellence with STP's Technical Team",
+      "description": "At STP, we are dedicated to provide comprehensive solutions to our partners and customers. Through our Technical Team as the core of this commitment, known as the Shrimp & Fish Farm Technicians are specialized to support your aquaculture process, and ensuring the optimal results."
+    },
+    "join-us": "Bergabunglah bersama kami di STP Aquaculture saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
+    "contact-us": "Hubungi kami"
   }
 }

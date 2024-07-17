@@ -15,7 +15,7 @@ export default function MappingCardSolutions() {
     {
       text: t('hatchery'),
       image: 'hatchery',
-      link: '#',
+      link: '/hatchery-farm',
       delay: 0.5,
     },
     {
@@ -27,7 +27,7 @@ export default function MappingCardSolutions() {
     {
       text: t('seafood-processing'),
       image: 'seafood-processing',
-      link: '#',
+      link: '/seafood-processing',
       delay: 1.5,
     },
     {
@@ -39,7 +39,7 @@ export default function MappingCardSolutions() {
     {
       text: t('technical-team'),
       image: 'technical-team',
-      link: '#',
+      link: '/technical-team',
       delay: 0.5,
     },
     {
@@ -58,6 +58,7 @@ export default function MappingCardSolutions() {
               text={data.text}
               image={data.image}
               delay={data.delay}
+              link={data.link}
             />
           </Col>
         ))}

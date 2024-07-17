@@ -39,7 +39,9 @@
       "title": "Menginovasi Masa Depan Akuakultur",
       "description": "Selamat datang di STP Aquaculture, dimana dedikasi kami terhadap inovasi dan komitmen terhadap keberlanjutan memandu upaya kami di industri akuakultur. Dengan menerapkan teknologi Industri 4.0 yang canggih, kami berupaya meningkatkan kualitas produk dan berkontribusi terhadap masa depan yang lebih berkelanjutan dan efisien"
     },
-    "about-us": "Dengan Penuh Semangat Memajukan Praktik Akuakultur"
+    "about-us": "Dengan Penuh Semangat Memajukan Praktik Akuakultur",
+    "hatchery-farm": "Selamat datang di STP Sustainable Hatchery & Farm",
+    "technical-team": "Selamat datang di Tim Teknis Berkelanjutan STP & Lab Seluler"
   },
   "homepage": {
     "total-solutions": {
@@ -179,6 +181,53 @@
     "act-sustainability": "Bertindak untuk Keberlanjutan",
     "news": "Artikel Berita",
     "innovation": "Inovasi",
+    "contact-us": "Hubungi kami"
+  },
+  "hatchery-farm": {
+    "hatchery": {
+      "title": "Keturunan Sehat, Dukungan Andal",
+      "shrimp": {
+        "title": "Pembenihan Udang",
+        "description1": "Di STP Shrimp Hatchery, kami memproduksi larva udang (benur) kualitas terbaik dari indukan SPF F1. Larva kami kuat, sehat, dan unggul secara genetik. Kami memastikan kualitas tinggi melalui langkah-langkah biosekuriti yang ketat dan memberikan dukungan teknis berkelanjutan untuk keberhasilan budidaya udang.",
+        "description2": "Fasilitas kami berlokasi strategis di Pidie Jaya (Aceh), Canti (Lampung), Anyer (Banten), Indramayu (Jawa Barat), Banyuwangi (Jawa Timur), Singaraja (Bali), Negara (Bali), Sumbawa (NTB), dan Barru (Sulawesi Selatan), menjamin produksi optimal di seluruh Indonesia."
+      },
+      "fish": {
+        "title": "Pembenihan Ikan",
+        "description1": "Pembenihan ikan kami didedikasikan untuk membudidayakan induk ikan unggul, dengan fokus pada spesies seperti Tilapia dan Clarias Catfish. Kami menggunakan teknik pembiakan yang canggih untuk memastikan ikan kami kuat, sehat, dan unggul secara genetik. Dengan memprioritaskan kesehatan dan kesejahteraan ikan kami, kami membantu petani mencapai tingkat pertumbuhan yang lebih baik dan hasil yang lebih tinggi.",
+        "description2": "Fasilitas kami berlokasi strategis di Purwakarta, Jawa Barat; Yogyakarta; dan Takisung, Kalimantan Selatan. Setiap lokasi memanfaatkan kondisi lokal yang optimal dan teknologi tercanggih untuk menghasilkan induk berkualitas tinggi, sehingga mendukung pengembangan budidaya perikanan di seluruh Indonesia."
+      }
+    },
+    "farm": {
+      "title": "Praktik Budidaya Perairan Unggul",
+      "shrimp": {
+        "title": "Budidaya Udang",
+        "description": "Kami spesialis budidaya udang dengan menggunakan larva berkualitas tinggi dari STP Hatchery. Larva kami, yang dikenal karena DNA-nya yang kuat, menghasilkan panen yang luar biasa. Berkomitmen terhadap keberlanjutan, kami memastikan kesehatan udang dan lingkungan. Dengan menggunakan Sistem Akuakultur Resirkulasi (RAS), kami memaksimalkan efisiensi dan keberlanjutan. Fasilitas budidaya udang kami di Banyuwangi dan Situbondo (Jawa Timur) memastikan pertumbuhan dan keberlanjutan yang optimal."
+      },
+      "fish": {
+        "title": "Budidaya Ikan",
+        "description": "Dalam operasi budidaya ikan nila kami yang terletak di perairan Danau Toba yang masih alami, kami memelihara bibit ikan nila yang unggul. Ekosistem danau yang unik menyediakan lingkungan yang ideal untuk budidaya ikan nila, sehingga menghasilkan ikan berkualitas tinggi. Selain itu, Barramundi kami, ikan laut dengan nilai pasar tinggi, dipelihara dengan sangat hati-hati. Kami memberi mereka pakan ramah lingkungan untuk memastikan kesehatan mereka dan mendukung keberlanjutan."
+      }
+    },
+    "commitment": {
+      "title": "Komitmen Kami terhadap Kualitas dan Keamanan",
+      "description": "Tempat penetasan kami mengkhususkan diri dalam memproduksi benih ikan dan udang berkualitas tinggi dan bebas penyakit, sehingga memberikan landasan yang dapat diandalkan untuk operasi budidaya perikanan yang berkelanjutan.",
+      "note1": "Kualitas dan Kuantitas Terjamin",
+      "note2": "Bebas Penyakit dan Virus",
+      "note3": "Potensi Pertumbuhan Optimal"
+    },
+    "join-us": "Bergabunglah bersama kami di STP Aquaculture saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
+    "contact-us": "Hubungi kami"
+  },
+  "technical-team": {
+    "section1": {
+      "title": "Layanan Komprehensif untuk Diagnostik Kualitas Hewan dan Air",
+      "description": "Di STP, Kami membantu Anda dalam memantau seluruh aspek kesehatan ternak Anda dan membantu mencegah berbagai potensi penyakit. Layanan kami dirancang untuk menjaga hewan Anda tetap sehat dan produktif. Selain itu, kami memberikan solusi diagnostik langsung ke peternakan Anda dengan layanan Japfa Aquaculture Mobile Diagnostic Lab kami."
+    },
+    "section2": {
+      "title": "Raih Keunggulan Akuakultur bersama Tim Teknis STP",
+      "description": "Di STP, kami berdedikasi untuk memberikan solusi komprehensif kepada mitra dan pelanggan kami. Melalui Tim Teknis kami sebagai inti komitmen ini, dikenal sebagai Teknisi Budidaya Udang & Ikan yang dikhususkan untuk mendukung proses budidaya perikanan Anda, dan memastikan hasil yang optimal."
+    },
+    "join-us": "Bergabunglah bersama kami di STP Aquaculture saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
     "contact-us": "Hubungi kami"
   }
 }
