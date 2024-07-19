@@ -49,9 +49,13 @@ function NavigationBar() {
   useEffect(() => {
     const handleScroll = () => {
       const specificContainer = document.getElementById('hero-homepage')
-      const specificContainerBottom =
-        specificContainer.getBoundingClientRect().bottom
-      setIsScrolled(specificContainerBottom <= 0)
+      if (specificContainer === null) {
+        setIsScrolled(true)
+      } else {
+        const specificContainerBottom =
+          specificContainer.getBoundingClientRect().bottom
+        setIsScrolled(specificContainerBottom <= 0)
+      }
     }
     window.addEventListener('scroll', handleScroll)
     return () => {

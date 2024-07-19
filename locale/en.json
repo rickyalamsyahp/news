@@ -4,7 +4,8 @@
     "innovation": "Innovation",
     "commitments": "Commitments",
     "about-us": "About Us",
-    "login": "Login"
+    "login": "Login",
+    "language": "LANGUAGE"
   },
   "seo": {
     "home": {
@@ -26,6 +27,18 @@
     "commitments": {
       "description": "STP Aquaculture",
       "title": "STP Aquaculture | Commitments"
+    },
+    "technical-team": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Technical Team"
+    },
+    "hatchery-farm": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Hatchery Farm"
+    },
+    "aquafeed": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Aquafeed"
     }
   },
   "hero": {
@@ -55,7 +68,7 @@
         "seafood-processing": "seafood processing",
         "animal-health": "animal health & mobile lab",
         "technical-team": "shrimp & fish technical team",
-        "innovations": "Innovations"
+        "innovations": "innovations & technology"
       }
     },
     "commitments": {
@@ -170,7 +183,7 @@
     "products": "Products",
     "aquafeed": "Aquafeed",
     "hatchery": "Shrimp & Fish Hatchery",
-    "grow-out": "Shrimp & Fish Grow Out",
+    "grow-out": "Shrimp & Fish Farm",
     "seafood-processing": "Seafood Processing",
     "about-us": "About Us",
     "story": "Story",
@@ -229,5 +242,23 @@
     },
     "join-us": "Bergabunglah bersama kami di STP Aquaculture saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
     "contact-us": "Hubungi kami"
+  },
+  "aquafeed": {
+    "introduction": {
+      "title": "Elevate Your Aquaculture with STP's Premium Feeds",
+      "description": "Since 1987, STP has been known for its high-quality feeds for aquaculture. Our commitment to excellence drives us to develop environmentally friendly formulas that enhance growth and optimize health, meeting the needs of international commercial fisheries."
+    },
+    "species": {
+      "title": "Species",
+      "description": "Our specialized aquafeed provides precise nutrition at every life stage for fresh water and marine fish and shrimp, that ensure optimal health and growth. We innovate constantly to offer the latest scientific solutions, helping farmers achieve the best results in growth rate, feed conversion, and animal welfare."
+    },
+    "reasons": {
+      "title": "Why Choose STP Aquafeeds?",
+      "consistent": "Consistent Quality",
+      "eco-friendly": "Eco-Friendly Efficiency",
+      "unmatched": "Unmatched Expertise",
+      "long-last": "Long Lasting and Easy to Store",
+      "complete-nutrition": "Complete Nutrition"
+    }
   }
 }

@@ -6,13 +6,13 @@ import Farm from '../../../components/Products/FarmHatchery/Farm/Farm'
 import Commitment from '../../../components/Products/FarmHatchery/Commitment/Commitment'
 import JoinUs from '../../../components/Products/FarmHatchery/JoinUs/JoinUs'
 
-// export async function generateMetadata({ params: { locale } }) {
-//   const t = await getTranslations({ locale, namespace: 'seo' })
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale, namespace: 'seo' })
 
-//   return {
-//     ...metadata(t('total-solutions.title'), t('total-solutions.description')),
-//   }
-// }
+  return {
+    ...metadata(t('hatchery-farm.title'), t('hatchery-farm.description')),
+  }
+}
 
 export default function Page() {
   return (

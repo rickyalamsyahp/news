@@ -1,4 +1,4 @@
-import HeroHomepage from '../../../assets/images/commitments-homepage-thumbnail.png'
+import HeroAboutUs from '../../../assets/images/Hero-About-Us.jpg'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 
@@ -9,7 +9,7 @@ function Hero() {
       className='hero'
       id='hero-homepage'
       style={{
-        backgroundImage: `url(${HeroHomepage.src})`,
+        backgroundImage: `url(${HeroAboutUs.src})`,
       }}
     >
       <Reveal>

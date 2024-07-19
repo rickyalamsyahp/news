@@ -4,7 +4,8 @@
     "innovation": "Inovasi",
     "commitments": "Komitmen",
     "about-us": "Tentang Kami",
-    "login": "Masuk"
+    "login": "Masuk",
+    "language": "BAHASA"
   },
   "seo": {
     "home": {
@@ -26,6 +27,18 @@
     "commitments": {
       "description": "STP Aquaculture",
       "title": "STP Aquaculture | Komitmen"
+    },
+    "technical-team": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Teknikal Tim"
+    },
+    "hatchery-farm": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Pembenihan dan Budidaya"
+    },
+    "aquafeed": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Aquafeed"
     }
   },
   "hero": {
@@ -55,7 +68,7 @@
         "seafood-processing": "pengolahan makanan laut",
         "animal-health": "kesehatan hewan & laboratorium keliling",
         "technical-team": "tim teknis udang & ikan",
-        "innovations": "inovasi"
+        "innovations": "inovasi dan teknologi"
       }
     },
     "commitments": {
@@ -170,7 +183,7 @@
     "products": "Produk",
     "aquafeed": "Pakan Air",
     "hatchery": "Pembenihan Udang & Ikan",
-    "grow-out": "Udang & Ikan Tumbuh",
+    "grow-out": "Ternak Udang & Ikan",
     "seafood-processing": "Pengolahan Makanan Laut",
     "about-us": "Tentang Kami",
     "story": "Cerita",
@@ -229,5 +242,23 @@
     },
     "join-us": "Bergabunglah bersama kami di STP Aquaculture saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
     "contact-us": "Hubungi kami"
+  },
+  "aquafeed": {
+    "introduction": {
+      "title": "Tingkatkan Budidaya Perairan Anda dengan Pakan Premium STP",
+      "description": "Sejak tahun 1987, STP dikenal dengan pakan budidaya perikanannya yang berkualitas. Komitmen kami terhadap keunggulan mendorong kami untuk mengembangkan formula ramah lingkungan yang meningkatkan pertumbuhan dan mengoptimalkan kesehatan, memenuhi kebutuhan perikanan komersial internasional."
+    },
+    "species": {
+      "title": "Jenis",
+      "description": "Aquafeed khusus kami memberikan nutrisi yang tepat pada setiap tahap kehidupan untuk ikan air tawar dan laut serta udang, yang menjamin kesehatan dan pertumbuhan optimal. Kami terus berinovasi untuk menawarkan solusi ilmiah terkini, membantu peternak mencapai hasil terbaik dalam tingkat pertumbuhan, konversi pakan, dan kesejahteraan hewan."
+    },
+    "reasons": {
+      "title": "Mengapa Memilih Aquafeed STP?",
+      "consistent": "Kualitas yang konsisten",
+      "eco-friendly": "Efisiensi Ramah Lingkungan",
+      "unmatched": "Keahlian yang Tak Tertandingi",
+      "long-last": "Tahan Lama dan Mudah Disimpan",
+      "complete-nutrition": "Nutrisi Lengkap"
+    }
   }
 }

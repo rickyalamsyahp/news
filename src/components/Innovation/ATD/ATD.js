@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import ATDImage from '../../../assets/images/atd-image.png'
+import ATDImage from '../../../assets/images/ATD.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
 
 export default function ATD() {

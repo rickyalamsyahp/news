@@ -1,15 +1,15 @@
-import HeroHomepage from '../../../assets/images/commitments-homepage-thumbnail.png'
+import HeroInnovation from '../../../assets/images/Hero-Innovations.jpg'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 
 function Hero() {
-  const t = useTranslations('hero.total-solutions')
+  const t = useTranslations('hero.innovation')
   return (
     <section
       className='hero'
       id='hero-homepage'
       style={{
-        backgroundImage: `url(${HeroHomepage.src})`,
+        backgroundImage: `url(${HeroInnovation.src})`,
       }}
     >
       <Reveal>
