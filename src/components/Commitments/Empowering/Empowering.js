@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import EmpoweringImage from '../../../assets/images/arc-image.png'
+import EmpoweringImage from '../../../assets/images/ARC.jpg'
 import Carousel from '../../GeneralComponent/Carousel/Carousel'
 import Reveal from '../../Animation/Reveal/Reveal'
 
