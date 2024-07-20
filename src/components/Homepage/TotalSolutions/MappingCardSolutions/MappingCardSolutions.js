@@ -9,7 +9,7 @@ export default function MappingCardSolutions() {
     {
       text: t('aquafeed'),
       image: 'aquafeed',
-      link: '#',
+      link: '/aquafeed',
       delay: 0,
     },
     {
@@ -53,7 +53,12 @@ export default function MappingCardSolutions() {
     <Col className='pt-4'>
       <Row className='justify-content-center g-xl-4 gy-4 gx-2 gy-xl-1'>
         {cardSolutions.map((data, index) => (
-          <Col xs={6} md='auto' key={`card-solutions-${data.text}-${index}`}>
+          <Col
+            xs={6}
+            md='auto'
+            xl={3}
+            key={`card-solutions-${data.text}-${index}`}
+          >
             <CardSolutions
               text={data.text}
               image={data.image}

@@ -1,0 +1,20 @@
+@import 'bootstrap/scss/mixins';
+
+.card-species {
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+
+  @include media-breakpoint-down(sm) {
+    width: 90px;
+    height: 60px;
+  }
+
+  .image-species {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+}

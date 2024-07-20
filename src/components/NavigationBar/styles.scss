@@ -26,6 +26,26 @@
       color: #383e49;
     }
   }
+
+  .select-language {
+    option {
+      color: #383e49 !important;
+    }
+  }
+
+  .select-language.mobile {
+    .select-language-mobile {
+      border: 1px solid #858d9d;
+      padding: 4px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .selected {
+      border: 1px solid white;
+    }
+  }
 }
 
 .img-logo {
