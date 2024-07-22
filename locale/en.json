@@ -39,6 +39,10 @@
     "aquafeed": {
       "description": "STP Aquaculture",
       "title": "STP Aquaculture | Aquafeed"
+    },
+    "contact-us": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Contact-us"
     }
   },
   "hero": {
@@ -260,5 +264,24 @@
       "long-last": "Long Lasting and Easy to Store",
       "complete-nutrition": "Complete Nutrition"
     }
+  },
+  "contact-us": {
+    "title": "Get in Touch",
+    "form": {
+      "full-name": "Full Name",
+      "location": "Location/City",
+      "email": "Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "placeholder": {
+      "full-name": "Write your name here..",
+      "location": "Choose your location",
+      "subject": "Choose subject you want to ask",
+      "message": "Write yout question here.."
+    },
+    "contact-notes": "or you can reach us directly to"
   }
 }

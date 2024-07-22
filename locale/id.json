@@ -39,6 +39,10 @@
     "aquafeed": {
       "description": "STP Aquaculture",
       "title": "STP Aquaculture | Aquafeed"
+    },
+    "contact-us": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Hubungi Kami"
     }
   },
   "hero": {
@@ -260,5 +264,24 @@
       "long-last": "Tahan Lama dan Mudah Disimpan",
       "complete-nutrition": "Nutrisi Lengkap"
     }
+  },
+  "contact-us": {
+    "title": "Hubungi Kami",
+    "form": {
+      "full-name": "Nama Lengkap",
+      "location": "Lokasi/Kota",
+      "email": "Email",
+      "phone": "Nomor Telepon",
+      "subject": "Subjek",
+      "message": "Pesan",
+      "submit": "Kirim Pesan"
+    },
+    "placeholder": {
+      "full-name": "Tulis nama Anda..",
+      "location": "Pilih lokasi Anda",
+      "subject": "Pilih subjek yang ingin Anda tanyakan",
+      "message": "Tulis pertanyaan Anda disini.."
+    },
+    "contact-notes": "atau Anda bisa mencari kami disini"
   }
 }

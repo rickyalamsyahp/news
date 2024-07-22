@@ -5,12 +5,14 @@ import React, { useRef, useEffect } from 'react'
 
 function Reveal({ children, overflow, delay, direction }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '0px 0px -250px 0px' })
+  const inView = useInView(ref, { margin: '0px 0px -250px 0px' })
   const animateControls = useAnimation()
 
   useEffect(() => {
     if (inView) {
       animateControls.start('visible')
+    } else {
+      animateControls.start('hidden')
     }
   }, [animateControls, inView])
 

@@ -27,7 +27,7 @@ export function ButtonSecondary({ children, mobile }) {
   )
 }
 
-export function ButtonThird({ children }) {
+export function ButtonThird({ children, onSubmit }) {
   return (
     <Button
       variant={'warning'}
@@ -36,6 +36,7 @@ export function ButtonThird({ children }) {
         padding: '16px 24px',
         borderRadius: '4px',
       }}
+      type={onSubmit}
     >
       {children}
       <ArrowRight />

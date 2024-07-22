@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import EmphasizingImage from '../../../assets/images/emphasizing-image.png'
+import EmphasizingImage from '../../../assets/images/emphasizing.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
 
 export default function Emphasizing() {
