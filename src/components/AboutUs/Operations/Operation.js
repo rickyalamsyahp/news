@@ -42,7 +42,10 @@ function Operations() {
   ]
 
   return (
-    <section className='bg-white pt-3 pt-md-5 position-relative'>
+    <section
+      className='bg-white pt-3 pt-md-5 position-relative'
+      id='operations'
+    >
       <Container className='py-3 py-md-5'>
         <Row>
           <Col xs={12}>

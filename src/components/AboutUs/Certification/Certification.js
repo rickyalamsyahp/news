@@ -13,10 +13,12 @@ import Image from 'next/image'
 
 function Certification() {
   const t = useTranslations('about-us.certification')
-  const certifications1 = [BKIPM, GMP, HACCP, BRC, BAP]
-  const certifications2 = [MUI, OU, MENTRI, WWF]
+  const certifications1 = [BKIPM, GMP, HACCP, BRC, BAP, MUI, OU, MENTRI, WWF]
   return (
-    <section className='bg-white py-3 py-md-5 position-relative'>
+    <section
+      className='bg-white py-3 py-md-5 position-relative'
+      id='certifications'
+    >
       <Container className='py-3 py-md-5'>
         <Row>
           <Col xs={12}>
@@ -24,17 +26,14 @@ function Certification() {
             <h4 className='text-center'>{t('description')}</h4>
           </Col>
         </Row>
-        <Row className='justify-content-center pt-4'>
+        <Row className='justify-content-center pt-4 w-75 m-auto'>
           {certifications1.map((data, index) => (
-            <Col md='auto' key={`certificate-${index}`}>
-              <Image src={data} alt={`certificate-${index}`} />
-            </Col>
-          ))}
-        </Row>
-        <Row className='justify-content-center pt-4'>
-          {certifications2.map((data, index) => (
-            <Col md='auto' key={`certificate-${index}`}>
-              <Image src={data} alt={`certificate-${index}`} />
+            <Col xs={4} md='auto' key={`certificate-${index}`}>
+              <Image
+                src={data}
+                alt={`certificate-${index}`}
+                className='w-100 h-auto'
+              />
             </Col>
           ))}
         </Row>

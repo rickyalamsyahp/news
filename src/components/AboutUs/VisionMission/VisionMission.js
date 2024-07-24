@@ -33,7 +33,7 @@ function VisionMission() {
     }
   }, [showDetailVision, showDetailMission])
   return (
-    <section className='pt-0 pt-md-5 pb-5'>
+    <section className='pt-0 pt-md-5 pb-5' id='vision-mission'>
       <Container>
         <Row className='card-vision-mission bg-white mb-3 mb-md-0'>
           <Col md={{ span: 5, order: '2' }} className='p-0 position-relative'>
@@ -46,7 +46,7 @@ function VisionMission() {
               className={`p-3 bg-warning position-absolute top-0 h-100 w-100 opacity-${showDetailVision} card-detail-vision`}
             >
               <div className='border border-white h-100 rounded-4 px-5 d-flex align-items-center flex-colum justify-content-center text-white'>
-                <h4>{t('vision.detail')}</h4>
+                <h5>{t('vision.detail')}</h5>
               </div>
             </div>
           </Col>
@@ -72,7 +72,7 @@ function VisionMission() {
               className={`p-3 position-absolute top-0 h-100 w-100 opacity-${showDetailMission} card-detail-mission`}
             >
               <div className='border border-white h-100 rounded-4 px-5 d-flex align-items-center flex-colum justify-content-center text-white'>
-                <h4>{t('mission.detail')}</h4>
+                <h5>{t('mission.detail')}</h5>
               </div>
             </div>
           </Col>

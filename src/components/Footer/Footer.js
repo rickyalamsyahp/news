@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Col, Container, Row } from 'react-bootstrap'
 import LogoSTP from '../../assets/images/stp-logo-colored.png'
+import { Link } from '../../navigation'
 
 function Footer() {
   const t = useTranslations('footer')
@@ -21,32 +22,35 @@ function Footer() {
     {
       header: t('about-us'),
       child: [
-        { title: t('story'), link: '#' },
-        { title: t('vision-mission'), link: '#' },
-        { title: t('operations'), link: '#' },
-        { title: t('certification'), link: '#' },
+        { title: t('story'), link: '/about-us#introduction' },
+        { title: t('vision-mission'), link: '/about-us#vision-mission' },
+        { title: t('operations'), link: '/about-us#operations' },
+        { title: t('certification'), link: '/about-us#certifications' },
       ],
     },
     {
       header: t('commitment'),
-      child: [
-        { title: t('act-sustainability'), link: '#' },
-        { title: t('news'), link: '#' },
-      ],
+      child: [{ title: t('act-sustainability'), link: '/commitments' }],
     },
     {
       header: t('contact-us'),
       child: [
-        { title: t('contact-us'), link: '#' },
+        { title: t('contact-us'), link: '/contact-us' },
         { title: 'Instagram', link: '#' },
       ],
     },
     {
       header: t('innovation'),
       child: [
-        { title: 'JAPFA Aquaculture Research Station (JARS)', link: '#' },
-        { title: 'Aquaculture Technology Development (ATD)', link: '#' },
-        { title: 'Aquaculture Research Center (ARC)', link: '#' },
+        {
+          title: 'JAPFA Aquaculture Research Station (JARS)',
+          link: '/innovation#jars',
+        },
+        {
+          title: 'Aquaculture Technology Development (ATD)',
+          link: '/innovation#atd',
+        },
+        { title: 'Aquaculture Research Center (ARC)', link: '/innovation#arc' },
       ],
     },
   ]
@@ -69,7 +73,7 @@ function Footer() {
                   {data.child.map((child, idx) => (
                     <li key={`footer-child-${idx}`}>
                       <h6 className='text-secondary'>
-                        <a href={child.link}>{child.title}</a>
+                        <Link href={child.link}>{child.title}</Link>
                       </h6>
                     </li>
                   ))}

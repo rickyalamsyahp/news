@@ -5,6 +5,7 @@ import Section2 from '../../../assets/images/section-2-technical-team.jpg'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 import { ButtonThird } from '../../GeneralComponent/CustomButton/CustomButton'
+import { Link } from '../../../navigation'
 
 function TechnicalTeam() {
   const t = useTranslations('technical-team')
@@ -47,10 +48,12 @@ function TechnicalTeam() {
         <Container>
           <div className='py-4'>
             <Reveal overflow={true}>
-              <h2 className='text-white mb-3 mb-md-5'>{t('join-us')}</h2>
+              <h3 className='text-white mb-3 mb-md-5'>{t('join-us')}</h3>
             </Reveal>
             <Reveal overflow={true}>
-              <ButtonThird>{t('contact-us')}</ButtonThird>
+              <ButtonThird>
+                <Link href='/contact-us'>{t('contact-us')}</Link>
+              </ButtonThird>
             </Reveal>
           </div>
         </Container>

@@ -29,7 +29,7 @@ function Introduction() {
         <Breadcrumbs data={dataBreadCrumb} />
         <div className='w-75 mb-5'>
           <h2 className='fw-bold my-5'>{t('title')}</h2>
-          <h3>{t('description')}</h3>
+          <h3 className='pb-5'>{t('description')}</h3>
         </div>
         <Image
           alt='bg-aquafeed1'

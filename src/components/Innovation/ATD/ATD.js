@@ -9,7 +9,7 @@ import Reveal from '../../Animation/Reveal/Reveal'
 export default function ATD() {
   const t = useTranslations('innovation.atd')
   return (
-    <section className='py-3 py-md-5 unique-bg'>
+    <section className='py-3 py-md-5 unique-bg' id='atd'>
       <Container>
         <Row className='align-items-center h-100 gap-3 gap-md-5'>
           <Col md={5}>

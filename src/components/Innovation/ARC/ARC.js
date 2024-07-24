@@ -9,7 +9,7 @@ import Reveal from '../../Animation/Reveal/Reveal'
 export default function ARC() {
   const t = useTranslations('innovation.arc')
   return (
-    <section className='py-3 py-md-5 bg-light'>
+    <section className='py-3 py-md-5 bg-light' id='arc'>
       <Container className='mb-5'>
         <Row className='justify-content-between align-items-center h-100'>
           <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>

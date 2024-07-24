@@ -9,7 +9,6 @@
       height: 0; /* Safari and Chrome */
     }
     .tab-item {
-      cursor: pointer;
       flex: 0 0 auto;
       white-space: nowrap;
       line-height: 12rem;
@@ -44,8 +43,12 @@
   .tab-content-container {
     padding-top: 36px;
     .img-journey-container {
+      width: 50%;
       border: 1px solid #989fad;
       background-color: #fcfcfd;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
       img {
         width: -webkit-fill-available;
         height: -webkit-fill-available;
@@ -55,12 +58,17 @@
       position: relative;
       height: 250px;
       padding: 40px;
+      width: 50%;
       border: 1px solid #f0f1f3;
       background-color: rgba(255, 255, 255, 0.8);
       box-shadow: 0px 2px 10px 0px rgba(112, 137, 179, 0.06);
       place-content: center;
       right: 60px;
       top: 170px;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        margin-top: 16px;
+      }
       @include media-breakpoint-down(lg) {
         position: unset;
         height: auto;
@@ -76,6 +84,9 @@
       &.transition {
         opacity: 0;
       }
+    }
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
     }
   }
 

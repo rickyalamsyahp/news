@@ -58,16 +58,15 @@
       filter: blur(0px);
     }
     h3 {
-      bottom: 10%;
+      bottom: 15%;
     }
   }
   &.active {
     transform: scale(1);
-    border-radius: 0px;
 
     svg {
       transform: translate(-50%, 50%) scale(0.2);
-      bottom: 20%;
+      bottom: 30%;
       @include media-breakpoint-down(md) {
         bottom: 25%;
       }

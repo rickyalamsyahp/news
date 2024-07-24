@@ -10,7 +10,7 @@ function OurStory() {
       <Container className='pb-0 pb-lg-5'>
         <Row>
           <Col>
-            <h3 className='fw-bold text-center'>{t('title')}</h3>
+            <h3 className='fw-bold text-center py-5 py-md-0'>{t('title')}</h3>
           </Col>
         </Row>
       </Container>

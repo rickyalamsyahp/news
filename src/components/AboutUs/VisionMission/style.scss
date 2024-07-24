@@ -9,6 +9,9 @@
     }
   }
   .card-title {
+    h2 {
+      font-size: 38px;
+    }
     span {
       h6 {
         cursor: pointer;
@@ -19,7 +22,7 @@
   .card-detail-vision,
   .card-detail-mission {
     transition: opacity 0.5s ease;
-    h4 {
+    h5 {
       &:before {
         content: '';
         width: 80px;
@@ -32,14 +35,14 @@
 
   .card-detail-mission {
     background-color: rgba(38, 72, 128, 1);
-    h4 {
+    h5 {
       &:before {
         background-color: $warning;
       }
     }
   }
   .card-detail-vision {
-    h4 {
+    h5 {
       &:before {
         background-color: rgba(38, 72, 128, 1);
       }

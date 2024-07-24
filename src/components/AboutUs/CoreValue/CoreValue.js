@@ -44,7 +44,7 @@ function CoreValue() {
             <h3 className='fw-bold pb-3'>{t('title')}</h3>
             <h4 className='pb-3'>{t('description')}</h4>
           </Col>
-          <Col className='d-flex flex-row justify-content-between align-items-center'>
+          <Col className='d-flex flex-row justify-content-between align-items-center pt-5'>
             {cardValues.map((data, index) => (
               <CardValue
                 key={`card-value-${index}`}

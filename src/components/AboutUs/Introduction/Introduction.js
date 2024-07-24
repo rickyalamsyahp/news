@@ -7,12 +7,12 @@ import IntroductionImage from '../../../assets/images/intro-about-us.png'
 export default function Introduction() {
   const t = useTranslations('about-us')
   return (
-    <section className='py-4 py-lg-5'>
+    <section className='py-4 py-lg-5' id='introduction'>
       <Container className='py-0 py-lg-5'>
         <Row className='text-center pb-3 pb-lg-5'>
           <Col>
             <Reveal overflow={true}>
-              <h4 className='text-secondary'>{t('introduction')}</h4>
+              <h3 className='text-secondary'>{t('introduction')}</h3>
             </Reveal>
           </Col>
         </Row>

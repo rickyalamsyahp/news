@@ -9,7 +9,7 @@ import Reveal from '../../Animation/Reveal/Reveal'
 export default function JARS() {
   const t = useTranslations('innovation.jars')
   return (
-    <section className='pb-3 pb-md-5'>
+    <section className='pb-3 pb-md-5' id='jars'>
       <Container>
         <Row className='justify-content-between align-items-start h-100'>
           <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>

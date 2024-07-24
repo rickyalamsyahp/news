@@ -9,19 +9,19 @@ function ContentTab({ tabs, activeTab, transition }) {
       <Row>
         <Col>
           <div className='tab-content-container position-relative d-flex justify-content-center align-center flew-row'>
-            <div className='img-journey-container w-50 h-auto p-4'>
+            <div className='img-journey-container h-auto p-4'>
               <Image
                 alt={`img-journey-${tabs[activeTab].title}`}
                 src={tabs[activeTab].content}
                 className={`tab-content ${transition ? 'transition' : ''}`}
               />
             </div>
-            <div className='description-journey-container w-50 d-grid'>
+            <div className='description-journey-container d-grid'>
               <div className={`tab-content ${transition ? 'transition' : ''}`}>
                 <h4 className='text-warning fw-bold'>
                   {tabs[activeTab].title}
                 </h4>
-                <h3>{t(`${tabs[activeTab].title}`)}</h3>
+                <h3 className='fw-bold'>{t(`${tabs[activeTab].title}`)}</h3>
               </div>
             </div>
           </div>
