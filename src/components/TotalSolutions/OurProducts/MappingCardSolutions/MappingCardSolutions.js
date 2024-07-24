@@ -8,25 +8,25 @@ export default function MappingCardSolutions() {
   const cardSolutions = [
     {
       text: t('aquafeed'),
-      image: 'aquafeed-new',
+      image: 'aquafeed',
       link: '/aquafeed',
       delay: 0,
     },
     {
       text: t('hatchery'),
-      image: 'hatchery-new',
+      image: 'hatchery',
       link: '/hatchery-farm',
       delay: 0.5,
     },
     {
       text: t('farm'),
-      image: 'farm-new',
+      image: 'farm',
       link: '#',
       delay: 1,
     },
     {
       text: t('seafood-processing'),
-      image: 'seafood-processing-new',
+      image: 'seafood-processing',
       link: '/seafood-processing',
       delay: 1.5,
     },

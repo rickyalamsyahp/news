@@ -11,10 +11,10 @@ function Footer() {
       child: [
         {
           title: t('aquafeed'),
-          link: '#',
+          link: '/aquafeed',
         },
-        { title: t('hatchery'), link: '#' },
-        { title: t('grow-out'), link: '#' },
+        { title: t('hatchery'), link: '/hatchery-farm' },
+        { title: t('grow-out'), link: '/technical-team' },
         { title: t('seafood-processing'), link: '#' },
       ],
     },

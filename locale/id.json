@@ -43,6 +43,10 @@
     "contact-us": {
       "description": "STP Aquaculture",
       "title": "STP Aquaculture | Hubungi Kami"
+    },
+    "news-article": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | Berita & Artikel"
     }
   },
   "hero": {

@@ -43,6 +43,10 @@
     "contact-us": {
       "description": "STP Aquaculture",
       "title": "STP Aquaculture | Contact-us"
+    },
+    "news-article": {
+      "description": "STP Aquaculture",
+      "title": "STP Aquaculture | News & Articles"
     }
   },
   "hero": {

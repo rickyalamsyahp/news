@@ -38,7 +38,7 @@ function Commitment() {
           </Col>
         </Row>
       </Container>
-      <Image alt='bg-fish' src={BGFish} />
+      <Image alt='bg-fish' src={BGFish} className='w-100 h-auto' />
     </section>
   )
 }

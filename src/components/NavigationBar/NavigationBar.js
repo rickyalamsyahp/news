@@ -12,7 +12,6 @@ import STPLogo from '../../assets/images/stp-logo.png'
 import STPLogoColored from '../../assets/images/stp-logo-colored.png'
 
 import './styles.scss'
-import { ButtonPrimary } from '../GeneralComponent/CustomButton/CustomButton'
 import LocaleSwitcher from './LocaleSwitcher/LocaleSwitcher'
 
 import Hamburger from 'hamburger-react'
@@ -108,7 +107,7 @@ function NavigationBar() {
                 {data.text}
               </Link>
             ))}
-            <ButtonPrimary>{t('login')}</ButtonPrimary>
+            {/* <ButtonPrimary>{t('login')}</ButtonPrimary> */}
             <LocaleSwitcher />
           </Container>
         </Nav>
