@@ -7,7 +7,7 @@ import HatcheryFish from '../../../../assets/images/hatchery-fish.jpg'
 function VisionMission() {
   const t = useTranslations('hatchery-farm')
   return (
-    <section className='pt-5 pb-5 bg-secondary-subtle'>
+    <section className='pt-5 pb-5 bg-secondary-subtle' id='hatchery'>
       <Container>
         <h2 className='text-center mb-5'>
           STP Hatchery

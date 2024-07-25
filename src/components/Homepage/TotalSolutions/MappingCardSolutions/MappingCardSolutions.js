@@ -15,13 +15,13 @@ export default function MappingCardSolutions() {
     {
       text: t('hatchery'),
       image: 'hatchery',
-      link: '/hatchery-farm',
+      link: '/hatchery-farm#hatchery',
       delay: 0.5,
     },
     {
       text: t('farm'),
       image: 'farm',
-      link: '#',
+      link: '/hatchery-farm#farm',
       delay: 1,
     },
     {
@@ -45,7 +45,7 @@ export default function MappingCardSolutions() {
     {
       text: t('innovations'),
       image: 'innovations',
-      link: '#',
+      link: '/innovations',
       delay: 1,
     },
   ]

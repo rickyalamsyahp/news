@@ -1,18 +1,19 @@
 import { Col, Row } from 'react-bootstrap'
-import ThumbnailCommitments from '../../../../assets/images/commitments-homepage-thumbnail.png'
-import Image from 'next/image'
 import Reveal from '../../../Animation/Reveal/Reveal'
 export default function Thumbnail() {
   return (
     <Row>
       <Col>
         <Reveal>
-          <Image
-            src={ThumbnailCommitments}
-            alt='thumbnail-commitments'
-            priority
-            className='w-100 h-100 py-2 py-md-5'
-          />
+          <iframe
+            style={{ width: '100%', height: 'auto' }}
+            src='https://www.youtube.com/embed/7MyhioD2f8k?si=fO3m5xBHnBrJ3-zr'
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerPolicy='strict-origin-when-cross-origin'
+            allowFullScreen
+          ></iframe>
         </Reveal>
       </Col>
     </Row>
