@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { metadata } from '../../shared-metadata'
+import NewsArticle from '../../../components/NewsArticle/NewsArticle'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -10,5 +11,9 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default function Page() {
-  return <></>
+  return (
+    <>
+      <NewsArticle />
+    </>
+  )
 }

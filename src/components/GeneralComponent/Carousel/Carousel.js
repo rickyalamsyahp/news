@@ -10,6 +10,7 @@ import Carousel3 from '../../../assets/images/carousel-3.png'
 import { ButtonSecondary } from '../CustomButton/CustomButton'
 import { Fragment } from 'react'
 import { Card } from 'react-bootstrap'
+import { Link } from '../../../navigation'
 
 export default function Carousel() {
   const settings = {
@@ -61,7 +62,9 @@ export default function Carousel() {
                     hendrerit maecenas pharetra.
                   </h6>
                 </div>
-                <ButtonSecondary>Read More</ButtonSecondary>
+                <ButtonSecondary>
+                  <Link href='/news-article'> Read More</Link>
+                </ButtonSecondary>
               </div>
               <Image
                 src={data.src}
@@ -88,7 +91,9 @@ export default function Carousel() {
                     hendrerit maecenas pharetra.
                   </h6>
                 </div>
-                <ButtonSecondary mobile={true}>Read More</ButtonSecondary>
+                <ButtonSecondary mobile={true}>
+                  <Link href='/news-article'> Read More</Link>
+                </ButtonSecondary>
               </Card.Body>
             </Card>
           </Fragment>

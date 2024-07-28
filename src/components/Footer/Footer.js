@@ -16,7 +16,9 @@ function Footer() {
         },
         { title: t('hatchery'), link: '/hatchery-farm#hatchery' },
         { title: t('grow-out'), link: '/hatchery-farm#farm' },
-        { title: t('seafood-processing'), link: '#' },
+        { title: t('seafood-processing'), link: '/seafood-processing' },
+        { title: t('animal-health'), link: '/seafood-processing' },
+        { title: t('technical-team'), link: '/technical-team' },
       ],
     },
     {
@@ -36,7 +38,10 @@ function Footer() {
       header: t('contact-us'),
       child: [
         { title: t('contact-us'), link: '/contact-us' },
-        { title: 'Instagram', link: '#' },
+        {
+          title: 'Instagram',
+          link: 'https://www.instagram.com/suritanipemuka/',
+        },
       ],
     },
     {
@@ -67,7 +72,11 @@ function Footer() {
               />
             </Col>
             {linkProduct.map((data, index) => (
-              <Col key={`footer-header-${index}`} xs={6} md='auto'>
+              <Col
+                key={`footer-header-${index}`}
+                xs={6}
+                md={index === 1 ? 'auto' : 2}
+              >
                 <h6 className='fw-bold mb-3 mb-sm-4'>{data.header}</h6>
                 <ul className='list-unstyled d-flex flex-column gap-2 gap-sm-3 mb-5 mb-md-0'>
                   {data.child.map((child, idx) => (

@@ -30,6 +30,10 @@
       .card-container::after {
         opacity: 0;
       }
+      .btn-custom {
+        position: relative;
+        z-index: 999;
+      }
     }
 
     &:not(.slick-active) {
@@ -56,7 +60,6 @@
     left: 20px;
     background: rgba(161, 161, 161, 0.6);
     width: 25vw;
-
     @include media-breakpoint-between(lg, xxl) {
       width: 30vw;
     }

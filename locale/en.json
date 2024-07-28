@@ -62,7 +62,9 @@
     "commitments": "Our Commitment through Actions for Sustainable Aquaculture",
     "about-us": "Passionately Advancing Aquaculture Practices",
     "hatchery-farm": "Welcome to STP Sustainable Hatchery & Farm",
-    "technical-team": "Welcome to STP Sustainable Technical Team & Mobile Lab"
+    "technical-team": "Welcome to STP Sustainable Technical Team & Mobile Lab",
+    "seafood-processing1": "Aquatic Processing",
+    "seafood-processing2": "Quality from Freshwater and Marine"
   },
   "homepage": {
     "total-solutions": {
@@ -193,6 +195,8 @@
     "hatchery": "Shrimp & Fish Hatchery",
     "grow-out": "Shrimp & Fish Farm",
     "seafood-processing": "Seafood Processing",
+    "animal-health": "Animal Health & Mobile Lab",
+    "technical-team": "Shrimp & Fish Technical Team",
     "about-us": "About Us",
     "story": "Story",
     "vision-mission": "Vision & Mission",
@@ -268,6 +272,13 @@
       "long-last": "Long Lasting and Easy to Store",
       "complete-nutrition": "Complete Nutrition"
     }
+  },
+  "seafood-processing": {
+    "introduction": "STP's aquatic processing products cater to different market needs, including the food service industry and the retail market. Our products are known for their superior quality and reliability. We are dedicated to providing high-quality seafood directly to consumers. This reflects our commitment to excellence, ensuring that every product meets high standards for freshness, taste, and sustainability.",
+    "toba-tilapia": "STP's Toba Tilapia, from our integrated production in North Sumatra, offers premium quality. Our tilapia thrive in Lake Toba's pure waters, fed eco-friendly diets, and cultures sustainably in floating net cages. Our advanced processing facility preserves freshness and flavour. With ASC and BAP certifications, we assure traceability and top-notch standards for sustainability and food safety.",
+    "seafood-lovers": "Introducing SeafoodLovers by STP: your top choice for retail seafood. We offer a wide range of high-quality products, from fresh Pangasius Fillet to value-added fish and shrimp. Our modern processing plant in West and East Java, ensures excellent quality with strict quality control. With a secure supply chain and high safety standards, we are your trusted partner for delicious seafood, locally and globally.",
+    "prime-seafood": "Introducing Japfa Prime Seafood: our top-notch value-added products for the food service industry. With an integrated supply chain meeting global standards, we ensure traceability and safety. Our Product Development Team creates custom seafood value added product to global tastes and preferences.",
+    "find-out-more": "Find out more"
   },
   "contact-us": {
     "title": "Get in Touch",

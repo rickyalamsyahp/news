@@ -8,7 +8,7 @@ export default function DescriptionCommitments() {
   const t = useTranslations('homepage.commitments')
   return (
     <Fragment>
-      <Row className='pb-2'>
+      <Row className='pb-2 pt-4'>
         <Col sm={12}>
           <Reveal overflow={true}>
             <Title subtitle={t('subtitle')} />

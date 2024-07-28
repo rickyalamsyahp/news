@@ -62,7 +62,9 @@
     },
     "about-us": "Dengan Penuh Semangat Memajukan Praktik Akuakultur",
     "hatchery-farm": "Selamat datang di STP Sustainable Hatchery & Farm",
-    "technical-team": "Selamat datang di Tim Teknis Berkelanjutan STP & Lab Seluler"
+    "technical-team": "Selamat datang di Tim Teknis Berkelanjutan STP & Lab Seluler",
+    "seafood-processing1": "Pengolahan Akuatik",
+    "seafood-processing2": "Kualitas dari Air Tawar dan Laut"
   },
   "homepage": {
     "total-solutions": {
@@ -193,6 +195,8 @@
     "hatchery": "Pembenihan Udang & Ikan",
     "grow-out": "Ternak Udang & Ikan",
     "seafood-processing": "Pengolahan Makanan Laut",
+    "animal-health": "Kesehatan Hewan & Laboratorium Keliling",
+    "technical-team": "Tim Teknis Udang & Ikan",
     "about-us": "Tentang Kami",
     "story": "Cerita",
     "vision-mission": "Visi & Misi",
@@ -268,6 +272,13 @@
       "long-last": "Tahan Lama dan Mudah Disimpan",
       "complete-nutrition": "Nutrisi Lengkap"
     }
+  },
+  "seafood-processing": {
+    "introduction": "Produk pengolahan akuatik STP memenuhi berbagai kebutuhan pasar, termasuk industri jasa makanan dan pasar eceran. Produk kami dikenal karena kualitas dan keandalannya yang unggul. Kami berdedikasi untuk menyediakan makanan laut berkualitas tinggi langsung kepada konsumen. Hal ini mencerminkan komitmen kami terhadap keunggulan, memastikan bahwa setiap produk memenuhi standar tinggi untuk kesegaran, rasa, dan keberlanjutan.",
+    "toba-tilapia": "Ikan Nila Toba STP, dari produksi terpadu kami di Sumatera Utara, menawarkan kualitas premium. Ikan nila kami tumbuh subur di perairan Danau Toba yang murni, diberi makan makanan ramah lingkungan, dan dibudidayakan secara berkelanjutan di keramba jaring apung. Fasilitas pengolahan kami yang canggih menjaga kesegaran dan rasa. Dengan sertifikasi ASC dan BAP, kami menjamin ketertelusuran dan standar terbaik untuk keberlanjutan dan keamanan pangan.",
+    "seafood-lovers": "Memperkenalkan SeafoodLovers by STP: pilihan utama Anda untuk makanan laut eceran. Kami menawarkan berbagai macam produk berkualitas tinggi, mulai dari Fillet Pangasius segar hingga ikan dan udang bernilai tambah. Pabrik pengolahan modern kami di Jawa Barat dan Jawa Timur, memastikan kualitas yang sangat baik dengan kontrol kualitas yang ketat. Dengan rantai pasokan yang aman dan standar keamanan yang tinggi, kami adalah mitra tepercaya Anda untuk hidangan laut yang lezat, baik secara lokal maupun global.",
+    "prime-seafood": "Memperkenalkan Japfa Prime Seafood: produk bernilai tambah terbaik kami untuk industri jasa makanan. Dengan rantai pasokan terpadu yang memenuhi standar global, kami memastikan keterlacakan dan keamanan. Tim Pengembangan Produk kami menciptakan produk makanan laut bernilai tambah khusus untuk selera dan preferensi global.",
+    "find-out-more": "Cari tahu lebih lanjut"
   },
   "contact-us": {
     "title": "Hubungi Kami",
