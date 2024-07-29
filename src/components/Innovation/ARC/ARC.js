@@ -2,23 +2,22 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import ARCImage from '../../../assets/images/ARC.jpg'
+import ARCImage2 from '../../../assets/images/ARC-2.jpg'
+import ARCImage3 from '../../../assets/images/ARC-3.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
+import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
 export default function ARC() {
   const t = useTranslations('innovation.arc')
+  const dataARC = [{ src: ARCImage }, { src: ARCImage2 }, { src: ARCImage3 }]
   return (
     <section className='py-3 py-md-5 bg-light' id='arc'>
       <Container className='mb-5'>
         <Row className='justify-content-between align-items-center h-100'>
           <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>
             <Reveal direction={'top'} overflow={true}>
-              <Image
-                src={ARCImage}
-                alt='arc-image'
-                className='img-innovation'
-              />
+              <CardEffectCarousel dataCarousel={dataARC} cardWidth={350} />
             </Reveal>
           </Col>
           <Col md={{ span: 4, order: '1' }}>
