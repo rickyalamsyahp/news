@@ -3,8 +3,10 @@ import { Col, Container, Form, Row } from 'react-bootstrap'
 import Breadcrumbs from '../GeneralComponent/Breadcrumbs/Breadcrumbs'
 import Image from 'next/image'
 import Thumbnail from '../../assets/images/species-common-carp.png'
+import { useRouter } from '../../navigation'
 
 function ItemProduct() {
+  const router = useRouter()
   const breadcrumbItemProduct = [
     {
       text: 'Home',
@@ -99,6 +101,9 @@ function ItemProduct() {
               xs={6}
               md={3}
               style={{ cursor: 'pointer' }}
+              onClick={() => {
+                router.push('/item-product-detail')
+              }}
             >
               <Image
                 src={data.image}

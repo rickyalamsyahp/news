@@ -109,6 +109,18 @@ iframe {
   background-size: cover;
   z-index: -1;
 }
+table,
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+th {
+  font-weight: normal;
+  background: #f8fafc !important;
+  font-size: 12px;
+  width: calc(100% / 8);
+}
 @include media-breakpoint-down(lg) {
   h1 {
     font-size: 42px;

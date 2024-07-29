@@ -157,7 +157,7 @@ function NewsArticle() {
                 src={Carousel1}
                 width={200}
                 height={200}
-                objectFit='cover'
+                className='object-fit-cover'
               />
               <div className='d-flex flex-column gap-3'>
                 <h6 className='text-secondary'>Category</h6>
