@@ -11,34 +11,48 @@ function TechnicalTeam() {
   const t = useTranslations('technical-team')
   return (
     <>
-      <section className='bg-white mt-5 overflow-hidden'>
-        <Container className='py-5'>
+      <section
+        className='bg-white mt-0 mt-md-5 overflow-hidden'
+        id='animal-health'
+      >
+        <Container className='py-0 py-md-5'>
           <Row className='py-5 align-items-center'>
-            <Col md={6}>
-              <h2 className='pb-3'>{t('section1.title')}</h2>
-              <h5>{t('section1.description')}</h5>
+            <Col xs={12} md={6}>
+              <h2 className='pb-3 fw-bold'>{t('section1.title')}</h2>
+              <h5 className='d-none d-md-flex'>{t('section1.description')}</h5>
             </Col>
             <Col md={6}>
-              <Image alt='section-1-technical-team' src={Section1} />
+              <Image
+                alt='section-1-technical-team'
+                src={Section1}
+                className='img-right-technical-team'
+              />
+            </Col>
+            <Col xs={12} className='d-flex d-md-none pt-3 '>
+              <h5>{t('section1.description')}</h5>
             </Col>
           </Row>
         </Container>
       </section>
-      <section className='mt-5 overflow-hidden position-relative'>
-        <Container className='py-5'>
-          <Row className='py-5 align-items-center'>
-            <Col md={6}>
+      <section className='mt-0 mt-md-5 overflow-hidden' id='shrimp-fish-tech'>
+        <Container className='py-0 py-md-5'>
+          <Row className='py-5 align-items-center position-relative'>
+            <Col
+              xs={{ order: 2, span: 12 }}
+              md={{ order: 1, span: 6 }}
+              className='img-left-technical-team-container'
+            >
               <Image
                 alt='section-2-technical-team'
                 src={Section2}
-                className='position-relative'
-                style={{
-                  left: '-130%',
-                }}
+                className='img-right-technical-team'
               />
             </Col>
-            <Col md={6}>
-              <h2 className='pb-3'>{t('section2.title')}</h2>
+            <Col xs={{ order: 1, span: 12 }} md={6}>
+              <h2 className='pb-3 fw-bold'>{t('section2.title')}</h2>
+              <h5 className='d-none d-md-flex'>{t('section2.description')}</h5>
+            </Col>
+            <Col xs={{ order: 3, span: 12 }} className='d-flex d-md-none pt-3 '>
               <h5>{t('section2.description')}</h5>
             </Col>
           </Row>

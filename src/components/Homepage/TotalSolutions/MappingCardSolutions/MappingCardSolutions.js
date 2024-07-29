@@ -33,19 +33,19 @@ export default function MappingCardSolutions() {
     {
       text: t('animal-health'),
       image: 'animal-health',
-      link: '#',
+      link: '/technical-team#animal-health',
       delay: 0,
     },
     {
       text: t('technical-team'),
       image: 'technical-team',
-      link: '/technical-team',
+      link: '/technical-team#shrimp-fish-tech',
       delay: 0.5,
     },
     {
       text: t('innovations'),
       image: 'innovations',
-      link: '/innovations',
+      link: '/innovation',
       delay: 1,
     },
   ]

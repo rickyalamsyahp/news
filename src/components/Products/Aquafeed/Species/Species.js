@@ -1,9 +1,13 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Col, Container, Row } from 'react-bootstrap'
+import { useRouter } from '../../../../navigation'
 
 function Species() {
   const t = useTranslations('aquafeed.species')
+  const router = useRouter()
   const dataAquafeed = [
     {
       text: 'Tilapia',
@@ -65,7 +69,10 @@ function Species() {
               xl={3}
               className='gy-4'
             >
-              <div className='card-species'>
+              <div
+                className='card-species'
+                onClick={() => router.push('item-product')}
+              >
                 <Image
                   src={`/${res.image}.png`}
                   alt={res.image}

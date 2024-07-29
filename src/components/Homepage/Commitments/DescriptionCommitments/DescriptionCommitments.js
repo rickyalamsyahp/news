@@ -1,11 +1,15 @@
+'use client'
+
 import React, { Fragment } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { Title } from '../../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../../Animation/Reveal/Reveal'
+import { useRouter } from '../../../../navigation'
 
 export default function DescriptionCommitments() {
   const t = useTranslations('homepage.commitments')
+  const router = useRouter()
   return (
     <Fragment>
       <Row className='pb-2 pt-4'>
@@ -24,7 +28,11 @@ export default function DescriptionCommitments() {
         <Col sm={12} md={6}>
           <Reveal overflow={true}>
             <div className='d-flex justify-content-between flex-column gap-2 gap-md-5'>
-              <Title description={t('description')} readMore={t('see-all')} />
+              <Title
+                description={t('description')}
+                readMore={t('see-all')}
+                onClick={() => router.push('/commitments')}
+              />
             </div>
           </Reveal>
         </Col>

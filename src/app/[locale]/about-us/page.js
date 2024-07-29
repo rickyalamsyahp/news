@@ -18,14 +18,18 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default function Page() {
   return (
-    <section className='bg-secondary-subtle'>
+    <>
       <Hero />
-      <Introduction />
-      <Journey />
-      <VisionMission />
-      <CoreValue />
-      <Operations />
-      <Certification />
-    </section>
+      <section className='bg-border'>
+        <Introduction />
+        <Journey />
+        <VisionMission />
+        <CoreValue />
+      </section>
+      <section className='bg-secondary-subtle'>
+        <Operations />
+        <Certification />
+      </section>
+    </>
   )
 }

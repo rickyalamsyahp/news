@@ -27,7 +27,7 @@ export default function ATD() {
                 <Title
                   description={t('description')}
                   title={'Aquaculture Technology Development (ATD)'}
-                  readMore={t('download')}
+                  download={t('download')}
                 />
               </div>
             </Reveal>

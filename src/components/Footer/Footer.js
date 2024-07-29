@@ -17,8 +17,11 @@ function Footer() {
         { title: t('hatchery'), link: '/hatchery-farm#hatchery' },
         { title: t('grow-out'), link: '/hatchery-farm#farm' },
         { title: t('seafood-processing'), link: '/seafood-processing' },
-        { title: t('animal-health'), link: '/seafood-processing' },
-        { title: t('technical-team'), link: '/technical-team' },
+        { title: t('animal-health'), link: '/technical-team#animal-health' },
+        {
+          title: t('technical-team'),
+          link: '/technical-team#shrimp-fish-tech',
+        },
       ],
     },
     {

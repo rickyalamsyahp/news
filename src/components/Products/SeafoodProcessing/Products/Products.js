@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { Col, Container, Row } from 'react-bootstrap'
 import Tilapia from '../../../../assets/images/tilapia.png'
@@ -21,6 +23,7 @@ function Products() {
               title={'Toba Tolapia'}
               description={t('toba-tilapia')}
               readMore={t('find-out-more')}
+              onClick={() => window.open('https://tobatilapia.com')}
             />
           </Col>
           <Col md={6}>
@@ -37,6 +40,9 @@ function Products() {
               title={'Seafood Lovers'}
               description={t('seafood-lovers')}
               readMore={t('find-out-more')}
+              onClick={() =>
+                window.open('https://www.japfabest.com/collections/seafood')
+              }
             />
           </Col>
         </Row>
@@ -47,6 +53,11 @@ function Products() {
               title={'JAPFA Prime Seafood'}
               description={t('prime-seafood')}
               readMore={t('find-out-more')}
+              onClick={() =>
+                window.open(
+                  'https://www.japfacomfeed.co.id/japfa-prime-seafood',
+                )
+              }
             />
           </Col>
           <Col md={6}>

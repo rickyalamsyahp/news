@@ -90,8 +90,8 @@ function NewsArticle() {
           </h6>
         </div>
         <h2 className='fw-bold py-3 py-md-5'>Sustainability</h2>
-        <Row className='border-2 border-bottom pb-5 mb-5'>
-          <Col xs={6}>
+        <Row className='border-2 border-bottom pb-5 mb-5 gy-3 gy-md-0'>
+          <Col xs={12} md={6}>
             <div className='d-flex align-items-center gap-3'>
               <Image
                 alt='card-sustainability'
@@ -110,7 +110,7 @@ function NewsArticle() {
               </div>
             </div>
           </Col>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <div className='d-flex align-items-center gap-3'>
               <Image
                 alt='card-sustainability'
@@ -130,8 +130,8 @@ function NewsArticle() {
             </div>
           </Col>
         </Row>
-        <Row className='border-2 border-bottom pb-5 mb-5'>
-          <Col xs={6}>
+        <Row className='border-2 border-bottom pb-5 mb-5 gy-3 gy-md-0'>
+          <Col xs={12} md={6}>
             <div className='d-flex align-items-center gap-3'>
               <Image
                 alt='card-sustainability'
@@ -150,7 +150,7 @@ function NewsArticle() {
               </div>
             </div>
           </Col>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <div className='d-flex align-items-center gap-3'>
               <Image
                 alt='card-sustainability'
