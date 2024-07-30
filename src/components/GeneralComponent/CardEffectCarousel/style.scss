@@ -3,7 +3,7 @@
 .stacked-carousel-container {
   height: 600px;
   @include media-breakpoint-down(md) {
-    height: 500px;
+    height: 350px;
   }
   .stacked-carousel-responsive-container {
     height: 100%;
@@ -53,6 +53,9 @@
     object-fit: cover;
     width: 100%;
     height: 800px;
+    @include media-breakpoint-down(md) {
+      height: 350px;
+    }
   }
 
   .twitch-card .cover {

@@ -2,23 +2,20 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import JARSImage from '../../../assets/images/JARS.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
+import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
 export default function JARS() {
   const t = useTranslations('innovation.jars')
+  const dataJARS = [{ src: JARSImage }, { src: JARSImage }]
   return (
     <section className='pb-3 pb-md-5' id='jars'>
       <Container>
         <Row className='justify-content-between align-items-start h-100'>
           <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>
             <Reveal overflow={true} direction={'top'}>
-              <Image
-                src={JARSImage}
-                alt='jars-image'
-                className='img-innovation'
-              />
+              <CardEffectCarousel dataCarousel={dataJARS} cardWidth={350} />
             </Reveal>
           </Col>
           <Col md={{ span: 4, order: '1' }}>

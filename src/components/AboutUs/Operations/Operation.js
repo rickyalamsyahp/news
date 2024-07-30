@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl'
 import { Col, Container, Row } from 'react-bootstrap'
+import IndonesiaMap from '../../../assets/images/indonesia-map.png'
+import Image from 'next/image'
 
 function Operations() {
   const t = useTranslations('about-us')
@@ -52,7 +54,12 @@ function Operations() {
             <h2 className='fw-bold pb-3 text-center'>{t('area')}</h2>
           </Col>
         </Row>
-        <Row className='pt-4 justify-content-between'>
+        <Image
+          alt='indonesia-map'
+          src={IndonesiaMap}
+          className='w-100 h-auto'
+        />
+        <Row className='pt-4 justify-content-evenly justify-content-md-between'>
           <Col xs={5} className='p-0'>
             {operations1.map((data, index) => (
               <div

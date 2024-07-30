@@ -42,7 +42,7 @@ function VisionMission() {
           </Col>
           <Col xs={12} md={{ span: 6, order: '1' }} className='py-5 px-5'>
             <div className='py-4 card-title gap-5 d-flex flex-column'>
-              <h3>{t('hatchery.shrimp.title')}</h3>
+              <h3 className='fw-bold'>{t('hatchery.shrimp.title')}</h3>
               <h5>{t('hatchery.shrimp.description1')}</h5>
               <h5>{t('hatchery.shrimp.description2')}</h5>
             </div>
@@ -56,7 +56,7 @@ function VisionMission() {
             <Row className='flex-column h-100 justify-content-between align-items-center'>
               <Col md={12} className='py-5 px-4'>
                 <div className='py-4 card-title gap-5 d-flex flex-column'>
-                  <h3>{t('hatchery.fish.title')}</h3>
+                  <h3 className='fw-bold'>{t('hatchery.fish.title')}</h3>
                   <h5>{t('hatchery.fish.description1')}</h5>
                   <h5>{t('hatchery.fish.description2')}</h5>
                 </div>

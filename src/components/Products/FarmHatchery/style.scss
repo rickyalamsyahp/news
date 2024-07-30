@@ -2,21 +2,21 @@
 
 .card-hatchery-farm {
   border-bottom: 1px solid rgba(208, 211, 217, 1);
-  img {
-    height: 800px;
-    width: 100%;
-    object-fit: cover;
-    @include media-breakpoint-down(md) {
-      height: 500px !important;
-      object-fit: cover;
-    }
-  }
+
   .card-title {
     span {
       h6 {
         cursor: pointer;
         padding-top: 48px;
       }
+    }
+  }
+}
+
+.commitment-section {
+  svg {
+    @include media-breakpoint-down(md) {
+      transform: scale(0.5);
     }
   }
 }
