@@ -34,7 +34,7 @@ function Species() {
       image: 'grouper',
     },
     {
-      text: 'Species 1',
+      text: 'Barramundi',
       image: 'species1',
     },
     {
@@ -42,11 +42,11 @@ function Species() {
       image: 'species2',
     },
     {
-      text: 'Species 3',
+      text: 'Litopenauses Vannamei',
       image: 'species3',
     },
     {
-      text: 'Species 4',
+      text: 'Eel',
       image: 'species4',
     },
     {

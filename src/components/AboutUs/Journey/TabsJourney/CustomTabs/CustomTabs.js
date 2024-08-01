@@ -65,7 +65,7 @@ function CustomTabs({
       >
         <div className='tabs-list d-flex flex-nowrap w-100'>
           {tabs.map((tab, index) => (
-            <h3
+            <h4
               key={index}
               ref={activeTab === index ? activeRef : null}
               className={`tab-item ${activeTab === index ? 'active' : ''} text-warning`}
@@ -73,7 +73,7 @@ function CustomTabs({
               id={`tab-${index}`}
             >
               {tab.title}
-            </h3>
+            </h4>
           ))}
         </div>
       </div>

@@ -38,16 +38,6 @@ function Footer() {
       child: [{ title: t('act-sustainability'), link: '/commitments' }],
     },
     {
-      header: t('contact-us'),
-      child: [
-        { title: t('contact-us'), link: '/contact-us' },
-        {
-          title: 'Instagram',
-          link: 'https://www.instagram.com/suritanipemuka/',
-        },
-      ],
-    },
-    {
       header: t('innovation'),
       child: [
         {
@@ -59,6 +49,16 @@ function Footer() {
           link: '/innovation#atd',
         },
         { title: 'Aquaculture Research Center (ARC)', link: '/innovation#arc' },
+      ],
+    },
+    {
+      header: t('contact-us'),
+      child: [
+        { title: t('contact-us'), link: '/contact-us' },
+        {
+          title: 'Instagram',
+          link: 'https://www.instagram.com/suritanipemuka/',
+        },
       ],
     },
   ]

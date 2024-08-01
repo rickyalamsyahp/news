@@ -16,7 +16,7 @@ function Products() {
   return (
     <section className='overflow-hidden section-seafood-processing'>
       <Container>
-        <Row className='align-items-center position-relative pt-5 pt-md-0'>
+        <Row className='align-items-center position-relative pt-5'>
           <Col md={6} className='d-flex flex-column gap-3'>
             <Image src={TobaTilapia} alt='tilapia' />
             <Title
@@ -30,7 +30,7 @@ function Products() {
             <Image src={Tilapia} alt='tilapia' className='img-right-food' />
           </Col>
         </Row>
-        <Row className='align-items-center position-relative'>
+        <Row className='align-items-center position-relative py-0 py-md-5'>
           <Col md={6} className='img-left-food-container'>
             <Image src={Shrimp} alt='tilapia' className='img-left-food' />
           </Col>
@@ -46,7 +46,7 @@ function Products() {
             />
           </Col>
         </Row>
-        <Row className='align-items-center position-relative pt-5 pt-md-0'>
+        <Row className='align-items-center position-relative py-5'>
           <Col md={6} className='d-flex flex-column gap-3'>
             <Image src={PrimeSeafood} alt='prime-seafood' />
             <Title

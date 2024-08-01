@@ -57,7 +57,7 @@ function Operations() {
         <Image
           alt='indonesia-map'
           src={IndonesiaMap}
-          className='w-100 h-auto'
+          className='w-100 h-auto d-none d-md-block'
         />
         <Row className='pt-4 justify-content-evenly justify-content-md-between'>
           <Col xs={5} className='p-0'>
