@@ -21,6 +21,6 @@ deploy:
     - echo "$PROJECT_DIR"
   script:
     - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && git pull origin master"
-    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && docker compose down -v && docker compose up --force-recreate --build -d && docker image prune -f"
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && docker compose down -v && docker compose up --force-recreate --build -d && docker buildx prune -f"
   only:
     - master
