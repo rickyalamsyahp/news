@@ -1,0 +1,21 @@
+services:
+  stp-frontend:
+    container_name: stp-frontend
+    build:
+      context: .
+      target: prod_image
+    image: stp-frontend
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true
+
