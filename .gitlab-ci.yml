@@ -22,5 +22,6 @@ deploy:
   script:
     - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && git pull origin master"
     - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && docker compose down -v && docker compose up --force-recreate --build -d && docker buildx prune -f"
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "docker exec nginx nginx -s reload"
   only:
     - master
