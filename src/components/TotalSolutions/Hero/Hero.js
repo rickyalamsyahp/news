@@ -17,11 +17,11 @@ function Hero() {
           {t('title')}
         </h1>
       </Reveal>
-      <Reveal overflow={true}>
+      {/* <Reveal overflow={true}>
         <h6 className='fw-light text-white m-auto w-75 text-center position-relative z-2 mt-3 d-block d-md-none'>
           {t('description')}
         </h6>
-      </Reveal>
+      </Reveal> */}
     </section>
   )
 }

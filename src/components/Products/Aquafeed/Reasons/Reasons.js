@@ -5,7 +5,6 @@ import Efficient from '../../../../assets/images/eco-friendly.png'
 import Unmatched from '../../../../assets/images/unmatched.png'
 import LongLasting from '../../../../assets/images/long-last.png'
 import CompleteNutrition from '../../../../assets/images/complete-nutrition.png'
-import BGAquafeed2 from '../../../../assets/images/bg-aquafeed-2.png'
 import Image from 'next/image'
 
 function Reasons() {
@@ -50,11 +49,11 @@ function Reasons() {
           ))}
         </Row>
       </Container>
-      <Image
+      {/* <Image
         src={BGAquafeed2}
         alt='bg-aquafeed2'
         className='position-absolute start-0 top-0'
-      />
+      /> */}
     </section>
   )
 }

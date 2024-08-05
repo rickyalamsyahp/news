@@ -17,15 +17,15 @@ function DescriptionProduct() {
         </div>
       </div>
       <div className='d-flex flex-column justify-content-between gap-2 gap-md-3'>
-        <div className='d-flex flex-row'>
+        <div className='d-flex flex-row gap-2 gap-md-0'>
           <h6 className='text-dark w-25'>Species </h6>
           <h5 className='fw-bold'>Common Carp </h5>
         </div>
-        <div className='d-flex flex-row'>
+        <div className='d-flex flex-row gap-2 gap-md-0'>
           <h6 className='text-dark w-25'>Stage </h6>
           <h5 className='fw-bold'>Grower </h5>
         </div>
-        <div className='d-flex flex-row'>
+        <div className='d-flex flex-row gap-2 gap-md-0'>
           <h6 className='text-dark w-25'>Category </h6>
           <h5 className='fw-bold'>Premium </h5>
         </div>

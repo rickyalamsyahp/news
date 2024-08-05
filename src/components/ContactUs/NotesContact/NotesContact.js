@@ -16,15 +16,24 @@ function NotesContact() {
     slidesToShow: 3,
     centerMode: false,
     slidesToScroll: 3,
-    variableWidth: false,
     responsive: [
       {
         breakpoint: 992,
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: true,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: true,
-          variableWidth: true,
+          adaptiveWidth: true,
+          arrows: false,
         },
       },
     ],

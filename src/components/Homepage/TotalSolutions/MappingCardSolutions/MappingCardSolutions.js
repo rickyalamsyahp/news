@@ -51,7 +51,7 @@ export default function MappingCardSolutions() {
   ]
   return (
     <Col className='pt-4'>
-      <Row className='justify-content-center g-xl-4 gy-4 gx-2 gy-xl-1'>
+      <Row className='justify-content-start justify-content-md-center g-xl-4 gy-4 gx-2 gy-xl-1'>
         {cardSolutions.map((data, index) => (
           <Col
             xs={6}
