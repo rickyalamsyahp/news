@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Col, Container, Row } from 'react-bootstrap'
 import { useRouter } from '../../../../navigation'
+import Reveal from '../../../Animation/Reveal/Reveal'
 
 function Species() {
   const t = useTranslations('aquafeed.species')
@@ -38,10 +39,6 @@ function Species() {
       image: 'species1',
     },
     {
-      text: 'Species 2',
-      image: 'species2',
-    },
-    {
       text: 'Litopenauses Vannamei',
       image: 'species3',
     },
@@ -57,8 +54,12 @@ function Species() {
   return (
     <section className='bg-primary-subtle pb-5'>
       <Container>
-        <h1 className='fw-bold py-5'>{t('title')}</h1>
-        <h4>{t('description')}</h4>
+        <Reveal direction='top' overflow={true}>
+          <h1 className='fw-bold py-5'>{t('title')}</h1>
+        </Reveal>
+        <Reveal direction='top' overflow={true}>
+          <h4>{t('description')}</h4>
+        </Reveal>
         <Row className='justify-content-center justify-content-lg-start pb-5'>
           {dataAquafeed.map((res, index) => (
             <Col
@@ -69,17 +70,19 @@ function Species() {
               xl={3}
               className='gy-4'
             >
-              <div
-                className='card-species'
-                onClick={() => router.push('item-product')}
-              >
-                <Image
-                  src={`/${res.image}.png`}
-                  alt={res.image}
-                  fill
-                  className='image-species'
-                />
-              </div>
+              <Reveal delay={index / 4} direction='left' overflow={true}>
+                <div
+                  className='card-species'
+                  onClick={() => router.push('item-product')}
+                >
+                  <Image
+                    src={`/${res.image}.png`}
+                    alt={res.image}
+                    fill
+                    className='image-species'
+                  />
+                </div>
+              </Reveal>
               <h4 className='text-center fw-bold'>{res.text}</h4>
             </Col>
           ))}

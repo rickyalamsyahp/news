@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { metadata } from '../../shared-metadata'
 import ItemProductDetail from '../../../components/ItemProductDetail/ItemProductDetail'
+import RelatedProduct from '../../../components/ItemProductDetail/RelatedProduct/RelatedProduct'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -12,8 +13,9 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default function Page() {
   return (
-    <section className='bg-secondary-subtle'>
+    <section>
       <ItemProductDetail />
+      <RelatedProduct />
     </section>
   )
 }

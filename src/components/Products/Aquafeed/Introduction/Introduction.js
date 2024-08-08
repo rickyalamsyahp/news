@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap'
 import Breadcrumbs from '../../../GeneralComponent/Breadcrumbs/Breadcrumbs'
 import Image from 'next/image'
 import BGAquafeed1 from '../../../../assets/images/bg-aquafeed-1.png'
+import Reveal from '../../../Animation/Reveal/Reveal'
 
 function Introduction() {
   const t = useTranslations('aquafeed.introduction')
@@ -28,8 +29,12 @@ function Introduction() {
       <Container className='pt-2 pt-md-5'>
         <Breadcrumbs data={dataBreadCrumb} />
         <div className='w-75 mb-5'>
-          <h2 className='fw-bold my-5'>{t('title')}</h2>
-          <h3 className='pb-5'>{t('description')}</h3>
+          <Reveal direction='top' overflow={true}>
+            <h2 className='fw-bold my-5'>{t('title')}</h2>
+          </Reveal>
+          <Reveal direction='top' overflow={true}>
+            <h3 className='pb-5'>{t('description')}</h3>
+          </Reveal>
         </div>
         <Image
           alt='bg-aquafeed1'

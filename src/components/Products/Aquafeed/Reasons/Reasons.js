@@ -6,6 +6,7 @@ import Unmatched from '../../../../assets/images/unmatched.png'
 import LongLasting from '../../../../assets/images/long-last.png'
 import CompleteNutrition from '../../../../assets/images/complete-nutrition.png'
 import Image from 'next/image'
+import Reveal from '../../../Animation/Reveal/Reveal'
 
 function Reasons() {
   const t = useTranslations('aquafeed.reasons')
@@ -37,15 +38,16 @@ function Reasons() {
         <h2 className='fw-bold text-center'>{t('title')}</h2>
         <Row className='justify-content-center align-items-center gy-4'>
           {dataReasons.map((res, index) => (
-            <Col
-              key={`reason-${index}`}
-              xs={6}
-              md={12}
-              className='py-3 d-flex align-items-center flex-column gap-3'
-            >
-              <Image alt={res.description} src={res.image} />
-              <h3>{res.description}</h3>
-            </Col>
+            <Reveal direction='bottom' overflow={true} key={`reason-${index}`}>
+              <Col
+                xs={6}
+                md={12}
+                className='py-3 d-flex align-items-center flex-column gap-3'
+              >
+                <Image alt={res.description} src={res.image} />
+                <h3>{res.description}</h3>
+              </Col>
+            </Reveal>
           ))}
         </Row>
       </Container>

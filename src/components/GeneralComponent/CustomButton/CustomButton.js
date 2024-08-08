@@ -27,11 +27,17 @@ export function ButtonSecondary({ children, mobile }) {
   )
 }
 
-export function ButtonThird({ children, onSubmit }) {
+export function ButtonThird({
+  children,
+  onSubmit,
+  variant,
+  className,
+  noArrow,
+}) {
   return (
     <Button
-      variant={'warning'}
-      className={`btn-custom text-white nunito-sans`}
+      variant={variant ? variant : 'warning'}
+      className={`btn-custom ${variant ? className : 'text-white'} nunito-sans`}
       style={{
         padding: '16px 24px',
         borderRadius: '4px',
@@ -39,7 +45,7 @@ export function ButtonThird({ children, onSubmit }) {
       type={onSubmit}
     >
       {children}
-      <ArrowRight />
+      {noArrow ? '' : <ArrowRight />}
     </Button>
   )
 }

@@ -20,6 +20,8 @@ function Reveal({ children, overflow, delay, direction }) {
   const standardVisible = { opacity: 1, y: 0 }
   const topHidden = { opacity: 0, y: -300 }
   const topVisible = { opacity: 1, y: 0 }
+  const bottomHidden = { opacity: 0, y: 300 }
+  const bottomVisible = { opacity: 1, y: 0 }
   const leftHidden = { opacity: 0, x: -150 }
   const leftVisible = { opacity: 1, x: 0 }
   const rightHidden = { opacity: 0, x: 150 }
@@ -38,6 +40,10 @@ function Reveal({ children, overflow, delay, direction }) {
           visible: rightVisible,
         }
       case 'bottom':
+        return {
+          hidden: bottomHidden,
+          visible: bottomVisible,
+        }
       case 'left':
         return {
           hidden: leftHidden,
