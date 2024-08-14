@@ -2,7 +2,7 @@ import HeroHomepage from '../../../assets/images/Hero-Home.gif'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 
-function Hero() {
+function Hero({ dataHero }) {
   const t = useTranslations('hero')
   return (
     <section
@@ -14,7 +14,7 @@ function Hero() {
     >
       <Reveal>
         <h1 className='fw-bold text-white m-auto w-75 text-center position-relative z-2'>
-          {t('homepage')}
+          {dataHero?.headline ? dataHero.headline : t('homepage')}
         </h1>
       </Reveal>
     </section>

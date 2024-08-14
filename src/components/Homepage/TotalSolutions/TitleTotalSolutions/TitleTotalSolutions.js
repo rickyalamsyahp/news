@@ -5,7 +5,7 @@ import { Title } from '../../../GeneralComponent/Title/Title'
 import Reveal from '../../../Animation/Reveal/Reveal'
 import { useRouter } from '../../../../navigation'
 
-export function TitleTotalSolutions() {
+export function TitleTotalSolutions({ headline }) {
   const router = useRouter()
   const t = useTranslations('homepage.total-solutions')
   return (
@@ -14,7 +14,7 @@ export function TitleTotalSolutions() {
         <div className='d-flex flex-column gap-4 '>
           <Title
             subtitle={t('subtitle')}
-            title={t('title')}
+            title={headline ? headline : t('title')}
             readMore={t('see-all')}
             onClick={() => router.push('/total-solutions')}
           />

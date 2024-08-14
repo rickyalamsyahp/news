@@ -17,7 +17,7 @@ export default function Thumbnail() {
             referrerPolicy='strict-origin-when-cross-origin'
             allowFullScreen
           ></iframe> */}
-          <Video src={STPVideo} />
+          {/* <Video src={STPVideo} /> */}
         </Reveal>
       </Col>
     </Row>

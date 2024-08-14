@@ -8,7 +8,7 @@ export default function Commitment() {
   return (
     <section className='py-4 py-md-5 overflow-hidden' id='commitments-homepage'>
       <Container>
-        <Thumbnail />
+        {/* <Thumbnail /> */}
         <DescriptionCommitments />
         <CountCommitments />
       </Container>
