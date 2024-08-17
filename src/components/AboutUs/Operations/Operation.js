@@ -1,6 +1,6 @@
 'use client'
 
-//import {  useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { Col, Container, Row } from 'react-bootstrap'
 //import IndonesiaMap from '../../../assets/images/indonesia-map.png'
 //import Image from 'next/image'
@@ -14,6 +14,7 @@ import Area from './Area'
 const Map = dynamic(() => import('./Map'), { ssr: false });
 
 function Operations() {
+  const t = useTranslations('about-us')
   const [geojsonData, setGeojsonData] = useState(null);
   const [provinceData, setProvinceData] = useState(null);
   const [areaData, setAreaData] = useState(null);
@@ -80,9 +81,6 @@ function Operations() {
     return <div>No data found</div>;
   }
 
-  //const t = useTranslations('about-us')
-  const title = 'Our Area of Operations'
-
   return (
     <section
       className='bg-white pt-3 pt-md-5 position-relative'
@@ -91,7 +89,7 @@ function Operations() {
       <Container className='py-3 py-md-5'>
         <Row>
           <Col xs={12}>
-            <h2 className='fw-bold pb-3 text-center'>{title}</h2>
+            <h2 className='fw-bold pb-3 text-center'>{t('area')}</h2>
           </Col>
         </Row>
         {/*
