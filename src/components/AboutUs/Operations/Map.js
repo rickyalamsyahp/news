@@ -2,11 +2,9 @@ import { MapContainer, GeoJSON, useMap } from 'react-leaflet';
 import { useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import './Map.css';
-import L from 'leaflet';
+//import L from 'leaflet';
 
 const Map = ({ geojsonData, provinceData }) => {
-  const allowedProv = [11, 12, 18, 32, 35] //dummy
-  //console.log(geojsonData)
   console.log(provinceData)
 
   const defaultStyle = {

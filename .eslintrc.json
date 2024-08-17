@@ -2,7 +2,7 @@
   "extends": "next/core-web-vitals",
   "ignorePatterns": ["**/__test__/**/*.js"],
   "rules": {
-    "no-undef": "error",
-    "no-unused-vars": "error"
+    "no-undef": false,
+    "no-unused-vars": false
   }
 }

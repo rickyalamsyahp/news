@@ -1,9 +1,9 @@
 'use client'
 
-import {  useTranslations } from 'next-intl'
+//import {  useTranslations } from 'next-intl'
 import { Col, Container, Row } from 'react-bootstrap'
-import IndonesiaMap from '../../../assets/images/indonesia-map.png'
-import Image from 'next/image'
+//import IndonesiaMap from '../../../assets/images/indonesia-map.png'
+//import Image from 'next/image'
 
 import axios from 'axios';
 import dynamic from 'next/dynamic'
