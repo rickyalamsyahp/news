@@ -3,6 +3,7 @@ import { metadata } from '../../shared-metadata'
 import Emphasizing from '../../../components/Commitments/Emphasizing/Emphasizing'
 import Hero from '../../../components/Commitments/Hero/Hero'
 import Empowering from '../../../components/Commitments/Empowering/Empowering'
+import { getPages } from '../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -12,12 +13,24 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Page() {
+export default async function Page({ locale }) {
+  const pages = await getPages({ locale, filter: '/commitments' })
+  const {
+    data: { data },
+  } = pages
+  const dataContent = data[0]?.attributes?.content
+  const dataHero = dataContent?.filter(item => item?.title === 'Hero')
+  const dataEmphasizing = dataContent?.filter(
+    item => item?.title === 'Emphasizing',
+  )
+  const dataEmpowering = dataContent?.filter(
+    item => item?.title === 'Empowering',
+  )
   return (
     <>
-      <Hero />
-      <Emphasizing />
-      <Empowering />
+      <Hero dataHero={dataHero} />
+      <Emphasizing dataEmphasizing={dataEmphasizing} />
+      <Empowering dataEmpowering={dataEmpowering} />
     </>
   )
 }

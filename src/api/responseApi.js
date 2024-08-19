@@ -44,7 +44,7 @@ export const getProducts = async ({ locale }) => {
     console.log(error)
   }
 }
-export const getPages = async ({ locale }) => {
+export const getPages = async ({ locale, filter }) => {
   try {
     const config = {
       params: {
@@ -52,6 +52,7 @@ export const getPages = async ({ locale }) => {
         'sort[1]': 'publishedAt:desc',
         locale,
         populate: '*',
+        'filters[url][$eq]': filter,
       },
     }
 

@@ -10,7 +10,7 @@ function Hero({ dataHero }) {
       className='hero'
       id='hero-homepage'
       style={{
-        backgroundImage: `url(${dataHero ? dataHero[0]?.url : HeroAboutUs.src})`,
+        backgroundImage: `url(${HeroAboutUs.src})`,
       }}
     >
       <Reveal>

@@ -9,9 +9,9 @@ import Carousel from '../../GeneralComponent/Carousel/Carousel'
 import Reveal from '../../Animation/Reveal/Reveal'
 import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
-export default function Empowering() {
+export default function Empowering({ dataEmpowering }) {
   const t = useTranslations('commitments.empowering')
-  const dataEmpowering = [
+  const dataEmpoweringCarousel = [
     { src: EmpoweringImage2 },
     { src: EmpoweringImage3 },
     { src: EmpoweringImage4 },
@@ -24,7 +24,7 @@ export default function Empowering() {
           <Col md={5}>
             <Reveal overflow={true} direction={'top'}>
               <CardEffectCarousel
-                dataCarousel={dataEmpowering}
+                dataCarousel={dataEmpoweringCarousel}
                 cardWidth={350}
               />
             </Reveal>
@@ -32,8 +32,17 @@ export default function Empowering() {
           <Col md={6}>
             <Reveal direction={'right'} overflow={true}>
               <div className='d-flex gap-3 gap-md-5 flex-column mt-3 mt-md-5'>
-                <Title description={t('description1')} title={t('title')} />
-                <Title description={t('description2')} />
+                <Title
+                  description={
+                    dataEmpowering
+                      ? dataEmpowering[0]?.highlight
+                      : t('description1')
+                  }
+                  title={
+                    dataEmpowering ? dataEmpowering[0]?.headline : t('title')
+                  }
+                />
+                {/* <Title description={t('description2')} /> */}
               </div>
             </Reveal>
           </Col>

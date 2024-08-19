@@ -25,7 +25,7 @@ function Operations() {
     const fetchProvinceData = async () => {
       try {
         const urlgeojson = process.env.NEXT_PUBLIC_WEBSITE_BASE_URL + '/indonesia.json'
-        const urlarea = process.env.NEXT_PUBLIC_API_URL + '/areas?pagination[limit]=10&sort[1]=ordering:asc&locale=id-ID&populate=*'
+        const urlarea = process.env.NEXT_PUBLIC_HOST + '/areas?pagination[limit]=10&sort[1]=ordering:asc&locale=id-ID&populate=*'
         const [response1, response2] = await Promise.all([
           axios.get(urlgeojson),
           axios.get(urlarea),
