@@ -11,7 +11,7 @@ import Relentless from '../../../assets/images/relentless.png'
 import { CardValue } from './CardValue/CardValue'
 import { useState } from 'react'
 
-function CoreValue() {
+function CoreValue({ dataOurValues }) {
   const [active, setActive] = useState(0)
   const [transition, setTransition] = useState(false)
   const t = useTranslations('about-us.values')
@@ -42,7 +42,9 @@ function CoreValue() {
         <Row>
           <Col>
             <h3 className='fw-bold pb-3'>{t('title')}</h3>
-            <h4 className='pb-3'>{t('description')}</h4>
+            <h4 className='pb-3'>
+              {dataOurValues ? dataOurValues[0]?.highlight : t('description')}
+            </h4>
           </Col>
           <Col className='d-flex flex-row justify-content-between align-items-center pt-5'>
             {cardValues.map((data, index) => (

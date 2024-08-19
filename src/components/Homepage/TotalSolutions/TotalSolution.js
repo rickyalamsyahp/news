@@ -4,7 +4,8 @@ import MappingCardSolutions from './MappingCardSolutions/MappingCardSolutions'
 import { TitleTotalSolutions } from './TitleTotalSolutions/TitleTotalSolutions'
 
 function TotalSolutions({ dataSolutions }) {
-  const headline = dataSolutions?.headline
+  const headline = dataSolutions && dataSolutions[0].headline
+
   return (
     <section className='bg-light py-2 py-md-5' id='total-solution-homepage'>
       <Container>

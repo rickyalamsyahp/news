@@ -2,19 +2,20 @@ import HeroAboutUs from '../../../assets/images/Hero-About-Us.jpg'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 
-function Hero() {
+function Hero({ dataHero }) {
   const t = useTranslations('hero')
+
   return (
     <section
       className='hero'
       id='hero-homepage'
       style={{
-        backgroundImage: `url(${HeroAboutUs.src})`,
+        backgroundImage: `url(${dataHero ? dataHero[0]?.url : HeroAboutUs.src})`,
       }}
     >
       <Reveal>
         <h1 className='fw-bold text-white m-auto w-75 text-center position-relative z-2'>
-          {t('about-us')}
+          {dataHero ? dataHero[0]?.headline : t('about-us')}
         </h1>
       </Reveal>
     </section>

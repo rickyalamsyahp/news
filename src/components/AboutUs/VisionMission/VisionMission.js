@@ -8,7 +8,7 @@ import VisionImage from '../../../assets/images/vision-image.jpg'
 import MissionImage from '../../../assets/images/mission-image.jpg'
 import { useEffect, useState } from 'react'
 
-function VisionMission() {
+function VisionMission({ dataOurVision, dataOurMission }) {
   const [showDetailVision, setShowDetailVision] = useState(0)
   const [showDetailMission, setShowDetailMission] = useState(0)
   const t = useTranslations('about-us.vision-mission')
@@ -39,14 +39,22 @@ function VisionMission() {
           <Col md={{ span: 5, order: '2' }} className='p-0 position-relative'>
             <Image
               alt='vision-image'
-              src={VisionImage}
+              src={
+                dataOurVision && dataOurVision[0]?.url !== null
+                  ? dataOurVision[0]?.url
+                  : VisionImage
+              }
               className='w-100 h-auto'
             />
             <div
               className={`p-3 bg-warning position-absolute top-0 h-100 w-100 opacity-${showDetailVision} card-detail-vision`}
             >
               <div className='border border-white h-100 rounded-4 px-5 d-flex align-items-center flex-colum justify-content-center text-white'>
-                <h5>{t('vision.detail')}</h5>
+                <h5>
+                  {dataOurVision
+                    ? dataOurVision[0]?.highlight
+                    : t('vision.detail')}
+                </h5>
               </div>
             </div>
           </Col>
@@ -54,7 +62,11 @@ function VisionMission() {
             <div className='py-4 card-title d-flex flex-column'>
               <Title
                 subtitle={t('vision.title')}
-                title={t('vision.description')}
+                title={
+                  dataOurVision
+                    ? dataOurVision[0]?.headline
+                    : t('vision.description')
+                }
                 readMore={t('readmore')}
                 onClick={handleClickVision}
               />
@@ -65,14 +77,22 @@ function VisionMission() {
           <Col md={{ span: 5, order: '1' }} className='p-0 position-relative'>
             <Image
               alt='mission-image'
-              src={MissionImage}
+              src={
+                dataOurMission && dataOurMission[0]?.url !== null
+                  ? dataOurMission[0]?.url
+                  : MissionImage
+              }
               className='w-100 h-100 object-fit-cover'
             />
             <div
               className={`p-3 position-absolute top-0 h-100 w-100 opacity-${showDetailMission} card-detail-mission`}
             >
               <div className='border border-white h-100 rounded-4 px-5 d-flex align-items-center flex-colum justify-content-center text-white'>
-                <h5>{t('mission.detail')}</h5>
+                <h5>
+                  {dataOurVision
+                    ? dataOurVision[0]?.highlight
+                    : t('mission.detail')}
+                </h5>
               </div>
             </div>
           </Col>
@@ -82,7 +102,11 @@ function VisionMission() {
                 <div className='py-4 card-title d-flex flex-column'>
                   <Title
                     subtitle={t('mission.title')}
-                    title={t('mission.description')}
+                    title={
+                      dataOurMission
+                        ? dataOurMission[0]?.headline
+                        : t('mission.description')
+                    }
                     readMore={t('readmore')}
                     onClick={handleClickMission}
                   />

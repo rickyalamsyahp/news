@@ -4,15 +4,18 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Image from 'next/image'
 import IntroductionImage from '../../../assets/images/intro-about-us.png'
 
-export default function Introduction() {
+export default function Introduction({ dataIntro }) {
   const t = useTranslations('about-us')
+
   return (
     <section className='py-4 py-lg-5' id='introduction'>
       <Container className='py-0 py-lg-5'>
         <Row className='text-center pb-3 pb-lg-5'>
           <Col>
             <Reveal overflow={true}>
-              <h3 className='text-secondary'>{t('introduction')}</h3>
+              <h3 className='text-secondary'>
+                {dataIntro ? dataIntro[0]?.highlight : t('introduction')}
+              </h3>
             </Reveal>
           </Col>
         </Row>
@@ -21,7 +24,11 @@ export default function Introduction() {
             <Reveal overflow={true}>
               <Image
                 alt='image-introduction-about-us'
-                src={IntroductionImage}
+                src={
+                  dataIntro && dataIntro[0]?.url !== null
+                    ? dataIntro[0]?.url
+                    : IntroductionImage
+                }
                 className='img-innovation'
               />
             </Reveal>

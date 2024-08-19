@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl'
 import Reveal from '../../../Animation/Reveal/Reveal'
 import { useRouter } from '../../../../navigation'
 
-export default function DescriptionCommitments() {
+export default function DescriptionCommitments({ headline, highlight }) {
   const t = useTranslations('homepage.commitments')
   const router = useRouter()
   return (
@@ -22,14 +22,14 @@ export default function DescriptionCommitments() {
       <Row className='pb-2 pb-lg-5'>
         <Col sm={12} md={6} className='d-flex align-items-end mb-3 mb-lg-0'>
           <Reveal overflow={true}>
-            <Title title={t('title')} />
+            <Title title={headline ? headline : t('title')} />
           </Reveal>
         </Col>
         <Col sm={12} md={6}>
           <Reveal overflow={true}>
             <div className='d-flex justify-content-between flex-column gap-2 gap-md-5'>
               <Title
-                description={t('description')}
+                description={highlight ? highlight : t('description')}
                 readMore={t('see-all')}
                 onClick={() => router.push('/commitments')}
               />

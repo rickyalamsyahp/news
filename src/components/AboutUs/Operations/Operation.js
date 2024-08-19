@@ -1,47 +1,86 @@
+/* eslint-disable no-undef */
 'use client'
 
 import { useTranslations } from 'next-intl'
 import { Col, Container, Row } from 'react-bootstrap'
-import IndonesiaMap from '../../../assets/images/indonesia-map.png'
-import Image from 'next/image'
+//import IndonesiaMap from '../../../assets/images/indonesia-map.png'
+//import Image from 'next/image'
+
+import axios from 'axios';
+import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
+import Area from './Area'
+//import IndonesiaJson from '../../../assets/json/indonesia.json'
+
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
 function Operations() {
   const t = useTranslations('about-us')
-  const operations1 = [
-    {
-      title: '5 Aquafeed',
-      description: 'Medan, Lampung Purwakarta, Gresik, Banyuwangi',
-    },
-    {
-      title: '12 Shrimp Hatcheries',
-      description:
-        'Pidie Jaya, West Bangka, South Lampung, Indramayu, Serang, Cilegon, Rembang, Banyuwangi, Buleleng, Jembrana, Sumbawa, Barru',
-    },
-    {
-      title: '4 Shrimp Farms',
-      description: 'Banyuwangi (2 locations), Situbondo (2 locations)',
-    },
-    {
-      title: '5 Fish Hatcheries',
-      description: 'Karawang, Sleman, Situbondo, Banjar, Tanah Laut',
-    },
-  ]
-  const operations2 = [
-    {
-      title: '3 Fish Farms',
-      description: 'Simalungun, Situbondo, Banyuwangi',
-    },
-    {
-      title: '3 Seafood Processing',
-      description:
-        'Tilapia and Ocean Fish Processing - Simalungun; Value-Added Seafood Processing - Cirebon; Pangasius Processing - Banyuwangi',
-    },
-    {
-      title: '4 Research and Development Facilities',
-      description:
-        'Aquaculture technology and development (Purwakarta), Japfa aquaculture research station (Medan, Purwakarta, Clanjur), Japfa Nutrition Lab (Gresik), aquaculture research center (Banyuwangi).',
-    },
-  ]
+  const [geojsonData, setGeojsonData] = useState(null);
+  const [provinceData, setProvinceData] = useState(null);
+  const [areaData, setAreaData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const fetchProvinceData = async () => {
+      try {
+        const urlgeojson = process.env.NEXT_PUBLIC_WEBSITE_BASE_URL + '/indonesia.json'
+        const urlarea = process.env.NEXT_PUBLIC_API_URL + '/areas?pagination[limit]=10&sort[1]=ordering:asc&locale=id-ID&populate=*'
+        const [response1, response2] = await Promise.all([
+          axios.get(urlgeojson),
+          axios.get(urlarea),
+        ]);
+
+        const dataGeoJson = response1.data;
+        const dataArea = response2.data.data;
+
+        const formattedProvinceData = {};
+        dataArea.forEach(item => {
+          const { title, provinces } = item.attributes;
+          provinces.data.forEach(prov => {
+            const provinceCode = prov.attributes.code;
+            if (!formattedProvinceData[provinceCode]) {
+              formattedProvinceData[provinceCode] = {
+                provinceName: prov.attributes.name,
+                facilities: []
+              };
+            }
+            formattedProvinceData[provinceCode].facilities.push(title);
+          });
+        });
+
+        let formattedAreaData = {};
+        dataArea.forEach(item => {
+          const { title, location, total } = item.attributes;
+          
+          if (!formattedAreaData[item.id]) {
+            formattedAreaData[item.id] = {
+              title: total + ' ' + title,
+              description: location
+            }
+          }
+        });
+
+        setGeojsonData(dataGeoJson);
+        setAreaData(formattedAreaData);
+        setProvinceData(formattedProvinceData);
+      } catch (error) {
+        console.error('Error fetching province data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProvinceData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!areaData || areaData.length === 0) {
+    return <div>No data found</div>;
+  }
 
   return (
     <section
@@ -54,35 +93,15 @@ function Operations() {
             <h2 className='fw-bold pb-3 text-center'>{t('area')}</h2>
           </Col>
         </Row>
+        {/*
         <Image
           alt='indonesia-map'
           src={IndonesiaMap}
           className='w-100 h-auto d-none d-md-block'
         />
-        <Row className='pt-4 justify-content-evenly justify-content-md-between'>
-          <Col xs={5} className='p-0'>
-            {operations1.map((data, index) => (
-              <div
-                key={`operation1-${index}`}
-                className={`${index === operations1.length - 1 ? '' : 'border-bottom border-gray'} d-flex flex-column gap-4 justify-content-start py-4`}
-              >
-                <h4>{data.title}</h4>
-                <h5>{data.description}</h5>
-              </div>
-            ))}
-          </Col>
-          <Col xs={5} className='p-0'>
-            {operations2.map((data, index) => (
-              <div
-                key={`operation2-${index}`}
-                className={`${index === operations2.length - 1 ? '' : 'border-bottom border-gray'} d-flex flex-column gap-4 justify-content-start py-4`}
-              >
-                <h4>{data.title}</h4>
-                <h5>{data.description}</h5>
-              </div>
-            ))}
-          </Col>
-        </Row>
+        */}
+        <Map geojsonData={geojsonData} provinceData={provinceData} />
+        <Area areaData={areaData} />
       </Container>
     </section>
   )

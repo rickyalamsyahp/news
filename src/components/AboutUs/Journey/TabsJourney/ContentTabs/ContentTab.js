@@ -14,13 +14,13 @@ function ContentTab({ tabs, activeTab, transition }) {
                 alt={`img-journey-${tabs[activeTab].title}`}
                 src={tabs[activeTab].content}
                 className={`tab-content ${transition ? 'transition' : ''}`}
+                width={tabs[activeTab].width}
+                height={tabs[activeTab].height}
               />
             </div>
             <div className='description-journey-container d-grid'>
               <div className={`tab-content ${transition ? 'transition' : ''}`}>
-                <h4 className='text-warning fw-bold'>
-                  {tabs[activeTab].title}
-                </h4>
+                <h4 className='text-warning fw-bold'>{tabs[activeTab].text}</h4>
                 <h3 className='fw-bold'>{t(`${tabs[activeTab].title}`)}</h3>
               </div>
             </div>

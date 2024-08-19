@@ -11,8 +11,9 @@ import MENTRI from '../../../assets/images/MENTRI.png'
 import WWF from '../../../assets/images/WWF.png'
 import Image from 'next/image'
 
-function Certification() {
+function Certification({ dataOurCertification }) {
   const t = useTranslations('about-us.certification')
+
   const certifications1 = [BKIPM, GMP, HACCP, BRC, BAP, MUI, OU, MENTRI, WWF]
   return (
     <section
@@ -22,8 +23,16 @@ function Certification() {
       <Container className='py-3 py-md-5'>
         <Row>
           <Col xs={12}>
-            <h2 className='fw-bold pb-4 text-center'>{t('title')}</h2>
-            <h4 className='text-center'>{t('description')}</h4>
+            <h2 className='fw-bold pb-4 text-center'>
+              {dataOurCertification
+                ? dataOurCertification[0]?.headline
+                : t('title')}
+            </h2>
+            <h4 className='text-center'>
+              {dataOurCertification
+                ? dataOurCertification[0]?.highlight
+                : t('description')}
+            </h4>
           </Col>
         </Row>
         <Row className='justify-content-center pt-4 w-75 m-auto'>

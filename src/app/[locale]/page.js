@@ -26,7 +26,6 @@ export default async function Page({ params: { locale } }) {
   const dataSolutions = dataContent?.content.filter(
     item => item?.title === 'Solutions',
   )
-  console.log(dataSolutions)
   const dataCommitments = dataContent?.content.filter(
     item => item?.title === 'Commitments',
   )

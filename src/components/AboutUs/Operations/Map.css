@@ -1,0 +1,7 @@
+.custom-map {
+    background-color: white;
+}
+.leaflet-control-attribution,
+.leaflet-control-zoom {
+  display: none !important;
+}

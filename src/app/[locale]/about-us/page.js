@@ -7,6 +7,7 @@ import CoreValue from '../../../components/AboutUs/CoreValue/CoreValue'
 import Operations from '../../../components/AboutUs/Operations/Operation'
 import Certification from '../../../components/AboutUs/Certification/Certification'
 import Introduction from '../../../components/AboutUs/Introduction/Introduction'
+import { getJourneys, getPages } from '../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -16,19 +17,54 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Page() {
+export default async function Page({ locale }) {
+  const pages = await getPages({ locale })
+  const journeys = await getJourneys({ locale })
+  const {
+    data: { data },
+  } = pages
+  const {
+    data: { data: journey },
+  } = journeys
+
+  const dataHomepage = data?.filter(
+    item => item?.attributes?.title === 'About Us',
+  )
+  const dataContent = dataHomepage[0]?.attributes
+
+  // Extract data for each section in homepage
+  const dataHero = dataContent?.content.filter(item => item?.title === 'Hero')
+  const dataIntro = dataContent?.content.filter(item => item?.title === 'Intro')
+  const dataOurVision = dataContent?.content.filter(
+    item => item?.title === 'Our Vision',
+  )
+  const dataOurMission = dataContent?.content.filter(
+    item => item?.title === 'Our Mission',
+  )
+  const dataOurValues = dataContent?.content.filter(
+    item => item?.title === 'Our Values',
+  )
+  const dataOurOperations = dataContent?.content.filter(
+    item => item?.title === 'Our Operations',
+  )
+  const dataOurCertification = dataContent?.content.filter(
+    item => item?.title === 'Our Certification',
+  )
   return (
     <>
-      <Hero />
+      <Hero dataHero={dataHero} />
       <section className='bg-border'>
-        <Introduction />
-        <Journey />
-        <VisionMission />
-        <CoreValue />
+        <Introduction dataIntro={dataIntro} />
+        <Journey journey={journey} />
+        <VisionMission
+          dataOurVision={dataOurVision}
+          dataOurMission={dataOurMission}
+        />
+        <CoreValue dataOurValues={dataOurValues} />
       </section>
       <section className='bg-secondary-subtle'>
-        <Operations />
-        <Certification />
+        <Operations dataOurOperations={dataOurOperations} />
+        <Certification dataOurCertification={dataOurCertification} />
       </section>
     </>
   )

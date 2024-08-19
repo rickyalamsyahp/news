@@ -3,7 +3,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import TabsJourney from './TabsJourney/TabsJourney'
 
-function OurStory() {
+function OurStory({ journey }) {
   const t = useTranslations('about-us.journey')
   return (
     <section className='pb-5'>
@@ -14,7 +14,7 @@ function OurStory() {
           </Col>
         </Row>
       </Container>
-      <TabsJourney />
+      <TabsJourney journey={journey} />
     </section>
   )
 }
