@@ -12,6 +12,10 @@ const nextConfig = withNextIntl({
         protocol: 'https',
         hostname: 'place-hold.it',
       },
+      {
+        protocol: 'https',
+        hostname: 'stpapi.bypentatone.com',
+      },
     ],
   },
   output: 'standalone',
