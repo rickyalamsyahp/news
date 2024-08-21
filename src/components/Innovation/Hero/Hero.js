@@ -4,12 +4,13 @@ import Reveal from '../../Animation/Reveal/Reveal'
 
 function Hero({ dataHero }) {
   const t = useTranslations('hero.innovation')
+  const image = `${process.env.NEXT_PUBLIC_HOST_IMAGE}${dataHero[0]?.image?.data[0].attributes.url}`
   return (
     <section
       className='hero'
       id='hero-homepage'
       style={{
-        backgroundImage: `url(${HeroInnovation.src})`,
+        backgroundImage: `url(${image ? image : HeroInnovation.src})`,
       }}
     >
       <Reveal>

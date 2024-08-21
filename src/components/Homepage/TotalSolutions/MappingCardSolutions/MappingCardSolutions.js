@@ -3,8 +3,15 @@ import { Col, Row } from 'react-bootstrap'
 import CardSolutions from '../../../GeneralComponent/CardSolutions/CardSolutions'
 import { useTranslations } from 'next-intl'
 
-export default function MappingCardSolutions() {
+export default function MappingCardSolutions({ dataSolutionsCard }) {
   const t = useTranslations('homepage.total-solutions.card')
+  const cardSolutionsApi = dataSolutionsCard.map((data, index) => ({
+    text: data.attributes.title,
+    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`,
+    link: `${data.attributes.url}`,
+    delay: index > 3 ? (index - 4) * 0.5 : index * 0.5,
+  }))
+
   const cardSolutions = [
     {
       text: t('aquafeed'),
@@ -49,10 +56,12 @@ export default function MappingCardSolutions() {
       delay: 1,
     },
   ]
+
+  const cardMappingData = cardSolutionsApi ? cardSolutionsApi : cardSolutions
   return (
     <Col className='pt-4'>
       <Row className='justify-content-start justify-content-md-center g-xl-4 gy-4 gx-2 gy-xl-1'>
-        {cardSolutions.map((data, index) => (
+        {cardMappingData.map((data, index) => (
           <Col
             xs={6}
             md='auto'

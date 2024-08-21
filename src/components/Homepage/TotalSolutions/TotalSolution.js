@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap'
 import MappingCardSolutions from './MappingCardSolutions/MappingCardSolutions'
 import { TitleTotalSolutions } from './TitleTotalSolutions/TitleTotalSolutions'
 
-function TotalSolutions({ dataSolutions }) {
+function TotalSolutions({ dataSolutions, dataSolutionsCard }) {
   const headline = dataSolutions && dataSolutions[0].headline
 
   return (
@@ -12,7 +12,7 @@ function TotalSolutions({ dataSolutions }) {
         <Row className='py-4 flex-column'>
           <TitleTotalSolutions headline={headline} />
 
-          <MappingCardSolutions />
+          <MappingCardSolutions dataSolutionsCard={dataSolutionsCard} />
         </Row>
       </Container>
     </section>

@@ -18,7 +18,8 @@ function TabsJourney({ journey }) {
     width: data.attributes.image.data.attributes.width,
     height: data.attributes.image.data.attributes.height,
   }))
-
+ 
+  
   return (
     <div className='tabs-container d-flex flex-column align-item-center pb-5'>
       <CustomTabs

@@ -12,7 +12,7 @@ export default function CardSolutions({ text, image, delay, link }) {
       <div className='card-solution' onClick={() => router.push(link)}>
         <ArrowTopRight alt='arrow-top-right' className='arrow-top-right' />
         <Image
-          src={`/${image}.png`}
+          src={image ? image : `/${image}.png`}
           fill
           alt={text}
           className='image-solution'

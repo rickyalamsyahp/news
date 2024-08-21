@@ -3,7 +3,7 @@ import { metadata } from '../shared-metadata'
 import Hero from '../../components/Homepage/Hero/Hero'
 import TotalSolutions from '../../components/Homepage/TotalSolutions/TotalSolution'
 import Commitments from '../../components/Homepage/Commitments/Commitment'
-import { getPages } from '../../api/responseApi'
+import { getArticles, getPages, getSolutions } from '../../api/responseApi'
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
 
@@ -14,11 +14,17 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function Page({ params: { locale } }) {
   const pages = await getPages({ locale })
+  const pagesArticle = await getArticles({ locale })
+  const solutions = await getSolutions({ locale })
+
   const {
     data: { data },
   } = pages
 
+  const dataSolutionsCard = solutions?.data?.data
+
   const dataHomepage = data?.filter(item => item?.attributes?.title === 'Home')
+
   const dataContent = dataHomepage[0]?.attributes
 
   // Extract data for each section in homepage
@@ -29,12 +35,22 @@ export default async function Page({ params: { locale } }) {
   const dataCommitments = dataContent?.content.filter(
     item => item?.title === 'Commitments',
   )
+  const dataPortofolio = dataContent?.content.filter(
+    item => item?.title === 'Portfolio',
+  )
 
   return (
     <>
       <Hero dataHero={dataHero} />
-      <TotalSolutions dataSolutions={dataSolutions} />
-      <Commitments dataCommitments={dataCommitments} />
+      <TotalSolutions
+        dataSolutions={dataSolutions}
+        dataSolutionsCard={dataSolutionsCard}
+      />
+      <Commitments
+        dataCommitments={dataCommitments}
+        dataPortofolio={dataPortofolio}
+        pagesArticle={pagesArticle}
+      />
     </>
   )
 }

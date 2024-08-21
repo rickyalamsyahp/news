@@ -15,7 +15,7 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default async function Page({ locale }) {
+export default async function Page({ params: { locale } }) {
   const pages = await getPages({ locale, filter: '/innovation' })
   const {
     data: { data },
