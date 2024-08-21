@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap'
 import Description from './Description/Description'
 import MappingCardSolutions from './MappingCardSolutions/MappingCardSolutions'
 
-function OurProducts({ dataProduct }) {
+function OurProducts({ dataProduct, dataOurProduct }) {
   const highlight = dataProduct[0]?.highlight || undefined
 
   return (
@@ -13,7 +13,7 @@ function OurProducts({ dataProduct }) {
           <Description highlight={highlight} />
         </Row>
         <Row className='pt-3 pt-sm-4 pb-4 pb-sm-5'>
-          <MappingCardSolutions />
+          <MappingCardSolutions dataOurProduct={dataOurProduct} />
         </Row>
       </Container>
     </section>

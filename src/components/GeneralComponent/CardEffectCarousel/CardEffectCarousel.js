@@ -15,7 +15,7 @@ export default function ImageCarousel({ dataCarousel }) {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '30px',
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 3000,
     variableWidth: true,
     arrows: false,

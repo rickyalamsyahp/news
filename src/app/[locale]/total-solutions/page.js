@@ -3,7 +3,7 @@ import { metadata } from '../../shared-metadata'
 import Hero from '../../../components/TotalSolutions/Hero/Hero'
 import OurProducts from '../../../components/TotalSolutions/OurProducts/OurProducts'
 import OurServices from '../../../components/TotalSolutions/OurServices/OurServices'
-import { getPages } from '../../../api/responseApi'
+import { getPages, getSolutions } from '../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -15,9 +15,14 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function Page({ params: { locale } }) {
   const pages = await getPages({ locale })
+  const solutions = await getSolutions({ locale })
   const {
     data: { data },
   } = pages
+
+  const dataOurProduct = solutions?.data?.data.slice(0, 4)
+  const dataOurService = solutions?.data?.data.slice(4, 7)
+
   const dataTotalSolutions = data?.filter(
     item => item?.attributes?.title === 'Total Solutions',
   )
@@ -33,8 +38,8 @@ export default async function Page({ params: { locale } }) {
   return (
     <>
       <Hero dataHero={dataHero} />
-      <OurProducts dataProduct={dataProduct} />
-      <OurServices dataService={dataService} />
+      <OurProducts dataProduct={dataProduct} dataOurProduct={dataOurProduct} />
+      <OurServices dataService={dataService} dataOurService={dataOurService} />
     </>
   )
 }

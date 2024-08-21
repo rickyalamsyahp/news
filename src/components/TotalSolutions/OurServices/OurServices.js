@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap'
 import Description from './Description/Description'
 import MappingCardSolutions from './MappingCardSolutions/MappingCardSolutions'
 
-function OurServices({ dataService }) {
+function OurServices({ dataService, dataOurService }) {
   const highlight = dataService[0]?.highlight || undefined
   const headline = dataService[0]?.headline || undefined
   return (
@@ -13,7 +13,7 @@ function OurServices({ dataService }) {
           <Description highlight={highlight} headline={headline} />
         </Row>
         <Row className='pt-2 pt-sm-4 pb-3 pt-sm-5'>
-          <MappingCardSolutions />
+          <MappingCardSolutions dataOurService={dataOurService} />
         </Row>
       </Container>
     </section>

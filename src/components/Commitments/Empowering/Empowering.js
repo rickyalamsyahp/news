@@ -9,7 +9,9 @@ import Carousel from '../../GeneralComponent/Carousel/Carousel'
 import Reveal from '../../Animation/Reveal/Reveal'
 import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
-export default function Empowering({ dataEmpowering }) {
+export default function Empowering({ dataEmpowering, pagesArticle }) {
+  const pagesArti = pagesArticle && pagesArticle.data.data
+
   const t = useTranslations('commitments.empowering')
   const dataEmpoweringCarousel = [
     { src: EmpoweringImage2 },
@@ -48,7 +50,7 @@ export default function Empowering({ dataEmpowering }) {
           </Col>
         </Row>
       </Container>
-      <Carousel />
+      <Carousel pagesArti={pagesArti} />
     </section>
   )
 }

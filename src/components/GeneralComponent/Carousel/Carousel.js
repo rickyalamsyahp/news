@@ -80,7 +80,7 @@ export default function Carousel({pagesArti}) {
                 className='m-auto w-100 h-100 rounded-2'
               />
             </div>
-            <Card className='d-block d-lg-none card-responsive' >
+            <Card className='d-block d-lg-none card-responsive'>
               <Image
                 alt='carousel-image-1'
                 priority

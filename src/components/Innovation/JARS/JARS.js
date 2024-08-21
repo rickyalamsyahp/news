@@ -8,6 +8,14 @@ import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEf
 
 export default function JARS({ dataJARS }) {
   const t = useTranslations('innovation.jars')
+  const dataJARSCarouselApi = dataJARS
+    ? dataJARS[0].image.data.map((data, index) => ({
+        src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`,
+        width: data.attributes.width,
+        height: data.attributes.height,
+      }))
+    : []
+
   const dataJARSCarousel = [{ src: JARSImage }, { src: JARSImage }]
   return (
     <section className='pb-3 pb-md-5' id='jars'>
@@ -15,10 +23,7 @@ export default function JARS({ dataJARS }) {
         <Row className='justify-content-between align-items-start h-100'>
           <Col md={{ span: 8, order: '2' }} className='mt-3 mt-md-0'>
             <Reveal overflow={true} direction={'top'}>
-              <CardEffectCarousel
-                dataCarousel={dataJARSCarousel}
-                cardWidth={350}
-              />
+              <CardEffectCarousel dataCarousel={dataJARSCarousel} />
             </Reveal>
           </Col>
           <Col md={{ span: 4, order: '1' }}>
