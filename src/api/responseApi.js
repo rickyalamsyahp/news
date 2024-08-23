@@ -146,7 +146,6 @@ export const getSolutions = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'ordering:asc',
         locale,
         populate: '*',
       },
