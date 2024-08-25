@@ -149,6 +149,7 @@ function ContactUs({ cities, solutions }) {
                 {solutions.map((data) => (
                   <option key={data.id} value={data.attributes.title}>{data.attributes.title}</option>
                 ))}
+                <option key='999' value='Others'>Others</option>
               </Form.Select>
             </Form.Group>
           </Row>
