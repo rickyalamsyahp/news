@@ -12,6 +12,8 @@ import {
   PRODUCTS,
   SOLUTIONS,
   SPECIES,
+  CITIES,
+  ADDRESS,
 } from './constant'
 
 const serverAxios = () => axios.create({ withCredentials: true })
@@ -197,6 +199,36 @@ export const getArticleById = async ({ locale, id }) => {
     }
 
     return await serverAxios().get(GET_ARTICLE_BY_ID(id), config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+export const getCities = async () => {
+  try {
+    const config = {
+      params: {
+        'pagination[limit]': 1000,
+        'sort[0]': 'name:asc',
+        'fields[0]':'code',
+        'fields[1]':'name'
+      },
+    }
+
+    return await serverAxios().get(CITIES, config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+export const getAddress = async () => {
+  try {
+    const config = {
+      params: {
+        'pagination[limit]': 1000,
+        'sort[0]': 'title:asc'
+      },
+    }
+
+    return await serverAxios().get(ADDRESS, config)
   } catch (error) {
     console.log(error)
   }

@@ -9,12 +9,21 @@ export async function generateMetadata({ params: { locale } }) {
     ...metadata(t('contact-us.title'), t('contact-us.description')),
   }
 }
+import { getCities, getSolutions, getAddress } from '../../../api/responseApi'
 
-export default function Page() {
+export default async function Page({ params: { locale } }) {
+  const cities = await getCities()
+  const solutions = await getSolutions({ locale })
+  const addresses = await getAddress()
+  console.log(addresses)
+  const city = cities?.data?.data
+  const solution = solutions?.data?.data
+  const address = addresses?.data?.data
+
   return (
     <section className='bg-secondary-subtle'>
-      <FormContact />
-      <NotesContact />
+      <FormContact cities={city} solutions={solution} />
+      <NotesContact  address={address} />
     </section>
   )
 }
