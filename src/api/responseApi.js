@@ -30,14 +30,25 @@ export const getArticles = async ({ locale }) => {
     console.log(error)
   }
 }
-export const getProducts = async ({ locale }) => {
+export const getProducts = async ({
+  locale,
+  species,
+  populates,
+  shapes,
+  phases,
+}) => {
   try {
+    const populate = { ...populates }
+
     const config = {
       params: {
-        'pagination[limit]': 10,
-        'sort[1]': 'publishedAt:desc',
+        'pagination[limit]': 30,
+        'sort[1]': 'feed_name:asc',
         locale,
-        populate: '*',
+        'filters[species][name][$eq]': species,
+        'filters[feed_shapes][name][$eq]': shapes,
+        'filters[phases][name][$eq]': phases,
+        ...populate,
       },
     }
 
@@ -100,7 +111,7 @@ export const getFeedShapes = async ({ locale }) => {
     const config = {
       params: {
         'pagination[limit]': 10,
-        'sort[1]': 'publishedAt:desc',
+        'sort[1]': 'name:asc',
         locale,
         populate: '*',
       },
@@ -116,7 +127,7 @@ export const getPhases = async ({ locale }) => {
     const config = {
       params: {
         'pagination[limit]': 10,
-        'sort[1]': 'publishedAt:desc',
+        'sort[1]': 'name:asc',
         locale,
         populate: '*',
       },
@@ -146,6 +157,7 @@ export const getSolutions = async ({ locale }) => {
   try {
     const config = {
       params: {
+        'sort[1]': 'ordering:asc',
         locale,
         populate: '*',
       },
@@ -171,17 +183,30 @@ export const getSpeciesById = async ({ locale, id }) => {
     console.log(error)
   }
 }
-export const getProductById = async ({ locale, id }) => {
+export const getProductById = async ({ locale, id_product }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'name:asc',
         locale,
         populate: '*',
       },
     }
 
-    return await serverAxios().get(GET_PRODUCT_BY_ID(id), config)
+    return await serverAxios().get(GET_PRODUCT_BY_ID(id_product), config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+export const getRelatedById = async ({ locale, id_product }) => {
+  try {
+    const config = {
+      params: {
+        locale,
+        populate: 'relateds.image',
+      },
+    }
+
+    return await serverAxios().get(GET_PRODUCT_BY_ID(id_product), config)
   } catch (error) {
     console.log(error)
   }
