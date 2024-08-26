@@ -10,6 +10,11 @@ import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEf
 
 export default function ARC({ dataARC }) {
   const t = useTranslations('innovation.arc')
+  const dataARCCarouselApi = dataARC
+    ? dataARC[0].image.data.map((data, index) => ({
+        src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`,
+      }))
+    : []
   const dataARCCarousel = [
     { src: ARCImage },
     { src: ARCImage2 },
@@ -19,12 +24,9 @@ export default function ARC({ dataARC }) {
     <section className='py-3 py-md-5 bg-light' id='arc'>
       <Container className='mb-5'>
         <Row className='justify-content-between align-items-center h-100'>
-          <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>
+          <Col md={{ span: 7, order: '2' }} className='mt-3 mt-md-0'>
             <Reveal direction={'top'} overflow={true}>
-              <CardEffectCarousel
-                dataCarousel={dataARCCarousel}
-                cardWidth={350}
-              />
+              <CardEffectCarousel dataCarousel={dataARCCarouselApi} />
             </Reveal>
           </Col>
           <Col md={{ span: 4, order: '1' }}>

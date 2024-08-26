@@ -9,10 +9,6 @@ import { getSolutions, getSpecies } from '../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
-  const species = await getSpecies({ locale })
-    // const {
-    //   data: { data },
-    // } = species
   return {
     ...metadata(t('aquafeed.title'), t('aquafeed.description')),
   }
@@ -23,15 +19,17 @@ export default async function Page({ params: { locale } }) {
   const {
     data: { data },
   } = species
+
   const solutions = await getSolutions({ locale })
+
   const dataSolutionsCard = solutions?.data?.data
 
   return (
     <>
       <Introduction />
-      <Species />
+      <Species dataSpecies={data} />
       <Reasons />
-      <TotalSolutions dataSolutionsCard={dataSolutionsCard}/>
+      <TotalSolutions dataSolutionsCard={dataSolutionsCard} />
     </>
   )
 }

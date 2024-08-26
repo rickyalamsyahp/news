@@ -11,18 +11,15 @@
       &::after {
         content: '';
         display: block;
-        width: 825px;
+        width: 800px;
         height: 100%;
         background: rgba(133, 141, 157, 0.7);
         position: absolute;
         border-radius: 8px;
         top: 0;
-        left: auto;
+        left: 20px;
         z-index: 1;
         transition: opacity 0.5s ease-out;
-        @include media-breakpoint-down(xxl) {
-          width: calc(98% + 2vw - 24px);
-        }
       }
     }
 
@@ -43,10 +40,21 @@
     }
 
     .card-responsive {
-      @include media-breakpoint-between(sm, lg) {
+      img {
+        width: 500px;
+        height: 250px;
+      }
+      .card-body {
         width: 500px;
       }
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-between(md, lg) {
+        width: 500px;
+      }
+      @include media-breakpoint-down(sm) {
+        .card-body,
+        img {
+          width: 250px;
+        }
         width: 250px;
       }
     }
@@ -57,11 +65,21 @@
   }
   .card-carousel {
     bottom: 20px;
-    left: 20px;
+    left: 40px;
     background: rgba(161, 161, 161, 0.6);
     width: 25vw;
     @include media-breakpoint-between(lg, xxl) {
       width: 30vw;
     }
+  }
+  .highlight-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    @include media-breakpoint-down(lg) {
+      -webkit-line-clamp: 1;
+    }
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

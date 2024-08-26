@@ -5,6 +5,7 @@ import Hatchery from '../../../components/Products/FarmHatchery/Hatchery/Hatcher
 import Farm from '../../../components/Products/FarmHatchery/Farm/Farm'
 import Commitment from '../../../components/Products/FarmHatchery/Commitment/Commitment'
 import JoinUs from '../../../components/Products/FarmHatchery/JoinUs/JoinUs'
+import { getSolutions } from '../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -14,7 +15,10 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Page() {
+export default async function Page({ params: { locale } }) {
+  const solutions = await getSolutions({ locale })
+  const dataSolutionsCard = solutions?.data?.data
+
   return (
     <>
       <Hero />

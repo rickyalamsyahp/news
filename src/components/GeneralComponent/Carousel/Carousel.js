@@ -12,9 +12,7 @@ import { Fragment } from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from '../../../navigation'
 
-export default function Carousel({pagesArti}) {
-
-  
+export default function Carousel({ pagesArti }) {
   const settings = {
     dots: true,
     focusOnSelect: true,
@@ -53,18 +51,14 @@ export default function Carousel({pagesArti}) {
     <div className='slider-container py-3'>
       <Slider {...settings}>
         {pagesArti.map((data, index) => (
-          // <>
-          // {console.log(data.attributes.image.data)
-          // }
-          // </>
           <Fragment key={`card-carousel-${index + 1}`}>
             <div className='card-container px-2 position-relative d-none d-lg-block'>
               <div className='card-carousel position-absolute p-4 text-white rounded-3'>
                 <div className='mb-3 d-flex flex-column gap-2'>
                   <h6>{data.attributes.category}</h6>
                   <h4>{data.attributes.title}</h4>
-                  <h6>
-                  {data.attributes.highlight}
+                  <h6 className='highlight-text'>
+                    {data.attributes.highlight}
                   </h6>
                 </div>
                 <ButtonSecondary>
@@ -73,30 +67,31 @@ export default function Carousel({pagesArti}) {
               </div>
               <Image
                 src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`}
-                width={200}
-                height={200}
+                width={800}
+                height={500}
                 alt='carousel-image-1'
                 priority
-                className='m-auto w-100 h-100 rounded-2'
+                className='m-auto object-fit-cover rounded-2'
               />
             </div>
             <Card className='d-block d-lg-none card-responsive'>
               <Image
                 alt='carousel-image-1'
                 priority
+                width={0}
+                height={0}
+                sizes='100vw'
                 src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`}
-                width={200}
-                height={200}
-                className='m-auto w-100 h-100 rounded-top-2'
+                className='m-auto object-fit-cover rounded-top-2'
               />
               <Card.Body className='bg-dark rounded-bottom-2'>
                 <div className='mb-3 d-flex flex-column gap-2 text-white nunito-sans'>
                   <h6>{data.attributes.category}</h6>
-                  <h4 className='fw-bold'>
-                  {data.attributes.title}
+                  <h4 className='fw-bold highlight-text'>
+                    {data.attributes.title}
                   </h4>
-                  <h6>
-                  {data.attributes.highlight}
+                  <h6 className='highlight-text'>
+                    {data.attributes.highlight}
                   </h6>
                 </div>
                 <ButtonSecondary mobile={true}>

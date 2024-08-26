@@ -6,14 +6,9 @@ import Thumbnail from '../../../assets/images/species-common-carp.png'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-function ThumbsImage() {
+function ThumbsImage({ product }) {
   const dataProduct = [
-    Thumbnail,
-    Thumbnail,
-    Thumbnail,
-    Thumbnail,
-    Thumbnail,
-    Thumbnail,
+    `${process.env.NEXT_PUBLIC_HOST_IMAGE}${product.image.data.attributes.url}`,
   ]
   const settings = {
     focusOnSelect: true,
@@ -44,8 +39,11 @@ function ThumbsImage() {
         <div key={`image-product-detail-${index}`}>
           <Image
             src={data}
+            width={0}
+            height={350}
+            sizes='100vw'
             alt={'image-product-detail'}
-            className='rounded-3 object-fit-cover w-100 h-auto'
+            className='rounded-3 object-fit-cover w-100'
           />
         </div>
       ))}

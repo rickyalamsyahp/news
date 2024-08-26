@@ -4,8 +4,16 @@
   .slick-slide {
     padding: 0px 15px;
   }
-  img {
+  .card-carousel-image {
+    @include media-breakpoint-between(md, lg) {
+      width: 300px !important;
+      height: 600px;
+    }
+    @include media-breakpoint-down(md) {
+      width: 200px !important;
+      height: 400px;
+    }
     width: 350px !important;
-    height: auto;
+    height: 700px;
   }
 }

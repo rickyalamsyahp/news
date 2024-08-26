@@ -11,7 +11,11 @@ import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEf
 
 export default function Empowering({ dataEmpowering, pagesArticle }) {
   const pagesArti = pagesArticle && pagesArticle.data.data
-
+  const dataEmpoweringCarouselApi = dataEmpowering
+    ? dataEmpowering[0].image.data.map((data, index) => ({
+        src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`,
+      }))
+    : []
   const t = useTranslations('commitments.empowering')
   const dataEmpoweringCarousel = [
     { src: EmpoweringImage2 },
@@ -23,15 +27,12 @@ export default function Empowering({ dataEmpowering, pagesArticle }) {
     <section className='py-3 py-md-5 bg-light overflow-hidden'>
       <Container className='pb-3 pb-md-5'>
         <Row className='align-items-center h-100 gap-3 gap-md-5 justify-content-between'>
-          <Col md={5}>
+          <Col md={7} xl={6}>
             <Reveal overflow={true} direction={'top'}>
-              <CardEffectCarousel
-                dataCarousel={dataEmpoweringCarousel}
-                cardWidth={350}
-              />
+              <CardEffectCarousel dataCarousel={dataEmpoweringCarouselApi} />
             </Reveal>
           </Col>
-          <Col md={6}>
+          <Col md={4} lg={4}>
             <Reveal direction={'right'} overflow={true}>
               <div className='d-flex gap-3 gap-md-5 flex-column mt-3 mt-md-5'>
                 <Title

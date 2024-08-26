@@ -4,7 +4,7 @@ import Breadcrumbs from '../GeneralComponent/Breadcrumbs/Breadcrumbs'
 import ThumbsImage from './ThumbsImage/ThumbsImage'
 import DescriptionProduct from './DescriptionProduct/DescriptionProduct'
 
-function ItemProductDetail() {
+function ItemProductDetail({ paramsSpecies, product }) {
   const breadcrumbItemProduct = [
     {
       text: 'Home',
@@ -22,12 +22,12 @@ function ItemProductDetail() {
       active: false,
     },
     {
-      text: 'Common Carp',
-      href: '/item-product',
+      text: paramsSpecies.attributes.name,
+      href: `/item-product/${paramsSpecies.id}`,
       active: false,
     },
     {
-      text: 'PA Extruder',
+      text: product.feed_name,
       href: '#',
       active: true,
     },
@@ -38,20 +38,14 @@ function ItemProductDetail() {
         <Breadcrumbs data={breadcrumbItemProduct} />
         <Row className='py-4'>
           <Col xs={6} md={3}>
-            <ThumbsImage />
+            <ThumbsImage product={product} />
           </Col>
           <Col xs={6} md={9}>
-            <DescriptionProduct />
+            <DescriptionProduct product={product} />
           </Col>
         </Row>
         <Row className='d-flex d-md-none gap-3'>
-          <h6>
-            PA Extruder is a premium floating pellet feed designed for the
-            grower phase of carp species. This environmentally friendly feed
-            promotes optimal growth in carp, whether in floating net cages,
-            fast-flowing water ponds, or earthen ponds. With a protein content
-            of 28%, PA Extruder ensures consistent quality in fish growth.
-          </h6>
+          <h6>{product.highlight}</h6>
           {/* <TableProduct /> */}
         </Row>
         {/* <Row className='d-none d-md-flex'>

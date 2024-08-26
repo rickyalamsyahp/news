@@ -4,10 +4,8 @@ import CardSolutions from '../../../GeneralComponent/CardSolutions/CardSolutions
 import { useTranslations } from 'next-intl'
 
 export default function MappingCardSolutions({ dataSolutionsCard }) {
-
-  
   const t = useTranslations('homepage.total-solutions.card')
-  const cardSolutionsApi = dataSolutionsCard?.map((data, index) => ({
+  const cardSolutionsApi = dataSolutionsCard.map((data, index) => ({
     text: data.attributes.title,
     image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`,
     link: `${data.attributes.url}`,

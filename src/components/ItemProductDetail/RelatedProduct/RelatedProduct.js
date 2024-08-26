@@ -5,8 +5,15 @@ import Thumbnail from '../../../assets/images/species-common-carp.png'
 import Image from 'next/image'
 import { useRouter } from '../../../navigation'
 
-function RelatedProduct() {
+function RelatedProduct({ id, relateds }) {
   const router = useRouter()
+  console.log(relateds)
+
+  const dataProductApi = relateds.data.map((res, index) => ({
+    id: res.id,
+    text: res.attributes.feed_name,
+    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.image?.data?.attributes?.url}`,
+  }))
   const dataProduct = [
     {
       image: Thumbnail,
@@ -34,21 +41,24 @@ function RelatedProduct() {
       <Container className='pb-5'>
         <Row className='pt-5 gy-5'>
           <h4>Related Products</h4>
-          {dataProduct.map((data, index) => (
+          {dataProductApi.map((data, index) => (
             <Col
               key={`card-product-${index}`}
               xs={4}
               md={3}
               style={{ cursor: 'pointer' }}
               onClick={() => {
-                router.push('/item-product-detail')
+                router.replace(`/item-product/${id}/${data.id}`)
               }}
             >
-              <Image
-                src={data.image}
-                alt={data.text}
-                className='w-100 h-auto rounded-top-3'
-              />
+              {data.image && (
+                <Image
+                  width={0}
+                  height={300}
+                  sizes='100vw'
+                  className='w-100 object-fit-contain rounded-top-3'
+                />
+              )}
               <h6
                 className='p-3 p-md-5 bg-white text-primary rounded-bottom-3 text-center fw-bold'
                 style={{

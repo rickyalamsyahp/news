@@ -1,24 +1,32 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import SectionAnimaHealth2 from '../../../assets/images/section-1-technical-team-2.jpg'
-import SectionAnimaHealth3 from '../../../assets/images/section-1-technical-team-3.jpg'
-import SectionTechnicalTeam1 from '../../../assets/images/section-2-technical-team.jpg'
-import SectionTechnicalTeam2 from '../../../assets/images/section-2-technical-team-2.jpg'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 import { ButtonThird } from '../../GeneralComponent/CustomButton/CustomButton'
 import { Link } from '../../../navigation'
 import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
-function TechnicalTeam() {
+function TechnicalTeam({ dataTechnicalTeam, dataAnimalHealth }) {
   const t = useTranslations('technical-team')
-  const dataAnimalHealth = [
-    { src: SectionAnimaHealth2 },
-    { src: SectionAnimaHealth3 },
-  ]
-  const dataTechnicalTeam = [
-    { src: SectionTechnicalTeam1 },
-    { src: SectionTechnicalTeam2 },
-  ]
+  var dataTechnicalTeamApi = []
+  var dataAnimalHealthApi = []
+  const modifiedTechnicalTeamApi = dataTechnicalTeam
+    ? dataTechnicalTeam[0].attributes.image.data.attributes.url
+    : []
+  const modifiedAnimalHealthApi = dataAnimalHealth
+    ? dataAnimalHealth[0].attributes.image.data.attributes.url
+    : []
+  if (modifiedTechnicalTeamApi) {
+    dataTechnicalTeamApi.push({
+      src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${modifiedTechnicalTeamApi}`,
+    })
+  }
+
+  if (modifiedAnimalHealthApi) {
+    dataAnimalHealthApi.push({
+      src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${modifiedAnimalHealthApi}`,
+    })
+  }
+
   return (
     <>
       <section
@@ -32,10 +40,7 @@ function TechnicalTeam() {
               <h5 className='d-none d-md-flex'>{t('section1.description')}</h5>
             </Col>
             <Col md={6}>
-              <CardEffectCarousel
-                cardWidth={450}
-                dataCarousel={dataAnimalHealth}
-              />
+              <CardEffectCarousel dataCarousel={dataAnimalHealthApi} />
             </Col>
             <Col xs={12} className='d-flex d-md-none pt-3 '>
               <h5>{t('section1.description')}</h5>
@@ -47,10 +52,7 @@ function TechnicalTeam() {
         <Container className='py-0 py-md-5'>
           <Row className='py-5 align-items-center position-relative'>
             <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 6 }}>
-              <CardEffectCarousel
-                cardWidth={450}
-                dataCarousel={dataTechnicalTeam}
-              />
+              <CardEffectCarousel dataCarousel={dataTechnicalTeamApi} />
             </Col>
             <Col xs={{ order: 1, span: 12 }} md={6}>
               <h2 className='pb-3 fw-bold'>{t('section2.title')}</h2>

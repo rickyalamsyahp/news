@@ -5,8 +5,6 @@ import './Map.css'
 //import L from 'leaflet';
 
 const Map = ({ geojsonData, provinceData }) => {
-  console.log(provinceData)
-
   const defaultStyle = {
     color: 'white',
     weight: 1,

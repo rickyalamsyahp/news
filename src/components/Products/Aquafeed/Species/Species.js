@@ -6,9 +6,14 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { useRouter } from '../../../../navigation'
 import Reveal from '../../../Animation/Reveal/Reveal'
 
-function Species() {
+function Species({ dataSpecies }) {
   const t = useTranslations('aquafeed.species')
   const router = useRouter()
+  const modifiedDataSpecies = dataSpecies.map((species, index) => ({
+    ...species,
+    text: species.attributes.name,
+    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${species.attributes.image.data.attributes.url}`,
+  }))
   const dataAquafeed = [
     {
       text: 'Tilapia',
@@ -61,7 +66,7 @@ function Species() {
           <h4>{t('description')}</h4>
         </Reveal>
         <Row className='justify-content-center justify-content-lg-start pb-5'>
-          {dataAquafeed.map((res, index) => (
+          {modifiedDataSpecies.map((res, index) => (
             <Col
               key={`species-${index}`}
               xs={4}
@@ -73,10 +78,10 @@ function Species() {
               <Reveal delay={index / 4} direction='left' overflow={true}>
                 <div
                   className='card-species'
-                  onClick={() => router.push('item-product')}
+                  onClick={() => router.push(`item-product/${res.id}`)}
                 >
                   <Image
-                    src={`/${res.image}.png`}
+                    src={res.image}
                     alt={res.image}
                     fill
                     className='image-species'

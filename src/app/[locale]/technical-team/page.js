@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { metadata } from '../../shared-metadata'
 import Hero from '../../../components/Products/TechnicalTeam/Hero/Hero'
 import TechnicalTeam from '../../../components/Products/TechnicalTeam/TechnicalTeam'
+import { getSolutions } from '../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -11,11 +12,23 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default function Page() {
+export default async function Page({ params: { locale } }) {
+  const solutions = await getSolutions({ locale })
+  const dataSolutionsCard = solutions?.data?.data
+  const dataAnimalHealth = dataSolutionsCard?.filter(
+    item => item?.attributes?.title === 'ANIMAL HEALTH & MOBILE LAB',
+  )
+  const dataTechnicalTeam = dataSolutionsCard?.filter(
+    item => item?.attributes?.title === 'SHRIMP & FISH TECHNICAL TEAM',
+  )
+
   return (
     <section className='bg-secondary-subtle'>
       <Hero />
-      <TechnicalTeam />
+      <TechnicalTeam
+        dataTechnicalTeam={dataTechnicalTeam}
+        dataAnimalHealth={dataAnimalHealth}
+      />
     </section>
   )
 }
