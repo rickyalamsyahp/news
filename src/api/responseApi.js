@@ -41,15 +41,19 @@ export const getProducts = async ({
 }) => {
   try {
     const populate = { ...populates }
-
+    let shape = {}
+    let phase = {}
+    if(shapes && shapes != '*' && shapes != 'Type') shape = {'filters[feed_shapes][name][$eq]': shapes}
+    if(phases && phases != 'Phases') phase = {'filters[phases][name][$eq]': phases}
+    
     const config = {
       params: {
         'pagination[limit]': 30,
         'sort[1]': 'feed_name:asc',
         locale,
         'filters[species][name][$eq]': species,
-        'filters[feed_shapes][name][$eq]': shapes,
-        'filters[phases][name][$eq]': phases,
+        ...shape,
+        ...phase,
         ...populate,
       },
     }
@@ -185,6 +189,22 @@ export const getSpeciesById = async ({ locale, id }) => {
     console.log(error)
   }
 }
+export const getSpeciesBySlug = async ({ locale, id }) => {
+  try {
+    const config = {
+      params: {
+        'sort[1]': 'name:asc',
+        locale,
+        populate: '*',
+        'filters[slug][$eq]': id,
+      },
+    }
+
+    return await serverAxios().get(SPECIES, config)
+  } catch (error) {
+    console.log(error)
+  }
+}
 export const getProductById = async ({ locale, id_product }) => {
   try {
     const config = {
@@ -195,6 +215,22 @@ export const getProductById = async ({ locale, id_product }) => {
     }
 
     return await serverAxios().get(GET_PRODUCT_BY_ID(id_product), config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+export const getProductBySlug = async ({ locale, id_product }) => {
+  try {
+    const config = {
+      params: {
+        'sort[1]': 'feed_name:asc',
+        locale,
+        populate: '*',
+        'filters[slug][$eq]': id_product,
+      },
+    }
+
+    return await serverAxios().get(PRODUCTS, config)
   } catch (error) {
     console.log(error)
   }

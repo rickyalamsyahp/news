@@ -86,6 +86,7 @@
       "title": "Sustainable Aquaculture Solutions Across the Nation",
       "see-all": "SEE OUR COMMITMENTS",
       "description": "Explore STP's total solutions in aquaculture, where advanced and sustainable feed production, hatcheries, and farming converge all over the nation to drive industry success.",
+      "by-number": "STP Aquaculture by Numbers",
       "count": {
         "1": "Shrimp <br></br> Hatcheries",
         "2": "Shrimp <br></br> Farms",
@@ -295,7 +296,7 @@
       "full-name": "Write your name here..",
       "location": "Choose your location",
       "subject": "Choose subject you want to ask",
-      "message": "Write yout question here.."
+      "message": "Write your inquiry here.."
     },
     "contact-notes": "or you can reach us directly to"
   }

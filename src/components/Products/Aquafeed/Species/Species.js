@@ -12,6 +12,7 @@ function Species({ dataSpecies }) {
   const modifiedDataSpecies = dataSpecies.map((species, index) => ({
     ...species,
     text: species.attributes.name,
+    slug: species.attributes.slug,
     image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${species.attributes.image.data.attributes.url}`,
   }))
   const dataAquafeed = [
@@ -78,7 +79,7 @@ function Species({ dataSpecies }) {
               <Reveal delay={index / 4} direction='left' overflow={true}>
                 <div
                   className='card-species'
-                  onClick={() => router.push(`item-product/${res.id}`)}
+                  onClick={() => router.push(`item-product/${res.slug}`)}
                 >
                   <Image
                     src={res.image}

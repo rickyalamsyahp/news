@@ -6,6 +6,7 @@ import {
   getPhases,
   getProducts,
   getSpeciesById,
+  getSpeciesBySlug,
 } from '../../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
@@ -17,12 +18,13 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function Page({ params: { locale, id } }) {
-  const getSpecies = await getSpeciesById({ locale, id })
+  //const getSpecies = await getSpeciesById({ locale, id })
+  const getSpecies = await getSpeciesBySlug({ locale, id })
   const populates = {
     'populate[0]': 'species',
     'populate[1]': 'image',
   }
-  const species = getSpecies.data.data
+  const species = getSpecies.data.data[0]
   const paramsSpecies = species.attributes.name
   const phases = (await getPhases({ locale })).data.data
   const shapes = (await getFeedShapes({ locale })).data.data
@@ -42,4 +44,5 @@ export default async function Page({ params: { locale, id } }) {
       />
     </>
   )
+
 }

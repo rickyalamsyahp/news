@@ -23,7 +23,7 @@ function ItemProductDetail({ paramsSpecies, product }) {
     },
     {
       text: paramsSpecies.attributes.name,
-      href: `/item-product/${paramsSpecies.id}`,
+      href: `/item-product/${paramsSpecies.attributes.slug}`,
       active: false,
     },
     {

@@ -15,7 +15,6 @@ export default async function Page({ params: { locale } }) {
   const cities = await getCities()
   const solutions = await getSolutions({ locale })
   const addresses = await getAddress()
-  console.log(addresses)
   const city = cities?.data?.data
   const solution = solutions?.data?.data
   const address = addresses?.data?.data

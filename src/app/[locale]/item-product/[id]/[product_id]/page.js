@@ -6,6 +6,8 @@ import {
   getProductById,
   getRelatedById,
   getSpeciesById,
+  getSpeciesBySlug,
+  getProductBySlug,
 } from '../../../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
@@ -17,18 +19,20 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function Page({ params: { locale, product_id, id } }) {
-  const getSpecies = await getSpeciesById({ locale, id })
-  const getProduct = await getProductById({ locale, id_product: product_id })
+  const getSpecies = await getSpeciesBySlug({ locale, id })
+  const getProduct = await getProductBySlug({ locale, id_product: product_id })
   const populates = {
     'populate[0]': 'relateds.image',
   }
+
+  const species = getSpecies.data.data[0]
+  const productid = getProduct.data.data[0].id
+  const product = getProduct.data.data[0].attributes
+  
   const getProductRelated = await getRelatedById({
     locale,
-    id_product: product_id,
+    id_product: productid,
   })
-
-  const species = getSpecies.data.data
-  const product = getProduct.data.data.attributes
   const relateds = getProductRelated.data.data.attributes.relateds
 
   return (

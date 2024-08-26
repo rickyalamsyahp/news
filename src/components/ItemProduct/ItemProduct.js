@@ -145,7 +145,7 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
                 md={3}
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
-                  router.push(`${id}/${data.id}`)
+                  router.push(`${id}/${data.attributes.slug}`)
                 }}
               >
                 <Image
