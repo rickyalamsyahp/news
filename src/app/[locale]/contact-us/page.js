@@ -13,16 +13,19 @@ import { getCities, getSolutions, getAddress } from '../../../api/responseApi'
 
 export default async function Page({ params: { locale } }) {
   const cities = await getCities()
+
+  
   const solutions = await getSolutions({ locale })
   const addresses = await getAddress()
+
+  
   const city = cities?.data?.data
   const solution = solutions?.data?.data
   const address = addresses?.data?.data
-
   return (
     <section className='bg-secondary-subtle'>
       <FormContact cities={city} solutions={solution} />
-      <NotesContact  address={address} />
+      <NotesContact  dataAddresses={address} />
     </section>
   )
 }

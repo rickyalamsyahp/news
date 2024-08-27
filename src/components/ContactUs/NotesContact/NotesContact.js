@@ -7,9 +7,8 @@ import { Fragment } from 'react'
 import { useTranslations } from 'next-intl'
 import { dataUnit } from './DataContact'
 
-function NotesContact({ address }) {
+function NotesContact({ dataAddresses }) {
   const t = useTranslations('contact-us')
-
   const settings = {
     dots: false,
     focusOnSelect: true,
@@ -45,10 +44,10 @@ function NotesContact({ address }) {
       <Container>
         <h4 className='fw-bold pb-5'>{t('contact-notes')}</h4>
         <Slider {...settings}>
-          {address.map((data, index) => (
+          {dataAddresses.map((data, index) => (
             <Fragment key={`card-carousel-${index + 1}`}>
               <div
-                className='d-flex flex-column gap-4 border border-light-subtle bg-white p-4 w-75 m-auto'
+                className='d-flex flex-column gap-4 border border-light-subtle bg-white p-4 w-75 m-auto justify-content-center'
                 style={{ height: '250px' }}
               >
                 <div className='d-flex flex-column gap-2'>
@@ -56,7 +55,7 @@ function NotesContact({ address }) {
                   <h5>{data.attributes.address}</h5>
                   <h5>{data.attributes.city}</h5>
                 </div>
-                <h5>{data.attributes.phone}</h5>
+                <h5>{data.phone}</h5>
               </div>
             </Fragment>
           ))}

@@ -33,7 +33,6 @@ export function ButtonThird({
   variant,
   className,
   noArrow,
-  disabled,
 }) {
   return (
     <Button
@@ -44,7 +43,6 @@ export function ButtonThird({
         borderRadius: '4px',
       }}
       type={onSubmit}
-      disabled={disabled}
     >
       {children}
       {noArrow ? '' : <ArrowRight />}
