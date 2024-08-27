@@ -24,7 +24,7 @@ export const getArticles = async ({ locale }) => {
       params: {
         'sort[0]': 'published_date:desc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -36,15 +36,13 @@ export const getArticles = async ({ locale }) => {
 export const getProducts = async ({
   locale,
   species,
-  populates,
   shapes,
   phases,
 }) => {
   try {
-    const populate = { ...populates }
     let shape = {}
     let phase = {}
-    if(shapes && shapes != '*' && shapes != 'Type') shape = {'filters[feed_shapes][name][$eq]': shapes}
+    if(shapes && shapes != 'deep' && shapes != 'Type') shape = {'filters[feed_shapes][name][$eq]': shapes}
     if(phases && phases != 'Phases') phase = {'filters[phases][name][$eq]': phases}
     
     const config = {
@@ -55,7 +53,7 @@ export const getProducts = async ({
         'filters[species][name][$eq]': species,
         ...shape,
         ...phase,
-        ...populate,
+        populate: 'deep',
       },
     }
 
@@ -71,7 +69,7 @@ export const getPages = async ({ locale, filter }) => {
         'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
-        populate: 'content.image',
+        populate: 'deep',
         'filters[url][$eq]': filter,
       },
     }
@@ -88,7 +86,7 @@ export const getAreas = async ({ locale }) => {
         'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -104,7 +102,7 @@ export const getJourneys = async ({ locale }) => {
         'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -120,7 +118,7 @@ export const getFeedShapes = async ({ locale }) => {
         'pagination[limit]': 10,
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -136,7 +134,7 @@ export const getPhases = async ({ locale }) => {
         'pagination[limit]': 10,
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -151,7 +149,7 @@ export const getSpecies = async ({ locale }) => {
       params: {
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -166,7 +164,7 @@ export const getSolutions = async ({ locale }) => {
       params: {
         'sort[0]': 'ordering:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -181,7 +179,7 @@ export const getSpeciesById = async ({ locale, id }) => {
       params: {
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -196,7 +194,7 @@ export const getSpeciesBySlug = async ({ locale, id }) => {
       params: {
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
         'filters[slug][$eq]': id,
       },
     }
@@ -211,7 +209,7 @@ export const getProductById = async ({ locale, id_product }) => {
     const config = {
       params: {
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -226,7 +224,7 @@ export const getProductBySlug = async ({ locale, id_product }) => {
       params: {
         'sort[0]': 'feed_name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
         'filters[slug][$eq]': id_product,
       },
     }
@@ -241,7 +239,7 @@ export const getRelatedById = async ({ locale, id_product }) => {
     const config = {
       params: {
         locale,
-        populate: 'relateds.image',
+        populate: 'deep',
       },
     }
 
@@ -256,7 +254,7 @@ export const getArticleById = async ({ locale, id }) => {
       params: {
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
