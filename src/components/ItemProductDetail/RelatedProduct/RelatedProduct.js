@@ -8,9 +8,8 @@ import { useRouter } from '../../../navigation'
 function RelatedProduct({ id, relateds }) {
   const router = useRouter()
 
-
   const dataProductApi = relateds.data.map((res, index) => ({
-    id: res.id,
+    id: res.attributes.slug,
     text: res.attributes.feed_name,
     image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.image?.data?.attributes?.url}`,
   }))

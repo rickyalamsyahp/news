@@ -21,19 +21,16 @@ export async function generateMetadata({ params: { locale } }) {
 export default async function Page({ params: { locale, product_id, id } }) {
   const getSpecies = await getSpeciesBySlug({ locale, id })
   const getProduct = await getProductBySlug({ locale, id_product: product_id })
-  const populates = {
-    'populate[0]': 'relateds.image',
-  }
 
   const species = getSpecies.data.data[0]
-  const productid = getProduct.data.data[0].id
-  const product = getProduct.data.data[0].attributes
-  
+  const productid = getProduct.data.data[0]?.id
+  const product = getProduct.data.data[0]?.attributes
+
   const getProductRelated = await getRelatedById({
     locale,
     id_product: productid,
   })
-  const relateds = getProductRelated.data.data.attributes.relateds
+  const relateds = getProductRelated?.data?.data?.attributes?.relateds
 
   return (
     <section>

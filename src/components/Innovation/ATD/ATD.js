@@ -17,7 +17,7 @@ export default function ATD({ dataATD }) {
   return (
     <section className='py-3 py-md-5 unique-bg' id='atd'>
       <Container>
-        <Row className='align-items-center h-100 gap-3 gap-md-5'>
+        <Row className='h-100 gap-3 gap-md-5'>
           <Col md={7} xl={6}>
             <Reveal overflow={true} direction={'top'}>
               <CardEffectCarousel dataCarousel={dataATDCarouselApi} />
@@ -25,7 +25,7 @@ export default function ATD({ dataATD }) {
           </Col>
           <Col md={4} lg={4}>
             <Reveal direction={'right'} overflow={true}>
-              <div className='d-flex gap-3 gap-md-5 flex-column mt-3 mt-md-5'>
+              <div className='d-flex gap-3 gap-md-5 flex-column'>
                 <Title
                   description={
                     dataATD ? dataATD[0]?.highlight : t('description')

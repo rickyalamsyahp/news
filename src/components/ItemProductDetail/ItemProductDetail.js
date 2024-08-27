@@ -22,12 +22,12 @@ function ItemProductDetail({ paramsSpecies, product }) {
       active: false,
     },
     {
-      text: paramsSpecies.attributes.name,
-      href: `/item-product/${paramsSpecies.attributes.slug}`,
+      text: paramsSpecies?.attributes?.name,
+      href: `/item-product/${paramsSpecies?.attributes?.slug}`,
       active: false,
     },
     {
-      text: product.feed_name,
+      text: product?.feed_name,
       href: '#',
       active: true,
     },
@@ -45,7 +45,7 @@ function ItemProductDetail({ paramsSpecies, product }) {
           </Col>
         </Row>
         <Row className='d-flex d-md-none gap-3'>
-          <h6>{product.highlight}</h6>
+          <h6>{product?.highlight}</h6>
           {/* <TableProduct /> */}
         </Row>
         {/* <Row className='d-none d-md-flex'>

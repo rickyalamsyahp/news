@@ -23,12 +23,28 @@ export default async function Page({ params: { locale } }) {
   const solutions = await getSolutions({ locale })
 
   const dataSolutionsCard = solutions?.data?.data
+  const dataAquafeed = dataSolutionsCard?.filter(
+    item => item?.attributes?.title === 'AQUAFEED',
+  )
+  const dataContent = dataAquafeed[0]?.attributes
+
+  // Extract data for each section in homepage
+  const dataHero = dataContent?.content.filter(item => item?.title === 'Hero')
+  const dataSpeciesDescription = dataContent?.content.filter(
+    item => item?.title === 'Species',
+  )
+  const dataReasons = dataContent?.content.filter(
+    item => item?.title === 'why choose aquafeed',
+  )
 
   return (
     <>
-      <Introduction />
-      <Species dataSpecies={data} />
-      <Reasons />
+      <Introduction dataHero={dataHero} />
+      <Species
+        dataSpecies={data}
+        dataSpeciesDescription={dataSpeciesDescription}
+      />
+      <Reasons dataReasons={dataReasons} />
       <TotalSolutions dataSolutionsCard={dataSolutionsCard} />
     </>
   )

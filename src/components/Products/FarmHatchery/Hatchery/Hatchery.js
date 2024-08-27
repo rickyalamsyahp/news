@@ -11,26 +11,36 @@ import HatcheryFish3 from '../../../../assets/images/hatchery-fish-3.jpg'
 import HatcheryFish4 from '../../../../assets/images/hatchery-fish-4.jpg'
 import CardEffectCarousel from '../../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
-function VisionMission() {
+function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
   const t = useTranslations('hatchery-farm')
-  const dataShrimp = [
-    { src: HatcheryShrimp },
-    { src: HatcheryShrimp2 },
-    { src: HatcheryShrimp3 },
-    { src: HatcheryShrimp4 },
-  ]
-  const dataFish = [
-    { src: HatcheryFish },
-    { src: HatcheryFish2 },
-    { src: HatcheryFish3 },
-    { src: HatcheryFish4 },
-  ]
+
+  const dataShrimp = dataShrimpHatchery[0]?.image?.data.map((res, index) => ({
+    src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
+  }))
+  const dataFish = dataFishHatchery[0]?.image?.data.map((res, index) => ({
+    src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
+  }))
+  // const dataShrimp = [
+  //   { src: HatcheryShrimp },
+  //   { src: HatcheryShrimp2 },
+  //   { src: HatcheryShrimp3 },
+  //   { src: HatcheryShrimp4 },
+  // ]
+  // const dataFish = [
+  //   { src: HatcheryFish },
+  //   { src: HatcheryFish2 },
+  //   { src: HatcheryFish3 },
+  //   { src: HatcheryFish4 },
+  // ]
   return (
     <section className='pt-5 pb-5 bg-secondary-subtle' id='hatchery'>
       <Container>
         <h2 className='text-center mb-5'>
           STP Hatchery
-          <br /> {t('hatchery.title')}
+          <br />{' '}
+          {dataShrimpHatchery
+            ? dataShrimpHatchery[0].headline
+            : t('hatchery.title')}
         </h2>
         <Row className='card-hatchery-farm bg-white mb-3 mb-md-0'>
           <Col
@@ -38,27 +48,39 @@ function VisionMission() {
             md={{ span: 7, order: '2' }}
             className='p-0 pt-5 pt-md-0 position-relative'
           >
-            <CardEffectCarousel dataCarousel={dataShrimp} cardWidth={450} />
+            <CardEffectCarousel dataCarousel={dataShrimp} />
           </Col>
           <Col xs={12} md={{ span: 5, order: '1' }} className='py-5 px-5'>
             <div className='py-4 card-title gap-5 d-flex flex-column'>
               <h3 className='fw-bold'>{t('hatchery.shrimp.title')}</h3>
-              <h5>{t('hatchery.shrimp.description1')}</h5>
-              <h5>{t('hatchery.shrimp.description2')}</h5>
+              <h5>
+                {dataShrimpHatchery
+                  ? dataShrimpHatchery[0].highlight
+                  : t('hatchery.shrimp.description1')}
+              </h5>
+              {/* <h5>{t('hatchery.shrimp.description2')}</h5> */}
             </div>
           </Col>
         </Row>
         <Row className='card-hatchery-farm bg-white'>
           <Col md={{ span: 7, order: '1' }} className='p-0 position-relative'>
-            <CardEffectCarousel dataCarousel={dataFish} cardWidth={400} />
+            <CardEffectCarousel dataCarousel={dataFish} />
           </Col>
           <Col md={{ span: 5, order: '2' }}>
             <Row className='flex-column h-100 justify-content-between align-items-center'>
               <Col md={12} className='py-5 px-4'>
                 <div className='py-4 card-title gap-5 d-flex flex-column'>
-                  <h3 className='fw-bold'>{t('hatchery.fish.title')}</h3>
-                  <h5>{t('hatchery.fish.description1')}</h5>
-                  <h5>{t('hatchery.fish.description2')}</h5>
+                  <h3 className='fw-bold'>
+                    {dataFishHatchery
+                      ? dataFishHatchery[0].headline
+                      : t('hatchery.fish.title')}
+                  </h3>
+                  <h5>
+                    {dataFishHatchery
+                      ? dataFishHatchery[0].highlight
+                      : t('hatchery.fish.description1')}
+                  </h5>
+                  {/* <h5>{t('hatchery.fish.description2')}</h5> */}
                 </div>
               </Col>
             </Row>

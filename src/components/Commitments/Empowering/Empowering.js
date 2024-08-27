@@ -26,15 +26,15 @@ export default function Empowering({ dataEmpowering, pagesArticle }) {
   return (
     <section className='py-3 py-md-5 bg-light overflow-hidden'>
       <Container className='pb-3 pb-md-5'>
-        <Row className='align-items-center h-100 gap-3 gap-md-5 justify-content-between'>
-          <Col md={7} xl={6}>
+        <Row className='h-100'>
+          <Col md={7}>
             <Reveal overflow={true} direction={'top'}>
               <CardEffectCarousel dataCarousel={dataEmpoweringCarouselApi} />
             </Reveal>
           </Col>
-          <Col md={4} lg={4}>
+          <Col md={4}>
             <Reveal direction={'right'} overflow={true}>
-              <div className='d-flex gap-3 gap-md-5 flex-column mt-3 mt-md-5'>
+              <div className='d-flex gap-3 gap-md-5 flex-column'>
                 <Title
                   description={
                     dataEmpowering

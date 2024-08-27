@@ -6,22 +6,33 @@ import Growth from '../../../../assets/svg/growth.svg'
 import BGFish from '../../../../assets/images/bg-fish.png'
 import Image from 'next/image'
 
-function Commitment() {
+function Commitment({ dataCommitment }) {
+  const dataImage = [Guarantee, Free, Growth]
+
   const t = useTranslations('hatchery-farm.commitment')
   return (
     <section className='bg-white commitment-section'>
       <Container>
-        <h2 className='text-center pb-3 pt-5'>{t('title')}</h2>
-        <h4 className='text-center pb-5'>{t('description')}</h4>
-        <Row className='justify-content-center align-items-center'>
-          <Col xs={3} lg={2}>
-            <Guarantee />
-          </Col>
-          <Col xs={5}>
-            <h4>{t('note1')}</h4>
-          </Col>
-        </Row>
-        <Row className='justify-content-center align-items-center'>
+        <h2 className='text-center pb-3 pt-5'>
+          {dataCommitment ? dataCommitment[0].headline : t('title')}
+        </h2>
+        <h4 className='text-center pb-5'>
+          {dataCommitment ? dataCommitment[0].highlight : t('description')}
+        </h4>
+        {dataCommitment.splice(1, 3).map((res, index) => (
+          <Row
+            className='justify-content-center align-items-center'
+            key={res.id}
+          >
+            <Col xs={3} lg={2}>
+              {dataImage[index]()}
+            </Col>
+            <Col xs={5}>
+              <h4>{res.headline}</h4>
+            </Col>
+          </Row>
+        ))}
+        {/* <Row className='justify-content-center align-items-center'>
           <Col xs={3} lg={2}>
             <Free />
           </Col>
@@ -36,7 +47,7 @@ function Commitment() {
           <Col xs={5}>
             <h4>{t('note3')}</h4>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
       <Image alt='bg-fish' src={BGFish} className='w-100 h-auto' />
     </section>

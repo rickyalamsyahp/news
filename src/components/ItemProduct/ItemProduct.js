@@ -37,10 +37,15 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
   const handleShapes = async e => {
     const value = e.target.value
     const paramsSpecies = species.attributes.name
+    const populates = {
+      'populate[0]': 'species',
+      'populate[1]': 'image',
+    }
     const products = await (
       await getProducts({
         locale,
         species: paramsSpecies,
+        populates,
         phases: phasesText,
         shapes: value === 'Type' ? '*' : value,
       })

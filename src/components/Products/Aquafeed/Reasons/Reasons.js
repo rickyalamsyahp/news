@@ -8,43 +8,55 @@ import CompleteNutrition from '../../../../assets/images/complete-nutrition.png'
 import Image from 'next/image'
 import Reveal from '../../../Animation/Reveal/Reveal'
 
-function Reasons() {
+function Reasons({ dataReasons }) {
   const t = useTranslations('aquafeed.reasons')
-  const dataReasons = [
-    {
-      description: t('consistent'),
-      image: Consistent,
-    },
-    {
-      description: t('eco-friendly'),
-      image: Efficient,
-    },
-    {
-      description: t('unmatched'),
-      image: Unmatched,
-    },
-    {
-      description: t('long-last'),
-      image: LongLasting,
-    },
-    {
-      description: t('complete-nutrition'),
-      image: CompleteNutrition,
-    },
-  ]
+
+  const modifiedDataReasons = dataReasons.map((res, index) => ({
+    description: res.headline,
+    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.image.data[0].attributes.url}`,
+  }))
+  // const dataReasons = [
+  //   {
+  //     description: t('consistent'),
+  //     image: Consistent,
+  //   },
+  //   {
+  //     description: t('eco-friendly'),
+  //     image: Efficient,
+  //   },
+  //   {
+  //     description: t('unmatched'),
+  //     image: Unmatched,
+  //   },
+  //   {
+  //     description: t('long-last'),
+  //     image: LongLasting,
+  //   },
+  //   {
+  //     description: t('complete-nutrition'),
+  //     image: CompleteNutrition,
+  //   },
+  // ]
   return (
     <section className='bg-body-secondary py-5 position-relative'>
       <Container>
         <h2 className='fw-bold text-center'>{t('title')}</h2>
         <Row className='justify-content-center align-items-center gy-4'>
-          {dataReasons.map((res, index) => (
+          {modifiedDataReasons.map((res, index) => (
             <Reveal direction='bottom' overflow={true} key={`reason-${index}`}>
               <Col
                 xs={6}
                 md={12}
-                className='py-3 d-flex align-items-center flex-column gap-3'
+                className='py-3 d-flex align-items-center flex-column gap-3 w-100'
               >
-                <Image alt={res.description} src={res.image} />
+                <Image
+                  alt={res.description}
+                  src={res.image}
+                  width={125}
+                  height={125}
+                  // sizes='100vw'
+                  className='object-fit-contain'
+                />
                 <h3>{res.description}</h3>
               </Col>
             </Reveal>

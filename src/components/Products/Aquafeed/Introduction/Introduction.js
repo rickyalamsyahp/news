@@ -5,7 +5,7 @@ import Image from 'next/image'
 import BGAquafeed1 from '../../../../assets/images/bg-aquafeed-1.png'
 import Reveal from '../../../Animation/Reveal/Reveal'
 
-function Introduction() {
+function Introduction({ dataHero }) {
   const t = useTranslations('aquafeed.introduction')
   const dataBreadCrumb = [
     {
@@ -30,10 +30,14 @@ function Introduction() {
         <Breadcrumbs data={dataBreadCrumb} />
         <div className='w-75 mb-5'>
           <Reveal direction='top' overflow={true}>
-            <h2 className='fw-bold my-5'>{t('title')}</h2>
+            <h2 className='fw-bold my-5'>
+              {dataHero ? dataHero[0].headline : t('title')}
+            </h2>
           </Reveal>
           <Reveal direction='top' overflow={true}>
-            <h3 className='pb-5'>{t('description')}</h3>
+            <h3 className='pb-5'>
+              {dataHero ? dataHero[0].highlight : t('description')}
+            </h3>
           </Reveal>
         </div>
         <Image

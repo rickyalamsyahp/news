@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 function ThumbsImage({ product }) {
   const dataProduct = [
-    `${process.env.NEXT_PUBLIC_HOST_IMAGE}${product.image.data.attributes.url}`,
+    `${process.env.NEXT_PUBLIC_HOST_IMAGE}${product?.image?.data?.attributes?.url}`,
   ]
   const settings = {
     focusOnSelect: true,
@@ -35,7 +35,7 @@ function ThumbsImage({ product }) {
   }
   return (
     <Slider {...settings} className='slider-container-thumbs-image'>
-      {dataProduct.map((data, index) => (
+      {dataProduct?.map((data, index) => (
         <div key={`image-product-detail-${index}`}>
           <Image
             src={data}

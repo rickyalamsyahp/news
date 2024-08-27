@@ -6,7 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { useRouter } from '../../../../navigation'
 import Reveal from '../../../Animation/Reveal/Reveal'
 
-function Species({ dataSpecies }) {
+function Species({ dataSpecies, dataSpeciesDescription }) {
   const t = useTranslations('aquafeed.species')
   const router = useRouter()
   const modifiedDataSpecies = dataSpecies.map((species, index) => ({
@@ -61,10 +61,18 @@ function Species({ dataSpecies }) {
     <section className='bg-primary-subtle pb-5'>
       <Container>
         <Reveal direction='top' overflow={true}>
-          <h1 className='fw-bold py-5'>{t('title')}</h1>
+          <h1 className='fw-bold py-5'>
+            {dataSpeciesDescription
+              ? dataSpeciesDescription[0].headline
+              : t('title')}
+          </h1>
         </Reveal>
         <Reveal direction='top' overflow={true}>
-          <h4>{t('description')}</h4>
+          <h4>
+            {dataSpeciesDescription
+              ? dataSpeciesDescription[0].highlight
+              : t('description')}
+          </h4>
         </Reveal>
         <Row className='justify-content-center justify-content-lg-start pb-5'>
           {modifiedDataSpecies.map((res, index) => (
