@@ -17,7 +17,7 @@ export default function ImageCarousel({ dataCarousel }) {
     // centerPadding: '30px',
     autoplay: true,
     autoplaySpeed: 3000,
-    variableWidth: true,
+    // variableWidth: true,
     arrows: false,
     dots: false,
   }
@@ -26,16 +26,17 @@ export default function ImageCarousel({ dataCarousel }) {
       {dataCarousel?.length > 1 ? (
         <Slider {...settings}>
           {dataCarousel.map((data, index) => (
-            <Image
-              src={data.src}
-              alt='carousel-image-1'
-              width={0}
-              height={0}
-              sizes='100vw'
-              priority
-              className={' card-carousel-image rounded-3 object-fit-cover'}
-              key={`card-carousel-${index + 1}`}
-            />
+            <div key={`card-carousel-${index + 1}`}>
+              <Image
+                src={data.src}
+                alt='carousel-image-1'
+                width={0}
+                height={0}
+                sizes='100vw'
+                priority
+                className={' card-carousel-image rounded-3 object-fit-cover'}
+              />
+            </div>
           ))}
         </Slider>
       ) : (

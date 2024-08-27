@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useRouter, usePathname } from '../../../navigation'
 import { useTranslations } from 'next-intl'
 
@@ -21,7 +22,7 @@ export default function LocaleSwitcherMobile({ children, defaultValue }) {
             onClick={() => onSelectChange(cur.value)}
             className={`${cur.value === defaultValue ? 'selected' : ''} select-language-mobile`}
           >
-            {cur.logo()}
+            <Image src={cur.logo} alt='eng' width={16} height={16} />
             {cur.label.toUpperCase()}
           </div>
         ))}
