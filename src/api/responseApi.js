@@ -22,6 +22,7 @@ export const getArticles = async ({ locale }) => {
   try {
     const config = {
       params: {
+        'sort[0]': 'published_date:desc',
         locale,
         populate: '*',
       },
@@ -49,7 +50,7 @@ export const getProducts = async ({
     const config = {
       params: {
         'pagination[limit]': 30,
-        'sort[1]': 'feed_name:asc',
+        'sort[0]': 'feed_name:asc',
         locale,
         'filters[species][name][$eq]': species,
         ...shape,
@@ -68,7 +69,7 @@ export const getPages = async ({ locale, filter }) => {
     const config = {
       params: {
         'pagination[limit]': 10,
-        'sort[1]': 'publishedAt:desc',
+        'sort[0]': 'publishedAt:desc',
         locale,
         populate: 'content.image',
         'filters[url][$eq]': filter,
@@ -85,7 +86,7 @@ export const getAreas = async ({ locale }) => {
     const config = {
       params: {
         'pagination[limit]': 10,
-        'sort[1]': 'publishedAt:desc',
+        'sort[0]': 'publishedAt:desc',
         locale,
         populate: '*',
       },
@@ -101,7 +102,7 @@ export const getJourneys = async ({ locale }) => {
     const config = {
       params: {
         'pagination[limit]': 10,
-        'sort[1]': 'publishedAt:desc',
+        'sort[0]': 'publishedAt:desc',
         locale,
         populate: '*',
       },
@@ -117,7 +118,7 @@ export const getFeedShapes = async ({ locale }) => {
     const config = {
       params: {
         'pagination[limit]': 10,
-        'sort[1]': 'name:asc',
+        'sort[0]': 'name:asc',
         locale,
         populate: '*',
       },
@@ -133,7 +134,7 @@ export const getPhases = async ({ locale }) => {
     const config = {
       params: {
         'pagination[limit]': 10,
-        'sort[1]': 'name:asc',
+        'sort[0]': 'name:asc',
         locale,
         populate: '*',
       },
@@ -148,7 +149,7 @@ export const getSpecies = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'name:asc',
+        'sort[0]': 'name:asc',
         locale,
         populate: '*',
       },
@@ -163,7 +164,7 @@ export const getSolutions = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'ordering:asc',
+        'sort[0]': 'ordering:asc',
         locale,
         populate: '*',
       },
@@ -178,7 +179,7 @@ export const getSpeciesById = async ({ locale, id }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'name:asc',
+        'sort[0]': 'name:asc',
         locale,
         populate: '*',
       },
@@ -193,7 +194,7 @@ export const getSpeciesBySlug = async ({ locale, id }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'name:asc',
+        'sort[0]': 'name:asc',
         locale,
         populate: '*',
         'filters[slug][$eq]': id,
@@ -223,7 +224,7 @@ export const getProductBySlug = async ({ locale, id_product }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'feed_name:asc',
+        'sort[0]': 'feed_name:asc',
         locale,
         populate: '*',
         'filters[slug][$eq]': id_product,
@@ -253,13 +254,45 @@ export const getArticleById = async ({ locale, id }) => {
   try {
     const config = {
       params: {
-        'sort[1]': 'name:asc',
+        'sort[0]': 'name:asc',
         locale,
         populate: '*',
       },
     }
 
     return await serverAxios().get(GET_ARTICLE_BY_ID(id), config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+export const getArticleBySlug = async ({ locale, id }) => {
+  try {
+    const config = {
+      params: {
+        'locale': locale,
+        'populate': 'deep',
+        'filters[slug][$eq]': id,
+      },
+    }
+
+    return await serverAxios().get(ARTICLES, config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+export const getArticlesByCategory = async ({ locale, category }) => {
+  try {
+    const config = {
+      params: {
+        'sort[0]': 'published_date:desc',
+        'pagination[limit]': 4,
+        'locale': locale,
+        'populate': 'deep',
+        'filters[category][$eq]': category,
+      },
+    }
+
+    return await serverAxios().get(ARTICLES, config)
   } catch (error) {
     console.log(error)
   }

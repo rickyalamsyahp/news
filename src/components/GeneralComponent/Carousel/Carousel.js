@@ -62,7 +62,7 @@ export default function Carousel({ pagesArti }) {
                   </h6>
                 </div>
                 <ButtonSecondary>
-                  <Link href='/news-article'> Read More</Link>
+                <Link href={`/news/${data.attributes.slug}`}> Read More</Link>
                 </ButtonSecondary>
               </div>
               <Image
