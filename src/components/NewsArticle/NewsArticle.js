@@ -50,8 +50,10 @@ function NewsArticle({articleSlug, articlesCat}) {
         </h6>
         <Image
           alt='news-image'
-          src={Carousel1}
+          src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${articleSlug.attributes.image.data.attributes.url}`}
           className='w-100 h-auto rounded-4'
+          width={800}
+          height={500}
         />
         <div className='p-5'>
           <h5>
@@ -137,7 +139,7 @@ function NewsArticle({articleSlug, articlesCat}) {
               <div className='d-flex align-items-center gap-3'>
                 <Image
                   alt='card-{data.attributes.category}'
-                  src={Carousel1}
+                  src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`}
                   width={200}
                   height={200}
                   objectFit='cover'
