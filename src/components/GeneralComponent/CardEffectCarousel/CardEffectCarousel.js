@@ -9,13 +9,13 @@ export default function ImageCarousel({ dataCarousel }) {
   const settings = {
     dots: true,
     focusOnSelect: true,
-    infinite: dataCarousel?.length > 1 ? true : false,
+    // infinite: dataCarousel?.length > 1 ? true : false,
     speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '30px',
-    // autoplay: true,
+    // centerMode: true,
+    // centerPadding: '30px',
+    autoplay: true,
     autoplaySpeed: 3000,
     variableWidth: true,
     arrows: false,
@@ -44,7 +44,7 @@ export default function ImageCarousel({ dataCarousel }) {
             src={dataCarousel[0].src}
             alt='carousel-image-1'
             width={0}
-            height={500}
+            height={700}
             sizes='100vw'
             priority
             className={'w-100 mx-auto rounded-3 object-fit-cover'}

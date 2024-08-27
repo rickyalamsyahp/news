@@ -35,12 +35,12 @@ function VisionMission() {
         <Row className='card-hatchery-farm bg-white mb-3 mb-md-0'>
           <Col
             xs={12}
-            md={{ span: 6, order: '2' }}
+            md={{ span: 7, order: '2' }}
             className='p-0 pt-5 pt-md-0 position-relative'
           >
             <CardEffectCarousel dataCarousel={dataShrimp} cardWidth={450} />
           </Col>
-          <Col xs={12} md={{ span: 6, order: '1' }} className='py-5 px-5'>
+          <Col xs={12} md={{ span: 5, order: '1' }} className='py-5 px-5'>
             <div className='py-4 card-title gap-5 d-flex flex-column'>
               <h3 className='fw-bold'>{t('hatchery.shrimp.title')}</h3>
               <h5>{t('hatchery.shrimp.description1')}</h5>
@@ -49,10 +49,10 @@ function VisionMission() {
           </Col>
         </Row>
         <Row className='card-hatchery-farm bg-white'>
-          <Col md={{ span: 5, order: '1' }} className='p-0 position-relative'>
+          <Col md={{ span: 7, order: '1' }} className='p-0 position-relative'>
             <CardEffectCarousel dataCarousel={dataFish} cardWidth={400} />
           </Col>
-          <Col md={{ span: 6, order: '2' }}>
+          <Col md={{ span: 5, order: '2' }}>
             <Row className='flex-column h-100 justify-content-between align-items-center'>
               <Col md={12} className='py-5 px-4'>
                 <div className='py-4 card-title gap-5 d-flex flex-column'>
