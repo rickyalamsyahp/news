@@ -7,7 +7,7 @@ import { useRouter } from '../../../navigation'
 
 function RelatedProduct({ id, relateds }) {
   const router = useRouter()
-  console.log(relateds.data[0].attributes.image);
+
   
   const dataProductApi = relateds.data.map((res, index) => ({
     id: res.attributes.slug,
