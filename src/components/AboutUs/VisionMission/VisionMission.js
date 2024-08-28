@@ -37,7 +37,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
       <Container>
         <Row className='card-vision-mission bg-white mb-3 mb-md-0'>
           <Col md={{ span: 6, order: '2' }} className='p-0 position-relative'>
-            {/* <Image
+            <Image
               alt='vision-image'
               src={
                 dataOurVision && dataOurVision[0]?.url !== null
@@ -45,8 +45,8 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                   : VisionImage
               }
               className='w-100 h-auto'
-            /> */}
-            <div
+            />
+            {/* <div
               className={`p-3 bg-warning w-100 opacity-${showDetailVision} card-detail-vision`}
             >
               <div className='border border-white h-100 rounded-4 px-5 d-flex align-items-center flex-colum justify-content-center text-white'>
@@ -56,7 +56,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                     : t('vision.detail')}
                 </h5>
               </div>
-            </div>
+            </div> */}
           </Col>
           <Col md={{ span: 6, order: '1' }} className='py-5 px-5'>
             <div className='py-4 card-title d-flex flex-column'>
@@ -112,7 +112,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                   />
                 </div>
               </Col>
-              <Col md={12} className='p-0'>
+              {/* <Col md={12} className='p-0'>
                 <h5 className='text-center pb-4'>
                   {t('mission.deliver.title')}
                 </h5>
@@ -130,7 +130,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                     <h5>{t('mission.deliver.3')}</h5>
                   </Col>
                 </Row>
-              </Col>
+              </Col> */}
             </Row>
           </Col>
         </Row>
