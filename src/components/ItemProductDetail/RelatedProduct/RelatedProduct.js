@@ -8,7 +8,6 @@ import { useRouter } from '../../../navigation'
 function RelatedProduct({ id, relateds }) {
   const router = useRouter()
 
-  
   const dataProductApi = relateds.data.map((res, index) => ({
     id: res.attributes.slug,
     text: res.attributes.feed_name,

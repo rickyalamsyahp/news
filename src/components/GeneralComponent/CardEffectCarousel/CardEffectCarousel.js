@@ -45,7 +45,7 @@ export default function ImageCarousel({ dataCarousel }) {
             src={dataCarousel[0].src}
             alt='carousel-image-1'
             width={0}
-            height={700}
+            height={800}
             sizes='100vw'
             priority
             className={'w-100 mx-auto rounded-3 object-fit-cover'}

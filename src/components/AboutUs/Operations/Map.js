@@ -68,7 +68,7 @@ const Map = ({ geojsonData, provinceData }) => {
 
   return (
     <MapContainer
-      className='custom-map'
+      className='custom-map d-none d-md-block'
       style={{ height: '500px', width: '100%' }}
       center={[-2.5, 118.0]}
       zoom={4.8}

@@ -19,7 +19,7 @@ export default function JARS({ dataJARS }) {
     <section className='pb-3 pb-md-5' id='jars'>
       <Container>
         <Row className='justify-content-between align-items-start h-100'>
-          <Col md={{ span: 7, order: '2' }} className='mt-3 mt-md-0'>
+          <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>
             <Reveal overflow={true} direction={'top'}>
               <CardEffectCarousel dataCarousel={dataJARSCarouselApi} />
             </Reveal>

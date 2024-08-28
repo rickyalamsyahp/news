@@ -32,6 +32,8 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
   //   { src: HatcheryFish3 },
   //   { src: HatcheryFish4 },
   // ]
+  console.log(dataShrimpHatchery)
+
   return (
     <section className='pt-5 pb-5 bg-secondary-subtle' id='hatchery'>
       <Container>
@@ -39,7 +41,7 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
           STP Hatchery
           <br />{' '}
           {dataShrimpHatchery
-            ? dataShrimpHatchery[0].headline
+            ? dataShrimpHatchery[0].title
             : t('hatchery.title')}
         </h2>
         <Row className='card-hatchery-farm bg-white mb-3 mb-md-0'>

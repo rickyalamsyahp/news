@@ -18,12 +18,12 @@ export default function ATD({ dataATD }) {
     <section className='py-3 py-md-5 unique-bg' id='atd'>
       <Container>
         <Row className='h-100 gap-3 gap-md-5'>
-          <Col md={7} xl={6}>
+          <Col md={5} xl={4}>
             <Reveal overflow={true} direction={'top'}>
               <CardEffectCarousel dataCarousel={dataATDCarouselApi} />
             </Reveal>
           </Col>
-          <Col md={4} lg={4}>
+          <Col md={5} lg={5}>
             <Reveal direction={'right'} overflow={true}>
               <div className='d-flex gap-3 gap-md-5 flex-column'>
                 <Title

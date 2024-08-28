@@ -7,25 +7,19 @@ import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEf
 
 function TechnicalTeam({ dataTechnicalTeam, dataAnimalHealth }) {
   const t = useTranslations('technical-team')
-  var dataTechnicalTeamApi = []
-  var dataAnimalHealthApi = []
-  const modifiedTechnicalTeamApi = dataTechnicalTeam
-    ? dataTechnicalTeam[0].attributes.image.data.attributes.url
-    : []
-  const modifiedAnimalHealthApi = dataAnimalHealth
-    ? dataAnimalHealth[0].attributes.image.data.attributes.url
-    : []
-  if (modifiedTechnicalTeamApi) {
-    dataTechnicalTeamApi.push({
-      src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${modifiedTechnicalTeamApi}`,
-    })
-  }
+  const modifiedDataTechnicalTeam = dataTechnicalTeam[0].attributes.content[0]
+  const modifiedDataAnimalHealth = dataAnimalHealth[0].attributes.content[0]
 
-  if (modifiedAnimalHealthApi) {
-    dataAnimalHealthApi.push({
-      src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${modifiedAnimalHealthApi}`,
-    })
-  }
+  const dataImageTechinalTeam = modifiedDataAnimalHealth.image.data.map(
+    res => ({
+      src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
+    }),
+  )
+  const dataImageAnimalHealth = modifiedDataAnimalHealth.image.data.map(
+    res => ({
+      src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
+    }),
+  )
 
   return (
     <>
@@ -34,32 +28,48 @@ function TechnicalTeam({ dataTechnicalTeam, dataAnimalHealth }) {
         id='animal-health'
       >
         <Container className='py-0 py-md-5'>
-          <Row className='py-5 align-items-center'>
-            <Col xs={12} md={6}>
-              <h2 className='pb-3 fw-bold'>{t('section1.title')}</h2>
+          <Row className='py-5 align-items-center justify-content-between'>
+            <Col xs={12} md={5}>
+              <h2 className='pb-3 fw-bold'>
+                {modifiedDataTechnicalTeam
+                  ? modifiedDataTechnicalTeam.headline
+                  : t('section1.title')}
+              </h2>
               <h5 className='d-none d-md-flex'>{t('section1.description')}</h5>
             </Col>
-            <Col md={6}>
-              <CardEffectCarousel dataCarousel={dataAnimalHealthApi} />
+            <Col md={5}>
+              <CardEffectCarousel dataCarousel={dataImageTechinalTeam} />
             </Col>
             <Col xs={12} className='d-flex d-md-none pt-3 '>
-              <h5>{t('section1.description')}</h5>
+              <h5>
+                {modifiedDataTechnicalTeam
+                  ? modifiedDataTechnicalTeam.highlight
+                  : t('section1.description')}
+              </h5>
             </Col>
           </Row>
         </Container>
       </section>
       <section className='mt-0 mt-md-5 overflow-hidden' id='shrimp-fish-tech'>
         <Container className='py-0 py-md-5'>
-          <Row className='py-5 align-items-center position-relative'>
-            <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 6 }}>
-              <CardEffectCarousel dataCarousel={dataTechnicalTeamApi} />
+          <Row className='py-5 align-items-center position-relative justify-content-between'>
+            <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 5 }}>
+              <CardEffectCarousel dataCarousel={dataImageAnimalHealth} />
             </Col>
-            <Col xs={{ order: 1, span: 12 }} md={6}>
-              <h2 className='pb-3 fw-bold'>{t('section2.title')}</h2>
+            <Col xs={{ order: 1, span: 12 }} md={5}>
+              <h2 className='pb-3 fw-bold'>
+                {modifiedDataAnimalHealth
+                  ? modifiedDataAnimalHealth.headline
+                  : t('section2.title')}
+              </h2>
               <h5 className='d-none d-md-flex'>{t('section2.description')}</h5>
             </Col>
             <Col xs={{ order: 3, span: 12 }} className='d-flex d-md-none pt-3 '>
-              <h5>{t('section2.description')}</h5>
+              <h5>
+                {modifiedDataAnimalHealth
+                  ? modifiedDataAnimalHealth.highlight
+                  : t('section2.description')}
+              </h5>
             </Col>
           </Row>
         </Container>
