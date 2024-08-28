@@ -75,7 +75,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
         </Row>
         <Row className='card-vision-mission bg-white'>
           <Col md={{ span: 6, order: '1' }} className='p-0 position-relative'>
-            {/* <Image
+            <Image
               alt='mission-image'
               src={
                 dataOurMission && dataOurMission[0]?.url !== null
@@ -83,8 +83,8 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                   : MissionImage
               }
               className='w-100 h-100 object-fit-cover'
-            /> */}
-            <div
+            />
+            {/* <div
               className={`p-3 w-100 opacity-${showDetailMission} card-detail-mission`}
             >
               <div className='border border-white h-100 rounded-4 px-5 d-flex align-items-center flex-colum justify-content-center text-white'>
@@ -94,7 +94,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                     : t('mission.detail')}
                 </h5>
               </div>
-            </div>
+            </div> */}
           </Col>
           <Col md={{ span: 6, order: '2' }}>
             <Row className='flex-column h-100 justify-content-between align-items-center'>
