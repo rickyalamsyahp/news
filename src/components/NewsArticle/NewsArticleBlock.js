@@ -2,18 +2,15 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Breadcrumbs from '../GeneralComponent/Breadcrumbs/Breadcrumbs'
 import Image from 'next/image'
+import Carousel1 from '../../assets/images/carousel-1.png'
 import Twitter from '../../assets/svg/twitter.svg'
 import Whatsapp from '../../assets/svg/whatsapp.svg'
 import Links from '../../assets/svg/link.svg'
 import Facebook from '../../assets/svg/facebook.svg'
 import Mail from '../../assets/svg/mail.svg'
 import { Link } from '../../navigation'
-import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
-import './style.scss'
 
-async function NewsArticle({articleSlug, articlesCat}) {
+function NewsArticle({articleSlug, articlesCat}) {
   const dataBreadCrumb = [
     {
       text: 'Home',
@@ -32,11 +29,14 @@ async function NewsArticle({articleSlug, articlesCat}) {
     },
   ]
 
-  const matterResult = matter(articleSlug.attributes.content_md)
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content)
-  const contentHtml = processedContent? processedContent.toString() : ''
+  const textStyles = (item) => {
+    let content = item.text || '\u00A0'
+    if (item.bold) content = <b>{content}</b>
+    if (item.italic) content = <i>{content}</i>
+    if (item.underline) content = <u>{content}</u>
+
+    return content;
+  }
 
   return (
     <section>
@@ -56,7 +56,60 @@ async function NewsArticle({articleSlug, articlesCat}) {
           height={500}
         />
         <div className='p-5'>
-          <h5 className='content' dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <h5>
+            {articleSlug.attributes?.content_rich && articleSlug.attributes.content_rich.length > 0 ? (
+              articleSlug.attributes.content_rich.map((data, index) => {
+                const renderContent = () => {
+                  switch (data.type) {
+                    case 'paragraph':
+                      return data.children.map((item, itemIndex) => (
+                        <span key={`paragraph-${itemIndex}`}>
+                          {textStyles(item)}
+                        </span>
+                      ))
+
+                    case 'heading':
+                      return React.createElement(
+                        `h${data.level || 1}`,
+                        { key: `heading-${index}` },
+                        data.children.map((item, itemIndex) => (
+                          <span key={`heading-${itemIndex}`}>
+                            {textStyles(item)}
+                          </span>
+                        ))
+                      )
+
+                      case 'list':
+                        return React.createElement(
+                          data.format == 'ordered' ? 'ol' : 'ul',
+                          null,
+                          data.children.map((item) =>
+                            React.createElement(
+                              `li`,
+                              null,
+                              item.children.map((subitem, subitemIndex) => (
+                                <span key={`paragraph-${subitemIndex}`}>
+                                  {textStyles(subitem)}
+                                </span>
+                              ))
+                            )
+                          )
+                        )
+
+                    default:
+                      return null;
+                  }
+
+                }
+
+                return (
+                  <div key={`content-${index}`} style={{ marginBottom: '20px !important' }}>
+                  {renderContent()}
+                  </div>
+                )
+              })
+            ): null}
+          </h5>
           
           <div className='d-flex flex-row gap-3 py-3'>
             {articleSlug.attributes?.images && articleSlug.attributes.images.length > 0 ? (
