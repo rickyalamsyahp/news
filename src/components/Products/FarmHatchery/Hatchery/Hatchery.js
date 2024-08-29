@@ -38,6 +38,8 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
     <section className='pt-5 pb-5 bg-secondary-subtle' id='hatchery'>
       <Container>
         <h2 className='text-center mb-5'>
+          STP Hatchery
+          <br />{' '}
           {dataShrimpHatchery
             ? dataShrimpHatchery[0].title
             : t('hatchery.title')}

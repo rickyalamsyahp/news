@@ -22,11 +22,6 @@
   .card-detail-vision,
   .card-detail-mission {
     transition: opacity 0.5s ease;
-    height: 800px;
-    @include media-breakpoint-down(md) {
-      height: 350px;
-    }
-    display: grid;
     h5 {
       &:before {
         content: '';
@@ -36,6 +31,14 @@
         margin-bottom: 40px;
       }
     }
+  }
+
+  .card-detail-mission {
+    height: 800px;
+    @include media-breakpoint-down(md) {
+      height: 350px;
+    }
+    display: grid;
   }
 
   .card-detail-mission {

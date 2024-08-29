@@ -13,6 +13,7 @@ export default function Emphasizing({ dataEmphasizing }) {
         src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`,
       }))
     : []
+  var paragraphs = dataEmphasizing[0]?.highlight.split(/(?:\r?\n)+/)
   const dataEmphasizingCarousel = [
     { src: EmphasizingImage },
     { src: EmphasizingImage },
@@ -31,15 +32,17 @@ export default function Emphasizing({ dataEmphasizing }) {
               <div className='d-flex gap-3 gap-md-5 flex-column mt-3 mt-md-5'>
                 <Title
                   description={
-                    dataEmphasizing
-                      ? dataEmphasizing[0]?.highlight
-                      : t('description1')
+                    dataEmphasizing ? paragraphs[0] : t('description1')
                   }
                   title={
                     dataEmphasizing ? dataEmphasizing[0]?.headline : t('title')
                   }
                 />
-                {/* <Title description={t('description2')} /> */}
+                <Title
+                  description={
+                    dataEmphasizing ? paragraphs[1] : t('description2')
+                  }
+                />
               </div>
             </Reveal>
           </Col>
