@@ -14,12 +14,12 @@ function Commitment({ dataCommitment }) {
     <section className='bg-white commitment-section'>
       <Container>
         <h2 className='text-center pb-3 pt-5'>
-          {dataCommitment ? dataCommitment[0].headline : t('title')}
+          {dataCommitment.length>0 ? dataCommitment[0].headline : t('title')}
         </h2>
         <h4 className='text-center pb-5'>
-          {dataCommitment ? dataCommitment[0].highlight : t('description')}
+          {dataCommitment.length>0 ? dataCommitment[0].highlight : t('description')}
         </h4>
-        {dataCommitment.splice(1, 3).map((res, index) => (
+        {dataCommitment.length>0 && dataCommitment.splice(1, 3).map((res, index) => (
           <Row
             className='justify-content-center align-items-center'
             key={res.id}

@@ -42,7 +42,7 @@ export default function ImageCarousel({ dataCarousel }) {
       ) : (
         <div className='d-grid w-100'>
           <Image
-            src={dataCarousel[0].src}
+            src={dataCarousel.length ===1?dataCarousel[0].src:''}
             alt='carousel-image-1'
             width={0}
             height={800}

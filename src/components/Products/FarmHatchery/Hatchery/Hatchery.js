@@ -39,7 +39,7 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
         <h2 className='text-center mb-5'>
           {/* STP Hatchery */}
           <br />{' '}
-          {dataShrimpHatchery
+          {dataShrimpHatchery.length>0
             ? dataShrimpHatchery[0].title
             : t('hatchery.title')}
         </h2>
@@ -55,7 +55,7 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
             <div className='py-4 card-title gap-5 d-flex flex-column'>
               <h3 className='fw-bold'>{t('hatchery.shrimp.title')}</h3>
               <h5>
-                {dataShrimpHatchery
+                {dataShrimpHatchery.length>0
                   ? dataShrimpHatchery[0].highlight
                   : t('hatchery.shrimp.description1')}
               </h5>
@@ -72,12 +72,12 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
               <Col md={12} className='py-5 px-4'>
                 <div className='py-4 card-title gap-5 d-flex flex-column'>
                   <h3 className='fw-bold'>
-                    {dataFishHatchery
+                    {dataFishHatchery.length>0
                       ? dataFishHatchery[0].headline
                       : t('hatchery.fish.title')}
                   </h3>
                   <h5>
-                    {dataFishHatchery
+                    {dataFishHatchery.length>0
                       ? dataFishHatchery[0].highlight
                       : t('hatchery.fish.description1')}
                   </h5>

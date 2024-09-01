@@ -19,23 +19,23 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
         <Row className='align-items-center position-relative pt-5 mb-5 mb-md-0'>
           <Col md={6} className='d-flex flex-column gap-3'>
             <Image
-              src={`${dataTobaTolapia ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataTobaTolapia[0].image.data[0].attributes.url : TobaTilapia}`}
+              src={`${dataTobaTolapia.length>0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataTobaTolapia[0].image.data[0].attributes.url : ''}`}
               alt='tilapia'
               width={150}
               height={150}
               className='object-fit-contain'
             />
             <Title
-              title={dataTobaTolapia[0].headline}
+              title={dataTobaTolapia.length>0 ? dataTobaTolapia[0].headline:''}
               description={
-                dataTobaTolapia
+                dataTobaTolapia.length>0
                   ? dataTobaTolapia[0].highlight
                   : t('toba-tilapia')
               }
               readMore={t('find-out-more')}
               onClick={() =>
                 window.open(
-                  dataTobaTolapia
+                  dataTobaTolapia.length>0
                     ? dataTobaTolapia[0].url
                     : 'https://tobatilapia.com',
                 )
@@ -46,7 +46,7 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
             <Image
               alt='tilapia'
               className='img-right-food'
-              src={`${dataTobaTolapia ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataTobaTolapia[0].image.data[1].attributes.url : Tilapia}`}
+              src={`${dataTobaTolapia.length>0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataTobaTolapia[0].image.data[1].attributes.url : ''}`}
               width={0}
               height={0}
               sizes='100vw'
@@ -58,7 +58,7 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
             <Image
               alt='tilapia'
               className='img-left-food'
-              src={`${dataSeafoodLovers ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataSeafoodLovers[0].image.data[1].attributes.url : Shrimp}`}
+              src={`${dataSeafoodLovers.length>0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataSeafoodLovers[0].image.data[1].attributes.url : ''}`}
               width={0}
               height={0}
               sizes='100vw'
@@ -67,22 +67,22 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
           <Col md={6} className='d-flex flex-column gap-3 left-text-food'>
             <Image
               alt='seafood-lover'
-              src={`${dataSeafoodLovers ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataSeafoodLovers[0].image.data[0].attributes.url : SeafoodLover}`}
+              src={`${dataSeafoodLovers.length>0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataSeafoodLovers[0].image.data[0].attributes.url : ''}`}
               width={150}
               height={150}
               className='object-fit-contain'
             />
             <Title
-              title={dataSeafoodLovers[0].headline}
+              title={dataSeafoodLovers.length>0?dataSeafoodLovers[0].headline:''}
               description={
-                dataSeafoodLovers
+                dataSeafoodLovers.length>0
                   ? dataSeafoodLovers[0].highlight
                   : t('seafood-lovers')
               }
               readMore={t('find-out-more')}
               onClick={() =>
                 window.open(
-                  dataSeafoodLovers
+                  dataSeafoodLovers.length>0
                     ? dataSeafoodLovers[0].url
                     : 'https://www.japfabest.com/collections/seafood',
                 )
@@ -93,23 +93,23 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
         <Row className='align-items-center position-relative py-5 mt-5 mt-md-0'>
           <Col md={6} className='d-flex flex-column gap-3'>
             <Image
-              src={`${dataPrimeSeafood ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataPrimeSeafood[0].image.data[0].attributes.url : PrimeSeafood}`}
+              src={`${dataPrimeSeafood.length>0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataPrimeSeafood[0].image.data[0].attributes.url : ''}`}
               alt='tilapia'
               width={150}
               height={150}
               className='object-fit-contain'
             />
             <Title
-              title={dataPrimeSeafood[0].headline}
+              title={dataPrimeSeafood.length>0?dataPrimeSeafood[0].headline:''}
               description={
-                dataPrimeSeafood
+                dataPrimeSeafood.length>0
                   ? dataPrimeSeafood[0].highlight
                   : t('prime-seafood')
               }
               readMore={t('find-out-more')}
               onClick={() =>
                 window.open(
-                  dataPrimeSeafood
+                  dataPrimeSeafood.length>0
                     ? dataPrimeSeafood[0].url
                     : 'https://www.japfacomfeed.co.id/japfa-prime-seafood',
                 )
@@ -118,7 +118,7 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
           </Col>
           <Col md={6}>
             <Image
-              src={`${dataPrimeSeafood ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataPrimeSeafood[0].image.data[1].attributes.url : Siomay}`}
+              src={`${dataPrimeSeafood.length>0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataPrimeSeafood[0].image.data[1].attributes.url : ''}`}
               width={0}
               height={0}
               sizes='100vw'

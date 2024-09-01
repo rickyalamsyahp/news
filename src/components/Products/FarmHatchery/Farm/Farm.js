@@ -42,12 +42,12 @@ function VisionMission({ dataFishFarming, dataShrimpFarming }) {
           <Col md={{ span: 5, order: '1' }} className='py-5 px-5'>
             <div className='py-4 card-title gap-5 d-flex flex-column'>
               <h3 className='fw-bold'>
-                {dataFishFarming
+                {dataFishFarming.length>0
                   ? dataFishFarming[0].headline
                   : t('farm.fish.title')}
               </h3>
               <h5>
-                {dataFishFarming
+                {dataFishFarming.length>0
                   ? dataFishFarming[0].highlight
                   : t('farm.fish.description')}
               </h5>
@@ -63,12 +63,12 @@ function VisionMission({ dataFishFarming, dataShrimpFarming }) {
               <Col md={12} className='py-5 px-4'>
                 <div className='py-4 card-title gap-5 d-flex flex-column'>
                   <h3 className='fw-bold'>
-                    {dataShrimpFarming
+                    {dataShrimpFarming.length>0
                       ? dataShrimpFarming[0].headline
                       : t('farm.shrimp.title')}
                   </h3>
                   <h5>
-                    {dataShrimpFarming
+                    {dataShrimpFarming.length>0
                       ? dataShrimpFarming[0].highlight
                       : t('farm.shrimp.description')}
                   </h5>
