@@ -24,8 +24,8 @@ function ContactUs({ cities, solutions }) {
     fullname: '',
     email: '',
     phone: '',
-    location: '',
-    subject: '',
+    location: cities.length > 0 ? cities[0].attributes.name : '', // Set default location value
+    subject: solutions.length > 0 ? solutions[0].attributes.title : '', // Set default subject value
     message: '',
   })
 
