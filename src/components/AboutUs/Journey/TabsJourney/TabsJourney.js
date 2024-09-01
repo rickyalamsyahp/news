@@ -13,11 +13,14 @@ function TabsJourney({ journey }) {
   const tabs = journey?.map(data => ({
     eventKey: data.attributes.title,
     title: data.attributes.year,
-    content: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`,
+    content: data.attributes.image?.data?.attributes?.url 
+      ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}` 
+      : '',
     text: data.attributes.highlight,
-    width: data.attributes.image.data.attributes.width,
-    height: data.attributes.image.data.attributes.height,
+    width: data.attributes.image?.data?.attributes?.width || '',
+    height: data.attributes.image?.data?.attributes?.height || '',
   }))
+  
  
   
   return (

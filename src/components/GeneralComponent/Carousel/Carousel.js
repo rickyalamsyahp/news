@@ -55,7 +55,6 @@ export default function Carousel({ pagesArti }) {
             <div className='card-container px-2 position-relative d-none d-lg-block'>
               <div className='card-carousel position-absolute p-4 text-white rounded-3'>
                 <div className='mb-3 d-flex flex-column gap-2'>
-                  {console.log(data.attributes.image.data)}
                   <h6>{data.attributes.category}</h6>
                   <h4>{data.attributes.title}</h4>
                   <h6 className='highlight-text'>

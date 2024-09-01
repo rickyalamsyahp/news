@@ -52,7 +52,7 @@
     opacity: 1;
     z-index: 1;
   }
-  &.active,
+
   &:hover {
     .image-value {
       filter: blur(0px);
@@ -61,7 +61,7 @@
       bottom: 15%;
     }
   }
-  &.active {
+  &:hover {
     transform: scale(1);
 
     svg {

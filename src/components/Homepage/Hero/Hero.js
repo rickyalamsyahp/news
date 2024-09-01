@@ -1,18 +1,30 @@
+'use client'
 import HeroHomepage from '../../../assets/images/Hero-Home.gif'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
+import { useState, useEffect } from 'react'
 
 function Hero({ dataHero }) {
   const t = useTranslations('hero')
-  const image =
-    dataHero &&
-    `${process.env.NEXT_PUBLIC_HOST_IMAGE}${dataHero[0]?.image?.data[0].attributes.url}`
+  const images = dataHero?.[0]?.image?.data.map(img => 
+    `${process.env.NEXT_PUBLIC_HOST_IMAGE}${img.attributes.url}`
+  ) || [HeroHomepage.src]
+
+  const [currentImage, setCurrentImage] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(prev => (prev + 1) % images.length)
+    }, 5000) // Change image every 5 seconds
+    return () => clearInterval(interval)
+  }, [images.length])
+
   return (
     <section
       className='hero'
       id='hero-homepage'
       style={{
-        backgroundImage: `url(${image ? image : HeroHomepage.src})`,
+        backgroundImage: `url(${images[currentImage]})`,
       }}
     >
       <Reveal>

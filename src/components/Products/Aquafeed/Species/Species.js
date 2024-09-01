@@ -62,14 +62,14 @@ function Species({ dataSpecies, dataSpeciesDescription }) {
       <Container>
         <Reveal direction='top' overflow={true}>
           <h1 className='fw-bold py-5'>
-            {dataSpeciesDescription
+            {dataSpeciesDescription.length > 0
               ? dataSpeciesDescription[0].headline
               : t('title')}
           </h1>
         </Reveal>
         <Reveal direction='top' overflow={true}>
           <h4>
-            {dataSpeciesDescription
+            {dataSpeciesDescription.length > 0
               ? dataSpeciesDescription[0].highlight
               : t('description')}
           </h4>
@@ -78,13 +78,13 @@ function Species({ dataSpecies, dataSpeciesDescription }) {
           {modifiedDataSpecies.map((res, index) => (
             <Col
               key={`species-${index}`}
-              xs={4}
+              xs={5}
               md='auto'
-              lg={4}
-              xl={3}
+              lg={5}
+              xl={4}
               className='gy-4'
             >
-              <Reveal delay={index / 4} direction='left' overflow={true}>
+              <Reveal delay={index / 3} direction='left' overflow={true}>
                 <div
                   className='card-species'
                   onClick={() => router.push(`item-product/${res.slug}`)}
@@ -92,7 +92,9 @@ function Species({ dataSpecies, dataSpeciesDescription }) {
                   <Image
                     src={res.image}
                     alt={res.image}
-                    fill
+                    width={70}
+                    height={70}
+                    // fill
                     className='image-species'
                   />
                 </div>

@@ -32,7 +32,6 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
   //   { src: HatcheryFish3 },
   //   { src: HatcheryFish4 },
   // ]
-  console.log(dataShrimpHatchery)
 
   return (
     <section className='pt-5 pb-5 bg-secondary-subtle' id='hatchery'>
