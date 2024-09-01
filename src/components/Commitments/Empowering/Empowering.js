@@ -28,7 +28,7 @@ export default function Empowering({ dataEmpowering, pagesArticle }) {
     <section className='py-3 py-md-5 bg-light overflow-hidden'>
       <Container className='pb-3 pb-md-5'>
         <Row className='h-100 justify-content-between align-items-center'>
-          <Col md={5}>
+          <Col md={7}>
             <Reveal overflow={true} direction={'top'}>
               <CardEffectCarousel dataCarousel={dataEmpoweringCarouselApi} />
             </Reveal>
