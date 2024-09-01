@@ -24,7 +24,7 @@ export const getArticles = async ({ locale }) => {
       params: {
         'sort[0]': 'published_date:desc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -70,7 +70,6 @@ export const getPages = async ({ locale, filter }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
         populate: 'content.image',
@@ -87,7 +86,6 @@ export const getAreas = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
         populate: '*',
@@ -103,10 +101,9 @@ export const getJourneys = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -119,7 +116,6 @@ export const getFeedShapes = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'name:asc',
         locale,
         populate: '*',
@@ -135,10 +131,9 @@ export const getPhases = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -286,7 +281,6 @@ export const getArticlesByCategory = async ({ locale, category }) => {
     const config = {
       params: {
         'sort[0]': 'published_date:desc',
-        'pagination[limit]': 4,
         locale: locale,
         populate: 'deep',
         'filters[category][$eq]': category,
