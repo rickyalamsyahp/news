@@ -54,7 +54,7 @@ function CustomTabs({
       behavior: 'smooth',
     })
   }
-  console.log(tabs);
+
   
   const sortedTabs = tabs.sort((a, b) => parseInt(a.title) - parseInt(b.title));
   return (

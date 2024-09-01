@@ -16,29 +16,29 @@ function Reasons({ dataReasons }) {
     <section className='bg-body-secondary py-5'>
       <Container>
         <h2 className='fw-bold text-center mb-4'>{t('title')}</h2>
-        <Row className='justify-content-center justify-content-lg-start pb-5'>
-          {modifiedDataReasons.length > 0 && modifiedDataReasons.map((res, index) => (
-                 <Col
-                 xs={5}
-                 md='auto'
-                 lg={6}
-                 xl={4}
-                 className='gy-4'
-                  >
-            <Reveal direction='bottom' overflow={true} key={`reason-${index}`}>
-         
-                <Image
-                  alt={res.description}
-                  src={res.image}
-                  width={60}
-                  height={60}
-                  className='mb-2'
-                />
-                <h4 className='fw-semibold'>{res.description}</h4>
-           
-            </Reveal>
-            </Col>
-          ))}
+        <Row className='justify-content-center pb-5'>
+          {modifiedDataReasons.length > 0 &&
+            modifiedDataReasons.map((res, index) => (
+              <Col
+                xs={12} // Full width on extra small screens
+                sm={6} // Half width on small screens
+                md={4} // One-third width on medium screens
+                lg={4} // Quarter width on large screens
+                className='gy-4 text-center' // Center text and content
+                key={`reason-${index}`} // Provide a unique key for each column
+              >
+                <Reveal direction='bottom' overflow={true}>
+                  <Image
+                    alt={res.description}
+                    src={res.image}
+                    width={60}
+                    height={60}
+                    className='mb-2' // Margin bottom for spacing
+                  />
+                  <h4 className='fw-semibold'>{res.description}</h4>
+                </Reveal>
+              </Col>
+            ))}
         </Row>
       </Container>
     </section>

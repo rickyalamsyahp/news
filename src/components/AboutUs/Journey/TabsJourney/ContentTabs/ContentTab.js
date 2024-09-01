@@ -20,7 +20,7 @@ function ContentTab({ tabs, activeTab, transition }) {
             </div>
             <div className='description-journey-container d-grid'>
               <div className={`tab-content ${transition ? 'transition' : ''}`}>
-                <h3 className='fw-bold'>{tabs[activeTab].text}</h3>
+                <h3 className='fw-bold small-text two-line-text'>{tabs[activeTab].text}</h3>
               </div>
             </div>
           </div>
