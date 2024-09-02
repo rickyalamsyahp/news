@@ -107,12 +107,12 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                         ? dataOurMission[0]?.headline
                         : t('mission.description')
                     }
-                    // readMore={t('readmore')}
-                    // onClick={handleClickMission}
+                    readMore={t('readmore')}
+                    onClick={handleClickMission}
                   />
                 </div>
               </Col>
-              {/* <Col md={12} className='p-0'>
+              <Col md={12} className='p-0'>
                 <h5 className='text-center pb-4'>
                   {t('mission.deliver.title')}
                 </h5>
@@ -130,7 +130,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                     <h5>{t('mission.deliver.3')}</h5>
                   </Col>
                 </Row>
-              </Col> */}
+              </Col>
             </Row>
           </Col>
         </Row>

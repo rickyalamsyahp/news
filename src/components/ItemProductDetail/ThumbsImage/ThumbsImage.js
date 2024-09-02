@@ -7,9 +7,10 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function ThumbsImage({ product }) {
-  const dataProduct = [
-    `${process.env.NEXT_PUBLIC_HOST_IMAGE}${product?.image?.data?.attributes?.url}`,
-  ]
+  const dataProduct = product?.image?.data.map((res, index) => ({
+    src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res?.attributes?.url}`,
+  }))
+
   const settings = {
     focusOnSelect: true,
     speed: 1000,
@@ -22,7 +23,7 @@ function ThumbsImage({ product }) {
     customPaging: function (i) {
       return (
         <Image
-          src={dataProduct[i]}
+          src={dataProduct[i].src}
           alt={'image-product-detail'}
           height={75}
           width={75}
@@ -38,7 +39,7 @@ function ThumbsImage({ product }) {
       {dataProduct?.map((data, index) => (
         <div key={`image-product-detail-${index}`}>
           <Image
-            src={data}
+            src={data.src}
             width={0}
             height={350}
             sizes='100vw'

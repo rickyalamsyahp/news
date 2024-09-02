@@ -39,7 +39,15 @@ function DescriptionProduct({ product }) {
           noArrow={true}
           className={'bg-white text-warning'}
         >
-          <Link href='#'>Download Brochure</Link>
+          <Link
+            href={
+              product.download.data && product.download.data !== null
+                ? product.download.data
+                : '#'
+            }
+          >
+            Download Brochure
+          </Link>
         </ButtonThird>
         <ButtonThird>
           <Link href='/contact-us'>{t('contact-us')}</Link>

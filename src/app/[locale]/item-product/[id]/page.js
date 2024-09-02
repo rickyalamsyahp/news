@@ -31,6 +31,7 @@ export default async function Page({ params: { locale, id } }) {
   const products = await (
     await getProducts({ locale, species: paramsSpecies, populates })
   ).data.data
+  console.log(species.attributes.image)
 
   return (
     <>
@@ -44,5 +45,4 @@ export default async function Page({ params: { locale, id } }) {
       />
     </>
   )
-
 }

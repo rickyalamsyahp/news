@@ -148,8 +148,9 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
                   router.push(`${id}/${data.attributes.slug}`)
                 }}
               >
+                {console.log(data.attributes)}
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes?.image?.data?.attributes?.url}`}
+                  src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes?.image?.data[0]?.attributes?.url}`}
                   alt={data.attributes.feed_name}
                   width={0}
                   height={300}
