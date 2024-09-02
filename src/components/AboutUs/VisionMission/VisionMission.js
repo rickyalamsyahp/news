@@ -107,7 +107,7 @@ function VisionMission({ dataOurVision, dataOurMission }) {
                         ? dataOurMission[0]?.headline
                         : t('mission.description')
                     }
-                    readMore={t('readmore')}
+                    // readMore={t('readmore')}
                     onClick={handleClickMission}
                   />
                 </div>

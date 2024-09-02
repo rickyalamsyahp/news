@@ -14,10 +14,18 @@ export const CardValue = ({
       setActive(index)
     }, 100) // match the transition duration in CSS
   }
+  const handleMouseEnter = () => {
+    setTransition(true);
+    setTimeout(() => {
+      setTransition(false);
+      setActive(index);
+    }, 100); // match the transition duration in CSS
+  };
   return (
     <div
       className={`card-value ${active === index ? 'active' : ''}`}
       onClick={() => handleActive(index)}
+      onMouseEnter={handleMouseEnter}
     >
       {data.logo()}
       <Image
