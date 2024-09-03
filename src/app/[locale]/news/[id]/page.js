@@ -14,6 +14,8 @@ export async function generateMetadata({ params: { locale } }) {
 export default async function Page({ params: { locale, id } }) {
   const getArticlesCat = await getArticlesByCategory({ locale })
   const getArticleSlug = await getArticleBySlug({ locale, id })
+  // console.log(getArticlesCat);
+  // console.log(getArticleSlug);
   const articlesCat  = getArticlesCat.data.data
   const articleSlug  = getArticleSlug.data.data[0]
 

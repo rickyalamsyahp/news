@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Col, Container, Row } from 'react-bootstrap'
-
+const Image = dynamic(() => import('next/image'), { ssr: false });
 function ContentTab({ tabs, activeTab, transition }) {
   const t = useTranslations('about-us.journey.tabs')
   return (

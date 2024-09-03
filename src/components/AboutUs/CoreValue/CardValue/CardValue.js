@@ -1,5 +1,6 @@
-import Image from 'next/image'
-
+import dynamic from 'next/dynamic';
+// import Image from 'next/image'
+const Image = dynamic(() => import('next/image'), { ssr: false });
 export const CardValue = ({
   data,
   index,

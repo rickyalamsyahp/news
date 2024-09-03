@@ -269,8 +269,7 @@ export const getArticleBySlug = async ({ locale, id }) => {
         populate: 'deep',
         'filters[slug][$eq]': id,
       },
-    }
-
+    }    
     return await serverAxios().get(ARTICLES, config)
   } catch (error) {
     console.log(error)

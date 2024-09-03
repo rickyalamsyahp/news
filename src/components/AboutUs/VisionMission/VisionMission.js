@@ -3,11 +3,12 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
+import dynamic from 'next/dynamic';
+// import Image from 'next/image'
 import VisionImage from '../../../assets/images/vision-image.jpg'
 import MissionImage from '../../../assets/images/mission-image.jpg'
 import { useEffect, useState } from 'react'
-
+const Image = dynamic(() => import('next/image'), { ssr: false });
 function VisionMission({ dataOurVision, dataOurMission }) {
   const [showDetailVision, setShowDetailVision] = useState(0)
   const [showDetailMission, setShowDetailMission] = useState(1)
