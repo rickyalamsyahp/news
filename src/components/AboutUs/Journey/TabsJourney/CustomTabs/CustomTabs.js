@@ -55,8 +55,7 @@ function CustomTabs({
     })
   }
 
-  
-  const sortedTabs = tabs.sort((a, b) => parseInt(a.title) - parseInt(b.title));
+  const sortedTabs = tabs.sort((a, b) => parseInt(a.title) - parseInt(b.title))
   return (
     <div className='d-flex w-100 align-items-center'>
       <div className='svg-container'>
@@ -66,7 +65,6 @@ function CustomTabs({
         className='tabs-scroll-container d-flex overflow-x-auto w-100'
         ref={scrollRef}
       >
-
         <div className='tabs-list d-flex flex-nowrap w-100'>
           {tabs.map((tab, index) => (
             <h4

@@ -39,9 +39,7 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
         <h2 className='text-center mb-5'>
           {/* STP Hatchery */}
           <br />{' '}
-          {dataShrimpHatchery.length>0
-            ? dataShrimpHatchery[0].title
-            : t('hatchery.title')}
+          {dataShrimpHatchery.length > 0 ? dataShrimpHatchery[0].title : ''}
         </h2>
         <Row className='card-hatchery-farm bg-white mb-3 mb-md-0'>
           <Col
@@ -53,11 +51,15 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
           </Col>
           <Col xs={12} md={{ span: 5, order: '1' }} className='py-5 px-5'>
             <div className='py-4 card-title gap-5 d-flex flex-column'>
-              <h3 className='fw-bold'>{t('hatchery.shrimp.title')}</h3>
+              <h3 className='fw-bold'>
+                {dataShrimpHatchery.length > 0
+                  ? dataShrimpHatchery[0].headline
+                  : ''}
+              </h3>
               <h5>
-                {dataShrimpHatchery.length>0
+                {dataShrimpHatchery.length > 0
                   ? dataShrimpHatchery[0].highlight
-                  : t('hatchery.shrimp.description1')}
+                  : ''}
               </h5>
               {/* <h5>{t('hatchery.shrimp.description2')}</h5> */}
             </div>
@@ -72,14 +74,14 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
               <Col md={12} className='py-5 px-4'>
                 <div className='py-4 card-title gap-5 d-flex flex-column'>
                   <h3 className='fw-bold'>
-                    {dataFishHatchery.length>0
+                    {dataFishHatchery.length > 0
                       ? dataFishHatchery[0].headline
-                      : t('hatchery.fish.title')}
+                      : ''}
                   </h3>
                   <h5>
-                    {dataFishHatchery.length>0
+                    {dataFishHatchery.length > 0
                       ? dataFishHatchery[0].highlight
-                      : t('hatchery.fish.description1')}
+                      : ''}
                   </h5>
                   {/* <h5>{t('hatchery.fish.description2')}</h5> */}
                 </div>

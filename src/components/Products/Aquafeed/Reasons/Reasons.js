@@ -1,19 +1,21 @@
-import { useTranslations } from 'next-intl';
-import { Col, Container, Row } from 'react-bootstrap';
-import Image from 'next/image';
-import Reveal from '../../../Animation/Reveal/Reveal';
+import { useTranslations } from 'next-intl'
+import { Col, Container, Row } from 'react-bootstrap'
+import Image from 'next/image'
+import Reveal from '../../../Animation/Reveal/Reveal'
+import BGAquafeed2 from '../../../../assets/images/bg-aquafeed-2.png'
 
 function Reasons({ dataReasons }) {
-  const t = useTranslations('aquafeed.reasons');
+  const t = useTranslations('aquafeed.reasons')
 
   // Modify data to match the desired output structure
-  const modifiedDataReasons = dataReasons?.map((res, index) => ({
-    description: res.headline,
-    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.image.data[0].attributes.url}`,
-  })) || [];
+  const modifiedDataReasons =
+    dataReasons?.map((res, index) => ({
+      description: res.headline,
+      image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.image.data[0].attributes.url}`,
+    })) || []
 
   return (
-    <section className='bg-body-secondary py-5'>
+    <section className='bg-body-secondary py-5 position-relative'>
       <Container>
         <h2 className='fw-bold text-center mb-4'>{t('title')}</h2>
         <Row className='justify-content-center pb-5'>
@@ -31,9 +33,10 @@ function Reasons({ dataReasons }) {
                   <Image
                     alt={res.description}
                     src={res.image}
-                    width={60}
-                    height={60}
-                    className='mb-2' // Margin bottom for spacing
+                    width={0}
+                    height={75}
+                    sizes='100vw'
+                    className='w-100 object-fit-contain mb-2'
                   />
                   <h4 className='fw-semibold'>{res.description}</h4>
                 </Reveal>
@@ -41,8 +44,13 @@ function Reasons({ dataReasons }) {
             ))}
         </Row>
       </Container>
+      <Image
+        src={BGAquafeed2}
+        alt='bg-aquafeed2'
+        className='position-absolute start-0 top-0'
+      />
     </section>
-  );
+  )
 }
 
-export default Reasons;
+export default Reasons

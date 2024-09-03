@@ -8,7 +8,7 @@ function ContentTab({ tabs, activeTab, transition }) {
     <Container>
       <Row>
         <Col>
-          <div className='tab-content-container position-relative d-flex justify-content-center align-center flew-row'style={{height:500}}>
+          <div className='tab-content-container position-relative d-flex justify-content-center align-center flew-row'>
             <div className='img-journey-container p-4'>
               <Image
                 alt={`img-journey-${tabs[activeTab].title}`}
@@ -20,7 +20,9 @@ function ContentTab({ tabs, activeTab, transition }) {
             </div>
             <div className='description-journey-container d-grid'>
               <div className={`tab-content ${transition ? 'transition' : ''}`}>
-                <h3 className='fw-bold small-text two-line-text'>{tabs[activeTab].text}</h3>
+                <h5 className='fw-bold small-text two-line-text'>
+                  {tabs[activeTab].text}
+                </h5>
               </div>
             </div>
           </div>

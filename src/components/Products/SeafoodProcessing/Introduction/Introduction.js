@@ -9,7 +9,7 @@ function Introduction({ dataHero }) {
         <Row>
           <Col>
             <h3 className='text-center'>
-              {dataHero.length>0  ? dataHero[0].highlight : t('introduction')}
+              {dataHero.length > 0 ? dataHero[0].highlight : ''}
             </h3>
           </Col>
         </Row>

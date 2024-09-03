@@ -7,7 +7,6 @@ import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEf
 
 function TechnicalTeam({ dataTechnicalTeam, dataAnimalHealth }) {
   const t = useTranslations('technical-team')
-  console.log(dataTechnicalTeam)
 
   const modifiedDataTechnicalTeam =
     dataTechnicalTeam[0]?.attributes?.content[0] || {}
@@ -34,18 +33,19 @@ function TechnicalTeam({ dataTechnicalTeam, dataAnimalHealth }) {
           <Row className='py-5 align-items-center justify-content-between'>
             <Col xs={12} md={5}>
               <h2 className='pb-3 fw-bold'>
-                {modifiedDataAnimalHealth.headline || t('section1.title')}
+                {modifiedDataAnimalHealth.headline || ''}
               </h2>
-              <h5 className='d-none d-md-flex'>{t('section1.description')}</h5>
+              <h5 className='d-none d-md-flex'>
+                {modifiedDataAnimalHealth.highlight || ''}
+              </h5>
             </Col>
             <Col md={7}>
-              <CardEffectCarousel dataCarousel={dataImageAnimalHealth} />
+              {dataImageAnimalHealth.length > 0 && (
+                <CardEffectCarousel dataCarousel={dataImageAnimalHealth} />
+              )}
             </Col>
             <Col xs={12} className='d-flex d-md-none pt-3 '>
-              <h5>
-                {modifiedDataAnimalHealth.highlight ||
-                  t('section1.description')}
-              </h5>
+              <h5>{modifiedDataAnimalHealth.highlight || ''}</h5>
             </Col>
           </Row>
         </Container>
@@ -54,19 +54,20 @@ function TechnicalTeam({ dataTechnicalTeam, dataAnimalHealth }) {
         <Container className='py-0 py-md-5'>
           <Row className='py-5 align-items-center position-relative justify-content-between'>
             <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 7 }}>
-              <CardEffectCarousel dataCarousel={dataImageTechnicalTeam} />
+              {dataImageTechnicalTeam.length > 0 && (
+                <CardEffectCarousel dataCarousel={dataImageTechnicalTeam} />
+              )}
             </Col>
             <Col xs={{ order: 1, span: 12 }} md={5}>
               <h2 className='pb-3 fw-bold'>
-                {modifiedDataTechnicalTeam.headline || t('section2.title')}
+                {modifiedDataTechnicalTeam.headline || ''}
               </h2>
-              <h5 className='d-none d-md-flex'>{t('section2.description')}</h5>
+              <h5 className='d-none d-md-flex'>
+                {modifiedDataTechnicalTeam.highlight || ''}
+              </h5>
             </Col>
             <Col xs={{ order: 3, span: 12 }} className='d-flex d-md-none pt-3 '>
-              <h5>
-                {modifiedDataTechnicalTeam.highlight ||
-                  t('section2.description')}
-              </h5>
+              <h5>{modifiedDataTechnicalTeam.highlight || ''}</h5>
             </Col>
           </Row>
         </Container>

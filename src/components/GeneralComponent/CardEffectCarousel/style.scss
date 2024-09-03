@@ -5,10 +5,12 @@
     padding: 0px 15px;
   }
   .card-carousel-image {
-    @include media-breakpoint-between(md, lg) {
+    @include media-breakpoint-between(md, xl) {
+      width: 375px !important;
       height: 600px;
     }
     @include media-breakpoint-down(md) {
+      width: 100% !important;
       height: 400px;
     }
     width: 575px !important;

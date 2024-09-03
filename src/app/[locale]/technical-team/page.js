@@ -21,10 +21,13 @@ export default async function Page({ params: { locale } }) {
   const dataTechnicalTeam = dataSolutionsCard?.filter(
     item => item?.attributes?.title === 'SHRIMP & FISH TECHNICAL TEAM',
   )
+  const dataHero = dataAnimalHealth[0]?.attributes?.content.filter(
+    item => item?.title === 'Hero Banner',
+  )
 
   return (
     <section className='bg-secondary-subtle'>
-      <Hero />
+      <Hero dataHero={dataHero} />
       <TechnicalTeam
         dataTechnicalTeam={dataTechnicalTeam}
         dataAnimalHealth={dataAnimalHealth}

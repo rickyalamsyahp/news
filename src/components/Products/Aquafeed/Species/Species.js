@@ -92,9 +92,9 @@ function Species({ dataSpecies, dataSpeciesDescription }) {
                   <Image
                     src={res.image}
                     alt={res.image}
-                    width={70}
-                    height={70}
-                    // fill
+                    // width={70}
+                    // height={70}
+                    fill
                     className='image-species'
                   />
                 </div>

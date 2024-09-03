@@ -14,9 +14,9 @@ export default function CountCommitments({ dataPortofolio }) {
       className='py-0 py-lg-5 gap-3'
       style={{ columnGap: '0.003rem !important' }}
     >
-      <h3 className='fw-bold' style={{ fontSize: '35px' }}>
-        {c('by-number')}
-      </h3>
+      <Reveal>
+        <h2 className='fw-bold'>{c('by-number')}</h2>
+      </Reveal>
       {dataPortofolio?.image?.data?.map((data, index) => (
         <Col key={index} className='p-0'>
           <Reveal>

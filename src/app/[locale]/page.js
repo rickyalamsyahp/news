@@ -29,7 +29,7 @@ export default async function Page({ params: { locale } }) {
 
   // Extract data for each section in homepage
   const dataHero = dataContent?.content.filter(item => item?.title === 'Hero')
-  
+
   const dataSolutions = dataContent?.content.filter(
     item => item?.title === 'Solutions',
   )
@@ -39,10 +39,8 @@ export default async function Page({ params: { locale } }) {
   const dataPortofolio = dataContent?.content.filter(
     item => item?.title === 'Portfolio',
   )
-  const dataVideo = dataContent?.content.filter(
-    item => item?.title === 'Video',
-  )
-  
+  const dataVideo = dataContent?.content.filter(item => item?.title === 'Video')
+
   return (
     <>
       <Hero dataHero={dataHero} />
@@ -51,7 +49,7 @@ export default async function Page({ params: { locale } }) {
         dataSolutionsCard={dataSolutionsCard}
       />
       <Commitments
-      dataVideo={dataVideo}
+        dataVideo={dataVideo}
         dataCommitments={dataCommitments}
         dataPortofolio={dataPortofolio}
         pagesArticle={pagesArticle}

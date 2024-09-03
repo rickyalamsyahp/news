@@ -14,24 +14,25 @@ function Commitment({ dataCommitment }) {
     <section className='bg-white commitment-section'>
       <Container>
         <h2 className='text-center pb-3 pt-5'>
-          {dataCommitment.length>0 ? dataCommitment[0].headline : t('title')}
+          {dataCommitment.length > 0 ? dataCommitment[0].headline : ''}
         </h2>
         <h4 className='text-center pb-5'>
-          {dataCommitment.length>0 ? dataCommitment[0].highlight : t('description')}
+          {dataCommitment.length > 0 ? dataCommitment[0].highlight : ''}
         </h4>
-        {dataCommitment.length>0 && dataCommitment.splice(1, 3).map((res, index) => (
-          <Row
-            className='justify-content-center align-items-center'
-            key={res.id}
-          >
-            <Col xs={3} lg={2}>
-              {dataImage[index]()}
-            </Col>
-            <Col xs={5}>
-              <h4>{res.headline}</h4>
-            </Col>
-          </Row>
-        ))}
+        {dataCommitment.length > 0 &&
+          dataCommitment.splice(1, 3).map((res, index) => (
+            <Row
+              className='justify-content-center align-items-center'
+              key={res.id}
+            >
+              <Col xs={3} lg={2}>
+                {dataImage[index]()}
+              </Col>
+              <Col xs={5}>
+                <h4>{res.headline}</h4>
+              </Col>
+            </Row>
+          ))}
         {/* <Row className='justify-content-center align-items-center'>
           <Col xs={3} lg={2}>
             <Free />

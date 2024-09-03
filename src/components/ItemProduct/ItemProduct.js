@@ -11,6 +11,7 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
   const [phasesText, setPhasesText] = useState('')
   const [shapesText, setShapesText] = useState('')
   const router = useRouter()
+
   const breadcrumbItemProduct = [
     {
       text: 'Home',
@@ -28,7 +29,7 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
       active: false,
     },
     {
-      text: 'Common Carp',
+      text: species.attributes.name,
       href: '#',
       active: true,
     },
@@ -148,15 +149,16 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
                   router.push(`${id}/${data.attributes.slug}`)
                 }}
               >
-                {console.log(data.attributes)}
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes?.image?.data[0]?.attributes?.url}`}
-                  alt={data.attributes.feed_name}
-                  width={0}
-                  height={300}
-                  sizes='100vw'
-                  className='w-100 object-fit-contain rounded-top-3'
-                />
+                {data.attributes?.image?.data !== null && (
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes?.image?.data[0]?.attributes?.url}`}
+                    alt={data.attributes.feed_name}
+                    width={0}
+                    height={300}
+                    sizes='100vw'
+                    className='w-100 object-fit-cover rounded-top-3'
+                  />
+                )}
                 <h6
                   className='p-3 p-md-5 bg-white text-primary rounded-bottom-3 text-center fw-bold'
                   style={{
