@@ -20,12 +20,13 @@ export default async function Page({ params: { locale } }) {
     item => item?.attributes?.title === 'SEAFOOD PROCESSING',
   )
   const dataContent = dataSeafoodProcessing[0]?.attributes
-
+  console.log(dataContent);
+  
   const dataHero = dataContent?.content.filter(
     item => item?.title === 'Hero Banner',
   )
   const dataTobaTolapia = dataContent?.content.filter(
-    item => item?.title === 'Toba Tolapia',
+    item => item?.title === 'Toba Tilapia',
   )
   const dataSeafoodLovers = dataContent?.content.filter(
     item => item?.title === 'Seafood Lovers',
