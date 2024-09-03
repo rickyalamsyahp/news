@@ -9,13 +9,16 @@ import Reveal from '../../../Animation/Reveal/Reveal'
 export default function CountCommitments({ dataPortofolio }) {
   const c = useTranslations('homepage.commitments')
   const t = useTranslations('homepage.commitments.count')
+
   return (
     <Row
       className='py-0 py-lg-5 gap-3'
       style={{ columnGap: '0.003rem !important' }}
     >
       <Reveal>
-        <h2 className='fw-bold'>{c('by-number')}</h2>
+        <h3 className='fw-bold'>
+          {dataPortofolio ? dataPortofolio.headline : ''}
+        </h3>
       </Reveal>
       {dataPortofolio?.image?.data?.map((data, index) => (
         <Col key={index} className='p-0'>

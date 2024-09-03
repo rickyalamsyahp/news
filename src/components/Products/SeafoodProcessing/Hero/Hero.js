@@ -13,7 +13,7 @@ function Hero({ dataHero }) {
       className='hero'
       id='hero-homepage'
       style={{
-        backgroundImage: `url(${image ? image : HeroSeafoodProcessing.src}))`,
+        backgroundImage: `url(${image ? image : ''})`,
       }}
     >
       <Reveal>

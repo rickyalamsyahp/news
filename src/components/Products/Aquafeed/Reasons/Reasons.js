@@ -26,7 +26,7 @@ function Reasons({ dataReasons }) {
                 sm={6} // Half width on small screens
                 md={4} // One-third width on medium screens
                 lg={4} // Quarter width on large screens
-                className='gy-4 text-center' // Center text and content
+                className='gy-5 text-center' // Center text and content
                 key={`reason-${index}`} // Provide a unique key for each column
               >
                 <Reveal direction='bottom' overflow={true}>
@@ -47,7 +47,7 @@ function Reasons({ dataReasons }) {
       <Image
         src={BGAquafeed2}
         alt='bg-aquafeed2'
-        className='position-absolute start-0 top-0'
+        className='w-25 h-auto position-absolute start-0 top-0'
       />
     </section>
   )

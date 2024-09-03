@@ -13,6 +13,8 @@ import CardEffectCarousel from '../../../GeneralComponent/CardEffectCarousel/Car
 
 function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
   const t = useTranslations('hatchery-farm')
+  var paragraphsShrimp = dataShrimpHatchery[0].highlight.split(/(?:\r?\n)+/)
+  var paragraphsFish = dataFishHatchery[0].highlight.split(/(?:\r?\n)+/)
 
   const dataShrimp = dataShrimpHatchery[0]?.image?.data.map((res, index) => ({
     src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
@@ -57,11 +59,11 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
                   : ''}
               </h3>
               <h5>
-                {dataShrimpHatchery.length > 0
-                  ? dataShrimpHatchery[0].highlight
-                  : ''}
+                {dataShrimpHatchery.length > 0 ? paragraphsShrimp[0] : ''}
               </h5>
-              {/* <h5>{t('hatchery.shrimp.description2')}</h5> */}
+              <h5>
+                {dataShrimpHatchery.length > 0 ? paragraphsShrimp[1] : ''}
+              </h5>
             </div>
           </Col>
         </Row>
@@ -79,11 +81,11 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
                       : ''}
                   </h3>
                   <h5>
-                    {dataFishHatchery.length > 0
-                      ? dataFishHatchery[0].highlight
-                      : ''}
+                    {dataFishHatchery.length > 0 ? paragraphsFish[0] : ''}
                   </h5>
-                  {/* <h5>{t('hatchery.fish.description2')}</h5> */}
+                  <h5>
+                    {dataFishHatchery.length > 0 ? paragraphsFish[1] : ''}
+                  </h5>
                 </div>
               </Col>
             </Row>

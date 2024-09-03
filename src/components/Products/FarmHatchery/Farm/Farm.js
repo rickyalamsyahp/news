@@ -11,6 +11,7 @@ import CardEffectCarousel from '../../../GeneralComponent/CardEffectCarousel/Car
 
 function VisionMission({ dataFishFarming, dataShrimpFarming }) {
   const t = useTranslations('hatchery-farm')
+  var paragraphsFish = dataFishFarming[0].highlight.split(/(?:\r?\n)+/)
   const dataShrimp = dataShrimpFarming[0]?.image?.data.map((res, index) => ({
     src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
   }))
@@ -44,9 +45,10 @@ function VisionMission({ dataFishFarming, dataShrimpFarming }) {
               <h3 className='fw-bold'>
                 {dataFishFarming.length > 0 ? dataFishFarming[0].headline : ''}
               </h3>
-              <h5>
-                {dataFishFarming.length > 0 ? dataFishFarming[0].highlight : ''}
-              </h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[0] : ''}</h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[1] : ''}</h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[2] : ''}</h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[3] : ''}</h5>
             </div>
           </Col>
         </Row>
