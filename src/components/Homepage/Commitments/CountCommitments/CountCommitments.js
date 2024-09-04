@@ -20,26 +20,35 @@ export default function CountCommitments({ dataPortofolio }) {
           {dataPortofolio ? dataPortofolio.headline : ''}
         </h3>
       </Reveal>
-      {dataPortofolio?.image?.data?.map((data, index) => (
-        <Col key={index} className='p-0'>
-          <Reveal>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`}
-              alt={`Image ${index}`}
-              width={0}
-              height={0}
-              sizes='100vw'
-              style={{
-                display: 'block',
-                padding: 0,
-                margin: 0,
-                width: '100%',
-                height: 'auto',
-              }}
-            />
-          </Reveal>
-        </Col>
-      ))}
+      {dataPortofolio?.image?.data?.sort((a, b) => {
+
+        const isAOdd = a.id % 2 !== 0;
+        const isBOdd = b.id % 2 !== 0;
+
+        if (isAOdd && !isBOdd) return -1; 
+        if (!isAOdd && isBOdd) return 1;  
+        return 0; 
+      })
+        .map((data, index) => (
+          <Col key={index} className='p-0'>
+            <Reveal>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`}
+                alt={`Image ${index}`}
+                width={0}
+                height={0}
+                sizes='100vw'
+                style={{
+                  display: 'block',
+                  padding: 0,
+                  margin: 0,
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
+            </Reveal>
+          </Col>
+        ))}
     </Row>
   )
 }
