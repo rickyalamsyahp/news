@@ -74,7 +74,7 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
                   sizes='100vw'
                 />
               </Col>
-              <Col md={6} className='d-flex flex-column gap-3 left-text-food'>
+              <Col md={6} className='d-flex flex-column gap-3'>
                 <Image
                   alt='seafood-lover'
                   src={`${dataSeafoodLovers.length > 0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataSeafoodLovers[0].image.data[0].attributes.url : ''}`}
@@ -105,6 +105,7 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
               </Col>
             </>
           )}
+          
         </Row>
         <Row className='align-items-center position-relative py-5 mt-5 mt-md-0'>
           <Col md={6} className='d-flex flex-column gap-3'>
