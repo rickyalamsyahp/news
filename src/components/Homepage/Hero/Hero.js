@@ -29,7 +29,7 @@ function Hero({ dataHero }) {
     >
       <Reveal>
         <h1 className='fw-bold text-white m-auto w-75 text-center position-relative z-2'>
-          {dataHero.length>0 ? dataHero[0].headline : t('homepage')}
+          {dataHero.length>0 ? dataHero[0].headline : ''}
         </h1>
       </Reveal>
     </section>

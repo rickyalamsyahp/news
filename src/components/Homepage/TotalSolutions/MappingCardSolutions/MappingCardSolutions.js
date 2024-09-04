@@ -58,7 +58,8 @@ export default function MappingCardSolutions({ dataSolutionsCard }) {
       delay: 1,
     },
   ]
-
+  console.log(cardSolutionsApi);
+  
   const cardMappingData = cardSolutionsApi ? cardSolutionsApi : cardSolutions
   return (
     <Col className='pt-4'>

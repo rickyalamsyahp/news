@@ -9,7 +9,8 @@ const Image = dynamic(() => import('next/image'), { ssr: false });
 
 export default function Introduction({ dataIntro }) {
   const t = useTranslations('about-us')
-
+  console.log(dataIntro[0]?.image.data[0]);
+  
   return (
     <section className='py-4 py-lg-5' id='introduction'>
       <Container className='py-0 py-lg-5'>
@@ -17,7 +18,7 @@ export default function Introduction({ dataIntro }) {
           <Col>
             <Reveal overflow={true}>
               <h3 className='text-secondary'>
-                {dataIntro ? dataIntro[0]?.highlight : t('introduction')}
+                {dataIntro ? dataIntro[0]?.highlight :''}
               </h3>
             </Reveal>
           </Col>
@@ -28,10 +29,12 @@ export default function Introduction({ dataIntro }) {
               <Image
                 alt='image-introduction-about-us'
                 src={
-                  dataIntro && dataIntro[0]?.url !== null
-                    ? dataIntro[0]?.url
-                    : IntroductionImage
+                  dataIntro && dataIntro[0]?.image.data.length>0 
+                    ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${dataIntro[0]?.image?.data[0].attributes.url}`
+                    : ''
                 }
+                width={1000}
+                height={1000}
                 className='img-innovation'
               />
             </Reveal>
