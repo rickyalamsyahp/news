@@ -47,7 +47,7 @@ function Reasons({ dataReasons }) {
       <Image
         src={BGAquafeed2}
         alt='bg-aquafeed2'
-        className='w-25 h-auto position-absolute start-0 top-0'
+        className='w-25 h-auto d-none d-md-block position-absolute start-0 top-0'
       />
     </section>
   )

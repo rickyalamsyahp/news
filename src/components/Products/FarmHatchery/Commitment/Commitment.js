@@ -25,7 +25,7 @@ function Commitment({ dataCommitment }) {
               className='justify-content-center align-items-center'
               key={res.id}
             >
-              <Col xs={3} lg={2}>
+              <Col xs={3} lg={2} className='me-3 me-sm-0'>
                 {dataImage[index]()}
               </Col>
               <Col xs={5}>

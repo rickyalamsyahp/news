@@ -24,7 +24,7 @@ function Introduction({ dataHero }) {
       active: true,
     },
   ]
-  
+
   return (
     <section className='position-relative'>
       <Container className='pt-2 pt-md-5'>
@@ -44,7 +44,7 @@ function Introduction({ dataHero }) {
         <Image
           alt='bg-aquafeed1'
           src={BGAquafeed1}
-          className='w-25 h-auto position-absolute end-0 top-50'
+          className='w-25 h-auto position-absolute end-0 top-50 img-aquafeed'
         />
       </Container>
     </section>
