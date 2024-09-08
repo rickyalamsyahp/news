@@ -21,6 +21,7 @@ export default async function Page({ params: { locale } }) {
   const dataHatchery = dataSolutionsCard?.filter(
     item => item?.attributes?.title === 'SHRIMP & FISH HATCHERY',
   )
+  
   const dataFarm = dataSolutionsCard?.filter(
     item => item?.attributes?.title === 'SHRIMP & FISH FARM',
   )
