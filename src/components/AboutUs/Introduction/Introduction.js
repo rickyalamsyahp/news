@@ -9,8 +9,7 @@ const Image = dynamic(() => import('next/image'), { ssr: false });
 
 export default function Introduction({ dataIntro }) {
   const t = useTranslations('about-us')
-  console.log(dataIntro[0]?.image.data[0]);
-  
+ 
   return (
     <section className='py-4 py-lg-5' id='introduction'>
       <Container className='py-0 py-lg-5'>

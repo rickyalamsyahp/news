@@ -11,7 +11,8 @@ import Relentless from '../../../assets/images/relentless.png'
 import { CardValue } from './CardValue/CardValue'
 import { useState } from 'react'
 
-function CoreValue({ dataOurValues }) {
+function CoreValue({ dataOurValues, value }) {
+ 
   const [active, setActive] = useState(0)
   const [transition, setTransition] = useState(false)
   const t = useTranslations('about-us.values')
@@ -35,7 +36,18 @@ function CoreValue({ dataOurValues }) {
       image: Relentless,
     },
   ]
+  const cardValuess = value.map((datas) =>({
+    title: datas.attributes.title,
+    description: datas.attributes.content,
+    logo: datas.attributes.icon?.data?.attributes?.url 
+    ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${datas.attributes.icon.data.attributes.url}` 
+    : '',
+    image: datas.attributes.image?.data?.attributes?.url 
+    ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${datas.attributes.image.data.attributes.url}` 
+    : '',
+  }))
 
+  
   return (
     <section className='py-5'>
       <Container>
@@ -47,7 +59,7 @@ function CoreValue({ dataOurValues }) {
             </h4>
           </Col>
           <Col className='d-flex flex-row justify-content-between align-items-center pt-5'>
-            {cardValues.map((data, index) => (
+            {cardValuess.map((data, index) => (
               <CardValue
                 key={`card-value-${index}`}
                 data={data}
@@ -62,7 +74,7 @@ function CoreValue({ dataOurValues }) {
             <h5
               className={`pt-3 pt-md-5 card-value-description ${transition ? 'active' : ''}`}
             >
-              {cardValues[active].description}
+              {cardValuess[active].description}
             </h5>
           </Col>
         </Row>

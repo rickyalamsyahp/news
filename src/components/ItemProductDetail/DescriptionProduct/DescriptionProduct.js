@@ -30,6 +30,12 @@ function DescriptionProduct({ product }) {
               {product?.feed_shapes?.data[0]?.attributes?.name}
             </h5>
           </div>
+          <div className='d-flex flex-row gap-2 gap-md-0'>
+            <h6 className='text-dark w-25'>Rearing System </h6>
+            <h5 className='fw-bold'>
+              {product?.rearings?.data[0]?.attributes?.name}
+            </h5>
+          </div>
         </div>
         <h6 className='d-none d-md-block'>{product?.highlight}</h6>
       </div>

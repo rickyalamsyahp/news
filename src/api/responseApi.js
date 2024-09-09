@@ -14,6 +14,7 @@ import {
   SPECIES,
   CITIES,
   ADDRESS,
+  VALUES,
 } from './constant'
 
 const serverAxios = () => axios.create({ withCredentials: true })
@@ -78,6 +79,21 @@ export const getPages = async ({ locale, filter }) => {
     }
 
     return await serverAxios().get(PAGES, config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getValues = async ({ locale, filter }) => {
+  try {
+    const config = {
+      params: {
+        locale,
+        populate: 'deep',
+      },
+    }
+
+    return await serverAxios().get(VALUES, config)
   } catch (error) {
     console.log(error)
   }
