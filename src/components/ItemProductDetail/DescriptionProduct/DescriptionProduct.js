@@ -3,9 +3,7 @@ import { ButtonThird } from '../../GeneralComponent/CustomButton/CustomButton'
 import { Link } from '../../../navigation'
 import { useTranslations } from 'next-intl'
 
-function DescriptionProduct({ product }) {
-  console.log(product);
-  
+function DescriptionProduct({ product }) {  
   const t = useTranslations('innovation')
   return (
     <div className='d-flex justify-content-md-between flex-column h-100 gap-3 gap-md-0'>
@@ -34,9 +32,11 @@ function DescriptionProduct({ product }) {
           </div>
           <div className='d-flex flex-row gap-2 gap-md-0'>
             <h6 className='text-dark w-25'>Rearing System </h6>
-            <h5 className='fw-bold'>
-              {product?.rearings?.data[0]?.attributes?.name}
-            </h5>
+            {product?.rearings?.data.map((a, index) => 
+               <h5 className='fw-bold' key={index}>
+               {a.attributes.name}{index < product.rearings.data.length - 1 ? ', ' : ''}
+             </h5>
+            )}
           </div>
         </div>
         <h6 className='d-none d-md-block'>{product?.highlight}</h6>

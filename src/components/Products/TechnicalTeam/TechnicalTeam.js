@@ -12,7 +12,7 @@ function TechnicalTeam({ dataTechnicalTeam, dataAnimalHealth }) {
     dataTechnicalTeam[0]?.attributes?.content[0] || {}
   const modifiedDataAnimalHealth =
     dataAnimalHealth[0]?.attributes?.content[1] || {}
-
+  
   const dataImageTechnicalTeam =
     modifiedDataTechnicalTeam.image?.data?.map(res => ({
       src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,

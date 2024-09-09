@@ -15,16 +15,19 @@ export async function generateMetadata({ params: { locale } }) {
 export default async function Page({ params: { locale } }) {
   const solutions = await getSolutions({ locale })
   const dataSolutionsCard = solutions?.data?.data
+
+    
   const dataAnimalHealth = dataSolutionsCard?.filter(
     item => item?.attributes?.title === 'ANIMAL HEALTH & MOBILE LAB',
   )
+  
   const dataTechnicalTeam = dataSolutionsCard?.filter(
     item => item?.attributes?.title === 'SHRIMP & FISH TECHNICAL TEAM',
   )
   const dataHero = dataAnimalHealth[0]?.attributes?.content.filter(
     item => item?.title === 'Hero Banner',
   )
-
+  
   return (
     <section className='bg-secondary-subtle'>
       <Hero dataHero={dataHero} />

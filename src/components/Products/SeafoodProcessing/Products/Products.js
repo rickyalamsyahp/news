@@ -67,7 +67,7 @@ function Products({ dataTobaTolapia, dataSeafoodLovers, dataPrimeSeafood }) {
               <Col md={6} className='img-left-food-container mt-5'>
                 <Image
                   alt='tilapia'
-                  className='img-left-food'
+                  className='img-right-food'
                   src={`${dataSeafoodLovers.length > 0 ? process.env.NEXT_PUBLIC_HOST_IMAGE + dataSeafoodLovers[0].image.data[1].attributes.url : ''}`}
                   width={0}
                   height={0}
