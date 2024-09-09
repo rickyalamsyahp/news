@@ -242,7 +242,7 @@ export const getProductBySlug = async ({ locale, id_product }) => {
         'filters[slug][$eq]': id_product,
       },
     }
-
+    
     return await serverAxios().get(PRODUCTS, config)
   } catch (error) {
     console.log(error)

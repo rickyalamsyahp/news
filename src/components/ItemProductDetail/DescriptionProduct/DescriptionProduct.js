@@ -4,6 +4,8 @@ import { Link } from '../../../navigation'
 import { useTranslations } from 'next-intl'
 
 function DescriptionProduct({ product }) {
+  console.log(product);
+  
   const t = useTranslations('innovation')
   return (
     <div className='d-flex justify-content-md-between flex-column h-100 gap-3 gap-md-0'>
