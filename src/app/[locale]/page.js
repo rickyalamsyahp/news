@@ -23,22 +23,26 @@ export default async function Page({ params: { locale } }) {
 
   const dataSolutionsCard = solutions?.data?.data
 
+  
+
   const dataHomepage = data?.filter(item => item?.attributes?.title === 'Home')
 
   const dataContent = dataHomepage[0]?.attributes
 
   // Extract data for each section in homepage
-  const dataHero = dataContent?.content.filter(item => item?.title === 'Hero')
+  const dataHero = dataContent?.content.filter(item => item?.key === 'hero')
+  
   const dataSolutions = dataContent?.content.filter(
-    item => item?.title === 'Solutions',
+    item => item?.key === 'solutions',
   )
   const dataCommitments = dataContent?.content.filter(
-    item => item?.title === 'Commitments',
+    item => item?.key === 'commitments',
   )
   const dataPortofolio = dataContent?.content.filter(
-    item => item?.title === 'Portfolio',
+    item => item?.key === 'portfolio',
   )
-
+  const dataVideo = dataContent?.content.filter(item => item?.key === 'video')
+  
   return (
     <>
       <Hero dataHero={dataHero} />
@@ -47,6 +51,7 @@ export default async function Page({ params: { locale } }) {
         dataSolutionsCard={dataSolutionsCard}
       />
       <Commitments
+        dataVideo={dataVideo}
         dataCommitments={dataCommitments}
         dataPortofolio={dataPortofolio}
         pagesArticle={pagesArticle}

@@ -8,6 +8,7 @@ export default function Commitment({
   dataCommitments,
   dataPortofolio,
   pagesArticle,
+  dataVideo
 }) {
   const headline = dataCommitments && dataCommitments[0].headline
   const highlight = dataCommitments && dataCommitments[0].highlight
@@ -17,7 +18,7 @@ export default function Commitment({
   return (
     <section className='py-4 py-md-5 overflow-hidden' id='commitments-homepage'>
       <Container>
-        {/* <Thumbnail /> */}
+        <Thumbnail dataVideo={dataVideo}/>
         <DescriptionCommitments headline={headline} highlight={highlight} />
         <CountCommitments dataPortofolio={dataPorto} />
       </Container>

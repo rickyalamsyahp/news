@@ -80,11 +80,21 @@
     .tab-content {
       opacity: 1;
       transition: opacity 0.5s ease;
+      white-space: pre-wrap; // Maintains line breaks and spaces
+      overflow-wrap: break-word; // Breaks long words if needed
 
       &.transition {
         opacity: 0;
       }
     }
+
+    // // Limit text to two lines
+    // .two-line-text {
+    //   display: -webkit-box;
+    // -webkit-line-clamp: 2; // Limit to 2 lines
+    // -webkit-box-orient: vertical;
+    // overflow: hidden; // Hide overflow text
+    // }
     @include media-breakpoint-down(md) {
       flex-direction: column;
     }
@@ -100,4 +110,5 @@
       }
     }
   }
+  // Make text smaller
 }

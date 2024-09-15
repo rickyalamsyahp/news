@@ -21,6 +21,8 @@ export async function generateMetadata({ params: { locale } }) {
 export default async function Page({ params: { locale, product_id, id } }) {
   const getSpecies = await getSpeciesBySlug({ locale, id })
   const getProduct = await getProductBySlug({ locale, id_product: product_id })
+  console.log(getProduct);
+  
 
   const species = getSpecies.data.data[0]
   const productid = getProduct.data.data[0]?.id

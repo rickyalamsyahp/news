@@ -65,7 +65,9 @@ export default function Carousel({ pagesArti }) {
                 <Link href={`/news/${data.attributes.slug}`}> Read More</Link>
                 </ButtonSecondary>
               </div>
-              <Image
+              {data && data.attributes && data.attributes.image && data.attributes.image.data ? 
+               (
+                <Image
                 src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`}
                 width={800}
                 height={500}
@@ -73,17 +75,37 @@ export default function Carousel({ pagesArti }) {
                 priority
                 className='m-auto object-fit-cover rounded-2'
               />
+              ) :  <Image
+              // src={}
+              width={800}
+              height={500}
+              alt='carousel-image-1'
+              priority
+              className='m-auto object-fit-cover rounded-2'
+            />
+            }
+              
             </div>
             <Card className='d-block d-lg-none card-responsive'>
-              <Image
+            {data && data.attributes && data.attributes.image && data.attributes.image.data ? 
+               (
+                <Image
+                src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`}
+                width={800}
+                height={500}
                 alt='carousel-image-1'
                 priority
-                width={0}
-                height={0}
-                sizes='100vw'
-                src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`}
-                className='m-auto object-fit-cover rounded-top-2'
+                className='m-auto object-fit-cover rounded-2'
               />
+              ) :  <Image
+              // src={}
+              width={800}
+              height={500}
+              alt='carousel-image-1'
+              priority
+              className='m-auto object-fit-cover rounded-2'
+            />
+            }
               <Card.Body className='bg-dark rounded-bottom-2'>
                 <div className='mb-3 d-flex flex-column gap-2 text-white nunito-sans'>
                   <h6>{data.attributes.category}</h6>
@@ -95,7 +117,7 @@ export default function Carousel({ pagesArti }) {
                   </h6>
                 </div>
                 <ButtonSecondary mobile={true}>
-                  <Link href='/news-article'> Read More</Link>
+                <Link href={`/news/${data.attributes.slug}`}> Read More</Link>
                 </ButtonSecondary>
               </Card.Body>
             </Card>

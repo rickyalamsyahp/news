@@ -68,11 +68,13 @@ function Footer() {
         <Container>
           <Row>
             <Col sm={12} md className='pb-3 pb-md-0'>
+            <Link href='/'>
               <Image
                 src={LogoSTP}
                 alt='logo-stp-aquaculture'
                 className='w-50 h-auto img-footer'
               />
+              </Link>
             </Col>
             {linkProduct.map((data, index) => (
               <Col

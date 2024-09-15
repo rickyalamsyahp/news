@@ -11,6 +11,7 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
   const [phasesText, setPhasesText] = useState('')
   const [shapesText, setShapesText] = useState('')
   const router = useRouter()
+
   const breadcrumbItemProduct = [
     {
       text: 'Home',
@@ -28,7 +29,7 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
       active: false,
     },
     {
-      text: 'Common Carp',
+      text: species.attributes.name,
       href: '#',
       active: true,
     },

@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Col, Container, Row } from 'react-bootstrap'
-
+const Image = dynamic(() => import('next/image'), { ssr: false });
 function ContentTab({ tabs, activeTab, transition }) {
   const t = useTranslations('about-us.journey.tabs')
   return (
@@ -9,7 +10,7 @@ function ContentTab({ tabs, activeTab, transition }) {
       <Row>
         <Col>
           <div className='tab-content-container position-relative d-flex justify-content-center align-center flew-row'>
-            <div className='img-journey-container h-auto p-4'>
+            <div className='img-journey-container p-4'>
               <Image
                 alt={`img-journey-${tabs[activeTab].title}`}
                 src={tabs[activeTab].content}
@@ -20,8 +21,9 @@ function ContentTab({ tabs, activeTab, transition }) {
             </div>
             <div className='description-journey-container d-grid'>
               <div className={`tab-content ${transition ? 'transition' : ''}`}>
-                <h3 className='fw-bold'>{tabs[activeTab].text}</h3>
-                {/* <h3 className='fw-bold'>{t(`${tabs[activeTab].text}`)}</h3> */}
+                <h5 className='fw-bold small-text two-line-text'>
+                  {tabs[activeTab].text}
+                </h5>
               </div>
             </div>
           </div>

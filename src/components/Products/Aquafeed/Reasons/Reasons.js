@@ -1,73 +1,54 @@
 import { useTranslations } from 'next-intl'
 import { Col, Container, Row } from 'react-bootstrap'
-import Consistent from '../../../../assets/images/consistent.png'
-import Efficient from '../../../../assets/images/eco-friendly.png'
-import Unmatched from '../../../../assets/images/unmatched.png'
-import LongLasting from '../../../../assets/images/long-last.png'
-import CompleteNutrition from '../../../../assets/images/complete-nutrition.png'
 import Image from 'next/image'
 import Reveal from '../../../Animation/Reveal/Reveal'
+import BGAquafeed2 from '../../../../assets/images/bg-aquafeed-2.png'
 
 function Reasons({ dataReasons }) {
   const t = useTranslations('aquafeed.reasons')
 
-  const modifiedDataReasons = dataReasons.map((res, index) => ({
-    description: res.headline,
-    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.image.data[0].attributes.url}`,
-  }))
-  // const dataReasons = [
-  //   {
-  //     description: t('consistent'),
-  //     image: Consistent,
-  //   },
-  //   {
-  //     description: t('eco-friendly'),
-  //     image: Efficient,
-  //   },
-  //   {
-  //     description: t('unmatched'),
-  //     image: Unmatched,
-  //   },
-  //   {
-  //     description: t('long-last'),
-  //     image: LongLasting,
-  //   },
-  //   {
-  //     description: t('complete-nutrition'),
-  //     image: CompleteNutrition,
-  //   },
-  // ]
+  // Modify data to match the desired output structure
+  const modifiedDataReasons =
+    dataReasons?.map((res, index) => ({
+      description: res.headline,
+      image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.image.data[0].attributes.url}`,
+    })) || []
+
   return (
     <section className='bg-body-secondary py-5 position-relative'>
       <Container>
-        <h2 className='fw-bold text-center'>{t('title')}</h2>
-        <Row className='justify-content-center align-items-center gy-4'>
-          {modifiedDataReasons.map((res, index) => (
-            <Reveal direction='bottom' overflow={true} key={`reason-${index}`}>
+        <h2 className='fw-bold text-center mb-4'>{t('title')}</h2>
+        <Row className='justify-content-center pb-5'>
+          {modifiedDataReasons.length > 0 &&
+            modifiedDataReasons.map((res, index) => (
               <Col
-                xs={6}
-                md={12}
-                className='py-3 d-flex align-items-center flex-column gap-3 w-100'
+                xs={12} // Full width on extra small screens
+                sm={6} // Half width on small screens
+                md={4} // One-third width on medium screens
+                lg={4} // Quarter width on large screens
+                className='gy-5 text-center' // Center text and content
+                key={`reason-${index}`} // Provide a unique key for each column
               >
-                <Image
-                  alt={res.description}
-                  src={res.image}
-                  width={125}
-                  height={125}
-                  // sizes='100vw'
-                  className='object-fit-contain'
-                />
-                <h3>{res.description}</h3>
+                <Reveal direction='bottom' overflow={true}>
+                  <Image
+                    alt={res.description}
+                    src={res.image}
+                    width={0}
+                    height={75}
+                    sizes='100vw'
+                    className='w-100 object-fit-contain mb-2'
+                  />
+                  <h4 className='fw-semibold'>{res.description}</h4>
+                </Reveal>
               </Col>
-            </Reveal>
-          ))}
+            ))}
         </Row>
       </Container>
-      {/* <Image
+      <Image
         src={BGAquafeed2}
         alt='bg-aquafeed2'
-        className='position-absolute start-0 top-0'
-      /> */}
+        className='w-25 h-auto d-none d-md-block position-absolute start-0 top-0'
+      />
     </section>
   )
 }

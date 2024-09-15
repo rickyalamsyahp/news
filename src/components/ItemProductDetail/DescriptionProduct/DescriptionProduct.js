@@ -3,7 +3,7 @@ import { ButtonThird } from '../../GeneralComponent/CustomButton/CustomButton'
 import { Link } from '../../../navigation'
 import { useTranslations } from 'next-intl'
 
-function DescriptionProduct({ product }) {
+function DescriptionProduct({ product }) {  
   const t = useTranslations('innovation')
   return (
     <div className='d-flex justify-content-md-between flex-column h-100 gap-3 gap-md-0'>
@@ -30,6 +30,14 @@ function DescriptionProduct({ product }) {
               {product?.feed_shapes?.data[0]?.attributes?.name}
             </h5>
           </div>
+          <div className='d-flex flex-row gap-2 gap-md-0'>
+            <h6 className='text-dark w-25'>Rearing System </h6>
+            {product?.rearings?.data.map((a, index) => 
+               <h5 className='fw-bold' key={index}>
+               {a.attributes.name}{index < product.rearings.data.length - 1 ? ', ' : ''}
+             </h5>
+            )}
+          </div>
         </div>
         <h6 className='d-none d-md-block mb-3'>{product?.highlight}</h6>
       </div>
@@ -39,7 +47,15 @@ function DescriptionProduct({ product }) {
           noArrow={true}
           className={'bg-white text-warning'}
         >
-          <Link href='#'>Download Brochure</Link>
+          <Link
+            href={
+              product.download.data && product.download.data !== null
+                ? product.download.data
+                : '#'
+            }
+          >
+            Download Brochure
+          </Link>
         </ButtonThird>
         <ButtonThird>
           <Link href='/contact-us'>{t('contact-us')}</Link>

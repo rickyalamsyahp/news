@@ -44,5 +44,4 @@ export default async function Page({ params: { locale, id } }) {
       />
     </>
   )
-
 }

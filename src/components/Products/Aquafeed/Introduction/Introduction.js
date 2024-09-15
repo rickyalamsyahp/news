@@ -24,6 +24,7 @@ function Introduction({ dataHero }) {
       active: true,
     },
   ]
+
   return (
     <section className='position-relative'>
       <Container className='pt-2 pt-md-5'>
@@ -31,19 +32,19 @@ function Introduction({ dataHero }) {
         <div className='w-75 mb-5'>
           <Reveal direction='top' overflow={true}>
             <h2 className='fw-bold my-5'>
-              {dataHero ? dataHero[0].headline : t('title')}
+              {dataHero.length > 0 ? dataHero[0].headline : t('title')}
             </h2>
           </Reveal>
           <Reveal direction='top' overflow={true}>
             <h3 className='pb-5'>
-              {dataHero ? dataHero[0].highlight : t('description')}
+              {dataHero.length > 0 ? dataHero[0].highlight : t('description')}
             </h3>
           </Reveal>
         </div>
         <Image
           alt='bg-aquafeed1'
           src={BGAquafeed1}
-          className='w-25 h-auto position-absolute end-0 top-50'
+          className='w-25 h-auto position-absolute end-0 top-50 img-aquafeed'
         />
       </Container>
     </section>

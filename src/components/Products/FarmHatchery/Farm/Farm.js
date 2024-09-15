@@ -11,6 +11,7 @@ import CardEffectCarousel from '../../../GeneralComponent/CardEffectCarousel/Car
 
 function VisionMission({ dataFishFarming, dataShrimpFarming }) {
   const t = useTranslations('hatchery-farm')
+  var paragraphsFish = dataFishFarming[0].highlight.split(/(?:\r?\n)+/)
   const dataShrimp = dataShrimpFarming[0]?.image?.data.map((res, index) => ({
     src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
   }))
@@ -32,8 +33,8 @@ function VisionMission({ dataFishFarming, dataShrimpFarming }) {
     <section className='pt-5 pb-5 bg-light-subtle' id='farm'>
       <Container>
         <h2 className='text-center my-5'>
-          STP Farming
-          <br /> {t('farm.title')}
+          {/* STP Farming */}
+          <br /> {dataFishFarming.length > 0 ? dataFishFarming[0].title : ''}
         </h2>
         <Row className='card-hatchery-farm bg-white mb-3 mb-md-0'>
           <Col md={{ span: 7, order: '2' }} className='p-0 position-relative'>
@@ -42,15 +43,12 @@ function VisionMission({ dataFishFarming, dataShrimpFarming }) {
           <Col md={{ span: 5, order: '1' }} className='py-5 px-5'>
             <div className='py-4 card-title gap-5 d-flex flex-column'>
               <h3 className='fw-bold'>
-                {dataFishFarming
-                  ? dataFishFarming[0].headline
-                  : t('farm.fish.title')}
+                {dataFishFarming.length > 0 ? dataFishFarming[0].headline : ''}
               </h3>
-              <h5>
-                {dataFishFarming
-                  ? dataFishFarming[0].highlight
-                  : t('farm.fish.description')}
-              </h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[0] : ''}</h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[1] : ''}</h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[2] : ''}</h5>
+              <h5>{dataFishFarming.length > 0 ? paragraphsFish[3] : ''}</h5>
             </div>
           </Col>
         </Row>
@@ -63,14 +61,14 @@ function VisionMission({ dataFishFarming, dataShrimpFarming }) {
               <Col md={12} className='py-5 px-4'>
                 <div className='py-4 card-title gap-5 d-flex flex-column'>
                   <h3 className='fw-bold'>
-                    {dataShrimpFarming
+                    {dataShrimpFarming.length > 0
                       ? dataShrimpFarming[0].headline
-                      : t('farm.shrimp.title')}
+                      : ''}
                   </h3>
                   <h5>
-                    {dataShrimpFarming
+                    {dataShrimpFarming.length > 0
                       ? dataShrimpFarming[0].highlight
-                      : t('farm.shrimp.description')}
+                      : ''}
                   </h5>
                 </div>
               </Col>

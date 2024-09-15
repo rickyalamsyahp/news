@@ -41,16 +41,18 @@ export default function ImageCarousel({ dataCarousel }) {
         </Slider>
       ) : (
         <div className='d-grid w-100'>
-          <Image
-            src={dataCarousel[0].src}
-            alt='carousel-image-1'
-            width={0}
-            height={800}
-            sizes='100vw'
-            priority
-            className={'w-100 mx-auto rounded-3 object-fit-cover'}
-            key={`card-carousel`}
-          />
+          {dataCarousel && dataCarousel !== null && (
+            <Image
+              src={dataCarousel?.length === 1 ? dataCarousel[0]?.src : ''}
+              alt='carousel-image-1'
+              width={0}
+              height={800}
+              sizes='100vw'
+              priority
+              className={'rounded-3 object-fit-cover card-carousel-image '}
+              key={`card-carousel`}
+            />
+          )}
         </div>
       )}
     </div>

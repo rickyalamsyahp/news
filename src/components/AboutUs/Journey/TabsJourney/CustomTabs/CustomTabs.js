@@ -19,13 +19,17 @@ function CustomTabs({
   }
 
   const handlePrev = () => {
-    const newIndex = activeTab > 0 ? activeTab - 1 : tabs.length - 1
-    handleSelect(newIndex)
+    if (activeTab > 0) {
+      const newIndex = activeTab - 1
+      handleSelect(newIndex)
+    }
   }
 
   const handleNext = () => {
-    const newIndex = activeTab < tabs.length - 1 ? activeTab + 1 : 0
-    handleSelect(newIndex)
+    if (activeTab < tabs.length - 1) {
+      const newIndex = activeTab + 1
+      handleSelect(newIndex)
+    }
   }
 
   useEffect(() => {
@@ -54,6 +58,8 @@ function CustomTabs({
       behavior: 'smooth',
     })
   }
+
+  const sortedTabs = tabs.sort((a, b) => parseInt(a.title) - parseInt(b.title))
   return (
     <div className='d-flex w-100 align-items-center'>
       <div className='svg-container'>

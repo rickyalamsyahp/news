@@ -24,7 +24,7 @@ export default function ARC({ dataARC }) {
     <section className='py-3 py-md-5 bg-light' id='arc'>
       <Container className='mb-5'>
         <Row className='h-100 justify-content-between'>
-          <Col md={{ span: 5, order: '2' }} className='mt-3 mt-md-0'>
+          <Col md={{ span: 7, order: '2' }} className='mt-3 mt-md-0'>
             <Reveal direction={'top'} overflow={true}>
               <CardEffectCarousel dataCarousel={dataARCCarouselApi} />
             </Reveal>

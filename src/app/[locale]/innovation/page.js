@@ -20,6 +20,7 @@ export default async function Page({ params: { locale } }) {
   const {
     data: { data },
   } = pages
+  
   const dataContent = data[0]?.attributes?.content
   const dataHero = dataContent?.filter(item => item?.title === 'Hero')
   const dataJARS = dataContent?.filter(item => item?.title === 'JARS')

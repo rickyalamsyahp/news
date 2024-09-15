@@ -7,7 +7,7 @@ import CoreValue from '../../../components/AboutUs/CoreValue/CoreValue'
 import Operations from '../../../components/AboutUs/Operations/Operation'
 import Certification from '../../../components/AboutUs/Certification/Certification'
 import Introduction from '../../../components/AboutUs/Introduction/Introduction'
-import { getJourneys, getPages } from '../../../api/responseApi'
+import { getJourneys, getPages, getValues } from '../../../api/responseApi'
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
@@ -19,6 +19,8 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function Page({ params: { locale } }) {
   const pages = await getPages({ locale })
+  const values = await getValues({ locale })
+
   const journeys = await getJourneys({ locale })
   const {
     data: { data },
@@ -26,6 +28,11 @@ export default async function Page({ params: { locale } }) {
   const {
     data: { data: journey },
   } = journeys
+
+  const {
+    data: { data: value },
+  } = values
+
 
   const dataHomepage = data?.filter(
     item => item?.attributes?.title === 'About Us',
@@ -60,7 +67,7 @@ export default async function Page({ params: { locale } }) {
           dataOurVision={dataOurVision}
           dataOurMission={dataOurMission}
         />
-        <CoreValue dataOurValues={dataOurValues} />
+        <CoreValue dataOurValues={dataOurValues} value={value}/>
       </section>
       <section className='bg-secondary-subtle'>
         <Operations dataOurOperations={dataOurOperations} />

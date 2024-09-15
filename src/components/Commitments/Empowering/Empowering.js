@@ -17,6 +17,7 @@ export default function Empowering({ dataEmpowering, pagesArticle }) {
       }))
     : []
   const t = useTranslations('commitments.empowering')
+  var paragraphs = dataEmpowering[0]?.highlight.split(/(?:\r?\n)+/)
   const dataEmpoweringCarousel = [
     { src: EmpoweringImage2 },
     { src: EmpoweringImage3 },
@@ -26,8 +27,8 @@ export default function Empowering({ dataEmpowering, pagesArticle }) {
   return (
     <section className='py-3 py-md-5 bg-light overflow-hidden'>
       <Container className='pb-3 pb-md-5'>
-        <Row className='h-100'>
-          <Col md={5}>
+        <Row className='h-100 justify-content-between align-items-center'>
+          <Col md={7}>
             <Reveal overflow={true} direction={'top'}>
               <CardEffectCarousel dataCarousel={dataEmpoweringCarouselApi} />
             </Reveal>
@@ -37,15 +38,17 @@ export default function Empowering({ dataEmpowering, pagesArticle }) {
               <div className='d-flex gap-3 gap-md-5 flex-column'>
                 <Title
                   description={
-                    dataEmpowering
-                      ? dataEmpowering[0]?.highlight
-                      : t('description1')
+                    dataEmpowering ? paragraphs[0] : t('description1')
                   }
                   title={
                     dataEmpowering ? dataEmpowering[0]?.headline : t('title')
                   }
                 />
-                {/* <Title description={t('description2')} /> */}
+                <Title
+                  description={
+                    dataEmpowering ? paragraphs[1] : t('description2')
+                  }
+                />
               </div>
             </Reveal>
           </Col>

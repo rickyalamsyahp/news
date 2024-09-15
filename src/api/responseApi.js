@@ -14,6 +14,7 @@ import {
   SPECIES,
   CITIES,
   ADDRESS,
+  VALUES,
 } from './constant'
 
 const serverAxios = () => axios.create({ withCredentials: true })
@@ -24,7 +25,7 @@ export const getArticles = async ({ locale }) => {
       params: {
         'sort[0]': 'published_date:desc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -70,7 +71,6 @@ export const getPages = async ({ locale, filter }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
         populate: 'content.image',
@@ -83,11 +83,25 @@ export const getPages = async ({ locale, filter }) => {
     console.log(error)
   }
 }
+
+export const getValues = async ({ locale, filter }) => {
+  try {
+    const config = {
+      params: {
+        locale,
+        populate: 'deep',
+      },
+    }
+
+    return await serverAxios().get(VALUES, config)
+  } catch (error) {
+    console.log(error)
+  }
+}
 export const getAreas = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
         populate: '*',
@@ -103,10 +117,9 @@ export const getJourneys = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'publishedAt:desc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -119,7 +132,6 @@ export const getFeedShapes = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'name:asc',
         locale,
         populate: '*',
@@ -135,10 +147,9 @@ export const getPhases = async ({ locale }) => {
   try {
     const config = {
       params: {
-        'pagination[limit]': 10,
         'sort[0]': 'name:asc',
         locale,
-        populate: '*',
+        populate: 'deep',
       },
     }
 
@@ -231,7 +242,7 @@ export const getProductBySlug = async ({ locale, id_product }) => {
         'filters[slug][$eq]': id_product,
       },
     }
-
+    
     return await serverAxios().get(PRODUCTS, config)
   } catch (error) {
     console.log(error)
@@ -274,8 +285,7 @@ export const getArticleBySlug = async ({ locale, id }) => {
         populate: 'deep',
         'filters[slug][$eq]': id,
       },
-    }
-
+    }    
     return await serverAxios().get(ARTICLES, config)
   } catch (error) {
     console.log(error)
@@ -286,7 +296,6 @@ export const getArticlesByCategory = async ({ locale, category }) => {
     const config = {
       params: {
         'sort[0]': 'published_date:desc',
-        'pagination[limit]': 4,
         locale: locale,
         populate: 'deep',
         'filters[category][$eq]': category,

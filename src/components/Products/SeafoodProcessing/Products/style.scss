@@ -34,11 +34,13 @@
   .left-text-food {
     // margin-top: 25%;
     // margin-bottom: 20%;
-    img,
-    h2,
-    span {
-      text-align: right;
-      margin-left: auto;
+    @include media-breakpoint-down(md) {
+      img,
+      h2,
+      span {
+        text-align: right;
+        margin-left: auto;
+      }
     }
   }
 }

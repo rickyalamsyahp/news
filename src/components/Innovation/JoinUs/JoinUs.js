@@ -19,7 +19,7 @@ function JoinUs({ dataContact }) {
           <Reveal overflow={true}>
             <ButtonThird>
               <Link href='/contact-us'>
-                {dataContact ? dataContact[0]?.headline : t('contact-us')}
+                {t('contact-us')}
               </Link>
             </ButtonThird>
           </Reveal>

@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic';
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Breadcrumbs from '../GeneralComponent/Breadcrumbs/Breadcrumbs'
-import Image from 'next/image'
+
 import Twitter from '../../assets/svg/twitter.svg'
 import Whatsapp from '../../assets/svg/whatsapp.svg'
 import Links from '../../assets/svg/link.svg'
@@ -12,7 +13,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 import './style.scss'
-
+const Image = dynamic(() => import('next/image'), { ssr: false });
 async function NewsArticle({articleSlug, articlesCat}) {
   const dataBreadCrumb = [
     {
@@ -26,13 +27,13 @@ async function NewsArticle({articleSlug, articlesCat}) {
       active: false,
     },
     {
-      text: articleSlug.attributes.title,
+      text: articleSlug.attributes.title ,
       href: '#',
       active: true,
     },
   ]
 
-  const matterResult = matter(articleSlug.attributes.content_md)
+  const matterResult = matter(articleSlug?.attributes?.content_md!==null?articleSlug?.attributes?.content_md:'')
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)

@@ -7,7 +7,9 @@ export default function MappingCardSolutions({ dataSolutionsCard }) {
   const t = useTranslations('homepage.total-solutions.card')
   const cardSolutionsApi = dataSolutionsCard.map((data, index) => ({
     text: data.attributes.title,
-    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`,
+    image: data.attributes.image?.data?.attributes?.url 
+    ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}` 
+    : '',
     link: `${data.attributes.url}`,
     delay: index > 3 ? (index - 4) * 0.5 : index * 0.5,
   }))
@@ -55,8 +57,7 @@ export default function MappingCardSolutions({ dataSolutionsCard }) {
       link: '/innovation',
       delay: 1,
     },
-  ]
-
+  ]  
   const cardMappingData = cardSolutionsApi ? cardSolutionsApi : cardSolutions
   return (
     <Col className='pt-4'>

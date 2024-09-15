@@ -26,6 +26,7 @@ export default async function Page({ params: { locale } }) {
   const dataAquafeed = dataSolutionsCard?.filter(
     item => item?.attributes?.title === 'AQUAFEED',
   )
+  
   const dataContent = dataAquafeed[0]?.attributes
 
   // Extract data for each section in homepage

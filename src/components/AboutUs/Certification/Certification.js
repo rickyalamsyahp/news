@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl'
 import { Col, Container, Row } from 'react-bootstrap'
 import BKIPM from '../../../assets/images/BKIPM.png'
@@ -9,7 +10,8 @@ import MUI from '../../../assets/images/MUI.png'
 import OU from '../../../assets/images/OU.png'
 import MENTRI from '../../../assets/images/MENTRI.png'
 import WWF from '../../../assets/images/WWF.png'
-import Image from 'next/image'
+// import Image from 'next/image'
+const Image = dynamic(() => import('next/image'), { ssr: false });
 
 function Certification({ dataOurCertification }) {
   const t = useTranslations('about-us.certification')

@@ -1,0 +1,7 @@
+@import 'bootstrap/scss/mixins';
+
+.img-aquafeed {
+  @include media-breakpoint-down(md) {
+    top: 85% !important;
+  }
+}

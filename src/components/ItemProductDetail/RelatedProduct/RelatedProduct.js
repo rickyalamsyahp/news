@@ -13,6 +13,7 @@ function RelatedProduct({ id, relateds }) {
     text: res.attributes.feed_name,
     image: res.attributes.image.data ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.image.data[0].attributes.formats.small.url}` : '',
   }))
+
   const dataProduct = [
     {
       image: Thumbnail,
@@ -52,11 +53,11 @@ function RelatedProduct({ id, relateds }) {
             >
               {data.image ? (
                 <Image
-                src={data.image}
+                  src={data.image}
                   width={0}
                   height={300}
                   sizes='100vw'
-                  className='w-100 object-fit-contain rounded-top-3'
+                  className='w-100 object-fit-cover rounded-top-3'
                 />
               ) : ( 
                 <div
