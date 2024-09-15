@@ -11,7 +11,7 @@ function RelatedProduct({ id, relateds }) {
   const dataProductApi = relateds.data.map((res, index) => ({
     id: res.attributes.slug,
     text: res.attributes.feed_name,
-    image: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.image?.data?.attributes?.url}`,
+    image: res.attributes.image.data ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.image.data[0].attributes.formats.small.url}` : '',
   }))
   const dataProduct = [
     {
@@ -50,13 +50,18 @@ function RelatedProduct({ id, relateds }) {
                 router.replace(`/item-product/${id}/${data.id}`)
               }}
             >
-              {data.image && (
+              {data.image ? (
                 <Image
                 src={data.image}
                   width={0}
                   height={300}
                   sizes='100vw'
                   className='w-100 object-fit-contain rounded-top-3'
+                />
+              ) : ( 
+                <div
+                  className='w-100 object-fit-contain rounded-top-3'
+                  style={{height: '260px', backgroundColor: '#fff', margin: '20px 0'}}
                 />
               )}
               <h6

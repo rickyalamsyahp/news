@@ -7,9 +7,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function ThumbsImage({ product }) {
-  const dataProduct = [
-    `${process.env.NEXT_PUBLIC_HOST_IMAGE}${product?.image?.data?.attributes?.url}`,
-  ]
   const settings = {
     focusOnSelect: true,
     speed: 1000,
@@ -22,8 +19,8 @@ function ThumbsImage({ product }) {
     customPaging: function (i) {
       return (
         <Image
-          src={dataProduct[i]}
-          alt={'image-product-detail'}
+          src={process.env.NEXT_PUBLIC_HOST_IMAGE + product.image.data[i].attributes.formats.small.url}
+          alt={product.image.data[i].attributes.name}
           height={75}
           width={75}
           className='rounded-3 object-fit-cover'
@@ -35,14 +32,14 @@ function ThumbsImage({ product }) {
   }
   return (
     <Slider {...settings} className='slider-container-thumbs-image'>
-      {dataProduct?.map((data, index) => (
+      {product.image.data?.map((img, index) => (
         <div key={`image-product-detail-${index}`}>
           <Image
-            src={data}
+            src={process.env.NEXT_PUBLIC_HOST_IMAGE + img.attributes.formats.small.url}
             width={0}
             height={350}
             sizes='100vw'
-            alt={'image-product-detail'}
+            alt={img.attributes.name}
             className='rounded-3 object-fit-cover w-100'
           />
         </div>

@@ -148,14 +148,21 @@ function ItemProduct({ locale, species, phases, shapes, dataProduct, id }) {
                   router.push(`${id}/${data.attributes.slug}`)
                 }}
               >
+              {data.attributes.image.data ? (
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes?.image?.data?.attributes?.url}`}
+                  src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data[0].attributes.formats.small.url}`}
                   alt={data.attributes.feed_name}
                   width={0}
                   height={300}
                   sizes='100vw'
                   className='w-100 object-fit-contain rounded-top-3'
                 />
+              ) :(
+                <div
+                  className='w-100 object-fit-contain rounded-top-3'
+                  style={{height: '300px'}}
+                />
+              )}
                 <h6
                   className='p-3 p-md-5 bg-white text-primary rounded-bottom-3 text-center fw-bold'
                   style={{

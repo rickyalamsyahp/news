@@ -31,7 +31,7 @@ function DescriptionProduct({ product }) {
             </h5>
           </div>
         </div>
-        <h6 className='d-none d-md-block'>{product?.highlight}</h6>
+        <h6 className='d-none d-md-block mb-3'>{product?.highlight}</h6>
       </div>
       <div className='d-flex flex-column flex-md-row gap-4 mt-auto mt-md-0'>
         <ButtonThird
