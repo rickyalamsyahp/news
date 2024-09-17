@@ -20,15 +20,20 @@ function DescriptionProduct({ product }) {
           </div>
           <div className='d-flex flex-row gap-2 gap-md-0'>
             <h6 className='text-dark w-25'>Stage </h6>
-            <h5 className='fw-bold'>
-              {product?.phases?.data[0]?.attributes?.name}
-            </h5>
+            {product?.phases?.data.map((a, index)=>
+            <h5 className='fw-bold' key={index}>
+               {a.attributes.name}{index < product.phases.data.length - 1 ? ', ' : ''}
+               </h5>
+                )}
           </div>
           <div className='d-flex flex-row gap-2 gap-md-0'>
             <h6 className='text-dark w-25'>Category </h6>
-            <h5 className='fw-bold'>
-              {product?.feed_shapes?.data[0]?.attributes?.name}
-            </h5>
+            {product?.feed_shapes?.data.map((a, index) => 
+             <h5 className='fw-bold'>
+              {a.attributes.name}{index < product.feed_shapes.data.length - 1 ? ', ' : ''}
+           </h5>
+            )}
+           
           </div>
           <div className='d-flex flex-row gap-2 gap-md-0'>
             <h6 className='text-dark w-25'>Rearing System </h6>
