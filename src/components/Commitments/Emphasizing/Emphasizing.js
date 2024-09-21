@@ -2,7 +2,6 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import EmphasizingImage from '../../../assets/images/emphasizing.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
 import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
@@ -14,10 +13,6 @@ export default function Emphasizing({ dataEmphasizing }) {
       }))
     : []
   var paragraphs = dataEmphasizing[0]?.highlight.split(/(?:\r?\n)+/)
-  const dataEmphasizingCarousel = [
-    { src: EmphasizingImage },
-    { src: EmphasizingImage },
-  ]
   return (
     <section className='pb-3 pb-md-5 unique-bg-2'>
       <Container className='mb-0 mb-md-5'>

@@ -1,4 +1,3 @@
-import HeroSeafoodProcessing from '../../../../assets/images/Hero-Seafood-Processing.jpg'
 import { useTranslations } from 'next-intl'
 import Reveal from '../../../Animation/Reveal/Reveal'
 

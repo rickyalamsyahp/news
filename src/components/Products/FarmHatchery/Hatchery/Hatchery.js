@@ -1,14 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { useTranslations } from 'next-intl'
-import HatcheryShrimp from '../../../../assets/images/hatchery-shrimp.jpg'
-import HatcheryShrimp2 from '../../../../assets/images/hatchery-shrimp-2.jpg'
-import HatcheryShrimp3 from '../../../../assets/images/hatchery-shrimp-3.jpg'
-import HatcheryShrimp4 from '../../../../assets/images/hatchery-shrimp-4.jpg'
-
-import HatcheryFish from '../../../../assets/images/hatchery-fish.jpg'
-import HatcheryFish2 from '../../../../assets/images/hatchery-fish-2.jpg'
-import HatcheryFish3 from '../../../../assets/images/hatchery-fish-3.jpg'
-import HatcheryFish4 from '../../../../assets/images/hatchery-fish-4.jpg'
 import CardEffectCarousel from '../../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
 function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
@@ -22,18 +13,6 @@ function VisionMission({ dataShrimpHatchery, dataFishHatchery }) {
   const dataFish = dataFishHatchery[0]?.image?.data.map((res, index) => ({
     src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.url}`,
   }))
-  // const dataShrimp = [
-  //   { src: HatcheryShrimp },
-  //   { src: HatcheryShrimp2 },
-  //   { src: HatcheryShrimp3 },
-  //   { src: HatcheryShrimp4 },
-  // ]
-  // const dataFish = [
-  //   { src: HatcheryFish },
-  //   { src: HatcheryFish2 },
-  //   { src: HatcheryFish3 },
-  //   { src: HatcheryFish4 },
-  // ]
 
   return (
     <section className='pt-5 pb-5 bg-secondary-subtle' id='hatchery'>

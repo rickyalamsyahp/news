@@ -1,7 +1,6 @@
 'use client'
 
 import { Col, Container, Row } from 'react-bootstrap'
-import Thumbnail from '../../../assets/images/species-common-carp.png'
 import Image from 'next/image'
 import { useRouter } from '../../../navigation'
 
@@ -14,28 +13,6 @@ function RelatedProduct({ id, relateds }) {
     image: res.attributes.image.data ? `${process.env.NEXT_PUBLIC_HOST_IMAGE}${res.attributes.image.data[0].attributes.formats.small.url}` : '',
   }))
 
-  const dataProduct = [
-    {
-      image: Thumbnail,
-      text: 'PA Extruder',
-    },
-    {
-      image: Thumbnail,
-      text: 'PA Extruder',
-    },
-    {
-      image: Thumbnail,
-      text: 'PA Extruder',
-    },
-    {
-      image: Thumbnail,
-      text: 'PA Extruder',
-    },
-    {
-      image: Thumbnail,
-      text: 'PA Extruder',
-    },
-  ]
   return (
     <section className='bg-primary-subtle pt-5'>
       <Container className='pb-5'>

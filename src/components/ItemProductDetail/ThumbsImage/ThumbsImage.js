@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Slider from 'react-slick'
-import Thumbnail from '../../../assets/images/species-common-carp.png'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
