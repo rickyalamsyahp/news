@@ -2,7 +2,6 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import JARSImage from '../../../assets/images/JARS.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
 import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
@@ -14,7 +13,6 @@ export default function JARS({ dataJARS }) {
         src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`,
       }))
     : []
-  const dataJARSCarousel = [{ src: JARSImage }, { src: JARSImage }]
   return (
     <section className='pb-3 pb-md-5' id='jars'>
       <Container>

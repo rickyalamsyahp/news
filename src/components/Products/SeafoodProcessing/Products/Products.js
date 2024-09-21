@@ -2,12 +2,6 @@
 
 import Image from 'next/image'
 import { Col, Container, Row } from 'react-bootstrap'
-import Tilapia from '../../../../assets/images/tilapia.png'
-import TobaTilapia from '../../../../assets/images/toba-tilapia.png'
-import Shrimp from '../../../../assets/images/shrimp.png'
-import SeafoodLover from '../../../../assets/images/seafood-lover.png'
-import Siomay from '../../../../assets/images/siomay.png'
-import PrimeSeafood from '../../../../assets/images/prime-seafood.png'
 import { useTranslations } from 'next-intl'
 import { Title } from '../../../GeneralComponent/Title/Title'
 

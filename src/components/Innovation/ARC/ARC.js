@@ -2,9 +2,6 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import ARCImage from '../../../assets/images/ARC.jpg'
-import ARCImage2 from '../../../assets/images/ARC-2.jpg'
-import ARCImage3 from '../../../assets/images/ARC-3.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
 import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
@@ -15,11 +12,6 @@ export default function ARC({ dataARC }) {
         src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`,
       }))
     : []
-  const dataARCCarousel = [
-    { src: ARCImage },
-    { src: ARCImage2 },
-    { src: ARCImage3 },
-  ]
   return (
     <section className='py-3 py-md-5 bg-light' id='arc'>
       <Container className='mb-5'>

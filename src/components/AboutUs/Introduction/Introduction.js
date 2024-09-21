@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl'
 import Reveal from '../../Animation/Reveal/Reveal'
 import { Col, Container, Row } from 'react-bootstrap'
 // import Image from 'next/image'
-import IntroductionImage from '../../../assets/images/intro-about-us.png'
 
 const Image = dynamic(() => import('next/image'), { ssr: false });
 

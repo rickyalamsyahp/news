@@ -2,7 +2,6 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Title } from '../../GeneralComponent/Title/Title'
 import { useTranslations } from 'next-intl'
-import ATDImage from '../../../assets/images/ATD.jpg'
 import Reveal from '../../Animation/Reveal/Reveal'
 import CardEffectCarousel from '../../GeneralComponent/CardEffectCarousel/CardEffectCarousel'
 
@@ -13,7 +12,6 @@ export default function ATD({ dataATD }) {
         src: `${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.url}`,
       }))
     : []
-  const dataATDCarousel = [{ src: ATDImage }, { src: ATDImage }]
   return (
     <section className='py-3 py-md-5 unique-bg' id='atd'>
       <Container>
