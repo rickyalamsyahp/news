@@ -22,7 +22,7 @@ before_script:
 build_image:
   stage: build
   script:
-    - docker buildx build --platform linux/amd64,linux/arm64 --cache-to=type=registry,ref=$CI_REGISTRY_IMAGE:buildcache,mode=max --cache-from=type=registry,ref=$CI_REGISTRY_IMAGE:buildcache -t $IMAGE_NAME:$DOCKER_TAG . --push
+    - docker buildx build --platform linux/amd64,linux/arm64 --cache-to=type=inline --cache-from=type=registry,ref=rikirusdian/stp_frontend:latest -t rikirusdian/stp_frontend:latest . --push
   only:
     - master
 
