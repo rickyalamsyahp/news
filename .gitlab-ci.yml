@@ -22,10 +22,7 @@ before_script:
 build_image:
   stage: build
   script:
-    - docker buildx build --platform linux/amd64,linux/arm64 \
-        --cache-to=type=inline \
-        --cache-from=type=registry,ref=$IMAGE_NAME:$DOCKER_TAG \
-        -t $IMAGE_NAME:$DOCKER_TAG . --push
+    - docker buildx build --builder cloud-rikirusdian-riki-builder --platform linux/amd64,linux/arm64 --cache-to =type=inline --cache-from=type=registry,ref=$IMAGE_NAME:$DOCKER_TAG -t $IMAGE_NAME:$DOCKER_TAG . --push
   only:
     - master
 
