@@ -7,6 +7,8 @@ variables:
   DOCKER_DRIVER: overlay2
   IMAGE_NAME: "rikirusdian/stp_frontend"
   DOCKER_TAG: "latest"
+  DOCKER_BUILDKIT: 1
+  BUILDX_CACHE: "/cache/buildx"
 
 stages:
   - build
@@ -14,12 +16,16 @@ stages:
 
 before_script:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker buildx create --use
+  - docker buildx inspect --bootstrap
 
 build_image:
   stage: build
   script:
-    - docker build -t $IMAGE_NAME:$DOCKER_TAG .
-    - docker push $IMAGE_NAME:$DOCKER_TAG
+    - docker buildx build --platform linux/amd64,linux/arm64 \
+        --cache-to=type=inline \
+        --cache-from=type=registry,ref=$IMAGE_NAME:$DOCKER_TAG \
+        -t $IMAGE_NAME:$DOCKER_TAG . --push
   only:
     - master
 
@@ -30,10 +36,10 @@ deploy:
     - eval $(ssh-agent -s)
     - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
+    - chmod 700 ~/.ssh/id_rsa
     - eval "$(ssh-agent -s)"
     - ssh-add ~/.ssh/id_rsa
-    - ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+
   script:
     - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && docker compose down -v && docker-compose pull && docker-compose up -d && docker buildx prune -f"
     - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "docker exec nginx nginx -s reload"
