@@ -22,7 +22,7 @@ const nextConfig = withNextIntl({
       },
       {
         protocol: 'http',
-        hostname: 'apidev.stpaquaculture.com',
+        hostname: 'api.stpaquaculture.com',
       },
     ],
   },
