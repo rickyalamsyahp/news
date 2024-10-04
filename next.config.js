@@ -20,6 +20,10 @@ const nextConfig = withNextIntl({
         protocol: 'https',
         hostname: 'api.stpaquaculture.com',
       },
+      {
+        protocol: 'http',
+        hostname: 'apidev.stpaquaculture.com',
+      },
     ],
   },
   output: 'standalone',
