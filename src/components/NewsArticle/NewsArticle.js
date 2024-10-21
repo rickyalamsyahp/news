@@ -77,7 +77,7 @@ async function NewsArticle({articleSlug, articlesCat}) {
             <Whatsapp />
           </h6>
         </div>
-        <h2 className='fw-bold py-3 py-md-5'>{articleSlug.attributes.category} </h2>
+        <h2 className='fw-bold py-3 py-md-5'>Other Articles</h2>
         <Row className='gy-3 gy-md-0'>
         {articlesCat.map((data) => (
           <Col xs={12} md={6} className='mb-5 pb-5 border-2 border-bottom'>

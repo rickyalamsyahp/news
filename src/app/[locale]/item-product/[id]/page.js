@@ -13,7 +13,7 @@ export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
 
   return {
-    ...metadata(t('news-article.title'), t('news-article.description')),
+    ...metadata('STP Aquaculture | Product Detail', t('news-article.description')),
   }
 }
 

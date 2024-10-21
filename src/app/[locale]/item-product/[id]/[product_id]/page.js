@@ -14,14 +14,14 @@ export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
 
   return {
-    ...metadata(t('news-article.title'), t('news-article.description')),
+    ...metadata('STP Aquaculture', 'product detail'),
   }
 }
 
 export default async function Page({ params: { locale, product_id, id } }) {
   const getSpecies = await getSpeciesBySlug({ locale, id })
   const getProduct = await getProductBySlug({ locale, id_product: product_id })
-  console.log(getProduct);
+
   
 
   const species = getSpecies.data.data[0]
