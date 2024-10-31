@@ -16,3 +16,10 @@ export const { Link, redirect, usePathname, useRouter } =
     localePrefix,
     pathnames,
   })
+// Server-side check: redirect if path is missing
+export const secureRedirect = (path) => {
+  if (!pathnames[path]) {
+    return redirect('/'); // Redirect to a safe default
+  }
+  return pathnames[path];
+};
