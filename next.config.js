@@ -42,10 +42,10 @@ const nextConfig = withNextIntl({
           {
             key: 'Content-Security-Policy',
             value: `
-              default-src 'self'; 
+              default-src 'self' https://api.stpaquaculture.com http://apidev.stpaquaculture.com https://www.youtube.com; 
               script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com; 
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-              img-src 'self' data: https://storage.googleapis.com https://place-hold.it https://stpapi.bypentatone.com https://api.stpaquaculture.com http://apidev.stpaquaculture.com; 
+              img-src 'self' data: https://storage.googleapis.com https://place-hold.it https://api.stpaquaculture.com http://apidev.stpaquaculture.com; 
               font-src 'self' https://fonts.gstatic.com; 
               frame-ancestors 'self'; 
               media-src 'self';
