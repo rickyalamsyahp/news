@@ -1,33 +1,13 @@
-image: docker:latest
-
-services:
-  - docker:dind
-
-variables:
-  DOCKER_DRIVER: overlay2
-  IMAGE_NAME: "rikirusdian/stp_frontend"
-  DOCKER_TAG: "latest"
-  DOCKER_BUILDKIT: 1
-  BUILDX_CACHE: "/cache/buildx"
-
 stages:
-  - build
-  - deploy
+  -  deploy_stp_fe
 
-before_script:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker buildx create --use
-  - docker buildx inspect --bootstrap
-
-build_image:
-  stage: build
-  script:
-    - docker buildx build --platform linux/amd64,linux/arm64 --cache-to=type=inline --cache-from=type=registry,ref=rikirusdian/stp_frontend:latest -t rikirusdian/stp_frontend:latest . --push
-  only:
-    - master
+cache:
+  paths:
+    - node_modules/
 
 deploy:
-  stage:  deploy
+  image: ubuntu:latest
+  stage:  deploy_stp_fe
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
@@ -36,9 +16,12 @@ deploy:
     - chmod 700 ~/.ssh/id_rsa
     - eval "$(ssh-agent -s)"
     - ssh-add ~/.ssh/id_rsa
-
+    - echo "$SSH_USER"
+    - echo "$SSH_HOST"
+    - echo "$PROJECT_DIR"
   script:
-    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && docker compose down -v && docker-compose pull && docker-compose up -d && docker buildx prune -f"
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && git pull origin master"
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "cd $PROJECT_DIR && docker compose down -v && docker compose up --force-recreate --build -d && docker buildx prune -f"
     - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST -p 1903 "docker exec nginx nginx -s reload"
   only:
     - master
