@@ -1,12 +1,26 @@
-import createMiddleware from 'next-intl/middleware'
+import createMiddleware from 'next-intl/middleware';
+import { NextResponse } from 'next/server';
 
-export default createMiddleware({
-  // A list of all locales that are supported
+const intlMiddleware = createMiddleware({
   locales: ['en', 'id'],
-
-  // Used when no locale matches
   defaultLocale: 'id',
-})
+});
+
+export default function middleware(request) {
+  const response = intlMiddleware(request);
+
+  const locale = request.cookies.get('NEXT_LOCALE')?.value || 'id';
+
+  // Set cookie with Secure and HttpOnly attributes
+  response.cookies.set('NEXT_LOCALE', locale, {
+    secure: true,
+    httpOnly: true,
+    path: '/',
+    maxAge: 30 * 24 * 60 * 60,
+  });
+
+  return response;
+}
 
 export const config = {
   // Matcher entries are linked with a logical "or", therefore
