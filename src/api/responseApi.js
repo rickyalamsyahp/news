@@ -88,6 +88,7 @@ export const getValues = async ({ locale, filter }) => {
   try {
     const config = {
       params: {
+        'sort[0]': 'ordering:asc',
         locale,
         populate: 'deep',
       },
