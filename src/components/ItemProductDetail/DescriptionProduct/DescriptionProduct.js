@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 
 function DescriptionProduct({ product }) {  
   const t = useTranslations('innovation')
+
   return (
     <div className='d-flex justify-content-md-between flex-column h-100 gap-3 gap-md-0'>
       <div className='d-flex flex-column gap-2 gap-xl-5'>
@@ -52,15 +53,13 @@ function DescriptionProduct({ product }) {
           noArrow={true}
           className={'bg-white text-warning'}
         >
-          <Link
+          <a  
             href={
-              product.download.data && product.download.data !== null
-                ? product.download.data
-                : '#'
+                product.download.data && product.download.data !== null
+                  ? process.env.NEXT_PUBLIC_HOST_IMAGE + product.download.data.attributes.url
+                  : '#'
             }
-          >
-            Download Brochure
-          </Link>
+          >Download Brochure</a>
         </ButtonThird>
         <ButtonThird>
           <Link href='/contact-us'>{t('contact-us')}</Link>
