@@ -1,113 +1,108 @@
+'use client'; // Pastikan ini ada agar bisa menggunakan useState dan useEffect
+
 import dynamic from 'next/dynamic';
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import Breadcrumbs from '../GeneralComponent/Breadcrumbs/Breadcrumbs'
+import React, { useEffect, useState, useRef } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import Breadcrumbs from '../GeneralComponent/Breadcrumbs/Breadcrumbs';
+import LogoSTP from '../../assets/images/berita.jpeg';
+import Twitter from '../../assets/svg/twitter.svg';
+import Whatsapp from '../../assets/svg/whatsapp.svg';
+import Links from '../../assets/svg/link.svg';
+import Facebook from '../../assets/svg/facebook.svg';
+import Mail from '../../assets/svg/mail.svg';
+import { Link } from '../../navigation';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+import './style.scss'; // Pastikan di-import
+import { articleSlug, articlesCat } from './dummj';
 
-import Twitter from '../../assets/svg/twitter.svg'
-import Whatsapp from '../../assets/svg/whatsapp.svg'
-import Links from '../../assets/svg/link.svg'
-import Facebook from '../../assets/svg/facebook.svg'
-import Mail from '../../assets/svg/mail.svg'
-import { Link } from '../../navigation'
-import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
-import './style.scss'
 const Image = dynamic(() => import('next/image'), { ssr: false });
-async function NewsArticle({articleSlug, articlesCat}) {
-  const dataBreadCrumb = [
-    {
-      text: 'Home',
-      href: '/',
-      active: false,
-    },
-    {
-      text: 'News & Article',
-      href: '#',
-      active: false,
-    },
-    {
-      text: articleSlug.attributes.title ,
-      href: '#',
-      active: true,
-    },
-  ]
 
-  const matterResult = matter(articleSlug?.attributes?.content_md!==null?articleSlug?.attributes?.content_md:'')
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content)
-  const contentHtml = processedContent? processedContent.toString() : ''
+function NewsArticle() {
+  const [isVisible, setIsVisible] = useState(false);
+  const contentRef = useRef(null);
+
+  // Intersection Observer untuk efek scroll animasi
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log('Element masuk viewport:', entry.isIntersecting); // Debug
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (contentRef.current) observer.observe(contentRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const dataBreadCrumb = [
+    { text: 'Home', href: '/', active: false },
+    { text: 'News & Article', href: '#', active: false },
+  ];
+
+  const matterResult = matter((articleSlug?.attributes?.content_desc ?? '').trim());
+  const processedContent = remark().use(html).processSync(matterResult.content);
+  const contentHtml = processedContent.toString();
 
   return (
-    <section>
-      <Container className='py-5'>
+    <section className="news-article-section">
+      <Container className="py-5">
         <Breadcrumbs data={dataBreadCrumb} />
-        <h2 className='fw-bold py-3 py-md-5'>
+        <h2 className={`fw-bold py-3 text-primary fade-in ${isVisible ? 'show' : ''}`}>
           {articleSlug.attributes.title}
         </h2>
-        <h6 className='text-end pb-3 pb-md-5'>
-          {articleSlug.attributes.category} &#8226; {articleSlug.attributes.published_date}
-        </h6>
+        <h6 className="text-muted text-end">{articleSlug.attributes.category} • {articleSlug.attributes.published_date}</h6>
         <Image
-          alt='news-image'
-          src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${articleSlug.attributes.image.data.attributes.url}`}
-          className='w-100 h-auto rounded-4'
+          alt="news-image"
+          src={LogoSTP}
+          className={`news-main-image rounded-4 shadow-sm fade-in ${isVisible ? 'show' : ''}`}
           width={800}
           height={500}
         />
-        <div className='p-5'>
-          <h5 className='content' dangerouslySetInnerHTML={{ __html: contentHtml }} />
-          
-          <div className='d-flex flex-row gap-3 py-3'>
-            {articleSlug.attributes?.images && articleSlug.attributes.images.length > 0 ? (
-              articleSlug.attributes.images.map((data) => (
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.image.data.attributes.url}`}
-                    className='w-50 h-auto rounded-4'
-                    width={500}
-                    height={500}
-                  />
-              ))
-            ): null}
-          </div>
 
-          <h6 className='justify-content-end d-flex flex-row gap-3'>
-            Share Article: <Links /> <Twitter /> <Mail /> <Facebook />{' '}
-            <Whatsapp />
-          </h6>
+        <div ref={contentRef} className={`content-box p-4 rounded-4 shadow-sm mt-4 fade-in ${isVisible ? 'show' : ''}`}>
+          <h5 className="content" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <Link href={`/news/${articleSlug.attributes.slug}`} className="btn btn-primary mt-3">
+            Baca Selengkapnya
+          </Link>
         </div>
-        <h2 className='fw-bold py-3 py-md-5'>Other Articles</h2>
-        <Row className='gy-3 gy-md-0'>
-        {articlesCat.map((data) => (
-          <Col xs={12} md={6} className='mb-5 pb-5 border-2 border-bottom'>
-            <Link 
-              href={`/news/${data.attributes.slug}`}
-            >
-              <div className='d-flex align-items-center gap-3'>
-                <Image
-                  alt='card-{data.attributes.category}'
-                  src={`${process.env.NEXT_PUBLIC_HOST_IMAGE}${data.attributes.image.data.attributes.url}`}
-                  width={200}
-                  height={200}
-                  objectFit='cover'
-                />
-                <div className='d-flex flex-column gap-3'>
-                  <h6 className='text-secondary'>{data.attributes.category}</h6>
-                  <h4 className='fw-bold'>
-                    {data.attributes.title}
-                  </h4>
-                  <h6 className='text-secondary'>{data.attributes.published_date}</h6>
+
+        <div className="image-gallery d-flex gap-3 py-3 flex-wrap">
+          {articleSlug.attributes?.images?.map((data, index) => (
+            <Image key={index} src={LogoSTP} className="rounded-4 shadow-sm fade-in show" width={200} height={200} />
+          ))}
+        </div>
+
+        <h6 className="share-article d-flex align-items-center gap-2 mt-3">
+          Share Article: <Links /> <Twitter /> <Mail /> <Facebook /> <Whatsapp />
+        </h6>
+      </Container>
+
+      <Container className="related-articles py-5">
+        <h2 className="fw-bold text-center text-secondary fade-in show">Related Articles</h2>
+        <Row className="gy-4 mt-4">
+          {articlesCat.map((data, index) => (
+            <Col xs={12} md={6} key={index}>
+              <Link href={`/news/${data.attributes.slug}`} className="text-decoration-none">
+                <div className="article-card p-3 rounded-4 shadow-sm d-flex gap-3 align-items-center fade-in show">
+                  <Image alt={data.attributes.title} src={LogoSTP} width={150} height={150} className="rounded-3"/>
+                  <div>
+                    <h6 className="text-muted">{data.attributes.category}</h6>
+                    <h4 className="fw-bold text-dark">{data.attributes.title}</h4>
+                    <h6 className="text-muted">{data.attributes.published_date}</h6>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </Col>
-        ))}
+              </Link>
+            </Col>
+          ))}
         </Row>
-        
       </Container>
     </section>
-  )
+  );
 }
 
-export default NewsArticle
+export default NewsArticle;

@@ -8,8 +8,8 @@ import { Container, Navbar, Nav } from 'react-bootstrap'
 
 import { Link, usePathname } from '../../navigation'
 
-import STPLogo from '../../assets/images/stp-logo.png'
-import STPLogoColored from '../../assets/images/stp-logo-colored.png'
+import STPLogo from '../../assets/images/logo-jabar.png'
+import STPLogoColored from '../../assets/images/logo-jabar.png'
 
 import './styles.scss'
 import LocaleSwitcher from './LocaleSwitcher/LocaleSwitcher'
@@ -39,11 +39,11 @@ function NavigationBar() {
       className: 'commitments',
       text: t('commitments'),
     },
-    {
-      href: '/about-us',
-      className: 'about-us',
-      text: t('about-us'),
-    },
+    // {
+    //   href: '/about-us',
+    //   className: 'about-us',
+    //   text: t('about-us'),
+    // },
   ]
   useEffect(() => {
     const handleScroll = () => {
@@ -108,7 +108,7 @@ function NavigationBar() {
               </Link>
             ))}
             {/* <ButtonPrimary>{t('login')}</ButtonPrimary> */}
-            <LocaleSwitcher />
+            {/* <LocaleSwitcher /> */}
           </Container>
         </Nav>
       </Container>

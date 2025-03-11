@@ -1,16 +1,16 @@
 {
   "navigation-bar": {
-    "total-solutions": "Total Solutions",
-    "innovation": "Innovation",
-    "commitments": "Commitments",
+    "total-solutions": "Homepage",
+    "innovation": "News",
+    "commitments": "Jabar Istimewa",
     "about-us": "About Us",
     "login": "Login",
     "language": "LANGUAGE"
   },
   "seo": {
     "home": {
-      "description": "STP Aquaculture",
-      "title": "STP Aquaculture"
+      "description": "Click.com",
+      "title": "Click.com"
     },
     "total-solutions": {
       "description": "STP Aquaculture",

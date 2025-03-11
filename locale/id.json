@@ -1,16 +1,16 @@
 {
   "navigation-bar": {
-    "total-solutions": "Solusi Total",
-    "innovation": "Inovasi",
-    "commitments": "Komitmen",
+    "total-solutions": "Homepage",
+    "innovation": "Berita Terbaru",
+    "commitments": "Jabar Istimewa",
     "about-us": "Tentang Kami",
     "login": "Masuk",
     "language": "BAHASA"
   },
   "seo": {
     "home": {
-      "description": "STP Aquaculture",
-      "title": "STP Aquaculture"
+      "description": "Click.com",
+      "title": "Click.com"
     },
     "total-solutions": {
       "description": "STP Aquaculture",

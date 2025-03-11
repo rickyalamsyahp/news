@@ -1,5 +1,150 @@
-@import 'bootstrap/scss/mixins';
-
-.content p {
-    margin-bottom: 1rem !important;
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .news-detail {
+    overflow-x: hidden; // Mencegah scroll horizontal di seluruh halaman
+    padding-bottom: 50px;
+  }
+  
+  .news-main-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .content-box {
+    background: #f8f9fa !important;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 2;
+    font-size: 1.9rem;
+    font-family: "Poppins", sans-serif; // Ubah sesuai font yang kamu gunakan
+    color: #333;
+  }
+  
+  /* Pastikan semua teks termasuk Markdown menggunakan font yang sama */
+  .content-box pre,
+  .content-box code,
+  .content-box p,
+  .content-box h1,
+  .content-box h2,
+  .content-box h3,
+  .content-box h4,
+  .content-box h5,
+  .content-box h6 {
+    font-family: inherit !important; // Pakai font utama
+    background: transparent !important;
+    color: inherit !important;
+    border: none;
+    padding: 0 !important; // Hapus padding
+    margin: 0 !important;  // Hapus margin biar seragam
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-size: inherit;
 }
+    
+  
+  .content-box h4,
+  .content-box p {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Styling untuk Markdown */
+  .content-box pre {
+    background: transparent !important; // Hilangkan latar belakang yang berbeda
+    border: none;
+    padding: 0;
+    margin: 0;
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .content-box code {
+    background: transparent !important; // Hilangkan warna abu-abu
+    color: inherit !important; // Gunakan warna teks utama
+    font-size: inherit;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  .content-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+  
+  .content {
+    overflow-x: hidden !important; // Paksa menghapus scroll horizontal
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+  }
+  
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .gallery-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Jika ada elemen <pre> atau <code> di dalam content */
+  .content-box pre, .content-box code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+    background: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+  }
+  
+  
+  .share-article {
+    font-weight: bold;
+    font-size: 16px;
+    color: #007bff;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  

@@ -65,7 +65,7 @@ function Footer() {
   return (
     <footer>
       <section className='py-5'>
-        <Container>
+        {/* <Container>
           <Row>
             <Col sm={12} md className='pb-3 pb-md-0'>
             <Link href='/'>
@@ -95,11 +95,11 @@ function Footer() {
               </Col>
             ))}
           </Row>
-        </Container>
+        </Container> */}
       </section>
       <section className='copyright'>
         <h6 className='text-secondary'>
-          STP Japfa Aquaculture © Copyright 2024. All rights Reserved.
+         Click.org © Copyright 2025. All rights Reserved.
         </h6>
       </section>
     </footer>

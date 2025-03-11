@@ -1,9 +1,6 @@
+import NewsArticle from '@/components/NewsArticle/NewsArticle'
 import { getTranslations } from 'next-intl/server'
 import { metadata } from '../shared-metadata'
-import Hero from '../../components/Homepage/Hero/Hero'
-import TotalSolutions from '../../components/Homepage/TotalSolutions/TotalSolution'
-import Commitments from '../../components/Homepage/Commitments/Commitment'
-import { getArticles, getPages, getSolutions } from '../../api/responseApi'
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale, namespace: 'seo' })
 
@@ -12,50 +9,21 @@ export async function generateMetadata({ params: { locale } }) {
   }
 }
 
-export default async function Page({ params: { locale } }) {
-  const pages = await getPages({ locale })
-  const pagesArticle = await getArticles({ locale })
-  const solutions = await getSolutions({ locale })
-
-  const {
-    data: { data },
-  } = pages
-
-  const dataSolutionsCard = solutions?.data?.data
-
-  
-
-  const dataHomepage = data?.filter(item => item?.attributes?.title === 'Home')
-
-  const dataContent = dataHomepage[0]?.attributes
-
-  // Extract data for each section in homepage
-  const dataHero = dataContent?.content.filter(item => item?.key === 'hero')
-  
-  const dataSolutions = dataContent?.content.filter(
-    item => item?.key === 'solutions',
-  )
-  const dataCommitments = dataContent?.content.filter(
-    item => item?.key === 'commitments',
-  )
-  const dataPortofolio = dataContent?.content.filter(
-    item => item?.key === 'portfolio',
-  )
-  const dataVideo = dataContent?.content.filter(item => item?.key === 'video')
-  
+export default async function Page({ params: { locale } }) { 
   return (
     <>
-      <Hero dataHero={dataHero} />
-      <TotalSolutions
+      {/* <Hero dataHero={dataHero} /> */}
+      {/* <TotalSolutions
         dataSolutions={dataSolutions}
         dataSolutionsCard={dataSolutionsCard}
-      />
-      <Commitments
+      /> */}
+      <NewsArticle/>
+      {/* <Commitments
         dataVideo={dataVideo}
         dataCommitments={dataCommitments}
         dataPortofolio={dataPortofolio}
         pagesArticle={pagesArticle}
-      />
+      /> */}
     </>
   )
 }
