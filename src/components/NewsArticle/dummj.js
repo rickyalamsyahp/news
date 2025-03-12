@@ -4,7 +4,7 @@ import Image from 'next/image';
 const articleSlug = {
   attributes: {
     title: "Wakil Gubernur Jabar Bantu Korban Banjir Bekasi",
-    category: "Politik",
+    category: "Politics",
     published_date: "2025-03-10",
     content_md: `<p><strong>Bekasi – Wakil Gubernur Jawa Barat turun langsung ke lokasi banjir di Bekasi</strong> untuk meninjau kondisi warga yang terdampak. Dalam kunjungannya, ia memberikan bantuan berupa sembako, perlengkapan medis, dan kebutuhan darurat lainnya.</p>
     
@@ -59,7 +59,7 @@ const articlesCat = [
       category: "Technology",
       published_date: "2025-03-08",
       slug: "react-server-components",
-      content_md: `**React Server Components** memungkinkan rendering lebih efisien dengan pemisahan kode di server dan client. Artikel ini menjelaskan konsep dasar, manfaat, dan cara menggunakannya dalam pengembangan aplikasi modern.`,
+      content_md: `**React Server Components** memungkinkan rendering lebih efisien dengan pemisahan kode di server dan client.`,
       image: {
         data: {
           attributes: {
@@ -75,7 +75,7 @@ const articlesCat = [
       category: "Design",
       published_date: "2025-03-07",
       slug: "tailwind-css",
-      content_md: `**Tailwind CSS** adalah framework utility-first yang memungkinkan pengembangan UI lebih cepat. Artikel ini membahas cara kerja Tailwind, kelebihannya dibanding CSS tradisional, dan tips mengoptimalkan penggunaannya.`,
+      content_md: `**Tailwind CSS** adalah framework utility-first yang memungkinkan pengembangan UI lebih cepat.`,
       image: {
         data: {
           attributes: {
@@ -91,7 +91,7 @@ const articlesCat = [
       category: "Technology",
       published_date: "2025-03-06",
       slug: "future-ai-web",
-      content_md: `**Artificial Intelligence (AI) semakin berperan dalam pengembangan web.** Artikel ini membahas bagaimana AI digunakan untuk otomatisasi desain, personalisasi pengalaman pengguna, dan optimasi performa situs web di masa depan.`,
+      content_md: `**Artificial Intelligence (AI) semakin berperan dalam pengembangan web.**` ,
       image: {
         data: {
           attributes: {
@@ -107,7 +107,55 @@ const articlesCat = [
       category: "Design",
       published_date: "2025-03-05",
       slug: "uiux-trends-2025",
-      content_md: `**Desain UI/UX terus berkembang.** Artikel ini menjelaskan tren terbaru UI/UX di tahun 2025, termasuk penggunaan animasi mikro, dark mode yang lebih fleksibel, dan desain berbasis kecerdasan buatan.`,
+      content_md: `**Desain UI/UX terus berkembang.**` ,
+      image: {
+        data: {
+          attributes: {
+            url: beritaImage
+          }
+        }
+      }
+    }
+  },
+  {
+    attributes: {
+      title: "Political Landscape in 2025",
+      category: "Politics",
+      published_date: "2025-03-04",
+      slug: "political-landscape-2025",
+      content_md: `**Dinamika politik global mengalami perubahan besar di tahun 2025.**` ,
+      image: {
+        data: {
+          attributes: {
+            url: beritaImage
+          }
+        }
+      }
+    }
+  },
+  {
+    attributes: {
+      title: "Health Trends in 2025",
+      category: "Health",
+      published_date: "2025-03-03",
+      slug: "health-trends-2025",
+      content_md: `**Gaya hidup sehat dan inovasi medis menjadi sorotan di tahun 2025.**` ,
+      image: {
+        data: {
+          attributes: {
+            url: beritaImage
+          }
+        }
+      }
+    }
+  },
+  {
+    attributes: {
+      title: "Upcoming Sports Events in 2025",
+      category: "Sports",
+      published_date: "2025-03-02",
+      slug: "sports-events-2025",
+      content_md: `**Berbagai kejuaraan olahraga internasional dijadwalkan berlangsung pada tahun 2025.**` ,
       image: {
         data: {
           attributes: {

@@ -4,49 +4,50 @@
     "innovation": "News",
     "commitments": "Jabar Istimewa",
     "about-us": "About Us",
+    "profile": "Profile",
     "login": "Login",
     "language": "LANGUAGE"
   },
   "seo": {
     "home": {
-      "description": "Click.com",
-      "title": "Click.com"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org"
     },
     "total-solutions": {
-      "description": "Click.com",
-      "title": "Click.com | Total Solutions"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Total Solutions"
     },
     "innovation": {
-      "description": "Click.com",
-      "title": "Click.com | Innovation"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Innovation"
     },
     "about-us": {
-      "description": "Click.com",
-      "title": "Click.com | About Us"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | About Us"
     },
     "commitments": {
-      "description": "Click.com",
-      "title": "Click.com | Commitments"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Commitments"
     },
     "technical-team": {
-      "description": "Click.com",
-      "title": "Click.com | Technical Team"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Technical Team"
     },
     "hatchery-farm": {
-      "description": "Click.com",
-      "title": "Click.com | Hatchery Farm"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Hatchery Farm"
     },
     "aquafeed": {
-      "description": "Click.com",
-      "title": "Click.com | Aquafeed"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Aquafeed"
     },
     "contact-us": {
-      "description": "Click.com",
-      "title": "Click.com | Contact-us"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Contact-us"
     },
     "news-article": {
-      "description": "Click.com",
-      "title": "Click.com | News & Articles"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | News & Articles"
     }
   },
   "hero": {
@@ -57,7 +58,7 @@
     },
     "innovation": {
       "title": "Innovating the Future of Aquaculture",
-      "description": "Welcome to Click.com, where our dedication to innovation and commitment to sustainability are guiding our efforts in the aquaculture industry. By embracing advanced Industry 4.0 technologies, we strive to enhance product quality and contribute to a more sustainable and efficient future."
+      "description": "Welcome to klikjabar.org, where our dedication to innovation and commitment to sustainability are guiding our efforts in the aquaculture industry. By embracing advanced Industry 4.0 technologies, we strive to enhance product quality and contribute to a more sustainable and efficient future."
     },
     "commitments": "Our Commitment through Actions for Sustainable Aquaculture",
     "about-us": "Passionately Advancing Aquaculture Practices",
@@ -86,7 +87,7 @@
       "title": "Sustainable Aquaculture Solutions Across the Nation",
       "see-all": "SEE OUR COMMITMENTS",
       "description": "Explore STP's total solutions in aquaculture, where advanced and sustainable feed production, hatcheries, and farming converge all over the nation to drive industry success.",
-      "by-number": "Click.com by Numbers",
+      "by-number": "klikjabar.org by Numbers",
       "count": {
         "1": "Shrimp <br></br> Hatcheries",
         "2": "Shrimp <br></br> Farms",
@@ -119,7 +120,7 @@
     "arc": {
       "description": "The Aquaculture Research Center (ARC) was established to promote responsible and sustainable aquaculture. It focuses on developing cultivable fish and shrimp species. ARC researches methods for farming marine and freshwater fish in controlled environments. Their work includes producing natural feed, managing broodstock, rearing productive broodstock, conducting artificial and natural breeding, harvesting and hatching eggs, and maintaining seeds. This comprehensive approach helps advance sustainable aquaculture practices."
     },
-    "join-us": "Join us at Click.com as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
+    "join-us": "Join us at klikjabar.org as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
     "contact-us": "Contact us"
   },
   "commitments": {
@@ -131,7 +132,7 @@
     "empowering": {
       "title": "Empowering Community",
       "description1": "We believe that aqua farmers, as well as the communities in which we operate, play a significant role in the industry. Our commitment to prioritizing sustainable aquaculture is not only marked by preserving the environment but also by raising awareness about more eco-friendly aquaculture practices. These efforts are carried out through the introduction of environmentally friendly aqua farming methods and the creation of industry-ready graduates. Additionally, we support sustainable livelihoods through initiatives in vannamei shrimp farming areas.",
-      "description2": "By integrating these principles into every aspect of our business, Click.com remains steadfast in our mission to contribute positively to sustainable aquaculture practices. We are not only nurturing our operations but also ensuring a sustainable future for the next generations"
+      "description2": "By integrating these principles into every aspect of our business, klikjabar.org remains steadfast in our mission to contribute positively to sustainable aquaculture practices. We are not only nurturing our operations but also ensuring a sustainable future for the next generations"
     }
   },
   "about-us": {
@@ -241,7 +242,7 @@
       "note2": "Disease and Virus Free",
       "note3": "Optimal Growth Potential"
     },
-    "join-us": "Join us at Click.com as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
+    "join-us": "Join us at klikjabar.org as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
     "contact-us": "Contact us"
   },
   "technical-team": {
@@ -253,7 +254,7 @@
       "title": "Achieve Aquaculture Excellence with STP's Technical Team",
       "description": "At STP, we are dedicated to provide comprehensive solutions to our partners and customers. Through our Technical Team as the core of this commitment, known as the Shrimp & Fish Farm Technicians are specialized to support your aquaculture process, and ensuring the optimal results."
     },
-    "join-us": "Join us at Click.com as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
+    "join-us": "Join us at klikjabar.org as we contribute to the evolution of the aquaculture industry, embracing innovation and sustainability to nourish the future.",
     "contact-us": "Contact us"
   },
   "aquafeed": {

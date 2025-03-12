@@ -1,8 +1,8 @@
-'use client'; // Pastikan ini ada agar bisa menggunakan useState dan useEffect
+'use client';
 
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState, useRef } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Carousel } from 'react-bootstrap';
 import Breadcrumbs from '../GeneralComponent/Breadcrumbs/Breadcrumbs';
 import LogoSTP from '../../assets/images/berita.jpeg';
 import Twitter from '../../assets/svg/twitter.svg';
@@ -11,10 +11,11 @@ import Links from '../../assets/svg/link.svg';
 import Facebook from '../../assets/svg/facebook.svg';
 import Mail from '../../assets/svg/mail.svg';
 import { Link } from '../../navigation';
-import matter from 'gray-matter';
+import * as matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import './style.scss'; // Pastikan di-import
+import { motion } from 'framer-motion';
+import './style.scss';
 import { articleSlug, articlesCat } from './dummj';
 
 const Image = dynamic(() => import('next/image'), { ssr: false });
@@ -23,14 +24,10 @@ function NewsArticle() {
   const [isVisible, setIsVisible] = useState(false);
   const contentRef = useRef(null);
 
-  // Intersection Observer untuk efek scroll animasi
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log('Element masuk viewport:', entry.isIntersecting); // Debug
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.2 }
     );
@@ -52,54 +49,58 @@ function NewsArticle() {
     <section className="news-article-section">
       <Container className="py-5">
         <Breadcrumbs data={dataBreadCrumb} />
-        <h2 className={`fw-bold py-3 text-primary fade-in ${isVisible ? 'show' : ''}`}>
-          {articleSlug.attributes.title}
-        </h2>
-        <h6 className="text-muted text-end">{articleSlug.attributes.category} • {articleSlug.attributes.published_date}</h6>
-        <Image
-          alt="news-image"
-          src={LogoSTP}
-          className={`news-main-image rounded-4 shadow-sm fade-in ${isVisible ? 'show' : ''}`}
-          width={800}
-          height={500}
-        />
 
-        <div ref={contentRef} className={`content-box p-4 rounded-4 shadow-sm mt-4 fade-in ${isVisible ? 'show' : ''}`}>
-          <h5 className="content" dangerouslySetInnerHTML={{ __html: contentHtml }} />
-          <Link href={`/news/${articleSlug.attributes.slug}`} className="btn btn-primary mt-3">
-            Baca Selengkapnya
-          </Link>
-        </div>
-
-        <div className="image-gallery d-flex gap-3 py-3 flex-wrap">
-          {articleSlug.attributes?.images?.map((data, index) => (
-            <Image key={index} src={LogoSTP} className="rounded-4 shadow-sm fade-in show" width={200} height={200} />
+        <Carousel className="mb-5" controls indicators fade interval={3000} prevIcon={<span className="carousel-control-prev-icon" />} nextIcon={<span className="carousel-control-next-icon" />} >
+          {articlesCat.slice(0, 10).map((article, index) => (
+            <Carousel.Item key={index}>
+              <Link href={`/news/${article.attributes.slug}`} className="d-block text-decoration-none">
+                <Image alt={article.attributes.title} src={LogoSTP} className="d-block w-50 mx-auto rounded-4 shadow-lg" width={500} height={500} />
+                <Carousel.Caption className="bg-dark bg-opacity-50 p-3 rounded">
+                  <h3>{article.attributes.title}</h3>
+                  <p>{article.attributes.category}</p>
+                </Carousel.Caption>
+              </Link>
+            </Carousel.Item>
           ))}
-        </div>
+        </Carousel>
 
-        <h6 className="share-article d-flex align-items-center gap-2 mt-3">
-          Share Article: <Links /> <Twitter /> <Mail /> <Facebook /> <Whatsapp />
-        </h6>
+        <motion.h2 className="fw-bold py-3 text-primary" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          {articleSlug.attributes.title}
+        </motion.h2>
+        <h6 className="text-muted text-end">{articleSlug.attributes.category} • {articleSlug.attributes.published_date}</h6>
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>
+          <Image alt="news-image" src={LogoSTP} className="news-main-image rounded-4 shadow-lg" width={500} height={300} />
+        </motion.div>
+
+        <motion.div ref={contentRef} className="content-box p-4 rounded-4 shadow-sm mt-4 bg-light" initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
+          <h5 className="content" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <Link href={`/news/${articleSlug.attributes.slug}`} className="btn btn-primary mt-3">Baca Selengkapnya</Link>
+        </motion.div>
       </Container>
 
       <Container className="related-articles py-5">
-        <h2 className="fw-bold text-center text-secondary fade-in show">Related Articles</h2>
-        <Row className="gy-4 mt-4">
-          {articlesCat.map((data, index) => (
-            <Col xs={12} md={6} key={index}>
-              <Link href={`/news/${data.attributes.slug}`} className="text-decoration-none">
-                <div className="article-card p-3 rounded-4 shadow-sm d-flex gap-3 align-items-center fade-in show">
-                  <Image alt={data.attributes.title} src={LogoSTP} width={150} height={150} className="rounded-3"/>
-                  <div>
-                    <h6 className="text-muted">{data.attributes.category}</h6>
-                    <h4 className="fw-bold text-dark">{data.attributes.title}</h4>
-                    <h6 className="text-muted">{data.attributes.published_date}</h6>
-                  </div>
-                </div>
-              </Link>
-            </Col>
-          ))}
-        </Row>
+        <h2 className="fw-bold text-center text-secondary">Related Articles</h2>
+        {['Politics', 'Technology', 'Health', 'Sports', 'Design'].map((category, i) => (
+          <div key={i} className="category-section py-4">
+            <h3 className="fw-bold text-dark">{category}</h3>
+            <Row className="gy-4 mt-3">
+              {articlesCat.filter(article => article.attributes.category === category).map((data, index) => (
+                <Col xs={12} md={6} key={index}>
+                  <Link href={`/news/${data.attributes.slug}`} className="text-decoration-none">
+                    <motion.div className="article-card p-3 rounded-4 shadow-sm d-flex gap-3 align-items-center" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+                      <Image alt={data.attributes.title} src={LogoSTP} width={150} height={150} className="rounded-3"/>
+                      <div>
+                        <h6 className="text-muted">{data.attributes.category}</h6>
+                        <h4 className="fw-bold text-dark">{data.attributes.title}</h4>
+                        <h6 className="text-muted">{data.attributes.published_date}</h6>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        ))}
       </Container>
     </section>
   );

@@ -4,49 +4,50 @@
     "innovation": "Berita Terbaru",
     "commitments": "Jabar Istimewa",
     "about-us": "Tentang Kami",
+    "profile": "Profile",
     "login": "Masuk",
     "language": "BAHASA"
   },
   "seo": {
     "home": {
-      "description": "Click.com",
-      "title": "Click.com"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org"
     },
     "total-solutions": {
-      "description": "Click.com",
-      "title": "Click.com | Total Solutions"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Total Solutions"
     },
     "innovation": {
-      "description": "Click.com",
-      "title": "Click.com | Inovasi"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Inovasi"
     },
     "about-us": {
-      "description": "Click.com",
-      "title": "Click.com | Tentang Kami"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Tentang Kami"
     },
     "commitments": {
-      "description": "Click.com",
-      "title": "Click.com | Komitmen"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Komitmen"
     },
     "technical-team": {
-      "description": "Click.com",
-      "title": "Click.com | Teknikal Tim"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Teknikal Tim"
     },
     "hatchery-farm": {
-      "description": "Click.com",
-      "title": "Click.com | Pembenihan dan Budidaya"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Pembenihan dan Budidaya"
     },
     "aquafeed": {
-      "description": "Click.com",
-      "title": "Click.com | Aquafeed"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Aquafeed"
     },
     "contact-us": {
-      "description": "Click.com",
-      "title": "Click.com | Hubungi Kami"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Hubungi Kami"
     },
     "news-article": {
-      "description": "Click.com",
-      "title": "Click.com | Berita & Artikel"
+      "description": "klikjabar.org",
+      "title": "klikjabar.org | Berita & Artikel"
     }
   },
   "hero": {
@@ -58,7 +59,7 @@
     "commitments": "Komitmen Kami melalui Aksi untuk Budidaya Perikanan Berkelanjutan",
     "innovation": {
       "title": "Menginovasi Masa Depan Akuakultur",
-      "description": "Selamat datang di Click.com, dimana dedikasi kami terhadap inovasi dan komitmen terhadap keberlanjutan memandu upaya kami di industri akuakultur. Dengan menerapkan teknologi Industri 4.0 yang canggih, kami berupaya meningkatkan kualitas produk dan berkontribusi terhadap masa depan yang lebih berkelanjutan dan efisien"
+      "description": "Selamat datang di klikjabar.org, dimana dedikasi kami terhadap inovasi dan komitmen terhadap keberlanjutan memandu upaya kami di industri akuakultur. Dengan menerapkan teknologi Industri 4.0 yang canggih, kami berupaya meningkatkan kualitas produk dan berkontribusi terhadap masa depan yang lebih berkelanjutan dan efisien"
     },
     "about-us": "Dengan Penuh Semangat Memajukan Praktik Akuakultur",
     "hatchery-farm": "Selamat datang di STP Sustainable Hatchery & Farm",
@@ -119,7 +120,7 @@
     "arc": {
       "description": "Pusat Penelitian Akuakultur (ARC) didirikan untuk mempromosikan budidaya perairan yang bertanggung jawab dan berkelanjutan. Ini berfokus pada pengembangan spesies ikan dan udang yang dapat dibudidayakan. ARC meneliti metode budidaya ikan laut dan air tawar di lingkungan terkendali. Pekerjaan mereka meliputi memproduksi pakan alami, mengelola indukan, membesarkan indukan produktif, melakukan pembiakan buatan dan alami, memanen dan menetaskan telur, serta memelihara benih. Pendekatan komprehensif ini membantu memajukan praktik akuakultur berkelanjutan."
     },
-    "join-us": "Bergabunglah bersama kami di Click.com saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
+    "join-us": "Bergabunglah bersama kami di klikjabar.org saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
     "contact-us": "Hubungi kami"
   },
   "commitments": {
@@ -131,7 +132,7 @@
     "empowering": {
       "title": "Pemberdayaan Komunitas",
       "description1": "Kami percaya bahwa para petani perairan, serta masyarakat di mana kami beroperasi, memainkan peran penting dalam industri ini. Komitmen kami untuk memprioritaskan budidaya perikanan berkelanjutan tidak hanya ditandai dengan pelestarian lingkungan tetapi juga dengan meningkatkan kesadaran mengenai praktik budidaya perikanan yang lebih ramah lingkungan. Upaya tersebut dilakukan melalui pengenalan metode aqua farming yang ramah lingkungan dan penciptaan lulusan yang siap industri. Selain itu, kami mendukung penghidupan berkelanjutan melalui inisiatif di kawasan budidaya udang vannamei.",
-      "description2": "Dengan mengintegrasikan prinsip-prinsip ini ke dalam setiap aspek bisnis kami, Click.com tetap teguh dalam misi kami untuk berkontribusi positif terhadap praktik akuakultur berkelanjutan. Kami tidak hanya memelihara operasi kami tetapi juga memastikan masa depan yang berkelanjutan untuk generasi berikutnya"
+      "description2": "Dengan mengintegrasikan prinsip-prinsip ini ke dalam setiap aspek bisnis kami, klikjabar.org tetap teguh dalam misi kami untuk berkontribusi positif terhadap praktik akuakultur berkelanjutan. Kami tidak hanya memelihara operasi kami tetapi juga memastikan masa depan yang berkelanjutan untuk generasi berikutnya"
     }
   },
   "about-us": {
@@ -241,7 +242,7 @@
       "note2": "Bebas Penyakit dan Virus",
       "note3": "Potensi Pertumbuhan Optimal"
     },
-    "join-us": "Bergabunglah bersama kami di Click.com saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
+    "join-us": "Bergabunglah bersama kami di klikjabar.org saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
     "contact-us": "Hubungi kami"
   },
   "technical-team": {
@@ -253,7 +254,7 @@
       "title": "Raih Keunggulan Akuakultur bersama Tim Teknis STP",
       "description": "Di STP, kami berdedikasi untuk memberikan solusi komprehensif kepada mitra dan pelanggan kami. Melalui Tim Teknis kami sebagai inti komitmen ini, dikenal sebagai Teknisi Budidaya Udang & Ikan yang dikhususkan untuk mendukung proses budidaya perikanan Anda, dan memastikan hasil yang optimal."
     },
-    "join-us": "Bergabunglah bersama kami di Click.com saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
+    "join-us": "Bergabunglah bersama kami di klikjabar.org saat kami berkontribusi terhadap evolusi industri akuakultur, merangkul inovasi dan keberlanjutan untuk memelihara masa depan.",
     "contact-us": "Hubungi kami"
   },
   "aquafeed": {

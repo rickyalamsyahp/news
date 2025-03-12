@@ -8,8 +8,8 @@ import { Container, Navbar, Nav } from 'react-bootstrap'
 
 import { Link, usePathname } from '../../navigation'
 
-import STPLogo from '../../assets/images/logo-jabar.png'
-import STPLogoColored from '../../assets/images/logo-jabar.png'
+import STPLogo from '../../assets/images/logo-klikjabar-noback.png'
+import STPLogoColored from '../../assets/images/logo-klikjabar-noback.png'
 
 import './styles.scss'
 import LocaleSwitcher from './LocaleSwitcher/LocaleSwitcher'
@@ -38,6 +38,11 @@ function NavigationBar() {
       href: '/commitments',
       className: 'commitments',
       text: t('commitments'),
+    },
+    {
+      href: '/profile',
+      className: 'profile',
+      text: t('profile'),
     },
     // {
     //   href: '/about-us',
